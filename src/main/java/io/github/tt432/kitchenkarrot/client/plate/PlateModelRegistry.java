@@ -43,7 +43,7 @@ public class PlateModelRegistry {
         Set<String> plates = new HashSet<>();
         PlateHolderMap.plateHolder.forEach((key, value) -> {
             for (int i = 1; i <= value; i++) {
-                plates.add(ForgeRegistries.ITEMS.getKey(key) + "_" + i);
+                plates.add(new ResourceLocation(Kitchenkarrot.MOD_ID, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(key)).getPath()) + "_" + i);
             }
         });
 
