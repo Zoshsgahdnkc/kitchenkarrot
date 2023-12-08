@@ -1,13 +1,16 @@
 package io.github.tt432.kitchenkarrot.recipes.recipe;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.github.tt432.kitchenkarrot.recipes.base.BaseRecipe;
 import io.github.tt432.kitchenkarrot.registries.RecipeSerializers;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingRecipeCodecs;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -19,17 +22,32 @@ import java.util.List;
  * @author DustW
  **/
 public class BrewingBarrelRecipe extends BaseRecipe<BrewingBarrelRecipe> {
+    public static final Codec<BrewingBarrelRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
+            Content.CODEC.fieldOf("content").forGetter(recipe -> recipe.content)
+    ).apply(builder, BrewingBarrelRecipe::new));
+
+    public BrewingBarrelRecipe(ItemStack result, Content content) {
+        this.result = result;
+        this.content = content;
+    }
+
     @Expose
     ItemStack result;
     @Expose
     Content content;
 
-    static class Content {
-        @Expose
-        NonNullList<Ingredient> recipe = NonNullList.withSize(6, Ingredient.EMPTY);
-        @Expose
-        @SerializedName("craftingtime")
-        int craftingTime;
+    public record Content(NonNullList<Ingredient> recipe, int craftingTime) {
+        public static final Codec<Content> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+                Ingredient.CODEC_NONEMPTY.listOf().fieldOf("recipe").flatXmap(list -> {
+                            Ingredient[] aingredient = list.stream().filter(i -> !i.isEmpty()).toArray(Ingredient[]::new);
+                            return DataResult.success(NonNullList.of(Ingredient.EMPTY, aingredient));
+                        }, DataResult::success)
+                        .orElse(NonNullList.withSize(6, Ingredient.EMPTY))
+                        .forGetter(Content::recipe),
+                Codec.INT.fieldOf("craftingTime").forGetter(Content::craftingTime)
+        ).apply(builder, Content::new));
+
     }
 
     public NonNullList<Ingredient> getIngredient() {
@@ -49,11 +67,6 @@ public class BrewingBarrelRecipe extends BaseRecipe<BrewingBarrelRecipe> {
     public ItemStack getResultItem(RegistryAccess p_267052_) {
         return result.copy();
     }
-
-    //    @Override
-//    public ItemStack getResultItem() {
-//        return result.copy();
-//    }
 
     @Override
     public RecipeSerializer<?> getSerializer() {

@@ -40,7 +40,7 @@ public class PlateRecipeCategory extends BaseRecipeCategory<PlateRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, PlateRecipe recipe, IFocusGroup focuses) {
-        ItemStack input = recipe.getInput().getDefaultInstance();
+        ItemStack input = recipe.getInput();
         ItemStack result = recipe.getResultStack();
         Ingredient tool = recipe.getTool();
 

@@ -28,7 +28,7 @@ public class CocktailRecipeCategory extends BaseRecipeCategory<CocktailRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CocktailRecipe recipe, IFocusGroup focuses) {
-        var ingredients = recipe.getContent().getRecipe();
+        var ingredients = recipe.getContent().recipe();
 
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 15).addIngredients(ingredients.get(0));
         builder.addSlot(RecipeIngredientRole.INPUT, 66, 15).addIngredients(ingredients.get(1));

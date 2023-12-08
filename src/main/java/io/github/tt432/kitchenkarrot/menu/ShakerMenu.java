@@ -62,12 +62,12 @@ public class ShakerMenu extends KKMenu {
                 var list = getInputs(handler);
 
                 var recipe = RecipeManager.getCocktailRecipes(inventory.player.level()).stream()
-                    .filter(r -> r.matches(list)).findFirst();
+                    .filter(r -> r.value().matches(list)).findFirst();
 
                 var recipeResult = CocktailItem.unknownCocktail();
 
                 if (recipe.isPresent()) {
-                    recipeResult = recipe.get().getResultItem(RegistryAccess.EMPTY);
+                    recipeResult = recipe.get().value().getResultItem(RegistryAccess.EMPTY);
                 }
 
                 if (list.stream().anyMatch(ItemStack::isEmpty)) {
@@ -110,9 +110,9 @@ public class ShakerMenu extends KKMenu {
         var list = getInputs(handler);
 
         var recipe = RecipeManager.getCocktailRecipes(inventory.player.level())
-                .stream().filter(r -> r.matches(list)).findFirst();
+                .stream().filter(r -> r.value().matches(list)).findFirst();
         if (recipe.isPresent()) {
-            ShakerItem.setRecipeTime(itemStack, recipe.get().getContent().getCraftingTime());
+            ShakerItem.setRecipeTime(itemStack, recipe.get().value().getContent().craftingTime());
         }
         else {
             if (list.stream().anyMatch(ItemStack::isEmpty)) {

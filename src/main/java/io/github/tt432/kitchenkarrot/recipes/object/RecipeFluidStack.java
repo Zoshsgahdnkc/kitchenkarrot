@@ -1,17 +1,18 @@
 package io.github.tt432.kitchenkarrot.recipes.object;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraftforge.fluids.FluidStack;
 
 /**
  * @author DustW
  **/
 public class RecipeFluidStack {
-    @Expose
-    @SerializedName("fluid_name")
+    public static final Codec<RecipeFluidStack> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            Codec.STRING.fieldOf("fluid_name").forGetter(recipe -> recipe.fluidName),
+            Codec.INT.fieldOf("amount").forGetter(recipe -> recipe.amount)
+    ).apply(builder, RecipeFluidStack::new));
     public String fluidName;
-    @Expose
     public int amount;
 
     public RecipeFluidStack(String fluidName, int amount) {

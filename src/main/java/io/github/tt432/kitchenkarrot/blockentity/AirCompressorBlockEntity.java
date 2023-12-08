@@ -31,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author DustW
@@ -133,8 +134,8 @@ public class AirCompressorBlockEntity extends MenuBlockEntity {
     private AirCompressorRecipe getRecipeFromItems() {
         List<ItemStack> items = ItemHandlerUtils.toList(input1);
         ItemStack container = items.remove(4);
-        return RecipeManager.getAirCompressorRecipe(level).stream()
-                .filter(r -> r.matches(items) && r.testContainer(container)).findFirst().orElse(null);
+        return Objects.requireNonNull(RecipeManager.getAirCompressorRecipe(level).stream()
+                .filter(r -> r.value().matches(items) && r.value().testContainer(container)).findFirst().orElse(null)).value();
     }
 
     private boolean isSlotAvailable(AirCompressorRecipe recipe) {

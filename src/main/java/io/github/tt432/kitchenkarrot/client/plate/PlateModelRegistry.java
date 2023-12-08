@@ -2,10 +2,8 @@ package io.github.tt432.kitchenkarrot.client.plate;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.block.PlateHolderMap;
-import io.github.tt432.kitchenkarrot.util.json.JsonUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BlockModel;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
@@ -15,7 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 

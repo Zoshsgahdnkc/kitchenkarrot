@@ -1,7 +1,5 @@
 package io.github.tt432.kitchenkarrot.recipes.recipe;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -10,33 +8,41 @@ import io.github.tt432.kitchenkarrot.registries.RecipeSerializers;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.CraftingRecipeCodecs;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.util.RecipeMatcher;
-import org.checkerframework.checker.units.qual.A;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 /**
  * @author DustW
  **/
 public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
+    public static final Codec<AirCompressorRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredient").flatXmap(ingredientList -> {
+                        Ingredient[] aingredient = ingredientList.stream().filter(i -> !i.isEmpty()).toArray(Ingredient[]::new);
+                        return DataResult.success(NonNullList.of(Ingredient.EMPTY, aingredient));
+                    }, DataResult::success)
+                    .orElse(NonNullList.withSize(4, Ingredient.EMPTY))
+                    .forGetter(AirCompressorRecipe::getIngredient),
+            Codec.INT.fieldOf("craftingTime").forGetter(AirCompressorRecipe::getCraftingTime),
+            Ingredient.CODEC.fieldOf("container").forGetter(AirCompressorRecipe::getContainer),
+            CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result)
+    ).apply(builder, AirCompressorRecipe::new));
+
     public AirCompressorRecipe(NonNullList<Ingredient> ingredient, int craftingTime, Ingredient container, ItemStack result) {
         this.ingredient = ingredient;
         this.craftingTime = craftingTime;
         this.container = container;
         this.result = result;
     }
-    @Expose
-    NonNullList<Ingredient> ingredient = NonNullList.withSize(4, Ingredient.EMPTY);
-    @Expose
-    @SerializedName("craftingtime")
+
+    NonNullList<Ingredient> ingredient;
     int craftingTime;
-    @Expose
     Ingredient container;
-    @Expose
     ItemStack result;
 
     @Override
@@ -61,11 +67,6 @@ public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
         return result.copy();
     }
 
-//    @Override
-//    public ItemStack getResultItem() {
-//        return result.copy();
-//    }
-
     public int getCraftingTime() {
         return craftingTime;
     }
@@ -78,46 +79,5 @@ public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
     @Override
     public RecipeType<?> getType() {
         return RecipeTypes.AIR_COMPRESSOR.get();
-    }
-
-    public static class Serializer implements RecipeSerializer<AirCompressorRecipe> {
-        private static final Codec<AirCompressorRecipe> CODEC = RecordCodecBuilder.create((builder) -> {
-            return builder.group(Ingredient.CODEC.fieldOf("container").forGetter((recipe) -> {
-                return recipe.container;
-            }), Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredient").flatXmap((ingredientList) -> {
-                Ingredient[] aingredient = ingredientList.stream().filter((i) -> !i.isEmpty()).toArray(Ingredient[]::new);
-                return DataResult.success(NonNullList.of(Ingredient.EMPTY, aingredient));
-            }, DataResult::success),
-                //TODO 为什么这地方会报错？？
-                Codec.INT.fieldOf("craftingTime").forGetter((recipe) -> {
-                return recipe.craftingTime;
-            }), CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter((recipe) -> {
-                return recipe.result;
-            })).apply(builder, SmithingTransformRecipe::new);
-        });
-
-        public Codec<AirCompressorRecipe> codec() {
-            return CODEC;
-        }
-
-        public AirCompressorRecipe fromNetwork(FriendlyByteBuf buf) {
-            Ingredient container = Ingredient.fromNetwork(buf);
-            NonNullList<Ingredient> ingredients = NonNullList.withSize(4, Ingredient.EMPTY);
-            for(int i = 0; i < 4; ++i) {
-                ingredients.set(i, Ingredient.fromNetwork(buf));
-            }
-            int time = buf.readInt();
-            ItemStack itemstack = buf.readItem();
-            return new AirCompressorRecipe(ingredients, time, container, itemstack);
-        }
-
-        public void toNetwork(FriendlyByteBuf buf, AirCompressorRecipe recipe) {
-            recipe.container.toNetwork(buf);
-            for (Ingredient i : recipe.ingredient) {
-                i.toNetwork(buf);
-            }
-            buf.writeInt(recipe.craftingTime);
-            buf.writeItem(recipe.result);
-        }
     }
 }

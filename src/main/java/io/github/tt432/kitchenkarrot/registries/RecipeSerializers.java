@@ -20,16 +20,16 @@ public class RecipeSerializers {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, RecipeManager.MOD_ID);
 
     public static final RegistryObject<BaseSerializer<?>> COCKTAIL =
-            SERIALIZER.register("cocktail", () -> new BaseSerializer<>(CocktailRecipe.class));
+            SERIALIZER.register("cocktail", () -> new BaseSerializer<>(CocktailRecipe.CODEC));
 
     public static final RegistryObject<BaseSerializer<?>> AIR_COMPRESSOR =
-            SERIALIZER.register("air_compressing", () -> new BaseSerializer<>(AirCompressorRecipe.class));
+            SERIALIZER.register("air_compressing", () -> new BaseSerializer<>(AirCompressorRecipe.CODEC));
 
     public static final RegistryObject<BaseSerializer<?>> BREWING_BARREL =
-            SERIALIZER.register("brewing_barrel", () -> new BaseSerializer<>(BrewingBarrelRecipe.class));
+            SERIALIZER.register("brewing_barrel", () -> new BaseSerializer<>(BrewingBarrelRecipe.CODEC));
 
     public static final RegistryObject<BaseSerializer<?>> PLATE =
-            SERIALIZER.register("plate", () -> new BaseSerializer<>(PlateRecipe.class));
+            SERIALIZER.register("plate", () -> new BaseSerializer<>(PlateRecipe.CODEC));
 
 
     public static void register(IEventBus bus) {

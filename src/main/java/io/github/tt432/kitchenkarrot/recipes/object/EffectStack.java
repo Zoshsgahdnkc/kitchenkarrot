@@ -1,6 +1,7 @@
 package io.github.tt432.kitchenkarrot.recipes.object;
 
-import com.google.gson.annotations.Expose;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,12 +12,21 @@ import java.util.function.Supplier;
  * @author DustW
  **/
 public class EffectStack {
-    @Expose
-    public String id;
-    @Expose
-    public int lvl;
-    @Expose
-    public int duration;
+    public static final Codec<EffectStack> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            Codec.STRING.fieldOf("id").forGetter(effectStack -> effectStack.id),
+            Codec.INT.fieldOf("lvl").forGetter(effectStack -> effectStack.lvl),
+            Codec.INT.fieldOf("duration").forGetter(effectStack -> effectStack.duration)
+    ).apply(builder, EffectStack::new));
+
+    public EffectStack(String id, int lvl, int duration) {
+        this.id = id;
+        this.lvl = lvl;
+        this.duration = duration;
+    }
+
+    String id;
+    int lvl;
+    int duration;
 
     private Supplier<MobEffectInstance> cache;
 

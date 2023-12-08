@@ -31,10 +31,9 @@ public abstract class BaseRecipe<SELF extends BaseRecipe<SELF>> implements Recip
         return getResultItem(p_267165_);
     }
 
-//    @Override
-//    public ItemStack assemble(Container pContainer) {
-//        return getResultItem();
-//    }
+    public ResourceLocation getId() {
+        return id;
+    }
 
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {

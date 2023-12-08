@@ -1,6 +1,7 @@
 package io.github.tt432.kitchenkarrot.util.json.serializer;
 
 import com.google.gson.*;
+import com.mojang.serialization.JsonOps;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -17,7 +18,7 @@ public class NonNullListSerializer implements JsonSerializer<NonNullList<Ingredi
         var result = NonNullList.withSize(list.size(), Ingredient.EMPTY);
 
         for (int i = 0; i < list.size(); i++) {
-            result.set(i, Ingredient.fromJson(list.get(i)));
+            result.set(i, Ingredient.CODEC_NONEMPTY.parse(JsonOps.INSTANCE, list.get(i)).get().orThrow());
         }
 
         return result;
@@ -28,7 +29,7 @@ public class NonNullListSerializer implements JsonSerializer<NonNullList<Ingredi
         var list = new JsonArray();
 
         for (Ingredient ingredient : src) {
-            list.add(ingredient.toJson());
+            list.add(ingredient.toJson(false));
         }
 
         return list;

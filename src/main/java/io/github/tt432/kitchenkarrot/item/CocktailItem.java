@@ -52,11 +52,11 @@ public class CocktailItem extends Item {
             if (cocktail != null) {
                 CocktailRecipe recipe = get(pLevel, cocktail);
                 if (recipe != null) {
-                    player.getFoodData().eat(recipe.content.hunger, recipe.content.saturation);
+                    player.getFoodData().eat(recipe.content.hunger(), recipe.content.saturation());
                     if (!player.getAbilities().instabuild) {
                         stack.shrink(1);
                     }
-                    for (EffectStack effectStack : recipe.content.getEffect()) {
+                    for (EffectStack effectStack : recipe.content.effect()) {
                         player.addEffect(effectStack.get());
                     }
                 } else if (cocktail.equals(UNKNOWN_COCKTAIL)) {
@@ -109,7 +109,7 @@ public class CocktailItem extends Item {
                 tooltip.add(Component.translatable("item.cocktail.author", recipe.author));
                 CocktailRecipe cocktailRecipe = get(level, name);
                 if (cocktailRecipe != null) {
-                    List<MobEffectInstance> list = cocktailRecipe.getContent().getEffect().stream().map(EffectStack::get).toList();
+                    List<MobEffectInstance> list = cocktailRecipe.getContent().effect().stream().map(EffectStack::get).toList();
                     PotionUtils.addPotionTooltip(list, tooltip, 1.0F);
                 }
             }
@@ -132,7 +132,7 @@ public class CocktailItem extends Item {
 
     @Nullable
     public static CocktailRecipe get(Level level, ResourceLocation resourceLocation) {
-        Optional<RecipeHolder<? extends Recipe<?>>> result = level.getRecipeManager().byKey(resourceLocation);
+        Optional<RecipeHolder<?>> result = level.getRecipeManager().byKey(resourceLocation);
 
         if (result.isPresent() && result.get().value().getType() == RecipeTypes.COCKTAIL.get()) {
             return (CocktailRecipe) result.get().value();

@@ -1,15 +1,17 @@
 package io.github.tt432.kitchenkarrot.recipes.recipe;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
-import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.recipes.base.BaseRecipe;
 import io.github.tt432.kitchenkarrot.recipes.object.EffectStack;
+import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.registries.RecipeSerializers;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingRecipeCodecs;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -22,6 +24,18 @@ import java.util.List;
  * @author DustW
  **/
 public class CocktailRecipe extends BaseRecipe<CocktailRecipe> {
+    public static final Codec<CocktailRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+            CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
+            Codec.STRING.fieldOf("author").forGetter(recipe -> recipe.author),
+            Content.CODEC.fieldOf("content").forGetter(recipe -> recipe.content)
+    ).apply(builder, CocktailRecipe::new));
+
+    public CocktailRecipe(ItemStack result, String author, Content content) {
+        this.result = result;
+        this.author = author;
+        this.content = content;
+    }
+
     @Override
     public boolean matches(List<ItemStack> inputs) {
         return RecipeMatcher.findMatches(inputs, content.recipe) != null;
@@ -62,30 +76,15 @@ public class CocktailRecipe extends BaseRecipe<CocktailRecipe> {
     @Expose
     public Content content;
 
-    public static class Content {
-        @Expose
-        List<Ingredient> recipe;
-        @Expose
-        @SerializedName("craftingtime")
-        int craftingTime;
-        @Expose
-        public int hunger;
-        @Expose
-        public int saturation;
-        @Expose
-        List<EffectStack> effect;
-
-        public int getCraftingTime() {
-            return craftingTime;
-        }
-
-        public List<Ingredient> getRecipe() {
-            return recipe;
-        }
-
-        public List<EffectStack> getEffect() {
-            return effect == null ? new ArrayList<>() : effect;
-        }
+    public record Content(List<Ingredient> recipe, int craftingTime, int hunger, int saturation,
+                          List<EffectStack> effect) {
+        public static final Codec<Content> CODEC = RecordCodecBuilder.create(builder -> builder.group(
+                Ingredient.CODEC_NONEMPTY.listOf().fieldOf("recipe").forGetter(Content::recipe),
+                Codec.INT.fieldOf("craftingTime").forGetter(Content::craftingTime),
+                Codec.INT.fieldOf("hunger").forGetter(Content::hunger),
+                Codec.INT.fieldOf("saturation").forGetter(Content::saturation),
+                EffectStack.CODEC.listOf().fieldOf("effect").orElse(new ArrayList<>()).forGetter(Content::effect)
+        ).apply(builder, Content::new));
     }
 
     public Content getContent() {
