@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "sweet_berry_martini",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "milk_acorn_wine",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

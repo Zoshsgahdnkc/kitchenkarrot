@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "black_pearl",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

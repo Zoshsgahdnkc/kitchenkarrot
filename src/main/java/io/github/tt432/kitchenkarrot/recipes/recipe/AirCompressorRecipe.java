@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * @author DustW
  **/
-public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
+public class AirCompressorRecipe extends BaseRecipe {
     public static final Codec<AirCompressorRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredient").flatXmap(ingredientList -> {
                         Ingredient[] aingredient = ingredientList.stream().filter(i -> !i.isEmpty()).toArray(Ingredient[]::new);
@@ -28,7 +28,7 @@ public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
                     }, DataResult::success)
                     .orElse(NonNullList.withSize(4, Ingredient.EMPTY))
                     .forGetter(AirCompressorRecipe::getIngredient),
-            Codec.INT.fieldOf("craftingTime").forGetter(AirCompressorRecipe::getCraftingTime),
+            Codec.INT.fieldOf("craftingtime").forGetter(AirCompressorRecipe::getCraftingTime),
             Ingredient.CODEC.fieldOf("container").forGetter(AirCompressorRecipe::getContainer),
             CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result)
     ).apply(builder, AirCompressorRecipe::new));
@@ -48,6 +48,11 @@ public class AirCompressorRecipe extends BaseRecipe<AirCompressorRecipe> {
     @Override
     public boolean matches(List<ItemStack> inputs) {
         return RecipeMatcher.findMatches(inputs, ingredient) != null;
+    }
+
+    @Override
+    public String getId() {
+        return getResultItem(null).getDescriptionId();
     }
 
     public NonNullList<Ingredient> getIngredient() {

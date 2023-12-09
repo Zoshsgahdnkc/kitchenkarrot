@@ -25,7 +25,7 @@ public class RecipeTypes {
     public static final RegistryObject<RecipeType<BrewingBarrelRecipe>> BREWING_BARREL = register("brewing_barrel");
     public static final RegistryObject<RecipeType<PlateRecipe>> PLATE = register("plate");
 
-    private static <TYPE extends BaseRecipe<TYPE>> RegistryObject<RecipeType<TYPE>> register(String name) {
+    private static <TYPE extends BaseRecipe> RegistryObject<RecipeType<TYPE>> register(String name) {
         return TYPES.register(name, () -> new RecipeType<>() {
             @Override
             public String toString() {

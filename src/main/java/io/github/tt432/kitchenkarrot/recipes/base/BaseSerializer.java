@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 /**
  * @author DustW
  **/
-public record BaseSerializer<RECIPE extends BaseRecipe<RECIPE>>(Codec<RECIPE> codec)
+public record BaseSerializer<RECIPE extends BaseRecipe>(Codec<RECIPE> codec)
         implements RecipeSerializer<RECIPE> {
 
     @Override

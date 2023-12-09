@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "second_guess",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

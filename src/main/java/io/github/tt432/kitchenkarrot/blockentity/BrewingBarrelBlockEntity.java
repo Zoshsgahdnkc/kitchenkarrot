@@ -129,12 +129,12 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
     void setRecipe(BrewingBarrelRecipe recipe) {
         this.currentRecipe = recipe;
 
-        if (recipe != null) {
-            this.recipe.set(recipe.getId().toString());
-        }
-        else {
-            this.recipe.set("");
-        }
+//        if (recipe != null) {
+//            this.recipe.set(recipe.getId().toString());
+//        }
+//        else {
+//            this.recipe.set("");
+//        }
     }
 
     void resetProgress() {

@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "birch_sap_vodka",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class RecipeManager {
     public static final String MOD_ID = Kitchenkarrot.MOD_ID;
 
-    public static <T extends BaseRecipe<T>> List<RecipeHolder<T>> getRecipe(Level level, RecipeType<T> type, List<ItemStack> itemStacks) {
+    public static <T extends BaseRecipe> List<RecipeHolder<T>> getRecipe(Level level, RecipeType<T> type, List<ItemStack> itemStacks) {
         return level.getRecipeManager().getAllRecipesFor(type).stream().filter(s -> s.value().matches(itemStacks)).collect(Collectors.toList());
     }
 

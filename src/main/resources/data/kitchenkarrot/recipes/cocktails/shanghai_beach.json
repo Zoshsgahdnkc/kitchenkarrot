@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "shanghai_beach",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

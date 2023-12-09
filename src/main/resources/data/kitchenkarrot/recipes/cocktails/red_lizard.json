@@ -1,5 +1,6 @@
 {
     "type": "kitchenkarrot:cocktail",
+    "cocktail_id": "red_lizard",
     "author":"kitchenkarrot",
     "content":{
         "recipe":[

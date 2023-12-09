@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author DustW
  **/
-public class BrewingBarrelRecipe extends BaseRecipe<BrewingBarrelRecipe> {
+public class BrewingBarrelRecipe extends BaseRecipe {
     public static final Codec<BrewingBarrelRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
             CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
             Content.CODEC.fieldOf("content").forGetter(recipe -> recipe.content)
@@ -45,7 +45,7 @@ public class BrewingBarrelRecipe extends BaseRecipe<BrewingBarrelRecipe> {
                         }, DataResult::success)
                         .orElse(NonNullList.withSize(6, Ingredient.EMPTY))
                         .forGetter(Content::recipe),
-                Codec.INT.fieldOf("craftingTime").forGetter(Content::craftingTime)
+                Codec.INT.fieldOf("craftingtime").forGetter(Content::craftingTime)
         ).apply(builder, Content::new));
 
     }
@@ -61,6 +61,11 @@ public class BrewingBarrelRecipe extends BaseRecipe<BrewingBarrelRecipe> {
     @Override
     public boolean matches(List<ItemStack> inputs) {
         return RecipeMatcher.findMatches(inputs, getIngredient()) != null;
+    }
+
+    @Override
+    public String getId() {
+        return getResultItem(null).getDescriptionId();
     }
 
     @Override

@@ -20,47 +20,35 @@ import java.util.List;
 /**
  * @author DustW
  **/
-public class PlateRecipe extends BaseRecipe<PlateRecipe> {
+public class PlateRecipe extends BaseRecipe {
     public static final Codec<PlateRecipe> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-            Input.CODEC.fieldOf("input").forGetter(plateRecipe -> plateRecipe.input),
-            Output.CODEC.fieldOf("result").forGetter(plateRecipe -> plateRecipe.result),
+            CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("input").forGetter(plateRecipe -> plateRecipe.input),
+            CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("result").forGetter(plateRecipe -> plateRecipe.result),
             Ingredient.CODEC.fieldOf("tool")
                     .orElse(Ingredient.of(ModItemTags.KNIFE_ITEM))
                     .forGetter(plateRecipe -> plateRecipe.tool)
     ).apply(builder, PlateRecipe::new));
 
-    public PlateRecipe(Input input, Output result, Ingredient tool) {
+    public PlateRecipe(ItemStack input, ItemStack result, Ingredient tool) {
         this.input = input;
         this.result = result;
         this.tool = tool;
     }
 
-    Input input;
-    Output result;
+    ItemStack input;
+    ItemStack result;
     Ingredient tool;
 
-    public record Input(ItemStack item) {
-        public static final Codec<Input> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("item").forGetter(Input::item)
-        ).apply(builder, Input::new));
-    }
-
-    public record Output(ItemStack item) {
-        public static final Codec<Output> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                CraftingRecipeCodecs.ITEMSTACK_OBJECT_CODEC.fieldOf("item").forGetter(Output::item)
-        ).apply(builder, Output::new));
-    }
-
     public ItemStack getInput() {
-        return input.item();
+        return input;
     }
 
     public int getResultCount() {
-        return PlateHolderMap.plateHolder.get(result.item().getItem());
+        return PlateHolderMap.plateHolder.get(result.getItem());
     }
 
     public ItemStack getResultStack() {
-        return new ItemStack(result.item().getItem(), getResultCount());
+        return new ItemStack(result.getItem(), getResultCount());
     }
 
     public Ingredient getTool() {
@@ -77,9 +65,14 @@ public class PlateRecipe extends BaseRecipe<PlateRecipe> {
     }
 
     @Override
+    public String getId() {
+        return getResultItem(RegistryAccess.EMPTY).getDescriptionId();
+    }
+
+    @Override
     @NotNull
     public ItemStack getResultItem(RegistryAccess p_267052_) {
-        return result.item != null ? new ItemStack(result.item().getItem()) : ItemStack.EMPTY;
+        return result != null ? new ItemStack(result.getItem()) : ItemStack.EMPTY;
     }
 
     @Override
