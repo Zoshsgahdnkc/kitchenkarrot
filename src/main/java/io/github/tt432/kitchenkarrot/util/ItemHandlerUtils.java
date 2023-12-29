@@ -29,7 +29,7 @@ public class ItemHandlerUtils {
     };
 
     public static void insertSingle(IItemHandler handler, int slot, Player player, ItemStack itemStack) {
-        ItemStack stack = player.getAbilities().instabuild ? new ItemStack(itemStack.getItem()) : itemStack.split(1);
+        ItemStack stack = player.getAbilities().instabuild ? itemStack.copy() : itemStack.split(1);
         handler.insertItem(slot, stack, false);
     };
 
