@@ -131,9 +131,10 @@
     "info.kitchenkarrot.popacorn": "剩餘%s口",
     "info.kitchenkarrot.water": "消耗水：%smB",
     "info.kitchenkarrot.time": "釀造時常：%s秒",
-    "info.kitchenkarrot.gem_carrot": "有小幾率在收穫普通胡蘿蔔時獲得。",
-    "info.kitchenkarrot.fine_salt": "大部分情況下可以從屠夫村民購買。（可配置）",
-    "info.kitchenkarrot.pillager_pie": "有小幾率窳民結構中或者擊敗掠奪者時獲得。",
+    "jei.info.kitchenkarrot.gem_carrot": "有小幾率在收穫普通胡蘿蔔時獲得。",
+    "jei.info.kitchenkarrot.fine_salt": "大部分情況下可以從屠夫村民購買。（可配置）",
+    "jei.info.kitchenkarrot.pillager_pie": "有小幾率窳民結構中或者擊敗掠奪者時獲得。",
+    "jei.info.kitchenkarrot.water":"對空氣壓縮機使用水桶來快速獲取。",
 
     "kitchenkarrot.unknown": "不知名鷄尾酒",
     "kitchenkarrot.unknown.tooltip": "§7新奇的研發。效果不明",

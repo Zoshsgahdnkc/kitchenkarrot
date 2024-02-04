@@ -131,9 +131,10 @@
     "info.kitchenkarrot.popacorn":"%s Bites Remains",
     "info.kitchenkarrot.water":"Water Consumption: %smB",
     "info.kitchenkarrot.time":"Brewing Duration: %ss",
-    "info.kitchenkarrot.gem_carrot":"Has a small chance to be harvested from normal carrots plants.",
-    "info.kitchenkarrot.fine_salt":"In most circumstances, can be bought from a butcher villager.(Configurable)",
-    "info.kitchenkarrot.pillager_pie":"Has a small chance to be looted from illager structure or from a dead pillager.",
+    "jei.info.kitchenkarrot.gem_carrot":"Has a small chance to be harvested from normal carrots plants.",
+    "jei.info.kitchenkarrot.fine_salt":"In most circumstances, can be bought from a butcher villager.(Configurable)",
+    "jei.info.kitchenkarrot.pillager_pie":"Has a small chance to be looted from illager structure or from a dead pillager.",
+    "jei.info.kitchenkarrot.water":"Right click the air compressor with a water bucket to obtain quickly.",
 
     "kitchenkarrot.unknown":"Unknown Cocktail",
     "kitchenkarrot.unknown.tooltip":"Creative work.Uncertain effect.",

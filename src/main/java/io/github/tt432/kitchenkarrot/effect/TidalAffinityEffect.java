@@ -9,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.*;
 import java.util.Map;
 import java.util.UUID;
 
+//TODO IMPLEMENT THIS
 public class TidalAffinityEffect extends MobEffect {
 
     public static final Attribute ATTRIBUTE = Attributes.ATTACK_SPEED;
