@@ -1,16 +1,11 @@
 package io.github.tt432.kitchenkarrot;
 
-import io.github.tt432.kitchenkarrot.registries.ModBlocks;
-import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
+import io.github.tt432.kitchenkarrot.registries.*;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
-import io.github.tt432.kitchenkarrot.registries.ModEntities;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
-import io.github.tt432.kitchenkarrot.registries.ModItems;
-import io.github.tt432.kitchenkarrot.registries.ModMenuTypes;
 import io.github.tt432.kitchenkarrot.networking.ModNetworking;
 import io.github.tt432.kitchenkarrot.recipes.RecipeManager;
-import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -44,6 +39,7 @@ public class Kitchenkarrot {
         ModSoundEvents.SOUNDS.register(bus);
         ModEntities.ENTITYS.register(bus);
         ModGlobalLootModifiers.GLM.register(bus);
+        ModEffects.EFFECTS.register(bus);
 
         RecipeManager.register(bus);
 
