@@ -5,8 +5,8 @@ import io.github.tt432.kitchenkarrot.blockentity.sync.*;
 import io.github.tt432.kitchenkarrot.capability.KKItemStackHandler;
 import io.github.tt432.kitchenkarrot.menu.BrewingBarrelMenu;
 import io.github.tt432.kitchenkarrot.recipes.recipe.BrewingBarrelRecipe;
-import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
+import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 import io.github.tt432.kitchenkarrot.util.ItemHandlerUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -56,7 +56,7 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
 
     @Override
     protected void syncDataInit(SyncDataManager manager) {
-        manager.add(tank = new FluidTankSyncData("fluid",FLUID_CAPACITY, (f) -> f.getFluid() == Fluids.WATER, true));
+        manager.add(tank = new FluidTankSyncData("fluid", FLUID_CAPACITY, (f) -> f.getFluid() == Fluids.WATER, true));
         manager.add(progress = new IntSyncData("progress", 0, true));
         manager.add(maxProgress = new IntSyncData("maxProgress", 0, true));
         manager.add(recipe = new StringSyncData("recipe", "", true));
@@ -75,25 +75,27 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
 
         if (!level.isClientSide) {
             Optional<BrewingBarrelRecipe> recipe = findRecipe();
-            if (recipe.isPresent() && hasEnoughWater(recipe.get())){
+            if (recipe.isPresent() && hasEnoughWater(recipe.get())) {
                 if (isStarted()) {
-                    if (isRecipeSame() && progress.plus(1,getMaxProgress()) == getMaxProgress()){
+                    if (isRecipeSame() && progress.plus(1, getMaxProgress()) == getMaxProgress()) {
                         finishBrewing();
                     }
-                } else {start();}
-            }else if(isStarted()) {
+                } else {
+                    start();
+                }
+            } else if (isStarted()) {
                 endProgress();
             }
         }
     }
 
-    public Optional<BrewingBarrelRecipe> findRecipe(){
+    public Optional<BrewingBarrelRecipe> findRecipe() {
         var inputList = ItemHandlerUtils.toList(input);
         return level.getRecipeManager().getAllRecipesFor(RecipeTypes.BREWING_BARREL.get())
                 .stream().filter(r -> r.matches(inputList)).findFirst();
     }
 
-    private void finishBrewing(){
+    private void finishBrewing() {
         ItemStack resultStack = result.getStackInSlot(0);
         if (resultStack.isEmpty() ||
                 (resultStack.is(getRecipe().getResultItem(RegistryAccess.EMPTY).getItem()) && resultStack.getCount() < resultStack.getMaxStackSize())) {
@@ -147,8 +149,7 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
 
         if (recipe != null) {
             this.recipe.set(recipe.getId().toString());
-        }
-        else {
+        } else {
             this.recipe.set("");
         }
     }
@@ -157,8 +158,7 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
         if (isStarted()) {
             this.progress.set(0);
             this.maxProgress.set(currentRecipe.getCraftingTime());
-        }
-        else {
+        } else {
             this.progress.set(0);
             this.maxProgress.set(0);
         }
@@ -167,7 +167,9 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
     public void start() {
         var inputList = ItemHandlerUtils.toList(input);
         level.getRecipeManager().getAllRecipesFor(RecipeTypes.BREWING_BARREL.get())
-                .stream().filter(r -> r.matches(inputList)).forEach(r -> {setRecipe(r);});
+                .stream().filter(r -> r.matches(inputList)).forEach(r -> {
+                    setRecipe(r);
+                });
         started.set(true);
         resetProgress();
     }
@@ -186,7 +188,16 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
     @NotNull
     @Override
     public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        return ForgeCapabilities.FLUID_HANDLER.orEmpty(cap, LazyOptional.of(() -> tank.get()));
+        if (cap == ForgeCapabilities.FLUID_HANDLER) {
+            return ForgeCapabilities.FLUID_HANDLER.orEmpty(cap, LazyOptional.of(() -> tank.get()));
+        }
+        if (cap == ForgeCapabilities.ITEM_HANDLER) {
+            return side == null ? LazyOptional.empty() : ForgeCapabilities.ITEM_HANDLER.orEmpty(cap, LazyOptional.of(() -> switch (side) {
+                case DOWN -> result;
+                case UP, NORTH, SOUTH, WEST, EAST -> input;
+            }));
+        }
+        return LazyOptional.empty();
     }
 
     public Integer getMaxProgress() {
@@ -220,9 +231,9 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
 
     public void playSound(SoundEvent soundEvent) {
         Vec3i vec3i = this.getBlockState().getValue(BrewingBarrelBlock.FACING).getNormal();
-        double d0 = (double) this.getBlockPos().getX() + 0.5D + (double)vec3i.getX() / 2.0D;
-        double d1 = (double) this.getBlockPos().getY() + 0.5D + (double)vec3i.getY() / 2.0D;
-        double d2 = (double) this.getBlockPos().getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
-        level.playSound((Player)null, d0, d1, d2, soundEvent, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+        double d0 = (double) this.getBlockPos().getX() + 0.5D + (double) vec3i.getX() / 2.0D;
+        double d1 = (double) this.getBlockPos().getY() + 0.5D + (double) vec3i.getY() / 2.0D;
+        double d2 = (double) this.getBlockPos().getZ() + 0.5D + (double) vec3i.getZ() / 2.0D;
+        level.playSound((Player) null, d0, d1, d2, soundEvent, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
     }
 }
