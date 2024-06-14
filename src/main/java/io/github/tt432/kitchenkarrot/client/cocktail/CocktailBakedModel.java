@@ -1,5 +1,6 @@
 package io.github.tt432.kitchenkarrot.client.cocktail;
 
+import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -19,7 +20,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import static io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry.to;
 
@@ -69,6 +69,7 @@ public class CocktailBakedModel implements BakedModel {
                 if (cocktail != null && modelManager.getMissingModel() != modelManager.getModel(to(cocktail))) {
                     model = modelManager.getModel(to(cocktail));
                 } else {
+                    Kitchenkarrot.LOGGER.warn("Miss cocktail texture for {}", p_173466_.getItem());
                     model = modelManager.getModel(CocktailItem.UNKNOWN_COCKTAIL);
                 }
                 return model;

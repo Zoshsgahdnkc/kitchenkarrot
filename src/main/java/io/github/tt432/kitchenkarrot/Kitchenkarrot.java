@@ -11,12 +11,17 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author DustW
  */
 @Mod(Kitchenkarrot.MOD_ID)
 public class Kitchenkarrot {
+    //Log
+    public static final Logger LOGGER = LogManager.getLogger();
+
     public static final String MOD_ID = "kitchenkarrot";
 
     // Mod version here.
