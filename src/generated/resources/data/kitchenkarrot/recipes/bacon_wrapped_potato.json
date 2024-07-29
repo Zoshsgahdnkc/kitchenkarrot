@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "c:cooked_pork"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "c:salt"
+    },
+    {
+      "tag": "c:cooking_oil"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "kitchenkarrot:bacon_wrapped_potato"
+  }
+}

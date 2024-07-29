@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "forge:bread"
+      "tag": "c:bread"
     },
     {
       "item": "kitchenkarrot:sashimi"

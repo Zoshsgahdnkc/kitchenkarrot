@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "-": {
+      "item": "minecraft:copper_ingot"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    }
+  },
+  "pattern": [
+    " B ",
+    "---"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:brewing_barrel"
+  }
+}

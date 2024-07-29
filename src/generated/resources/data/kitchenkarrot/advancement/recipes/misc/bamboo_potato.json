@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bamboo_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:bamboo_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:bamboo_potato"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bamboo_potato"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:bamboo_potato"
+    ]
+  }
+}

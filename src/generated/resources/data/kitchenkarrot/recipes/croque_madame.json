@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:croque_madame"
+  }
+}

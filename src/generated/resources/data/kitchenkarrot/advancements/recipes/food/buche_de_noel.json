@@ -1,35 +1,31 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / forge:ice_cubes]": {
+    "has_TagKey[minecraft:item / c:ice_cubes]": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:ice_cubes"
+            "items": "#c:ice_cubes"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cocoa_beans": {
+    "has_minecraft:cocoa_beans": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cocoa_beans"
-            ]
+            "items": "minecraft:cocoa_beans"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_sweet_berries": {
+    "has_minecraft:sweet_berries": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sweet_berries"
-            ]
+            "items": "minecraft:sweet_berries"
           }
         ]
       },
@@ -44,16 +40,15 @@
   },
   "requirements": [
     [
-      "has_sweet_berries",
-      "has_cocoa_beans",
-      "has_TagKey[minecraft:item / forge:ice_cubes]",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_minecraft:sweet_berries",
+      "has_minecraft:cocoa_beans",
+      "has_TagKey[minecraft:item / c:ice_cubes]"
     ]
   ],
   "rewards": {
     "recipes": [
       "kitchenkarrot:buche_de_noel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

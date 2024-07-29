@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_croque_madame": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:croque_madame"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:croque_madame"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_croque_madame"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:croque_madame"
+    ]
+  }
+}

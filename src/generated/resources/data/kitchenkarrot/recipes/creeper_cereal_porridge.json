@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "kitchenkarrot:grilled_wheatmeal"
+    },
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:creeper_cereal_porridge"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:oak_sapling"
+  },
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:acorn"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "kitchenkarrot:acorn_wine"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "kitchenkarrot:acorn_wine_base"
+  }
+}
