@@ -1,9 +1,0 @@
-{
-    "type": "kitchenkarrot:plate",
-    "input": {
-      "item": "kitchenkarrot:slime_mousse"
-    },
-    "result": {
-      "item": "kitchenkarrot:small_slime_mousse"
-    }
-  }

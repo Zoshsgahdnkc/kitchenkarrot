@@ -1,0 +1,12 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "kitchenkarrot:sirloin_steak"
+  },
+  "result": {
+    "id": "kitchenkarrot:beef_grains"
+  },
+  "tool": {
+    "tag": "kitchenkarrot:knife_item"
+  }
+}

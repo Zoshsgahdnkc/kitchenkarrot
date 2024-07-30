@@ -4,6 +4,7 @@ import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.datagen.provider.recipe.AirCompressorRecipeBuilder;
 import io.github.tt432.kitchenkarrot.datagen.provider.recipe.BrewingBarrelRecipeBuilder;
 import io.github.tt432.kitchenkarrot.datagen.provider.recipe.ModShapelessRecipeBuilder;
+import io.github.tt432.kitchenkarrot.datagen.provider.recipe.PlateRecipeBuilder;
 import io.github.tt432.kitchenkarrot.recipes.recipe.BrewingBarrelRecipe;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
@@ -59,6 +60,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Brewing Barrel
         genBrewingBarrel(recipeOutput);
 
+        // Cocktails
+        genCocktails(recipeOutput);
+
+        // Compat
+        //        genCompat(recipeOutput);
+
+        // Plate
+        genPlate(recipeOutput);
+
         // Food Shapeless
         genFoodShapeless(recipeOutput);
 
@@ -79,6 +89,78 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // smithingTransform
         genSmithingTransform(recipeOutput);
+    }
+
+    private void genPlate(RecipeOutput recipeOutput) {
+        PlateRecipeBuilder.plate(
+                        ModItems.BEEF_IN_DRIPLEAF.toStack(),
+                        ModItems.SMALL_BEEF_IN_DRIPLEAF.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SMALL_BEEF_IN_DRIPLEAF)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.CHORUS_MOUSSE.toStack(),
+                        ModItems.SMALL_CHORUS_MOUSSE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SMALL_CHORUS_MOUSSE)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.DUNGEON_PIZZA.toStack(),
+                        ModItems.DUNGEON_PIZZA_SLICE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.DUNGEON_PIZZA_SLICE)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.FEAST_PIZZA.toStack(),
+                        ModItems.FEAST_PIZZA_SLICE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.FEAST_PIZZA_SLICE)));
+
+        PlateRecipeBuilder.plate(
+                        Items.MELON_SLICE.getDefaultInstance(),
+                        Items.MELON_SLICE.getDefaultInstance(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(Items.MELON_SLICE)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.MONSTER_LASAGNA.toStack(),
+                        ModItems.SMALL_MONSTER_LASAGNA.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SMALL_MONSTER_LASAGNA)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.SHINY_PIZZA.toStack(),
+                        ModItems.SHINY_PIZZA_SLICE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SHINY_PIZZA_SLICE)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.SIRLOIN_STEAK.toStack(),
+                        ModItems.BEEF_GRAINS.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.BEEF_GRAINS)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.SLIME_MOUSSE.toStack(),
+                        ModItems.SMALL_SLIME_MOUSSE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SMALL_SLIME_MOUSSE)));
+
+        PlateRecipeBuilder.plate(
+                        ModItems.SWEET_LOAF.toStack(),
+                        ModItems.SWEET_LOAF_SLICE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.SWEET_LOAF_SLICE)));
+    }
+
+    //
+    //    private void genCompat(RecipeOutput recipeOutput) {
+    //        RecipeOutput loadArsNouveauOutput = recipeOutput.withConditions(
+    //                new ModLoadedCondition("ars_nouveau"));
+    //    }
+
+    private void genCocktails(RecipeOutput recipeOutput) {
+        // TODO use Cocktails Registries
     }
 
     private void genBrewingBarrel(RecipeOutput recipeOutput) {
@@ -1177,6 +1259,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 + "_stonecutting"
                                 + "_"
                                 + resultCount);
+    }
+
+    public static String getPlateRecipeName(ItemLike itemLike) {
+        return "plate_" + getSimpleRecipeName(itemLike);
     }
 
     //    protected static void createIngotRecipes(Consumer<FinishedRecipe> c, RegistryObject<Item>

@@ -1,0 +1,12 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "kitchenkarrot:dungeon_pizza"
+  },
+  "result": {
+    "id": "kitchenkarrot:dungeon_pizza_slice"
+  },
+  "tool": {
+    "tag": "kitchenkarrot:knife_item"
+  }
+}

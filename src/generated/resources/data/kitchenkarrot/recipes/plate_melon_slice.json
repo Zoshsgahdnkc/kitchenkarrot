@@ -1,0 +1,12 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "minecraft:melon_slice"
+  },
+  "result": {
+    "id": "minecraft:melon_slice"
+  },
+  "tool": {
+    "tag": "kitchenkarrot:knife_item"
+  }
+}

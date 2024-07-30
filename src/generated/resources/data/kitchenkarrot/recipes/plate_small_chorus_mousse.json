@@ -1,0 +1,12 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "kitchenkarrot:chorus_mousse"
+  },
+  "result": {
+    "id": "kitchenkarrot:small_chorus_mousse"
+  },
+  "tool": {
+    "tag": "kitchenkarrot:knife_item"
+  }
+}

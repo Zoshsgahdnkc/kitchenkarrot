@@ -1,0 +1,12 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "kitchenkarrot:slime_mousse"
+  },
+  "result": {
+    "id": "kitchenkarrot:small_slime_mousse"
+  },
+  "tool": {
+    "tag": "kitchenkarrot:knife_item"
+  }
+}
