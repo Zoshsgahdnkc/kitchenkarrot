@@ -1,9 +1,10 @@
-package io.github.tt432.kitchenkarrot.datagen;
+package io.github.tt432.kitchenkarrot.datagen.provider;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.tag.ModItemTags;
+
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -24,10 +25,12 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.conditions.NotCondition;
 import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 import net.neoforged.neoforge.registries.DeferredItem;
+
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
+
+import javax.annotation.Nullable;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     protected static final String KK = Kitchenkarrot.MOD_ID;
@@ -174,10 +177,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void genSmokingCooking(RecipeOutput recipeOutput) {
         smokingCooking(recipeOutput, 100, Items.WHEAT, ModItems.GRILLED_WHEATMEAL, 0.1F);
-        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_BEEF, ModItems.COOKED_VEGAN_BEEF, 0.5F);
-        smokingCooking(recipeOutput, 100, ModItems.RAW_BEEF_IN_DRIPLEAF, ModItems.BEEF_IN_DRIPLEAF, 0.5F);
-        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_MUTTON, ModItems.COOKED_VEGAN_MUTTON, 0.5F);
-        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_PORK, ModItems.COOKED_VEGAN_PORK, 0.5F);
+        smokingCooking(
+                recipeOutput, 100, ModItems.RAW_VEGAN_BEEF, ModItems.COOKED_VEGAN_BEEF, 0.5F);
+        smokingCooking(
+                recipeOutput, 100, ModItems.RAW_BEEF_IN_DRIPLEAF, ModItems.BEEF_IN_DRIPLEAF, 0.5F);
+        smokingCooking(
+                recipeOutput, 100, ModItems.RAW_VEGAN_MUTTON, ModItems.COOKED_VEGAN_MUTTON, 0.5F);
+        smokingCooking(
+                recipeOutput, 100, ModItems.RAW_VEGAN_PORK, ModItems.COOKED_VEGAN_PORK, 0.5F);
         smokingCooking(recipeOutput, 400, ModItems.RAW_SWEET_LOAF, ModItems.SWEET_LOAF, 1F);
     }
 
@@ -801,7 +808,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.GRILLED_WHEATMEAL)
                 .requires(Tags.Items.BUCKETS_MILK)
                 .requires(Items.NETHER_STAR)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE)));
+                .save(
+                        recipeOutput,
+                        RL(getSimpleRecipeName(ModItems.ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE)));
 
         simpleMiscShapeless(ModItems.VODKA_BASE, 4, null)
                 .requires(ModItems.VODKA)
@@ -873,7 +882,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void smokingCooking(
-            RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {
+            RecipeOutput recipeOutput,
+            int cookingTime,
+            ItemLike material,
+            ItemLike result,
+            float experience) {
         RecipeProvider.simpleCookingRecipe(
                 recipeOutput,
                 "smoking",

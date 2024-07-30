@@ -1,0 +1,15 @@
+{
+  "type": "kitchenkarrot:replace_loot_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/piglin_bartering"
+    }
+  ],
+  "count": 6,
+  "item": {
+    "count": 1,
+    "id": "kitchenkarrot:canned_hoglin_confit"
+  },
+  "weight": 45
+}

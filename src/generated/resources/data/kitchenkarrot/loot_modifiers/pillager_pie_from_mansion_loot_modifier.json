@@ -1,0 +1,17 @@
+{
+  "type": "kitchenkarrot:add_item_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/pillager_outpost"
+    },
+    {
+      "chance": 0.3,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": {
+    "count": 1,
+    "id": "kitchenkarrot:pillager_pie"
+  }
+}

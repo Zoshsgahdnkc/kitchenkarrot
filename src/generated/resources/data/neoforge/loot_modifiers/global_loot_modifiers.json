@@ -1,11 +1,11 @@
 {
-  "replace": false,
   "entries": [
-    "kitchenkarrot:piglin_barter_loot_modifier",
     "kitchenkarrot:gem_carrot_loot_modifier",
+    "kitchenkarrot:piglin_barter_loot_modifier",
+    "kitchenkarrot:ice_cubes_loot_modifier",
     "kitchenkarrot:pillager_pie_from_outpost_loot_modifier",
-    "kitchenkarrot:pillager_pie_from_mansion_loot_modifier",
     "kitchenkarrot:pillager_pie_from_pillager_loot_modifier",
-    "kitchenkarrot:ice_cubes_loot_modifier"
-  ]
+    "kitchenkarrot:pillager_pie_from_mansion_loot_modifier"
+  ],
+  "replace": false
 }

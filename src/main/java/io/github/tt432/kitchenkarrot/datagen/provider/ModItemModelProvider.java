@@ -1,4 +1,4 @@
-package io.github.tt432.kitchenkarrot.datagen;
+package io.github.tt432.kitchenkarrot.datagen.provider;
 
 import com.google.common.collect.ImmutableSet;
 
