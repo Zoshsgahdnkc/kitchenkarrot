@@ -1,0 +1,30 @@
+{
+  "type": "kitchenkarrot:brewing_barrel",
+  "content": {
+    "craftingtime": 2000,
+    "recipe": [
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:wheat"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      }
+    ],
+    "water_consumption": 250
+  },
+  "result": {
+    "id": "kitchenkarrot:glow_berry_lager"
+  }
+}

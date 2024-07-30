@@ -1,4 +1,4 @@
-package io.github.tt432.kitchenkarrot.datagen.provider;
+package io.github.tt432.kitchenkarrot.datagen.provider.recipe;
 
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;

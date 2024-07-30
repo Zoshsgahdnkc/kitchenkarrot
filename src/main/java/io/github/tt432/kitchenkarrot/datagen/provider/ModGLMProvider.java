@@ -22,8 +22,8 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.concurrent.CompletableFuture;
 
-public class MODGLMProvider extends GlobalLootModifierProvider {
-    public MODGLMProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+public class ModGLMProvider extends GlobalLootModifierProvider {
+    public ModGLMProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, Kitchenkarrot.MOD_ID);
     }
 

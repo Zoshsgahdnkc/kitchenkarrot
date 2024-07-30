@@ -1,0 +1,30 @@
+{
+  "type": "kitchenkarrot:brewing_barrel",
+  "content": {
+    "craftingtime": 6000,
+    "recipe": [
+      {
+        "item": "minecraft:sugar_cane"
+      },
+      {
+        "item": "minecraft:sugar_cane"
+      },
+      {
+        "item": "minecraft:sugar_cane"
+      },
+      {
+        "item": "minecraft:sugar_cane"
+      },
+      {
+        "tag": "c:crops/wheat"
+      },
+      {
+        "tag": "c:crops/wheat"
+      }
+    ],
+    "water_consumption": 500
+  },
+  "result": {
+    "id": "kitchenkarrot:rum"
+  }
+}

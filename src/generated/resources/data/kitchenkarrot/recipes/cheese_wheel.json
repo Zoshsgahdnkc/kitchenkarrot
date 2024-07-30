@@ -1,0 +1,30 @@
+{
+  "type": "kitchenkarrot:brewing_barrel",
+  "content": {
+    "craftingtime": 3000,
+    "recipe": [
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:buckets/milk"
+      }
+    ],
+    "water_consumption": 0
+  },
+  "result": {
+    "id": "kitchenkarrot:cheese_wheel"
+  }
+}

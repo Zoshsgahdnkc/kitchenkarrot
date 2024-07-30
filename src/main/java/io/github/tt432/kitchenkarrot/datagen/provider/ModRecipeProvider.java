@@ -2,6 +2,9 @@ package io.github.tt432.kitchenkarrot.datagen.provider;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.datagen.provider.recipe.AirCompressorRecipeBuilder;
+import io.github.tt432.kitchenkarrot.datagen.provider.recipe.BrewingBarrelRecipeBuilder;
+import io.github.tt432.kitchenkarrot.datagen.provider.recipe.ModShapelessRecipeBuilder;
+import io.github.tt432.kitchenkarrot.recipes.recipe.BrewingBarrelRecipe;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.tag.ModItemTags;
@@ -53,7 +56,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Air Compressor
         genAirCompressor(recipeOutput);
 
-        // FoodShapeless
+        // Brewing Barrel
+        genBrewingBarrel(recipeOutput);
+
+        // Food Shapeless
         genFoodShapeless(recipeOutput);
 
         // Shapeless
@@ -73,6 +79,113 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // smithingTransform
         genSmithingTransform(recipeOutput);
+    }
+
+    private void genBrewingBarrel(RecipeOutput recipeOutput) {
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.ACORN_WINE,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(ModItemTags.ACORN),
+                                        Ingredient.of(ModItemTags.ACORN),
+                                        Ingredient.of(ModItems.CARROT_SPICES),
+                                        Ingredient.of(ModItems.CARROT_SPICES),
+                                        Ingredient.of(Tags.Items.CROPS_WHEAT),
+                                        Ingredient.of(Tags.Items.CROPS_WHEAT)),
+                                6000,
+                                500))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ACORN_WINE)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.CHEESE_WHEEL,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK),
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK),
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK),
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK),
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK),
+                                        Ingredient.of(Tags.Items.BUCKETS_MILK)),
+                                3000,
+                                0))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CHEESE_WHEEL)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.GLOW_BERRY_LAGER,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Items.WHEAT),
+                                        Ingredient.of(Items.WHEAT),
+                                        Ingredient.of(Items.WHEAT),
+                                        Ingredient.of(Items.SWEET_BERRIES),
+                                        Ingredient.of(Items.SWEET_BERRIES),
+                                        Ingredient.of(Items.SWEET_BERRIES)),
+                                2000,
+                                250))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.GLOW_BERRY_LAGER)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.ICED_MELON_LAGER,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Items.MELON_SLICE),
+                                        Ingredient.of(Items.MELON_SLICE),
+                                        Ingredient.of(Items.WHEAT),
+                                        Ingredient.of(Items.WHEAT),
+                                        Ingredient.of(ModItemTags.ICE_CUBES),
+                                        Ingredient.of(ModItemTags.ICE_CUBES)),
+                                2000,
+                                250))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ICED_MELON_LAGER)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.MEAD,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Items.HONEY_BOTTLE),
+                                        Ingredient.of(Items.HONEY_BOTTLE),
+                                        Ingredient.of(Items.HONEY_BOTTLE),
+                                        Ingredient.of(ModItems.WATER),
+                                        Ingredient.of(ModItems.WATER),
+                                        Ingredient.of(ModItems.WATER)),
+                                6000,
+                                500))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MEAD)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.RUM,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Items.SUGAR_CANE),
+                                        Ingredient.of(Items.SUGAR_CANE),
+                                        Ingredient.of(Items.SUGAR_CANE),
+                                        Ingredient.of(Items.SUGAR_CANE),
+                                        Ingredient.of(Tags.Items.CROPS_WHEAT),
+                                        Ingredient.of(Tags.Items.CROPS_WHEAT)),
+                                6000,
+                                500))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RUM)));
+
+        BrewingBarrelRecipeBuilder.brewingBarrel(
+                        ModItems.VODKA,
+                        new BrewingBarrelRecipe.Content(
+                                NonNullList.of(
+                                        Ingredient.EMPTY,
+                                        Ingredient.of(Tags.Items.CROPS_POTATO),
+                                        Ingredient.of(Tags.Items.CROPS_POTATO),
+                                        Ingredient.of(Tags.Items.CROPS_POTATO),
+                                        Ingredient.of(Tags.Items.CROPS_POTATO),
+                                        Ingredient.of(Tags.Items.CROPS_BEETROOT),
+                                        Ingredient.of(Tags.Items.CROPS_BEETROOT)),
+                                6000,
+                                500))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.VODKA)));
     }
 
     private void genAirCompressor(RecipeOutput recipeOutput) {
