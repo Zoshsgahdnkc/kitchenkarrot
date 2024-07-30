@@ -4,6 +4,7 @@ import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.datagen.provider.MODGLMProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.ModItemModelProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.ModRecipeProvider;
+import io.github.tt432.kitchenkarrot.datagen.provider.loot.ModLootTableProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.tags.ModBlockTagsProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.tags.ModItemTagsProvider;
 
@@ -33,6 +34,8 @@ public class Datagen {
                 true,
                 new ModItemTagsProvider(
                         output, lookupProvider, modBlockTagsProvider.contentsGetter(), helper));
+
+        generator.addProvider(true, new ModLootTableProvider(output, lookupProvider));
         generator.addProvider(true, new MODGLMProvider(output, lookupProvider));
         generator.addProvider(true, new ModRecipeProvider(output, lookupProvider));
         generator.addProvider(true, new ModItemModelProvider(output, helper));
