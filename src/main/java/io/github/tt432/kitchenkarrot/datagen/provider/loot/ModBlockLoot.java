@@ -2,8 +2,8 @@ package io.github.tt432.kitchenkarrot.datagen.provider.loot;
 
 import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
-
 import io.github.tt432.kitchenkarrot.registries.ModItems;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -48,7 +48,8 @@ public class ModBlockLoot extends BlockLootSubProvider {
                                         LootPool.lootPool()
                                                 .setRolls(ConstantValue.exactly(1))
                                                 .add(
-                                                        LootItem.lootTableItem(ModItems.PLATE_PIECES)
+                                                        LootItem.lootTableItem(
+                                                                        ModItems.PLATE_PIECES)
                                                                 .apply(
                                                                         SetItemCountFunction
                                                                                 .setCount(

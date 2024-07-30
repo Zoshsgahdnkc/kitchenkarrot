@@ -1,6 +1,7 @@
 package io.github.tt432.kitchenkarrot.datagen.provider;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
+import io.github.tt432.kitchenkarrot.datagen.provider.recipe.AirCompressorRecipeBuilder;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.tag.ModItemTags;
@@ -8,6 +9,7 @@ import io.github.tt432.kitchenkarrot.tag.ModItemTags;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -48,6 +50,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
+        // Air Compressor
+        genAirCompressor(recipeOutput);
+
         // FoodShapeless
         genFoodShapeless(recipeOutput);
 
@@ -68,6 +73,140 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // smithingTransform
         genSmithingTransform(recipeOutput);
+    }
+
+    private void genAirCompressor(RecipeOutput recipeOutput) {
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CANNED_BEEF_POTATO,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(ModItemTags.OIL),
+                                Ingredient.of(ModItemTags.SALT),
+                                Ingredient.of(ModItemTags.COOKED_BEEF),
+                                Ingredient.of(Items.POTATO)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CANNED_BEEF_POTATO)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CANNED_CANDIED_APPLE,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(Items.HONEY_BOTTLE),
+                                Ingredient.of(Items.APPLE),
+                                Ingredient.of(Items.APPLE)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CANNED_CANDIED_APPLE)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CANNED_MUTTON_PUMPKIN,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(ModItemTags.OIL),
+                                Ingredient.of(ModItemTags.SALT),
+                                Ingredient.of(ModItemTags.COOKED_MUTTON),
+                                Ingredient.of(Items.PUMPKIN)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CANNED_MUTTON_PUMPKIN)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CANNED_PORK_BEETROOT,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(ModItemTags.OIL),
+                                Ingredient.of(ModItemTags.SALT),
+                                Ingredient.of(ModItemTags.COOKED_PORK),
+                                Ingredient.of(Items.BEETROOT)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CANNED_PORK_BEETROOT)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CANNED_SWEET_BERRY_MILK,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(ModItems.SWEET_BERRY_MILK),
+                                Ingredient.of(ModItems.SWEET_BERRY_MILK)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CANNED_SWEET_BERRY_MILK)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.CORAL_COKE,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(ModItems.ICE_CUBES),
+                                Ingredient.of(ModItemTags.CORALS)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CORAL_COKE)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.DANDELION_COKE,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(ModItems.ICE_CUBES),
+                                Ingredient.of(Items.DANDELION)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.DANDELION_COKE)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.DRAGON_BREATH_COKE,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Items.SUGAR),
+                                Ingredient.of(ModItems.ICE_CUBES),
+                                Ingredient.of(Items.DRAGON_BREATH)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.DRAGON_BREATH_COKE)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.KELP_SODA,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Items.KELP),
+                                Ingredient.of(Items.KELP)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KELP_SODA)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.LIGHT_SODA,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(ItemTags.LEAVES),
+                                Ingredient.of(ItemTags.LEAVES)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.LIGHT_SODA)));
+
+        AirCompressorRecipeBuilder.airCompressor(
+                        ModItems.TWISTING_SODA,
+                        NonNullList.of(
+                                Ingredient.EMPTY,
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Tags.Items.BUCKETS_WATER),
+                                Ingredient.of(Items.TWISTING_VINES),
+                                Ingredient.of(Items.TWISTING_VINES)),
+                        100,
+                        Ingredient.of(ModItems.EMPTY_CAN))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.TWISTING_SODA)));
     }
 
     private void genSmithingTransform(RecipeOutput recipeOutput) {

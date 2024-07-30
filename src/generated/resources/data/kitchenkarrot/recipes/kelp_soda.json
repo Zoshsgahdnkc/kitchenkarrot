@@ -1,11 +1,15 @@
 {
   "type": "kitchenkarrot:air_compressing",
+  "container": {
+    "item": "kitchenkarrot:empty_can"
+  },
+  "craftingtime": 100,
   "ingredient": [
     {
-      "tag": "forge:water"
+      "tag": "c:buckets/water"
     },
     {
-      "tag": "forge:water"
+      "tag": "c:buckets/water"
     },
     {
       "item": "minecraft:kelp"
@@ -15,7 +19,6 @@
     }
   ],
   "result": {
-    "item": "kitchenkarrot:kelp_soda"
-  },
-  "craftingtime": 100
+    "id": "kitchenkarrot:kelp_soda"
+  }
 }
