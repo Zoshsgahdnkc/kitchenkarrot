@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "0": {
+      "item": "minecraft:bread"
+    },
+    "1": {
+      "tag": "c:buckets/milk"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "tag": "c:cooking_oil"
+    }
+  },
+  "pattern": [
+    "123",
+    "000"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:raw_sweet_loaf"
+  }
+}

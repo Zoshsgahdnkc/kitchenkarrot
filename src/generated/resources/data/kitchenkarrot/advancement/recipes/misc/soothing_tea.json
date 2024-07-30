@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soothing_tea": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:soothing_tea"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:soothing_tea"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soothing_tea"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:soothing_tea"
+    ]
+  }
+}

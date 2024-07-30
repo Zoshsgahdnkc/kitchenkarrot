@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "c:nuts/acorn"
+    },
+    {
+      "tag": "c:nuts/acorn"
+    },
+    {
+      "tag": "c:nuts/acorn"
+    },
+    {
+      "tag": "c:nuts/acorn"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:popacorn"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:spore_blossom"
+    },
+    {
+      "item": "kitchenkarrot:ice_cubes"
+    },
+    {
+      "item": "kitchenkarrot:ice_cubes"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:soothing_tea"
+  }
+}

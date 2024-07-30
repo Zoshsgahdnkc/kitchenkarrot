@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "kitchenkarrot:raw_sweet_loaf"
-  },
-  "result": "kitchenkarrot:sweet_loaf",
-  "experience": 1,
-  "cookingtime": 400
-}

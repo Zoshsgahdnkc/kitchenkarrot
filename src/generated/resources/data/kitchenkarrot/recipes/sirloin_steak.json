@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "c:cooked_beef"
+    },
+    {
+      "tag": "c:crops/nether_wart"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:salt"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:sirloin_steak"
+  }
+}

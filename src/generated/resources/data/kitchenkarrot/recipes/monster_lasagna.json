@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "tag": "c:buckets/milk"
+    },
+    "2": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "3": {
+      "tag": "c:crops/wheat"
+    }
+  },
+  "pattern": [
+    "11",
+    "22",
+    "33"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:monster_lasagna"
+  }
+}

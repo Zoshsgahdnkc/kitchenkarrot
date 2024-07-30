@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "kitchenkarrot:fries"
+    },
+    {
+      "item": "kitchenkarrot:fries"
+    },
+    {
+      "item": "kitchenkarrot:drumstick"
+    },
+    {
+      "item": "kitchenkarrot:drumstick"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:fried_chicken_combo"
+  }
+}

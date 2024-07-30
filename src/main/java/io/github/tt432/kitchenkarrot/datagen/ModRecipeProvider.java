@@ -4,7 +4,6 @@ import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.tag.ModItemTags;
-
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -16,15 +15,19 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CampfireCookingRecipe;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SmokingRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.conditions.NotCondition;
+import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 import net.neoforged.neoforge.registries.DeferredItem;
-
-import java.util.concurrent.CompletableFuture;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     protected static final String KK = Kitchenkarrot.MOD_ID;
@@ -41,30 +44,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeOutput) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMPTY_PLATE.get(), 2)
-                .group(KK)
-                .define('b', Items.BRICK)
-                .define('n', Items.IRON_NUGGET)
-                .pattern("nbn")
-                .unlockedBy(getHasName(Items.BRICK), has(Items.BRICK))
-                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.EMPTY_PLATE.get())));
-        ModShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.EMPTY_PLATE.get())
-                .group(KK)
-                .requires(ModItems.PLATE_PIECES.get(), 4)
-                .unlockedBy(ModItems.PLATE_PIECES)
-                .save(recipeOutput, RL("plate_from_pieces"));
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.KNIFE.get())
-                .group(KK)
-                .define('#', Items.IRON_SWORD)
-                .define('n', Items.IRON_NUGGET)
-                .pattern(" #")
-                .pattern("n ")
-                .unlockedBy(getHasName(Items.IRON_SWORD), has(Items.IRON_SWORD))
-                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KNIFE.get())));
+    protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
+        // FoodShapeless
+        genFoodShapeless(recipeOutput);
 
+        // Shapeless
+        genShapeless(recipeOutput);
+
+        // Shaped
+        genShaped(recipeOutput);
+
+        // Campfire Cooking
+        genCampfireCooking(recipeOutput);
+
+        // Smoking
+        genSmokingCooking(recipeOutput);
+
+        // stoneCutting
+        genStoneCutting(recipeOutput);
+
+        // smithingTransform
+        genSmithingTransform(recipeOutput);
+    }
+
+    private void genSmithingTransform(RecipeOutput recipeOutput) {
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(Items.IRON_NUGGET),
+                        Ingredient.of(Items.BUCKET),
+                        Ingredient.of(Items.IRON_NUGGET),
+                        RecipeCategory.MISC,
+                        ModItems.SHAKER.get())
+                .unlocks(getHasName(ModItems.SHAKER), has(ModItems.SHAKER))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SHAKER)));
+    }
+
+    private void genFoodShapeless(RecipeOutput recipeOutput) {
         foodShapeless(ModItems.PHANTOM_STEW)
                 .requires(Items.BOWL)
                 .requires(ModItemTags.MILK)
@@ -142,6 +156,59 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(ModItems.CARROT_SPICES)
                 .unlockedBy(Items.INK_SAC)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.BIKINI_BOTTOM_SUB.get())));
+    }
+
+    private void genStoneCutting(RecipeOutput recipeOutput) {
+        RecipeProvider.stonecutterResultFromBase(
+                recipeOutput, RecipeCategory.MISC, ModItems.ACORN.get(), Items.OAK_SAPLING);
+        RecipeProvider.stonecutterResultFromBase(
+                recipeOutput, RecipeCategory.MISC, ModItems.PLATE_PIECES, ModItems.EMPTY_PLATE, 3);
+
+        KKStoneCutterResultFromBase(
+                recipeOutput, RecipeCategory.MISC, ModItems.ICE_CUBES, Items.ICE, 1);
+        KKStoneCutterResultFromBase(
+                recipeOutput, RecipeCategory.MISC, ModItems.ICE_CUBES, Items.PACKED_ICE, 4);
+        KKStoneCutterResultFromBase(
+                recipeOutput, RecipeCategory.MISC, ModItems.ICE_CUBES, Items.BLUE_ICE, 8);
+    }
+
+    private void genSmokingCooking(RecipeOutput recipeOutput) {
+        smokingCooking(recipeOutput, 100, Items.WHEAT, ModItems.GRILLED_WHEATMEAL, 0.1F);
+        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_BEEF, ModItems.COOKED_VEGAN_BEEF, 0.5F);
+        smokingCooking(recipeOutput, 100, ModItems.RAW_BEEF_IN_DRIPLEAF, ModItems.BEEF_IN_DRIPLEAF, 0.5F);
+        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_MUTTON, ModItems.COOKED_VEGAN_MUTTON, 0.5F);
+        smokingCooking(recipeOutput, 100, ModItems.RAW_VEGAN_PORK, ModItems.COOKED_VEGAN_PORK, 0.5F);
+        smokingCooking(recipeOutput, 400, ModItems.RAW_SWEET_LOAF, ModItems.SWEET_LOAF, 1F);
+    }
+
+    private void genCampfireCooking(RecipeOutput recipeOutput) {
+        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_BEEF, ModItems.COOKED_VEGAN_BEEF);
+        campfireCooking(
+                recipeOutput, 600, ModItems.RAW_BEEF_IN_DRIPLEAF, ModItems.BEEF_IN_DRIPLEAF);
+        campfireCooking(recipeOutput, 600, Items.WHEAT, ModItems.GRILLED_WHEATMEAL);
+        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_MUTTON, ModItems.COOKED_VEGAN_MUTTON);
+        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_PORK, ModItems.COOKED_VEGAN_PORK);
+    }
+
+    private void genShaped(RecipeOutput recipeOutput) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMPTY_PLATE.get(), 2)
+                .group(KK)
+                .define('2', Items.BRICK)
+                .define('1', Items.IRON_NUGGET)
+                .pattern("121")
+                .unlockedBy(getHasName(Items.BRICK), has(Items.BRICK))
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.EMPTY_PLATE.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.KNIFE.get())
+                .group(KK)
+                .define('#', Items.IRON_SWORD)
+                .define('n', Items.IRON_NUGGET)
+                .pattern(" #")
+                .pattern("n ")
+                .unlockedBy(getHasName(Items.IRON_SWORD), has(Items.IRON_SWORD))
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KNIFE.get())));
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.ENCHANTED_CHEESE.get())
                 .group(KK)
                 .define('#', ModItems.CHEESE_SLICE.get())
@@ -154,7 +221,189 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.GOLD_NUGGET), has(Items.GOLD_NUGGET))
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ENCHANTED_CHEESE.get())));
 
-        // Shapeless
+        simpleMiscShaped(ModBlocks.ACORN_OIL, 2, ModItemTags.ACORN)
+                .pattern("* ")
+                .pattern(" *")
+                .define('*', ModItemTags.ACORN)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.ACORN_OIL)));
+
+        simpleMiscShaped(ModBlocks.AIR_COMPRESSOR, null)
+                .pattern("1")
+                .pattern("2")
+                .pattern("3")
+                .define('1', Items.BLUE_DYE)
+                .define('2', Items.MINECART)
+                .define('3', Items.HEAVY_WEIGHTED_PRESSURE_PLATE)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.AIR_COMPRESSOR)));
+
+        simpleMiscShaped(ModItems.BAMBOO_POTATO, null)
+                .pattern("123")
+                .pattern(" 0 ")
+                .define('0', Items.BAMBOO)
+                .define('1', Tags.Items.EGGS)
+                .define('2', Items.BAKED_POTATO)
+                .define('3', ModItemTags.SALT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.BAMBOO_POTATO)));
+
+        simpleMiscShaped(ModBlocks.BREWING_BARREL, null)
+                .pattern(" B ")
+                .pattern("---")
+                .define('B', Items.BARREL)
+                .define('-', Items.COPPER_INGOT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.BREWING_BARREL)));
+
+        simpleMiscShaped(ModItems.CHORUS_MOUSSE, null)
+                .pattern("121")
+                .pattern("343")
+                .pattern("555")
+                .define('1', Items.CHORUS_FLOWER)
+                .define('2', Items.BONE_MEAL)
+                .define('3', Items.SUGAR)
+                .define('4', ModItems.ICE_CUBES)
+                .define('5', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CHORUS_MOUSSE)));
+
+        simpleMiscShaped(ModBlocks.CHORUS_OIL, 2, null)
+                .pattern("* ")
+                .pattern(" *")
+                .define('*', Items.CHORUS_FLOWER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.CHORUS_OIL)));
+
+        simpleMiscShaped(ModBlocks.COASTER, null)
+                .pattern("* *")
+                .pattern(" # ")
+                .pattern("* *")
+                .define('*', Items.STICK)
+                .define('#', Items.IRON_NUGGET)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.COASTER)));
+
+        simpleMiscShaped(ModItems.DUNGEON_PIZZA, null)
+                .pattern("121")
+                .pattern("333")
+                .pattern("444")
+                .define('1', Tags.Items.BUCKETS_MILK)
+                .define('2', ModItemTags.SALT)
+                .define('3', Ingredient.of(Items.ROTTEN_FLESH, Items.SPIDER_EYE))
+                .define('4', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.DUNGEON_PIZZA)));
+
+        simpleMiscShaped(ModItems.EMPTY_CAN, 4, null)
+                .pattern(" 1 ")
+                .pattern("121")
+                .pattern(" 1 ")
+                .define('1', Items.IRON_NUGGET)
+                .define('2', Items.BOWL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.EMPTY_CAN)));
+
+        simpleMiscShaped(ModItems.FEAST_PIZZA, null)
+                .pattern("121")
+                .pattern("333")
+                .pattern("444")
+                .define('1', Tags.Items.BUCKETS_MILK)
+                .define('2', ModItemTags.OIL)
+                .define('3', ModItemTags.MEAT)
+                .define('4', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FEAST_PIZZA)));
+
+        simpleMiscShaped(ModItems.FISHERMENS_DELIGHT, null)
+                .pattern("123")
+                .pattern(" 0 ")
+                .define('0', Items.BOWL)
+                .define('1', ModItems.BIRCH_SAP)
+                .define('2', Items.COOKED_SALMON)
+                .define('3', Items.KELP)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FISHERMENS_DELIGHT)));
+
+        simpleMiscShaped(ModItems.GRILLED_FISH_AND_CACTUS, null)
+                .pattern("123")
+                .pattern(" 0 ")
+                .define('0', Items.CACTUS)
+                .define('1', ModItemTags.SALT)
+                .define('2', Ingredient.of(Tags.Items.FOODS_COOKED_FISH))
+                .define('3', ModItemTags.GRASS_SPICES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.GRILLED_FISH_AND_CACTUS)));
+
+        simpleMiscShaped(ModItems.MONSTER_LASAGNA, null)
+                .pattern("11")
+                .pattern("22")
+                .pattern("33")
+                .define('1', Tags.Items.BUCKETS_MILK)
+                .define('2', Items.ROTTEN_FLESH)
+                .define('3', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MONSTER_LASAGNA)));
+
+        simpleMiscShaped(ModItems.EMPTY_PLATE, null)
+                .pattern("11")
+                .pattern("11")
+                .define('1', ModItems.PLATE_PIECES)
+                .save(
+                        recipeOutput,
+                        RL(getConversionRecipeName(ModItems.EMPTY_PLATE, ModItems.PLATE_PIECES)));
+
+        simpleMiscShaped(ModItems.RAW_SWEET_LOAF, null)
+                .pattern("123")
+                .pattern("000")
+                .define('0', Items.BREAD)
+                .define('1', Tags.Items.BUCKETS_MILK)
+                .define('2', Items.SUGAR)
+                .define('3', ModItemTags.OIL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RAW_SWEET_LOAF)));
+
+        simpleMiscShaped(ModBlocks.ROCK_SALT, 2, null)
+                .pattern("* ")
+                .pattern(" *")
+                .define('*', ModItemTags.SALT_ROCK)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.ROCK_SALT)));
+
+        simpleMiscShaped(ModBlocks.SEA_SALT, 2, null)
+                .pattern("* ")
+                .pattern(" #")
+                .define('*', ModItems.WATER)
+                .define('#', Items.BONE_MEAL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.SEA_SALT) + "_" + 2));
+
+        simpleMiscShaped(ModItems.SHINY_PIZZA, null)
+                .pattern("123")
+                .pattern("456")
+                .pattern("777")
+                .define('1', Tags.Items.GEMS_DIAMOND)
+                .define('2', Tags.Items.DUSTS_REDSTONE)
+                .define('3', Items.EMERALD)
+                .define('4', Items.COPPER_INGOT)
+                .define('5', Items.IRON_INGOT)
+                .define('6', Items.GOLD_INGOT)
+                .define('7', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SHINY_PIZZA)));
+
+        simpleMiscShaped(ModItems.SLIME_MOUSSE, null)
+                .pattern("121")
+                .pattern("343")
+                .pattern("555")
+                .define('1', Tags.Items.SLIMEBALLS)
+                .define('2', Items.BONE_MEAL)
+                .define('3', Items.SUGAR)
+                .define('4', ModItems.ICE_CUBES)
+                .define('5', Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SLIME_MOUSSE)));
+
+        simpleMiscShaped(ModBlocks.SUNFLOWER_OIL, 2, null)
+                .pattern("* ")
+                .pattern(" *")
+                .define('*', Items.SUNFLOWER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.SUNFLOWER_OIL)));
+    }
+
+    private void genShapeless(RecipeOutput recipeOutput) {
+        RecipeOutput notTagEmptyRecipeOutput =
+                recipeOutput.withConditions(
+                        new NotCondition(new TagEmptyCondition(ModItemTags.CROPS_RICE)));
+
+        ModShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.EMPTY_PLATE.get())
+                .group(KK)
+                .requires(ModItems.PLATE_PIECES.get(), 4)
+                .unlockedBy(ModItems.PLATE_PIECES)
+                .save(recipeOutput, RL("plate_from_pieces"));
+
         simpleMiscShapeless(ModItems.ACORN, ModItemTags.ACORN)
                 .requires(Items.OAK_SAPLING)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ACORN)));
@@ -279,73 +528,307 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Tags.Items.EGGS)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CROQUE_MADAME)));
 
-        // Shaped
-        simpleMiscShaped(ModBlocks.ACORN_OIL, 2, ModItemTags.ACORN)
-                .pattern("* ")
-                .pattern(" *")
-                .define('*', ModItemTags.ACORN)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.ACORN_OIL)));
+        simpleMiscShapeless(ModItems.CURRY_UDON, null)
+                .requires(Items.POTATO)
+                .requires(Items.CARROT)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(ModItemTags.COOKED_MEAT)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.SALT)
+                .requires(ModItems.CARROT_SPICES)
+                .requires(Items.BOWL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CURRY_UDON)));
 
-        simpleMiscShaped(ModBlocks.AIR_COMPRESSOR, null)
-                .pattern("1")
-                .pattern("2")
-                .pattern("3")
-                .define('1', Items.BLUE_DYE)
-                .define('2', Items.MINECART)
-                .define('3', Items.HEAVY_WEIGHTED_PRESSURE_PLATE)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.AIR_COMPRESSOR)));
+        simpleMiscShapeless(ModItems.DRUMSTICK, null)
+                .requires(ModItemTags.RAW_CHICKEN)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.SALT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.DRUMSTICK)));
 
-        simpleMiscShaped(ModItems.BAMBOO_POTATO, null)
-                .pattern("123")
-                .pattern(" 0 ")
-                .define('0', Items.BAMBOO)
-                .define('1', Tags.Items.EGGS)
-                .define('2', Items.BAKED_POTATO)
-                .define('3', ModItemTags.SALT)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.BAMBOO_POTATO)));
+        simpleMiscShapeless(ModItems.EGG_TART, null)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .requires(Items.EGG)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Items.SUGAR)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.EGG_TART)));
 
-        simpleMiscShaped(ModBlocks.BREWING_BARREL, null)
-                .pattern(" B ")
-                .pattern("---")
-                .define('B', Items.BARREL)
-                .define('-', Items.COPPER_INGOT)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.BREWING_BARREL)));
+        simpleMiscShapeless(ModItems.FLOWER_CAKE, null)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .requires(Items.EGG)
+                .requires(ItemTags.SMALL_FLOWERS)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FLOWER_CAKE)));
 
-        simpleMiscShaped(ModItems.CHORUS_MOUSSE, null)
-                .pattern("121")
-                .pattern("343")
-                .pattern("555")
-                .define('1', Items.CHORUS_FLOWER)
-                .define('2', Items.BONE_MEAL)
-                .define('3', Items.SUGAR)
-                .define('4', ModItems.ICE_CUBES)
-                .define('5', Tags.Items.CROPS_WHEAT)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CHORUS_MOUSSE)));
+        simpleMiscShapeless(ModItems.FRESH_SALAD, null)
+                .requires(Items.BOWL)
+                .requires(Items.MOSS_BLOCK)
+                .requires(ItemTags.SMALL_FLOWERS)
+                .requires(ItemTags.SMALL_FLOWERS)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FRESH_SALAD)));
 
-        simpleMiscShaped(ModBlocks.CHORUS_OIL, 2, null)
-                .pattern("* ")
-                .pattern(" *")
-                .define('*', Items.CHORUS_FLOWER)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.CHORUS_OIL)));
+        simpleMiscShapeless(ModItems.FRIED_CHICKEN_COMBO, null)
+                .requires(ModItems.FRIES)
+                .requires(ModItems.FRIES)
+                .requires(ModItems.DRUMSTICK)
+                .requires(ModItems.DRUMSTICK)
+                .requires(ModItems.CARROT_SPICES)
+                .requires(ModItems.CARROT_SPICES)
+                .requires(Items.PAPER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FRIED_CHICKEN_COMBO)));
 
-        simpleMiscShaped(ModBlocks.COASTER, null)
-                .pattern("* *")
-                .pattern(" # ")
-                .pattern("* *")
-                .define('*', Items.STICK)
-                .define('#', Items.IRON_NUGGET)
-                .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.COASTER)));
+        simpleMiscShapeless(ModItems.FRIED_PUMPKIN_CAKE, 2, null)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .requires(Items.PUMPKIN)
+                .requires(ModItemTags.OIL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FRIED_PUMPKIN_CAKE)));
 
-        // Campfire Cooking
-        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_BEEF, ModItems.COOKED_VEGAN_BEEF);
-        campfireCooking(
-                recipeOutput, 600, ModItems.RAW_BEEF_IN_DRIPLEAF, ModItems.BEEF_IN_DRIPLEAF);
-        campfireCooking(recipeOutput, 600, Items.WHEAT, ModItems.GRILLED_WHEATMEAL);
-        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_MUTTON, ModItems.COOKED_VEGAN_MUTTON);
-        campfireCooking(recipeOutput, 600, ModItems.RAW_VEGAN_PORK, ModItems.COOKED_VEGAN_PORK);
+        simpleMiscShapeless(ModItems.FRIES, null)
+                .requires(Items.POTATO)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.SALT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FRIES)));
 
-        RecipeProvider.stonecutterResultFromBase(
-                recipeOutput, RecipeCategory.MISC, ModItems.ACORN.get(), Items.OAK_SAPLING);
+        simpleMiscShapeless(ModItems.FRUIT_CEREAL_PORRIDGE, null)
+                .requires(Items.BOWL)
+                .requires(ModItems.GRILLED_WHEATMEAL)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Ingredient.of(ModItemTags.FRUITS))
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.FRUIT_CEREAL_PORRIDGE)));
+
+        simpleMiscShapeless(ModItems.HI_NRG_BRULEE, null)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(ModItemTags.OIL)
+                .requires(Items.REDSTONE)
+                .requires(ModItemTags.FIRE_CHARGES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.HI_NRG_BRULEE)));
+
+        simpleMiscShapeless(ModItems.HONEY_BRULEE, null)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(ModItemTags.OIL)
+                .requires(Items.SUGAR)
+                .requires(Items.HONEY_BOTTLE)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.HONEY_BRULEE)));
+
+        simpleMiscShapeless(ModItems.ICE_CUBES, null)
+                .requires(Items.SNOWBALL)
+                .requires(ModItems.WATER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ICE_CUBES)));
+
+        simpleMiscShapeless(ModItems.KELP_WITH_SUNFLOWER_SEED, 8, null)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.DRIED_KELP)
+                .requires(Items.SUNFLOWER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KELP_WITH_SUNFLOWER_SEED)));
+
+        simpleMiscShapeless(ModItems.LAVA_BRULEE, null)
+                .requires(Items.LAVA_BUCKET)
+                .requires(ModItemTags.OIL)
+                .requires(Items.SUGAR)
+                .requires(Items.MAGMA_CREAM)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.LAVA_BRULEE)));
+
+        simpleMiscShapeless(ModItems.VERDANT_NAMA_CHOCO, 2, null)
+                .requires(Items.COCOA_BEANS)
+                .requires(Items.COCOA_BEANS)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(ItemTags.LEAVES)
+                .requires(ItemTags.LEAVES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.VERDANT_NAMA_CHOCO)));
+
+        simpleMiscShapeless(ModItems.LUSH_SALAD, null)
+                .requires(Items.BOWL)
+                .requires(Items.GLOW_BERRIES)
+                .requires(
+                        Ingredient.of(
+                                Items.AZALEA_LEAVES,
+                                Items.FLOWERING_AZALEA_LEAVES,
+                                Items.AZALEA,
+                                Items.FLOWERING_AZALEA))
+                .requires(Tags.Items.MUSHROOMS)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.LUSH_SALAD)));
+
+        simpleMiscShapeless(ModItems.MEAD_BASE, 4, null)
+                .requires(ModItems.MEAD)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MEAD_BASE)));
+
+        simpleMiscShapeless(ModItems.MILK, 8, null)
+                .requires(Items.MILK_BUCKET)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MILK)));
+
+        simpleMiscShapeless(Items.MILK_BUCKET, null)
+                .requires(Items.BUCKET)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .requires(ModItems.MILK)
+                .save(recipeOutput, RL(getSimpleRecipeName(Items.MILK_BUCKET)));
+
+        simpleMiscShapeless(ModItems.MOSS_FRIED_LAMB_CUTLETS, null)
+                .requires(Items.MOSS_BLOCK)
+                .requires(Items.MOSS_BLOCK)
+                .requires(ModItemTags.SALT)
+                .requires(ModItems.CARROT_SPICES)
+                .requires(ModItemTags.COOKED_MUTTON)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MOSS_FRIED_LAMB_CUTLETS)));
+
+        simpleMiscShapeless(ModItems.PICKLED_SEA_PICKLES, 2, null)
+                .requires(Items.SEA_PICKLE)
+                .requires(Items.SEA_PICKLE)
+                .requires(Items.SEA_PICKLE)
+                .requires(Items.SEA_PICKLE)
+                .requires(ModItemTags.SALT)
+                .requires(ModItemTags.SALT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.PICKLED_SEA_PICKLES)));
+
+        simpleMiscShapeless(ModItems.POPACORN, null)
+                .requires(ModItemTags.ACORN)
+                .requires(ModItemTags.ACORN)
+                .requires(ModItemTags.ACORN)
+                .requires(ModItemTags.ACORN)
+                .requires(Items.SUGAR)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.SALT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.POPACORN)));
+
+        simpleMiscShapeless(ModItems.RAW_BEEF_IN_DRIPLEAF, null)
+                .requires(Items.BIG_DRIPLEAF)
+                .requires(Items.BIG_DRIPLEAF)
+                .requires(ModItemTags.RAW_BEEF)
+                .requires(ModItemTags.SALT)
+                .requires(ModItems.CARROT_SPICES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RAW_BEEF_IN_DRIPLEAF)));
+
+        simpleMiscShapeless(ModItems.RAW_VEGAN_BEEF, null)
+                .requires(Items.PUMPKIN)
+                .requires(Items.PUMPKIN)
+                .requires(ModItems.CARROT_SPICES)
+                .requires(ModItems.CARROT_SPICES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RAW_VEGAN_BEEF)));
+
+        simpleMiscShapeless(ModItems.RAW_VEGAN_MUTTON, null)
+                .requires(ModItems.GEM_CARROT)
+                .requires(ModItems.GEM_CARROT)
+                .requires(ModItems.BIRCH_SAP)
+                .requires(ModItems.BIRCH_SAP)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RAW_VEGAN_MUTTON)));
+
+        simpleMiscShapeless(ModItems.RAW_VEGAN_PORK, null)
+                .requires(Tags.Items.MUSHROOMS)
+                .requires(Tags.Items.MUSHROOMS)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.OIL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RAW_VEGAN_PORK)));
+
+        simpleMiscShapeless(ModItems.RICE_CAKE, 2, null)
+                .requires(ModItemTags.CROPS_RICE)
+                .requires(Items.SUGAR)
+                .save(notTagEmptyRecipeOutput, RL(getSimpleRecipeName(ModItems.RICE_CAKE)));
+
+        simpleMiscShapeless(ModItems.RUM_BASE, 4, null)
+                .requires(ModItems.RUM)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.RUM_BASE)));
+
+        simpleMiscShapeless(ModItems.SASHIMI, null)
+                .requires(Tags.Items.FOODS_RAW_FISH)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SASHIMI)));
+
+        simpleMiscShapeless(ModItems.SEED_PIE, 2, null)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.SEEDS)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SEED_PIE)));
+
+        simpleMiscShapeless(ModItems.SIRLOIN_STEAK, null)
+                .requires(ModItemTags.COOKED_BEEF)
+                .requires(Tags.Items.CROPS_NETHER_WART)
+                .requires(ModItemTags.OIL)
+                .requires(ModItemTags.SALT)
+                .requires(ModItems.CARROT_SPICES)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SIRLOIN_STEAK)));
+
+        simpleMiscShapeless(ModItems.SOOTHING_TEA, null)
+                .requires(Items.SPORE_BLOSSOM)
+                .requires(ModItems.ICE_CUBES)
+                .requires(ModItems.ICE_CUBES)
+                .requires(ModItems.WATER)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SOOTHING_TEA)));
+
+        simpleMiscShapeless(ModItems.SWEET_BERRY_MILK, 2, null)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.SUGAR)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SWEET_BERRY_MILK)));
+
+        simpleMiscShapeless(ModItems.SWEET_BERRY_TART, null)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Items.SUGAR)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SWEET_BERRY_TART)));
+
+        simpleMiscShapeless(ModItems.SWEET_ROLL, null)
+                .requires(ModItemTags.BREAD)
+                .requires(ModItemTags.SALT)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Tags.Items.EGGS)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.SWEET_ROLL)));
+
+        simpleMiscShapeless(ModItems.TRAVELERS_SALAD, null)
+                .requires(Items.BOWL)
+                .requires(Items.CACTUS)
+                .requires(Items.KELP)
+                .requires(Items.KELP)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.TRAVELERS_SALAD)));
+
+        simpleMiscShapeless(ModItems.ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE, null)
+                .requires(Items.BOWL)
+                .requires(ModItems.GRILLED_WHEATMEAL)
+                .requires(Tags.Items.BUCKETS_MILK)
+                .requires(Items.NETHER_STAR)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE)));
+
+        simpleMiscShapeless(ModItems.VODKA_BASE, 4, null)
+                .requires(ModItems.VODKA)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.VODKA_BASE)));
+
+        simpleMiscShapeless(ModItems.WATER, 8, null)
+                .requires(Items.WATER_BUCKET)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.WATER)));
+
+        simpleMiscShapeless(Items.WATER_BUCKET, null)
+                .requires(Items.BUCKET)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .requires(ModItems.WATER)
+                .save(recipeOutput, RL(getSimpleRecipeName(Items.WATER_BUCKET)));
+
+        simpleMiscShapeless(ModItems.WOODLAND_TATER_PUREE, null)
+                .requires(Items.BAKED_POTATO)
+                .requires(ModItems.MILK)
+                .requires(ModItems.BIRCH_SAP)
+                .requires(Items.BOWL)
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.WOODLAND_TATER_PUREE)));
     }
 
     protected static ModShapelessRecipeBuilder foodShapeless(DeferredItem<Item> food) {
@@ -389,6 +872,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(itemLike), tagKey == null ? has(itemLike) : has(tagKey));
     }
 
+    protected static void smokingCooking(
+            RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {
+        RecipeProvider.simpleCookingRecipe(
+                recipeOutput,
+                "smoking",
+                RecipeSerializer.SMOKING_RECIPE,
+                SmokingRecipe::new,
+                cookingTime,
+                material,
+                result,
+                experience);
+    }
+
     protected static void campfireCooking(
             RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result) {
         RecipeProvider.simpleCookingRecipe(
@@ -400,6 +896,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 material,
                 result,
                 0.35F);
+    }
+
+    protected static void KKStoneCutterResultFromBase(
+            RecipeOutput recipeOutput,
+            RecipeCategory category,
+            ItemLike result,
+            ItemLike material,
+            int resultCount) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(material), category, result, resultCount)
+                .unlockedBy(getHasName(material), has(material))
+                .save(
+                        recipeOutput,
+                        getConversionRecipeName(result, material)
+                                + "_stonecutting"
+                                + "_"
+                                + resultCount);
     }
 
     //    protected static void createIngotRecipes(Consumer<FinishedRecipe> c, RegistryObject<Item>

@@ -10,6 +10,10 @@ import net.minecraft.world.item.Item;
  **/
 public class ModItemTags {
     // mod Tags
+    public static final TagKey<Item> SALT_ROCK =
+            ItemTags.create(ResourceLocation.parse("kitchenkarrot:salt_rock"));
+    public static final TagKey<Item> FIRE_CHARGES =
+            ItemTags.create(ResourceLocation.parse("kitchenkarrot:fire_charges"));
     public static final TagKey<Item> CONTAINER_ITEM =
             ItemTags.create(ResourceLocation.parse("kitchenkarrot:container_item"));
     public static final TagKey<Item> KNIFE_ITEM =
@@ -26,6 +30,17 @@ public class ModItemTags {
             ItemTags.create(ResourceLocation.parse("kitchenkarrot:cooked_meat"));
 
     // neoforge Tags
+    public static final TagKey<Item> CROPS_RICE =
+            ItemTags.create(ResourceLocation.parse("c:crops/rice"));
+    public static final TagKey<Item> COOKED_MUTTON =
+            ItemTags.create(ResourceLocation.parse("c:cooked_mutton"));
+    public static final TagKey<Item> FRUITS = ItemTags.create(ResourceLocation.parse("c:fruits"));
+    public static final TagKey<Item> RAW_BEEF =
+            ItemTags.create(ResourceLocation.parse("c:raw_beef"));
+    public static final TagKey<Item> RAW_CHICKEN =
+            ItemTags.create(ResourceLocation.parse("c:raw_chicken"));
+    public static final TagKey<Item> COOKED_BEEF =
+            ItemTags.create(ResourceLocation.parse("c:cooked_beef"));
     public static final TagKey<Item> COOKED_PORK =
             ItemTags.create(ResourceLocation.parse("c:cooked_pork"));
     public static final TagKey<Item> OIL = ItemTags.create(ResourceLocation.parse("c:cooking_oil"));

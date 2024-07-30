@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "tag": "c:gems/diamond"
+    },
+    "2": {
+      "tag": "c:dusts/redstone"
+    },
+    "3": {
+      "item": "minecraft:emerald"
+    },
+    "4": {
+      "item": "minecraft:copper_ingot"
+    },
+    "5": {
+      "item": "minecraft:iron_ingot"
+    },
+    "6": {
+      "item": "minecraft:gold_ingot"
+    },
+    "7": {
+      "tag": "c:crops/wheat"
+    }
+  },
+  "pattern": [
+    "123",
+    "456",
+    "777"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:shiny_pizza"
+  }
+}

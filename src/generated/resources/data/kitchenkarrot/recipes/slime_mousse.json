@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "tag": "c:slimeballs"
+    },
+    "2": {
+      "item": "minecraft:bone_meal"
+    },
+    "3": {
+      "item": "minecraft:sugar"
+    },
+    "4": {
+      "item": "kitchenkarrot:ice_cubes"
+    },
+    "5": {
+      "tag": "c:crops/wheat"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "555"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:slime_mousse"
+  }
+}

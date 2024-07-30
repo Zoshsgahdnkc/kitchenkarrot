@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "kitchenkarrot:vodka"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "kitchenkarrot:vodka_base"
+  }
+}

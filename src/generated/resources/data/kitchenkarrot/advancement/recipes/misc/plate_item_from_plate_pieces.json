@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_plate_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:plate_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:plate_item_from_plate_pieces"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_plate_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:plate_item_from_plate_pieces"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "tag": "c:buckets/milk"
+    },
+    "2": {
+      "tag": "c:cooking_oil"
+    },
+    "3": {
+      "tag": "kitchenkarrot:meat"
+    },
+    "4": {
+      "tag": "c:crops/wheat"
+    }
+  },
+  "pattern": [
+    "121",
+    "333",
+    "444"
+  ],
+  "result": {
+    "count": 1,
+    "id": "kitchenkarrot:feast_pizza"
+  }
+}
