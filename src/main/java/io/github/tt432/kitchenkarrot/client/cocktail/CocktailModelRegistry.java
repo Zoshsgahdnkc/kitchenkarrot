@@ -1,5 +1,6 @@
 package io.github.tt432.kitchenkarrot.client.cocktail;
 
+import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.util.json.JsonUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.BakedModel;
@@ -56,19 +57,20 @@ public class CocktailModelRegistry {
         }
 
         for (var info : CocktailList.INSTANCE.cocktails) {
+            Kitchenkarrot.LOGGER.info("Register cocktail model: {}", info);
             e.register(to(new ResourceLocation(info)));
         }
     }
 
     /*public static void bakeModel(ModelBakeEvent evt) {
-        *//*MODEL_MAP.clear();
+     *//*MODEL_MAP.clear();
 
         for (String cocktailName : CocktailList.INSTANCE.cocktails) {
             ModelResourceLocation modelName = to(new ResourceLocation(cocktailName));
             MODEL_MAP.put(from(modelName), evt.getModelManager().getModel(modelName));
         }*//*
 
-        *//*for (String cocktailName : CocktailList.INSTANCE.cocktails) {
+     *//*for (String cocktailName : CocktailList.INSTANCE.cocktails) {
             ResourceLocation name = new ResourceLocation(cocktailName);
             String namespace = name.getNamespace();
             String path = name.getPath();
