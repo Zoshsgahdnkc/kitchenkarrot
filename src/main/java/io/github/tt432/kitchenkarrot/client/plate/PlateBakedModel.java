@@ -1,10 +1,12 @@
 package io.github.tt432.kitchenkarrot.client.plate;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
+import io.github.tt432.kitchenkarrot.registries.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
@@ -50,7 +52,7 @@ public class PlateBakedModel implements BakedModel {
 
     @Override
     public TextureAtlasSprite getParticleIcon() {
-        return null;
+        return Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(ModBlocks.PLATE.getId());
     }
 
     @Override
