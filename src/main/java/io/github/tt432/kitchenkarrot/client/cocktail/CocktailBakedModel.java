@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import static io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry.to;
 
@@ -54,7 +53,7 @@ public class CocktailBakedModel implements BakedModel {
 
     @Override
     public TextureAtlasSprite getParticleIcon() {
-        return null;
+        return CocktailTextureManager.INSTANCE.getSprite(CocktailItem.UNKNOWN_COCKTAIL);
     }
 
     @Override
