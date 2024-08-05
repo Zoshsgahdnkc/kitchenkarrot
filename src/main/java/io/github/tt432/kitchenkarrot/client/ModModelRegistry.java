@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.client.cocktail.CocktailBakedModel;
 import io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry;
+import io.github.tt432.kitchenkarrot.client.cocktail.CocktailTextureManager;
 import io.github.tt432.kitchenkarrot.client.plate.PlateBakedModel;
 import io.github.tt432.kitchenkarrot.client.plate.PlateModelRegistry;
 import net.minecraft.client.Minecraft;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -38,6 +40,11 @@ public class ModModelRegistry {
     public static void registerModelUnBake(ModelRegistryEvent e) {
         CocktailModelRegistry.register(e);
         PlateModelRegistry.register(e);
+    }
+
+    @SubscribeEvent
+    public static void registerAtlasSpriteLoaders(RegisterClientReloadListenersEvent event) {
+        event.registerReloadListener(CocktailTextureManager.INSTANCE);
     }
 
     @SubscribeEvent
