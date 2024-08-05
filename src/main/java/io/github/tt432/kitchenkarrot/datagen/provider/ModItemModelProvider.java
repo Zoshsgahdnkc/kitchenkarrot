@@ -11,14 +11,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
-import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
 
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -31,7 +29,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(output, Kitchenkarrot.MOD_ID, existingFileHelper);
     }
 
-    private static final ImmutableSet<DeferredHolder<Item, Item>> IGNORES =
+    private static final ImmutableSet<RegistryObject<Item>> IGNORES =
             ImmutableSet.of(ModItems.KNIFE, ModItems.COCKTAIL);
 
     @Override
@@ -56,8 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         genBlockGenerated(ModBlocks.SEA_SALT);
 
         ModBlocks.BLOCKS.getEntries().stream()
-                .map(holder -> (DeferredBlock<Block>) holder)
-                .filter(holder -> isSkip(holder.asItem()))
+                .filter(holder -> isSkip(holder.get().asItem()))
                 .forEach(this::genBlockItemModel);
     }
 
@@ -70,33 +67,33 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     protected void initSkip() {
-        skip(ModBlocks.PLATE.asItem());
+        skip(ModBlocks.PLATE.get().asItem());
     }
 
     @NotNull
-    private ItemModelBuilder tool(@NotNull DeferredItem<Item> item) {
+    private ItemModelBuilder tool(@NotNull RegistryObject<Item> item) {
         skip(item.get());
         ResourceLocation rl = item.getId();
         return getBuilder(rl.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/handheld"))
                 .texture(
                         "layer0",
-                        ResourceLocation.fromNamespaceAndPath(
+                        new ResourceLocation(
                                 Kitchenkarrot.MOD_ID, "item/" + rl.getPath()));
     }
 
-    protected ItemModelBuilder genBlockGenerated(DeferredBlock<Block> block) {
-        skip(block.asItem());
+    protected ItemModelBuilder genBlockGenerated(RegistryObject<Block> block) {
+        skip(block.get().asItem());
         return withExistingParent(
                         block.getId().getPath(),
-                        ResourceLocation.withDefaultNamespace("item/generated"))
+                        new ResourceLocation("item/generated"))
                 .texture(
                         "layer0",
-                        ResourceLocation.fromNamespaceAndPath(
+                        new ResourceLocation(
                                 Kitchenkarrot.MOD_ID, ITEM_FOLDER + "/" + block.getId().getPath()));
     }
 
-    private ItemModelBuilder genBlockItemModel(DeferredBlock<Block> block) {
+    private ItemModelBuilder genBlockItemModel(RegistryObject<Block> block) {
         String id = block.getId().getPath();
         return withExistingParent(id, Kitchenkarrot.getModRL("block/" + id));
     }

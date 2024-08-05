@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "kitchenkarrot:raw_beef_in_dripleaf"
+  },
+  "result": "kitchenkarrot:beef_in_dripleaf"
+}

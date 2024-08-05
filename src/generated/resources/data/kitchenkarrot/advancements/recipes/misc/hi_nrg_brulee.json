@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hi_nrg_brulee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:hi_nrg_brulee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:hi_nrg_brulee"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_hi_nrg_brulee",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:hi_nrg_brulee"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -19,7 +19,7 @@
     "3"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:air_compressor"
-  }
+    "item": "kitchenkarrot:air_compressor"
+  },
+  "show_notification": true
 }

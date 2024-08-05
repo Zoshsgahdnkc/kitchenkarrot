@@ -4,20 +4,19 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:mushrooms"
+      "tag": "forge:mushrooms"
     },
     {
-      "tag": "c:mushrooms"
+      "tag": "forge:mushrooms"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:raw_vegan_pork"
+    "item": "kitchenkarrot:raw_vegan_pork"
   }
 }

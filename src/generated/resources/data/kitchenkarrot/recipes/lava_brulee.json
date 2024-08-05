@@ -7,7 +7,7 @@
       "item": "minecraft:lava_bucket"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
       "item": "minecraft:sugar"
@@ -17,7 +17,6 @@
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:lava_brulee"
+    "item": "kitchenkarrot:lava_brulee"
   }
 }

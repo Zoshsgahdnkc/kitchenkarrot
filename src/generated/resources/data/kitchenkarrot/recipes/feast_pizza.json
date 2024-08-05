@@ -4,16 +4,16 @@
   "group": "kitchenkarrot",
   "key": {
     "1": {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     "2": {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     "3": {
       "tag": "kitchenkarrot:meat"
     },
     "4": {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     }
   },
   "pattern": [
@@ -22,7 +22,7 @@
     "444"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:feast_pizza"
-  }
+    "item": "kitchenkarrot:feast_pizza"
+  },
+  "show_notification": true
 }

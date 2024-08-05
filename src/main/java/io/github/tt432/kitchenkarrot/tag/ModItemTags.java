@@ -16,60 +16,64 @@ public class ModItemTags {
             ItemTags.create(Kitchenkarrot.getModRL("vegan_meat"));
     public static final TagKey<Item> CORALS = ItemTags.create(Kitchenkarrot.getModRL("corals"));
     public static final TagKey<Item> SALT_ROCK =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:salt_rock"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:salt_rock"));
     public static final TagKey<Item> FIRE_CHARGES =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:fire_charges"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:fire_charges"));
     public static final TagKey<Item> CONTAINER_ITEM =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:container_item"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:container_item"));
     public static final TagKey<Item> KNIFE_ITEM =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:knife_item"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:knife_item"));
     public static final TagKey<Item> BASE =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:base"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:base"));
     public static final TagKey<Item> INTERACT_WITH_PLATE =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:interact_with_plate"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:interact_with_plate"));
     public static final TagKey<Item> MEAT =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:meat"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:meat"));
     public static final TagKey<Item> GRASS_SPICES =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:grass_spices"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:grass_spices"));
     public static final TagKey<Item> RAW_MEAT = ItemTags.create(Kitchenkarrot.getModRL("raw_meat"));
     public static final TagKey<Item> COOKED_MEAT =
-            ItemTags.create(ResourceLocation.parse("kitchenkarrot:cooked_meat"));
+            ItemTags.create(new ResourceLocation("kitchenkarrot:cooked_meat"));
 
     // neoforge Tags
     public static final TagKey<Item> KNIVES =
-            ItemTags.create(ResourceLocation.parse("c:tools/knives"));
-    public static final TagKey<Item> NUTS = ItemTags.create(ResourceLocation.parse("c:nuts"));
+            ItemTags.create(new ResourceLocation("forge:tools/knives"));
+    public static final TagKey<Item> NUTS = ItemTags.create(new ResourceLocation("forge:nuts"));
     public static final TagKey<Item> CROPS_RICE =
-            ItemTags.create(ResourceLocation.parse("c:crops/rice"));
+            ItemTags.create(new ResourceLocation("forge:crops/rice"));
     public static final TagKey<Item> COOKED_MUTTON =
-            ItemTags.create(ResourceLocation.parse("c:cooked_mutton"));
-    public static final TagKey<Item> FRUITS = ItemTags.create(ResourceLocation.parse("c:fruits"));
+            ItemTags.create(new ResourceLocation("forge:cooked_mutton"));
+    public static final TagKey<Item> FRUITS = ItemTags.create(new ResourceLocation("forge:fruits"));
     public static final TagKey<Item> RAW_PORK =
-            ItemTags.create(ResourceLocation.parse("c:raw_pork"));
+            ItemTags.create(new ResourceLocation("forge:raw_pork"));
     public static final TagKey<Item> RAW_MUTTON =
-            ItemTags.create(ResourceLocation.parse("c:raw_mutton"));
+            ItemTags.create(new ResourceLocation("forge:raw_mutton"));
     public static final TagKey<Item> RAW_BEEF =
-            ItemTags.create(ResourceLocation.parse("c:raw_beef"));
+            ItemTags.create(new ResourceLocation("forge:raw_beef"));
     public static final TagKey<Item> RAW_CHICKEN =
-            ItemTags.create(ResourceLocation.parse("c:raw_chicken"));
+            ItemTags.create(new ResourceLocation("forge:raw_chicken"));
     public static final TagKey<Item> COOKED_CHICKEN =
-            ItemTags.create(ResourceLocation.parse("c:cooked_chicken"));
+            ItemTags.create(new ResourceLocation("forge:cooked_chicken"));
     public static final TagKey<Item> COOKED_BEEF =
-            ItemTags.create(ResourceLocation.parse("c:cooked_beef"));
+            ItemTags.create(new ResourceLocation("forge:cooked_beef"));
     public static final TagKey<Item> COOKED_PORK =
-            ItemTags.create(ResourceLocation.parse("c:cooked_pork"));
-    public static final TagKey<Item> OIL = ItemTags.create(ResourceLocation.parse("c:cooking_oil"));
-    public static final TagKey<Item> SALT = ItemTags.create(ResourceLocation.parse("c:salt"));
+            ItemTags.create(new ResourceLocation("forge:cooked_pork"));
+    public static final TagKey<Item> OIL = ItemTags.create(new ResourceLocation("forge:cooking_oil"));
+    public static final TagKey<Item> SALT = ItemTags.create(new ResourceLocation("forge:salt"));
     public static final TagKey<Item> ICE_CUBES =
-            ItemTags.create(ResourceLocation.parse("c:ice_cubes"));
+            ItemTags.create(new ResourceLocation("forge:ice_cubes"));
     public static final TagKey<Item> ACORN =
-            ItemTags.create(ResourceLocation.parse("c:nuts/acorn"));
-    public static final TagKey<Item> BREAD = ItemTags.create(ResourceLocation.parse("c:bread"));
-    public static final TagKey<Item> MILK = ItemTags.create(ResourceLocation.parse("c:milk"));
+            ItemTags.create(new ResourceLocation("forge:nuts/acorn"));
+    public static final TagKey<Item> BREAD = ItemTags.create(new ResourceLocation("forge:bread"));
+    public static final TagKey<Item> MILK = ItemTags.create(new ResourceLocation("forge:milk"));
+    public static final TagKey<Item> WATER = ItemTags.create(new ResourceLocation("forge:water"));
 
+    public static final TagKey<Item> FOOD_COOKED_FISH = ItemTags.create(new ResourceLocation("forge:food/cooked_fish"));
+    public static final TagKey<Item> FOOD_RAW_FISH = ItemTags.create(new ResourceLocation("forge:food/raw_fish"));
     public static final TagKey<Item> FOOD_MEAT =
-            ItemTags.create(ResourceLocation.parse("c:food/meat"));
+            ItemTags.create(new ResourceLocation("forge:food/meat"));
 
     public static final TagKey<Item> SQUIRREL_TEMPT_ITEMS =
-            ItemTags.create(ResourceLocation.parse("ecologics:squirrel_tempt_items"));
+            ItemTags.create(new ResourceLocation("ecologics:squirrel_tempt_items"));
+
 }

@@ -16,7 +16,7 @@
       "item": "kitchenkarrot:ice_cubes"
     },
     "5": {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     }
   },
   "pattern": [
@@ -25,7 +25,7 @@
     "555"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:chorus_mousse"
-  }
+    "item": "kitchenkarrot:chorus_mousse"
+  },
+  "show_notification": true
 }

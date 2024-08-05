@@ -16,14 +16,14 @@
       "item": "minecraft:beetroot"
     },
     {
-      "tag": "c:nuts/acorn"
+      "tag": "forge:nuts/acorn"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     }
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:beetroot_crepe"
+    "item": "kitchenkarrot:beetroot_crepe"
   }
 }

@@ -7,13 +7,13 @@
       "item": "minecraft:bread"
     },
     "1": {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     "2": {
       "item": "minecraft:sugar"
     },
     "3": {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     }
   },
   "pattern": [
@@ -21,7 +21,7 @@
     "000"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:raw_sweet_loaf"
-  }
+    "item": "kitchenkarrot:raw_sweet_loaf"
+  },
+  "show_notification": true
 }

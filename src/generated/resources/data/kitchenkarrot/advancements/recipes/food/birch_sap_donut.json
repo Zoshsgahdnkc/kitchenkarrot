@@ -1,31 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_kitchenkarrot:birch_sap": {
+    "has_birch_sap": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:birch_sap"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_minecraft:sugar": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:sugar"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_minecraft:wheat": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:wheat"
+            "items": [
+              "kitchenkarrot:birch_sap"
+            ]
           }
         ]
       },
@@ -35,7 +17,19 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:cooking_oil"
+            "tag": "forge:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sugar"
+            ]
           }
         ]
       },
@@ -46,20 +40,33 @@
         "recipe": "kitchenkarrot:birch_sap_donut"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wheat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:wheat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_minecraft:wheat",
-      "has_kitchenkarrot:birch_sap",
-      "has_minecraft:sugar",
-      "has_oil"
+      "has_wheat",
+      "has_birch_sap",
+      "has_sugar",
+      "has_oil",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "kitchenkarrot:birch_sap_donut"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -7,11 +7,10 @@
       "item": "minecraft:birch_sapling"
     },
     {
-      "tag": "c:buckets/water"
+      "tag": "forge:water"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:birch_sap"
+    "item": "kitchenkarrot:birch_sap"
   }
 }

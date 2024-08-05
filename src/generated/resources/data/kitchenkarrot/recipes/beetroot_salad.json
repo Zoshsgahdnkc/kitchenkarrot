@@ -7,7 +7,7 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "c:eggs"
+      "tag": "forge:eggs"
     },
     {
       "item": "minecraft:beetroot"
@@ -24,6 +24,6 @@
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:beetroot_salad"
+    "item": "kitchenkarrot:beetroot_salad"
   }
 }

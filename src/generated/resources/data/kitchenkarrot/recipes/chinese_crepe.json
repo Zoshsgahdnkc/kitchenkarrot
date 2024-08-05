@@ -7,10 +7,10 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
       "item": "kitchenkarrot:carrot_spices"
@@ -21,6 +21,6 @@
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:chinese_crepe"
+    "item": "kitchenkarrot:chinese_crepe"
   }
 }

@@ -17,6 +17,7 @@
   ],
   "result": {
     "count": 4,
-    "id": "kitchenkarrot:empty_can"
-  }
+    "item": "kitchenkarrot:empty_can"
+  },
+  "show_notification": true
 }

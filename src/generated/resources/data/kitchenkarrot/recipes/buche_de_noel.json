@@ -19,7 +19,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "c:ice_cubes"
+      "tag": "forge:ice_cubes"
     }
   ],
   "result": {

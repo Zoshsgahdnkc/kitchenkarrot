@@ -4,29 +4,28 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:nuts/acorn"
+      "tag": "forge:nuts/acorn"
     },
     {
-      "tag": "c:nuts/acorn"
+      "tag": "forge:nuts/acorn"
     },
     {
-      "tag": "c:nuts/acorn"
+      "tag": "forge:nuts/acorn"
     },
     {
-      "tag": "c:nuts/acorn"
+      "tag": "forge:nuts/acorn"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:popacorn"
+    "item": "kitchenkarrot:popacorn"
   }
 }

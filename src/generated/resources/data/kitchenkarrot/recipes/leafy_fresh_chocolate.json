@@ -10,7 +10,7 @@
       "item": "minecraft:cocoa_beans"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
       "tag": "minecraft:leaves"
@@ -21,6 +21,6 @@
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:leafy_fresh_chocolate"
+    "item": "kitchenkarrot:leafy_fresh_chocolate"
   }
 }

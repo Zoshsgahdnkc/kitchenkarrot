@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carrot_and_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:carrot_and_carrot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:carrot_and_carrot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_carrot_and_carrot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:carrot_and_carrot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

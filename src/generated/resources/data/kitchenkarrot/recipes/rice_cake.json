@@ -1,19 +1,10 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:crops/rice"
-      }
-    }
-  ],
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:crops/rice"
+      "tag": "forge:crops/rice"
     },
     {
       "item": "minecraft:sugar"
@@ -21,6 +12,6 @@
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:rice_cake"
+    "item": "kitchenkarrot:rice_cake"
   }
 }

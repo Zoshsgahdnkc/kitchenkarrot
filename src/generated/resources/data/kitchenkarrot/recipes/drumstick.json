@@ -4,17 +4,16 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:raw_chicken"
+      "tag": "forge:raw_chicken"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:drumstick"
+    "item": "kitchenkarrot:drumstick"
   }
 }

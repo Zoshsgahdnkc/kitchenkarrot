@@ -1,31 +1,35 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / c:milk]": {
+    "has_TagKey[minecraft:item / forge:milk]": {
       "conditions": {
         "items": [
           {
-            "items": "#c:milk"
+            "tag": "forge:milk"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_kitchenkarrot:carrot_spices": {
+    "has_carrot_spices": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:carrot_spices"
+            "items": [
+              "kitchenkarrot:carrot_spices"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_minecraft:phantom_membrane": {
+    "has_phantom_membrane": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:phantom_membrane"
+            "items": [
+              "minecraft:phantom_membrane"
+            ]
           }
         ]
       },
@@ -40,15 +44,16 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_TagKey[minecraft:item / c:milk]",
-      "has_kitchenkarrot:carrot_spices",
-      "has_minecraft:phantom_membrane"
+      "has_TagKey[minecraft:item / forge:milk]",
+      "has_carrot_spices",
+      "has_phantom_membrane",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "kitchenkarrot:phantom_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

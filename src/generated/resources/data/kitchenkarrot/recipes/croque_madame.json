@@ -7,20 +7,19 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:eggs"
+      "tag": "forge:eggs"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:croque_madame"
+    "item": "kitchenkarrot:croque_madame"
   }
 }

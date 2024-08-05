@@ -4,20 +4,19 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:bread"
+      "tag": "forge:bread"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
-      "tag": "c:eggs"
+      "tag": "forge:eggs"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:sweet_roll"
+    "item": "kitchenkarrot:sweet_roll"
   }
 }

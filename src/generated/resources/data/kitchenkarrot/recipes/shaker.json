@@ -7,8 +7,7 @@
     "item": "minecraft:bucket"
   },
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:shaker"
+    "item": "kitchenkarrot:shaker"
   },
   "template": {
     "item": "minecraft:iron_nugget"

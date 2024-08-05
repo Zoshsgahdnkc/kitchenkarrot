@@ -21,7 +21,7 @@
     " 0 "
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:fishermens_delight"
-  }
+    "item": "kitchenkarrot:fishermens_delight"
+  },
+  "show_notification": true
 }

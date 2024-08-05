@@ -4,10 +4,10 @@
   "group": "kitchenkarrot",
   "key": {
     "1": {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     "2": {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     "3": [
       {
@@ -18,7 +18,7 @@
       }
     ],
     "4": {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     }
   },
   "pattern": [
@@ -27,7 +27,7 @@
     "444"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:dungeon_pizza"
-  }
+    "item": "kitchenkarrot:dungeon_pizza"
+  },
+  "show_notification": true
 }

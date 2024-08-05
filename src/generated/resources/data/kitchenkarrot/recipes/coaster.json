@@ -16,7 +16,7 @@
     "* *"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:coaster"
-  }
+    "item": "kitchenkarrot:coaster"
+  },
+  "show_notification": true
 }

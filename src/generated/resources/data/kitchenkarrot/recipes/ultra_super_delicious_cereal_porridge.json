@@ -10,14 +10,13 @@
       "item": "kitchenkarrot:grilled_wheatmeal"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
       "item": "minecraft:nether_star"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:ultra_super_delicious_cereal_porridge"
+    "item": "kitchenkarrot:ultra_super_delicious_cereal_porridge"
   }
 }

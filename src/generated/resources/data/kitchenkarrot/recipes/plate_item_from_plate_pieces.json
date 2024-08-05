@@ -12,7 +12,7 @@
     "11"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:plate_item"
-  }
+    "item": "kitchenkarrot:plate_item"
+  },
+  "show_notification": true
 }

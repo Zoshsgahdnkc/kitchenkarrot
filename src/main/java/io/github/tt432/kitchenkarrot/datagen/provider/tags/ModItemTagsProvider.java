@@ -10,9 +10,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -37,12 +36,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.COOKED_PORK).add(Items.COOKED_PORKCHOP, ModItems.COOKED_VEGAN_PORK.get());
         tag(ModItemTags.OIL)
                 .add(
-                        ModBlocks.SUNFLOWER_OIL.asItem(),
-                        ModBlocks.ACORN_OIL.asItem(),
-                        ModBlocks.CHORUS_OIL.asItem());
+                        ModBlocks.SUNFLOWER_OIL.get().asItem(),
+                        ModBlocks.ACORN_OIL.get().asItem(),
+                        ModBlocks.CHORUS_OIL.get().asItem());
         tag(ModItemTags.FRUITS).add(Items.APPLE, Items.CHORUS_FRUIT);
         tag(ModItemTags.ICE_CUBES).add(ModItems.ICE_CUBES.get());
-        tag(Tags.Items.BUCKETS_MILK).add(ModItems.MILK.get());
+        tag(ModItemTags.MILK).add(ModItems.MILK.get());
         tag(ModItemTags.NUTS).add(ModItems.ACORN.get());
         tag(ModItemTags.RAW_BEEF).add(Items.BEEF, ModItems.RAW_VEGAN_BEEF.get());
         tag(ModItemTags.RAW_CHICKEN).add(Items.CHICKEN);
@@ -50,10 +49,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.RAW_PORK).add(Items.PORKCHOP, ModItems.RAW_VEGAN_PORK.get());
         tag(ModItemTags.SALT)
                 .add(
-                        ModBlocks.ROCK_SALT.asItem(),
-                        ModBlocks.SEA_SALT.asItem(),
-                        ModBlocks.FINE_SALT.asItem());
-        tag(Tags.Items.BUCKETS_WATER).add(ModItems.WATER.get());
+                        ModBlocks.ROCK_SALT.get().asItem(),
+                        ModBlocks.SEA_SALT.get().asItem(),
+                        ModBlocks.FINE_SALT.get().asItem());
+        tag(ModItemTags.WATER).add(ModItems.WATER.get());
         tag(ModItemTags.BASE)
                 .add(
                         ModItems.RUM_BASE.get(),
@@ -67,7 +66,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItemTags.COOKED_CHICKEN,
                         ModItemTags.COOKED_MUTTON,
                         ModItemTags.COOKED_PORK,
-                        Tags.Items.FOODS_COOKED_FISH);
+                        ModItemTags.FOOD_COOKED_FISH);
         tag(ModItemTags.CORALS)
                 .add(
                         Items.TUBE_CORAL_BLOCK,
@@ -91,7 +90,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItemTags.RAW_CHICKEN,
                         ModItemTags.RAW_MUTTON,
                         ModItemTags.RAW_PORK,
-                        Tags.Items.FOODS_RAW_FISH);
+                        ModItemTags.FOOD_RAW_FISH);
         tag(ModItemTags.SALT_ROCK)
                 .add(Items.CALCITE, Items.TUFF, Items.MOSSY_COBBLESTONE, Items.DIORITE);
         tag(ModItemTags.VEGAN_MEAT)
@@ -104,8 +103,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItems.COOKED_VEGAN_MUTTON.get());
 
         // food
-        tag(Tags.Items.FOODS_COOKED_FISH).add(Items.COOKED_COD, Items.COOKED_SALMON);
-        tag(Tags.Items.FOODS_RAW_FISH)
+        tag(ModItemTags.FOOD_COOKED_FISH).add(Items.COOKED_COD, Items.COOKED_SALMON);
+        tag(ModItemTags.FOOD_RAW_FISH)
                 .add(Items.COD, Items.SALMON, Items.TROPICAL_FISH, Items.PUFFERFISH);
         tag(ModItemTags.FOOD_MEAT).add(ModItems.MEAD.get());
 

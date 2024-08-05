@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "key": {
     "1": {
-      "tag": "c:slimeballs"
+      "tag": "forge:slimeballs"
     },
     "2": {
       "item": "minecraft:bone_meal"
@@ -16,7 +16,7 @@
       "item": "kitchenkarrot:ice_cubes"
     },
     "5": {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     }
   },
   "pattern": [
@@ -25,7 +25,7 @@
     "555"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:slime_mousse"
-  }
+    "item": "kitchenkarrot:slime_mousse"
+  },
+  "show_notification": true
 }

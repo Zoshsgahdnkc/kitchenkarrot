@@ -10,17 +10,16 @@
       "item": "minecraft:big_dripleaf"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "forge:raw_beef"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
       "item": "kitchenkarrot:carrot_spices"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:raw_beef_in_dripleaf"
+    "item": "kitchenkarrot:raw_beef_in_dripleaf"
   }
 }

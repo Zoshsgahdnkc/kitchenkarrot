@@ -15,7 +15,7 @@
     "---"
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:brewing_barrel"
-  }
+    "item": "kitchenkarrot:brewing_barrel"
+  },
+  "show_notification": true
 }

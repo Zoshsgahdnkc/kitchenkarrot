@@ -24,11 +24,10 @@
       }
     ],
     {
-      "tag": "c:mushrooms"
+      "tag": "forge:mushrooms"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:lush_salad"
+    "item": "kitchenkarrot:lush_salad"
   }
 }

@@ -7,10 +7,10 @@
       "item": "minecraft:cactus"
     },
     "1": {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     "2": {
-      "tag": "c:foods/cooked_fish"
+      "tag": "forge:food/cooked_fish"
     },
     "3": {
       "tag": "kitchenkarrot:grass_spices"
@@ -21,7 +21,7 @@
     " 0 "
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:grilled_fish_and_cactus"
-  }
+    "item": "kitchenkarrot:grilled_fish_and_cactus"
+  },
+  "show_notification": true
 }

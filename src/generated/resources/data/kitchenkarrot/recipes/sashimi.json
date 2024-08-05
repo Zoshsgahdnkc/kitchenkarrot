@@ -4,11 +4,10 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:foods/raw_fish"
+      "tag": "forge:food/raw_fish"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:sashimi"
+    "item": "kitchenkarrot:sashimi"
   }
 }

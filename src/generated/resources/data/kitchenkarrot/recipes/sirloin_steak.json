@@ -4,23 +4,22 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:cooked_beef"
+      "tag": "forge:cooked_beef"
     },
     {
-      "tag": "c:crops/nether_wart"
+      "tag": "forge:crops/nether_wart"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
       "item": "kitchenkarrot:carrot_spices"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:sirloin_steak"
+    "item": "kitchenkarrot:sirloin_steak"
   }
 }

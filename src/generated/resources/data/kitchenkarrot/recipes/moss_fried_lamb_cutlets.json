@@ -10,17 +10,16 @@
       "item": "minecraft:moss_block"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
       "item": "kitchenkarrot:carrot_spices"
     },
     {
-      "tag": "c:cooked_mutton"
+      "tag": "forge:cooked_mutton"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:moss_fried_lamb_cutlets"
+    "item": "kitchenkarrot:moss_fried_lamb_cutlets"
   }
 }

@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
       "item": "minecraft:bread"
@@ -14,7 +14,6 @@
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:crispy_bread_with_kelp"
+    "item": "kitchenkarrot:crispy_bread_with_kelp"
   }
 }

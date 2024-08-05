@@ -10,14 +10,13 @@
       "item": "kitchenkarrot:grilled_wheatmeal"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
-      "tag": "c:fruits"
+      "tag": "forge:fruits"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:fruit_cereal_porridge"
+    "item": "kitchenkarrot:fruit_cereal_porridge"
   }
 }

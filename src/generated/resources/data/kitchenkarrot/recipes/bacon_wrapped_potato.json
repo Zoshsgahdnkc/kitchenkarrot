@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:cooked_pork"
+      "tag": "forge:cooked_pork"
     },
     {
       "item": "minecraft:baked_potato"
@@ -13,14 +13,14 @@
       "item": "minecraft:baked_potato"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     }
   ],
   "result": {
     "count": 4,
-    "id": "kitchenkarrot:bacon_wrapped_potato"
+    "item": "kitchenkarrot:bacon_wrapped_potato"
   }
 }

@@ -4,17 +4,17 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     },
     {
       "item": "minecraft:pumpkin"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     }
   ],
   "result": {
     "count": 2,
-    "id": "kitchenkarrot:fried_pumpkin_cake"
+    "item": "kitchenkarrot:fried_pumpkin_cake"
   }
 }

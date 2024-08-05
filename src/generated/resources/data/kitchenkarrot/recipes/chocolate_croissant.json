@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
       "item": "minecraft:bread"
@@ -14,7 +14,6 @@
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:chocolate_croissant"
+    "item": "kitchenkarrot:chocolate_croissant"
   }
 }

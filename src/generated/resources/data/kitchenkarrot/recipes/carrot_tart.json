@@ -4,20 +4,19 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:crops/wheat"
+      "tag": "forge:crops/wheat"
     },
     {
       "item": "minecraft:carrot"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:carrot_tart"
+    "item": "kitchenkarrot:carrot_tart"
   }
 }

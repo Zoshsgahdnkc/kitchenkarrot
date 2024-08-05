@@ -17,7 +17,6 @@
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:fresh_salad"
+    "item": "kitchenkarrot:fresh_salad"
   }
 }

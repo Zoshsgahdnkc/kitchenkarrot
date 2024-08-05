@@ -4,10 +4,10 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:buckets/milk"
+      "tag": "forge:milk"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
       "item": "minecraft:sugar"
@@ -17,7 +17,6 @@
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:honey_brulee"
+    "item": "kitchenkarrot:honey_brulee"
   }
 }

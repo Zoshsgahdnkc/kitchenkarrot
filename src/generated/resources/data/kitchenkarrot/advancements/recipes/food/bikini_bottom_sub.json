@@ -1,61 +1,71 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_TagKey[minecraft:item / c:bread]": {
+    "has_TagKey[minecraft:item / forge:bread]": {
       "conditions": {
         "items": [
           {
-            "items": "#c:bread"
+            "tag": "forge:bread"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_kitchenkarrot:carrot_spices": {
+    "has_carrot_spices": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:carrot_spices"
+            "items": [
+              "kitchenkarrot:carrot_spices"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_kitchenkarrot:cheese_slice": {
+    "has_cheese_slice": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:cheese_slice"
+            "items": [
+              "kitchenkarrot:cheese_slice"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_kitchenkarrot:pickled_sea_pickles": {
+    "has_ink_sac": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:pickled_sea_pickles"
+            "items": [
+              "minecraft:ink_sac"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_kitchenkarrot:sashimi": {
+    "has_pickled_sea_pickles": {
       "conditions": {
         "items": [
           {
-            "items": "kitchenkarrot:sashimi"
+            "items": [
+              "kitchenkarrot:pickled_sea_pickles"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_minecraft:ink_sac": {
+    "has_sashimi": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:ink_sac"
+            "items": [
+              "kitchenkarrot:sashimi"
+            ]
           }
         ]
       },
@@ -70,18 +80,19 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_TagKey[minecraft:item / c:bread]",
-      "has_kitchenkarrot:sashimi",
-      "has_kitchenkarrot:pickled_sea_pickles",
-      "has_kitchenkarrot:cheese_slice",
-      "has_kitchenkarrot:carrot_spices",
-      "has_minecraft:ink_sac"
+      "has_TagKey[minecraft:item / forge:bread]",
+      "has_sashimi",
+      "has_pickled_sea_pickles",
+      "has_cheese_slice",
+      "has_carrot_spices",
+      "has_ink_sac",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "kitchenkarrot:bikini_bottom_sub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -7,7 +7,6 @@ import io.github.tt432.kitchenkarrot.registries.ModItems;
 
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -17,14 +16,12 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
-import net.neoforged.neoforge.common.loot.LootTableIdCondition;
-
-import java.util.concurrent.CompletableFuture;
+import net.minecraftforge.common.data.GlobalLootModifierProvider;
+import net.minecraftforge.common.loot.LootTableIdCondition;
 
 public class ModGLMProvider extends GlobalLootModifierProvider {
-    public ModGLMProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, Kitchenkarrot.MOD_ID);
+    public ModGLMProvider(PackOutput output) {
+        super(output, Kitchenkarrot.MOD_ID);
     }
 
     @Override
@@ -41,31 +38,31 @@ public class ModGLMProvider extends GlobalLootModifierProvider {
                                     .build(),
                             LootItemRandomChanceCondition.randomChance(0.04F).build()
                         },
-                        ModItems.GEM_CARROT.toStack()));
+                        ModItems.GEM_CARROT.get().getDefaultInstance()));
 
         add(
                 "ice_cubes_loot_modifier",
                 new AddItemModifier(
                         new LootItemCondition[] {
                             LootTableIdCondition.builder(
-                                            ResourceLocation.withDefaultNamespace("blocks/ice"))
+                                            new ResourceLocation("blocks/ice"))
                                     .build(),
                             MatchTool.toolMatches(
                                             ItemPredicate.Builder.item().of(ItemTags.PICKAXES))
                                     .build()
                         },
-                        ModItems.ICE_CUBES.toStack()));
+                        ModItems.ICE_CUBES.get().getDefaultInstance()));
 
         add(
                 "piglin_barter_loot_modifier",
                 new ReplaceLootModifier(
                         new LootItemCondition[] {
                             LootTableIdCondition.builder(
-                                            ResourceLocation.withDefaultNamespace(
+                                            new ResourceLocation(
                                                     "gameplay/piglin_bartering"))
                                     .build()
                         },
-                        ModItems.CANNED_HOGLIN_CONFIT.toStack(),
+                        ModItems.CANNED_HOGLIN_CONFIT.get().getDefaultInstance(),
                         45,
                         6));
 
@@ -74,34 +71,34 @@ public class ModGLMProvider extends GlobalLootModifierProvider {
                 new AddItemModifier(
                         new LootItemCondition[] {
                             LootTableIdCondition.builder(
-                                            ResourceLocation.withDefaultNamespace(
+                                            new ResourceLocation(
                                                     "chests/pillager_outpost"))
                                     .build(),
                             LootItemRandomChanceCondition.randomChance(0.3F).build()
                         },
-                        ModItems.PILLAGER_PIE.toStack()));
+                        ModItems.PILLAGER_PIE.get().getDefaultInstance()));
 
         add(
                 "pillager_pie_from_outpost_loot_modifier",
                 new AddItemModifier(
                         new LootItemCondition[] {
                             LootTableIdCondition.builder(
-                                            ResourceLocation.withDefaultNamespace(
+                                            new ResourceLocation(
                                                     "chests/pillager_outpost"))
                                     .build()
                         },
-                        ModItems.PILLAGER_PIE.toStack()));
+                        ModItems.PILLAGER_PIE.get().getDefaultInstance()));
 
         add(
                 "pillager_pie_from_pillager_loot_modifier",
                 new AddItemModifier(
                         new LootItemCondition[] {
                             LootTableIdCondition.builder(
-                                            ResourceLocation.withDefaultNamespace(
+                                            new ResourceLocation(
                                                     "entities/pillager"))
                                     .build(),
                             LootItemRandomChanceCondition.randomChance(0.2F).build()
                         },
-                        ModItems.PILLAGER_PIE.toStack()));
+                        ModItems.PILLAGER_PIE.get().getDefaultInstance()));
     }
 }

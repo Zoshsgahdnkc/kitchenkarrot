@@ -7,14 +7,13 @@
       "item": "minecraft:potato"
     },
     {
-      "tag": "c:cooking_oil"
+      "tag": "forge:cooking_oil"
     },
     {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:fries"
+    "item": "kitchenkarrot:fries"
   }
 }

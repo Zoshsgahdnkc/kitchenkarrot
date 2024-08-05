@@ -7,13 +7,13 @@
       "item": "minecraft:bamboo"
     },
     "1": {
-      "tag": "c:eggs"
+      "tag": "forge:eggs"
     },
     "2": {
       "item": "minecraft:baked_potato"
     },
     "3": {
-      "tag": "c:salt"
+      "tag": "forge:salt"
     }
   },
   "pattern": [
@@ -21,7 +21,7 @@
     " 0 "
   ],
   "result": {
-    "count": 1,
-    "id": "kitchenkarrot:bamboo_potato"
-  }
+    "item": "kitchenkarrot:bamboo_potato"
+  },
+  "show_notification": true
 }
