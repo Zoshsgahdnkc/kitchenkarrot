@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "*": {
+      "item": "minecraft:chorus_flower"
+    }
+  },
+  "pattern": [
+    "* ",
+    " *"
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:chorus_oil"
+  },
+  "show_notification": true
+}

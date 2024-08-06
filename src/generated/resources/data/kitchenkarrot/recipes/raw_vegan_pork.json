@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:raw_vegan_pork"
+  }
+}

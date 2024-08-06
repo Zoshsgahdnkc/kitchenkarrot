@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    },
+    {
+      "item": "kitchenkarrot:water"
+    }
+  ],
+  "result": {
+    "item": "minecraft:water_bucket"
+  }
+}

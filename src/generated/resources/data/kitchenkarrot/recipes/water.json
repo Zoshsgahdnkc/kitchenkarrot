@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "kitchenkarrot:water"
+  }
+}

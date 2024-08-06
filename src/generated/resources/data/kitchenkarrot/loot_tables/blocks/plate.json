@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": true,
+              "count": {
+                "type": "minecraft:binomial",
+                "n": 3.0,
+                "p": 0.5
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "kitchenkarrot:plate_pieces"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "kitchenkarrot:blocks/plate"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:raw_vegan_beef"
+  }
+}

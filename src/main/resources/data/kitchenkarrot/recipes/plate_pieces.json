@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "kitchenkarrot:plate_item"
-  },
-  "result": "kitchenkarrot:plate_pieces",
-  "count": 3
-}

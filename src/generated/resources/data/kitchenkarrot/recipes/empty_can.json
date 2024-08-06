@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "item": "minecraft:iron_nugget"
+    },
+    "2": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    " 1 ",
+    "121",
+    " 1 "
+  ],
+  "result": {
+    "count": 4,
+    "item": "kitchenkarrot:empty_can"
+  },
+  "show_notification": true
+}

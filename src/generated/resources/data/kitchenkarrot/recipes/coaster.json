@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "*": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "* *",
+    " # ",
+    "* *"
+  ],
+  "result": {
+    "item": "kitchenkarrot:coaster"
+  },
+  "show_notification": true
+}

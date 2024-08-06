@@ -1,0 +1,17 @@
+{
+  "type": "kitchenkarrot:add_item_modifier",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/pillager"
+    },
+    {
+      "chance": 0.2,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": {
+    "Count": 1,
+    "id": "kitchenkarrot:pillager_pie"
+  }
+}

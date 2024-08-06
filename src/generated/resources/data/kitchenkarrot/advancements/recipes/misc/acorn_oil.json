@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_acorn_oil": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:nuts/acorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:acorn_oil"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_acorn_oil",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:acorn_oil"
+    ]
+  },
+  "sends_telemetry_event": false
+}

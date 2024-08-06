@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:carrot_spices"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:carrot_spices_from_gem_carrot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_carrot_spices",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:carrot_spices_from_gem_carrot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

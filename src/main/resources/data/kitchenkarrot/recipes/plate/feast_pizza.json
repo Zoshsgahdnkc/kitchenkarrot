@@ -1,9 +1,0 @@
-{
-    "type": "kitchenkarrot:plate",
-    "input": {
-      "item": "kitchenkarrot:feast_pizza"
-    },
-    "result": {
-      "item": "kitchenkarrot:feast_pizza_slice"
-    }
-  }

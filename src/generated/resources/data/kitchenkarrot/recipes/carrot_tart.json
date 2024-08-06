@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:carrot_tart"
+  }
+}

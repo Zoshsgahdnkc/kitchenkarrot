@@ -1,11 +1,14 @@
 package io.github.tt432.kitchenkarrot;
 
-import io.github.tt432.kitchenkarrot.registries.*;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
 import io.github.tt432.kitchenkarrot.networking.ModNetworking;
 import io.github.tt432.kitchenkarrot.recipes.RecipeManager;
+import io.github.tt432.kitchenkarrot.registries.*;
+
+import net.minecraft.resources.ResourceLocation;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +22,7 @@ import org.apache.logging.log4j.Logger;
  */
 @Mod(Kitchenkarrot.MOD_ID)
 public class Kitchenkarrot {
-    //Log
+    // Log
     public static final Logger LOGGER = LogManager.getLogger();
 
     public static final String MOD_ID = "kitchenkarrot";
@@ -35,7 +38,7 @@ public class Kitchenkarrot {
         INSTANCE = this;
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON,ModCommonConfigs.COMMON,"kitchenkarrot-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.COMMON, "kitchenkarrot-common.toml");
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
         ModBlockItems.BLOCK_ITEMS.register(bus);
@@ -56,7 +59,11 @@ public class Kitchenkarrot {
         return INSTANCE;
     }
 
-    public ModNetworking getNetworking() {
-        return networking;
+    public static ResourceLocation getModRL(String path) {
+        return new ResourceLocation(Kitchenkarrot.MOD_ID, path);
     }
+
+        public ModNetworking getNetworking() {
+            return networking;
+        }
 }

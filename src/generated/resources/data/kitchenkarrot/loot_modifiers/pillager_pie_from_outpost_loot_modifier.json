@@ -1,0 +1,13 @@
+{
+  "type": "kitchenkarrot:add_item_modifier",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/pillager_outpost"
+    }
+  ],
+  "item": {
+    "Count": 1,
+    "id": "kitchenkarrot:pillager_pie"
+  }
+}

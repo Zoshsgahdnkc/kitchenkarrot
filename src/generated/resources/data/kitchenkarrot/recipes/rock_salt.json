@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "*": {
+      "tag": "kitchenkarrot:salt_rock"
+    }
+  },
+  "pattern": [
+    "* ",
+    " *"
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:rock_salt"
+  },
+  "show_notification": true
+}

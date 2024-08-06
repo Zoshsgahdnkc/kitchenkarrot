@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "kitchenkarrot:cooked_meat"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:curry_udon"
+  }
+}

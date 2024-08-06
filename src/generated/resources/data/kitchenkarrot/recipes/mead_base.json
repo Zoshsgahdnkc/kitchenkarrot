@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "kitchenkarrot:mead"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "kitchenkarrot:mead_base"
+  }
+}

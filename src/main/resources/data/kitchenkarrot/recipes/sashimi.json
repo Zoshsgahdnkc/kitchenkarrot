@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "forge:raw_fishes"
-  },
-  "result": "kitchenkarrot:sashimi",
-  "count": 1
-}

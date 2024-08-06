@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "tag": "kitchenkarrot:fire_charges"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:hi_nrg_brulee"
+  }
+}

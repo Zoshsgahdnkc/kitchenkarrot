@@ -1,0 +1,10 @@
+{
+  "values": [
+    "kitchenkarrot:raw_vegan_beef",
+    "kitchenkarrot:cooked_vegan_beef",
+    "kitchenkarrot:raw_vegan_pork",
+    "kitchenkarrot:cooked_vegan_pork",
+    "kitchenkarrot:raw_vegan_mutton",
+    "kitchenkarrot:cooked_vegan_mutton"
+  ]
+}

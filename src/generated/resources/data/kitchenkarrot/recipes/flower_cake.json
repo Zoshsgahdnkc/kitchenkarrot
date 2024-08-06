@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "minecraft:small_flowers"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:flower_cake"
+  }
+}

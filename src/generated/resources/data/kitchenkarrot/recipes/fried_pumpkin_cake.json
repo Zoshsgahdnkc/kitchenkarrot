@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:fried_pumpkin_cake"
+  }
+}

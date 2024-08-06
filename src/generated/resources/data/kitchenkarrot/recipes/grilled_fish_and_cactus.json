@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "0": {
+      "item": "minecraft:cactus"
+    },
+    "1": {
+      "tag": "forge:salt"
+    },
+    "2": {
+      "tag": "forge:food/cooked_fish"
+    },
+    "3": {
+      "tag": "kitchenkarrot:grass_spices"
+    }
+  },
+  "pattern": [
+    "123",
+    " 0 "
+  ],
+  "result": {
+    "item": "kitchenkarrot:grilled_fish_and_cactus"
+  },
+  "show_notification": true
+}

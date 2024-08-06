@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "tag": "forge:salt"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:pickled_sea_pickles"
+  }
+}

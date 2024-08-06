@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "*": {
+      "tag": "forge:nuts/acorn"
+    }
+  },
+  "pattern": [
+    "* ",
+    " *"
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:acorn_oil"
+  },
+  "show_notification": true
+}

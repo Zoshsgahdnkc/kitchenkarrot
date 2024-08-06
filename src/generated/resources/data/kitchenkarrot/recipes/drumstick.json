@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:salt"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:drumstick"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "item": "minecraft:blue_dye"
+    },
+    "2": {
+      "item": "minecraft:minecart"
+    },
+    "3": {
+      "item": "minecraft:heavy_weighted_pressure_plate"
+    }
+  },
+  "pattern": [
+    "1",
+    "2",
+    "3"
+  ],
+  "result": {
+    "item": "kitchenkarrot:air_compressor"
+  },
+  "show_notification": true
+}

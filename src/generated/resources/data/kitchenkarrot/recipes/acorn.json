@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_sapling"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:acorn"
+  }
+}

@@ -1,8 +1,9 @@
-// 1.20.1	2024-02-05T11:09:08.1032694	Item Models: kitchenkarrot
+// 1.20.1	2024-08-05T19:28:04.2422322	Item Models: kitchenkarrot
 587a728a6194f49a78ce4da0a026dc1a4bbebeef assets/kitchenkarrot/models/item/acorn.json
 7f62e09445b4d6ddd57a6d2ac3b52e91243b5d04 assets/kitchenkarrot/models/item/acorn_oil.json
 46b625de364e39641dbefbe62c60af36aa6e4ab6 assets/kitchenkarrot/models/item/acorn_wine.json
 3c8fbafc9c445496d4f10f0501a1f3e68b7290d7 assets/kitchenkarrot/models/item/acorn_wine_base.json
+875288e1e5e1a359f11b3e5706d1dbbde60a032b assets/kitchenkarrot/models/item/air_compressor.json
 f2496cb834085b944a58b34347cb90f2a405c39f assets/kitchenkarrot/models/item/bacon_wrapped_potato.json
 173225df13d0226b96cdbd07a06dec1416caf803 assets/kitchenkarrot/models/item/bamboo_potato.json
 4c7cd25c5f5ff2e13060c0c295427bb03e89c0cc assets/kitchenkarrot/models/item/beef_grains.json
@@ -13,6 +14,7 @@ c3bcbc1d2b8b805de1f8f1a9c71ed521c68cfe25 assets/kitchenkarrot/models/item/bikini
 8172c158db13418326568522cc06d782e545973a assets/kitchenkarrot/models/item/birch_sap.json
 c83f2b22b963b2e82f18345f02293b378604b988 assets/kitchenkarrot/models/item/birch_sap_chocolate_bar.json
 c60f588723b7a7d33c0e20e1f645e14b6c1fe76c assets/kitchenkarrot/models/item/birch_sap_donut.json
+41196cee287c04848e0d18bdeb5a4e1a3c2332f9 assets/kitchenkarrot/models/item/brewing_barrel.json
 0c2681133b3fc26381d7859ece5a7673a8cededd assets/kitchenkarrot/models/item/buche_de_noel.json
 416ffe6a9566cea886bca33bcc11e4232d813ea6 assets/kitchenkarrot/models/item/canned_beef_potato.json
 228836f5efae5aa43c753eb828cad58da49ac380 assets/kitchenkarrot/models/item/canned_candied_apple.json
@@ -30,6 +32,7 @@ aa864eac20bb598fb44d1a1a4ab434d7672adcf5 assets/kitchenkarrot/models/item/chines
 79f585b3892d6ac91d598119b5531d7b4ae6652c assets/kitchenkarrot/models/item/chocolate_croissant.json
 9f50a30181cde31be47537224af1c6788888f59b assets/kitchenkarrot/models/item/chorus_mousse.json
 821687bb03cb598943d212532672b22c31e34280 assets/kitchenkarrot/models/item/chorus_oil.json
+829336c23c3a3a70e864e551c0a49047ee10fff5 assets/kitchenkarrot/models/item/coaster.json
 08585431163f48a38800b4cc47e953f396bcb643 assets/kitchenkarrot/models/item/cooked_vegan_beef.json
 ccf8d7cfd9a095583e3fff4da59a0e9c3bf529ae assets/kitchenkarrot/models/item/cooked_vegan_mutton.json
 1847ad13358291335372136f340aa3860ddcc032 assets/kitchenkarrot/models/item/cooked_vegan_pork.json

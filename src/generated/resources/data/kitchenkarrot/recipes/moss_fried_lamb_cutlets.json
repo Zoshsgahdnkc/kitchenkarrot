@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:moss_block"
+    },
+    {
+      "item": "minecraft:moss_block"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "tag": "forge:cooked_mutton"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:moss_fried_lamb_cutlets"
+  }
+}

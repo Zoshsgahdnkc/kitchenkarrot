@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dungeon_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:dungeon_pizza"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:dungeon_pizza"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_dungeon_pizza",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:dungeon_pizza"
+    ]
+  },
+  "sends_telemetry_event": false
+}

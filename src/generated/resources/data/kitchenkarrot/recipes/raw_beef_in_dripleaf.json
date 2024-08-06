@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:big_dripleaf"
+    },
+    {
+      "item": "minecraft:big_dripleaf"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:raw_beef_in_dripleaf"
+  }
+}

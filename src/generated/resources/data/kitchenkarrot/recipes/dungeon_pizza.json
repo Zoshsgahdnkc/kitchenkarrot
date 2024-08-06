@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "tag": "forge:milk"
+    },
+    "2": {
+      "tag": "forge:salt"
+    },
+    "3": [
+      {
+        "item": "minecraft:rotten_flesh"
+      },
+      {
+        "item": "minecraft:spider_eye"
+      }
+    ],
+    "4": {
+      "tag": "forge:crops/wheat"
+    }
+  },
+  "pattern": [
+    "121",
+    "333",
+    "444"
+  ],
+  "result": {
+    "item": "kitchenkarrot:dungeon_pizza"
+  },
+  "show_notification": true
+}

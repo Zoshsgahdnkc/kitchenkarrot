@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    },
+    {
+      "item": "kitchenkarrot:milk"
+    }
+  ],
+  "result": {
+    "item": "minecraft:milk_bucket"
+  }
+}

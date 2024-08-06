@@ -3,15 +3,15 @@
   "category": "equipment",
   "group": "kitchenkarrot",
   "key": {
-    "b": {
-      "item": "minecraft:brick"
-    },
-    "n": {
+    "1": {
       "item": "minecraft:iron_nugget"
+    },
+    "2": {
+      "item": "minecraft:brick"
     }
   },
   "pattern": [
-    "nbn"
+    "121"
   ],
   "result": {
     "count": 2,

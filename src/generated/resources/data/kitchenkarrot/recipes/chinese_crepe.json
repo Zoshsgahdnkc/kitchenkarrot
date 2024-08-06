@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "item": "kitchenkarrot:carrot_spices"
+    },
+    {
+      "tag": "kitchenkarrot:cooked_meat"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:chinese_crepe"
+  }
+}

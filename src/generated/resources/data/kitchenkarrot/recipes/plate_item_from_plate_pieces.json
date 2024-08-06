@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "1": {
+      "item": "kitchenkarrot:plate_pieces"
+    }
+  },
+  "pattern": [
+    "11",
+    "11"
+  ],
+  "result": {
+    "item": "kitchenkarrot:plate_item"
+  },
+  "show_notification": true
+}

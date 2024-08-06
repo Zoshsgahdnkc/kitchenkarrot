@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:seeds"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:seed_pie"
+  }
+}

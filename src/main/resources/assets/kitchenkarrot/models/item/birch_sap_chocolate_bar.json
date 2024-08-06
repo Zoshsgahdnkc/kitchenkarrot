@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "kitchenkarrot:item/birch_sap_chocolate_bar"
-  }
-}

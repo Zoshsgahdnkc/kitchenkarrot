@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "key": {
+    "#": {
+      "item": "minecraft:bone_meal"
+    },
+    "*": {
+      "item": "kitchenkarrot:water"
+    }
+  },
+  "pattern": [
+    "* ",
+    " #"
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:sea_salt"
+  },
+  "show_notification": true
+}

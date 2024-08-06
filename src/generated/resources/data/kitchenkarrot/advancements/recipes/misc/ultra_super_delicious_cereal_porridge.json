@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:ultra_super_delicious_cereal_porridge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_super_delicious_cereal_porridge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:ultra_super_delicious_cereal_porridge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultra_super_delicious_cereal_porridge",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:ultra_super_delicious_cereal_porridge"
+    ]
+  },
+  "sends_telemetry_event": false
+}

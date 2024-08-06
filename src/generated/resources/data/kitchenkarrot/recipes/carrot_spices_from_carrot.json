@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "kitchenkarrot:grass_spices"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kitchenkarrot:carrot_spices"
+  }
+}

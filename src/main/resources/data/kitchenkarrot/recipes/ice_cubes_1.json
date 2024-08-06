@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:ice"
-  },
-  "result": "kitchenkarrot:ice_cubes",
-  "count": 1
-}

@@ -1,0 +1,19 @@
+{
+  "type": "kitchenkarrot:add_item_modifier",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/ice"
+    },
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "minecraft:pickaxes"
+      }
+    }
+  ],
+  "item": {
+    "Count": 1,
+    "id": "kitchenkarrot:ice_cubes"
+  }
+}

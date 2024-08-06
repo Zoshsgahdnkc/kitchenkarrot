@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_moss_fried_lamb_cutlets": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:moss_fried_lamb_cutlets"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:moss_fried_lamb_cutlets"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_moss_fried_lamb_cutlets",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:moss_fried_lamb_cutlets"
+    ]
+  },
+  "sends_telemetry_event": false
+}

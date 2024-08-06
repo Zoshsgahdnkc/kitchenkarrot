@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leafy_fresh_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:leafy_fresh_chocolate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:leafy_fresh_chocolate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_leafy_fresh_chocolate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:leafy_fresh_chocolate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

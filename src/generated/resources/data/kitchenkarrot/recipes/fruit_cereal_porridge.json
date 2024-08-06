@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kitchenkarrot",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "kitchenkarrot:grilled_wheatmeal"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:fruits"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:fruit_cereal_porridge"
+  }
+}
