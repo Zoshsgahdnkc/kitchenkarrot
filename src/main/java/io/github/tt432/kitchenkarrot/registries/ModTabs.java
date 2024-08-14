@@ -2,7 +2,7 @@ package io.github.tt432.kitchenkarrot.registries;
 
 import static io.github.tt432.kitchenkarrot.Kitchenkarrot.MOD_ID;
 
-import io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry;
+import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.cocktail.CocktailProperty;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 
@@ -51,7 +51,7 @@ public class ModTabs {
             event.accept(ModItems.RUM_BASE);
             event.accept(ModItems.VODKA_BASE);
             for (CocktailProperty cocktailProperty :
-                    CocktailModelRegistry.COCKTAIL_PROPERTIES.values()) {
+                    Kitchenkarrot.getCocktailManager().getAllCocktailProperty()) {
                 ItemStack itemStack = new ItemStack(ModItems.COCKTAIL.get());
                 CocktailItem.setCocktail(itemStack, cocktailProperty);
                 event.accept(itemStack);

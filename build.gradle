@@ -173,5 +173,6 @@ spotless {
     java {
         target "src/**/java/io/github/tt432/kitchenkarrot/**/*.java"
         googleJavaFormat().aosp().formatJavadoc(false).reorderImports(true)
+        toggleOffOn()
     }
 }
