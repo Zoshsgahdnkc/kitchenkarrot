@@ -1,5 +1,5 @@
 plugins {
-    id 'net.neoforged.moddev' version '1.0.11'
+    id 'net.neoforged.moddev' version '2.0.14-beta'
     id "com.diffplug.spotless" version "7.+"
 }
 

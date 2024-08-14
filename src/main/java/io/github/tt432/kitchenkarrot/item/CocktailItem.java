@@ -152,7 +152,8 @@ public class CocktailItem extends Item {
                                         .map(EffectStack::get)
                                         .toList();
 
-                        PotionContents.addPotionTooltip(list, Component::toFlatList, 1.0F, 1.0F);
+                        PotionContents.addPotionTooltip(
+                                list, tooltipComponents::add, 1.0F, context.tickRate());
                     }
                 }
             }

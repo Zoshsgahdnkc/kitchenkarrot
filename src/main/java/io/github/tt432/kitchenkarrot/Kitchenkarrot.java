@@ -1,12 +1,12 @@
 package io.github.tt432.kitchenkarrot;
 
+import io.github.tt432.kitchenkarrot.cocktail.CocktailManager;
 import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
 import io.github.tt432.kitchenkarrot.recipes.RecipeManager;
 import io.github.tt432.kitchenkarrot.registries.*;
-import io.github.tt432.kitchenkarrot.util.CocktailManager;
 
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -14,6 +14,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 
@@ -34,13 +37,14 @@ public class Kitchenkarrot {
     public static final String VERSION = "1.21-0.5.0";
 
     private static Kitchenkarrot INSTANCE;
-    private static CocktailManager cocktailManager = new CocktailManager();
+    private static final CocktailManager cocktailManager = new CocktailManager();
 
     //    private final ModNetworking networking;
 
     public Kitchenkarrot(IEventBus bus, Dist dist, ModContainer container) {
         INSTANCE = this;
 
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         container.registerConfig(
                 ModConfig.Type.COMMON, ModCommonConfigs.COMMON, "kitchenkarrot-common.toml");
         ModBlocks.BLOCKS.register(bus);
@@ -57,11 +61,11 @@ public class Kitchenkarrot {
 
         RecipeManager.register(bus);
 
-        NeoForge.EVENT_BUS.addListener(this::reloadDatapack);
+        NeoForge.EVENT_BUS.addListener(this::reloadDataPack);
         //        networking = new ModNetworking();
     }
 
-    public void reloadDatapack(AddReloadListenerEvent event) {
+    public void reloadDataPack(AddReloadListenerEvent event) {
         event.addListener(cocktailManager);
     }
 

@@ -82,9 +82,9 @@ public class ModFood extends ModItem {
         if (this.effectEntries != null && this.effectEntries.length > 0) {
             PotionContents.addPotionTooltip(
                     Arrays.stream(effectEntries).map(e -> e.effect.get()).toList(),
-                    Component::toFlatList,
+                    tooltipComponents::add,
                     1.0F,
-                    1.0F);
+                    context.tickRate());
         }
     }
 

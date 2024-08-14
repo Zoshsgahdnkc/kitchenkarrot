@@ -1,4 +1,4 @@
-package io.github.tt432.kitchenkarrot.util;
+package io.github.tt432.kitchenkarrot.cocktail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
@@ -8,7 +8,6 @@ import com.mojang.serialization.DynamicOps;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry;
-import io.github.tt432.kitchenkarrot.cocktail.CocktailProperty;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 
 import net.minecraft.core.registries.Registries;

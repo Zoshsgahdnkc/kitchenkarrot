@@ -2,7 +2,6 @@ package io.github.tt432.kitchenkarrot.client.cocktail;
 
 import static io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry.to;
 
-import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 
 import net.minecraft.client.Minecraft;
@@ -82,11 +81,6 @@ public class CocktailBakedModel implements BakedModel {
                         && modelManager.getMissingModel() != modelManager.getModel(to(cocktail))) {
                     model = modelManager.getModel(to(cocktail));
                 } else {
-                    if (cocktail != null) {
-                        Kitchenkarrot.LOGGER.warn("Miss cocktail texture {} for {}", to(cocktail), p_173466_.getItem());
-                    } else {
-                        Kitchenkarrot.LOGGER.warn("Miss cocktailProperty");
-                    }
                     model = modelManager.getModel(ModelResourceLocation.standalone(CocktailItem.UNKNOWN_COCKTAIL));
                 }
                 return model;
