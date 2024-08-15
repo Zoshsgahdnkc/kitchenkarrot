@@ -1,7 +1,5 @@
 package io.github.tt432.kitchenkarrot.item;
 
-import io.github.tt432.kitchenkarrot.block.PlateHolderMap;
-
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,8 +22,10 @@ public class ModItem extends Item {
             List<Component> tooltipComponents,
             TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-        if (PlateHolderMap.canPutOnPlate(stack.getItem())) {
-            tooltipComponents.add(Component.translatable("info.kitchenkarrot.can_be_dished"));
-        }
+        // use Mixin version
+        //        if (PlateHolderMap.canPutOnPlate(stack.getItem())) {
+        //
+        // tooltipComponents.add(Component.translatable("info.kitchenkarrot.can_be_dished"));
+        //        }
     }
 }

@@ -136,17 +136,20 @@ public class EmptyPlateItem extends ModFood {
             BlockPos pos, Level level, ItemStack stack, BlockState state) {
         BlockState blockState = state;
 
-        Map<String, String> properties =
-                stack.getComponents().get(DataComponents.BLOCK_STATE).properties();
-        StateDefinition<Block, BlockState> stateDefinition = state.getBlock().getStateDefinition();
-        for (String s : properties.keySet()) {
-            Property<?> property = stateDefinition.getProperty(s);
-            if (property != null) {
-                String s1 = Objects.requireNonNull(properties.get(s));
-                blockState = updateState(blockState, property, s1);
+        if (stack.has(DataComponents.BLOCK_STATE)) {
+            Map<String, String> properties =
+                    Objects.requireNonNull(stack.getComponents().get(DataComponents.BLOCK_STATE))
+                            .properties();
+            StateDefinition<Block, BlockState> stateDefinition =
+                    state.getBlock().getStateDefinition();
+            for (String s : properties.keySet()) {
+                Property<?> property = stateDefinition.getProperty(s);
+                if (property != null) {
+                    String s1 = Objects.requireNonNull(properties.get(s));
+                    blockState = updateState(blockState, property, s1);
+                }
             }
         }
-
         if (blockState != state) {
             level.setBlock(pos, blockState, 2);
         }
@@ -177,7 +180,7 @@ public class EmptyPlateItem extends ModFood {
     public static void updateCustomBlockEntityTag(
             Level level, @Nullable Player player, BlockPos pos, ItemStack stack) {
         MinecraftServer server = level.getServer();
-        if (server != null) {
+        if (server != null && stack.has(DataComponents.BLOCK_ENTITY_DATA)) {
             CompoundTag compoundTag = Objects.requireNonNull(getBlockEntityData(stack)).copyTag();
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity != null) {

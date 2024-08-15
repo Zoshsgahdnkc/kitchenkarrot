@@ -69,9 +69,14 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
                                                 ? PlateModelRegistry.DEFAULT_NAME
                                                 : ResourceLocation.fromNamespaceAndPath(
                                                         Kitchenkarrot.MOD_ID,
-                                                        stack.getItem() + "_" + stack.getCount())));
+                                                        ResourceLocation.parse(
+                                                                                stack.getItem()
+                                                                                        .toString())
+                                                                        .getPath()
+                                                                + "_"
+                                                                + stack.getCount())));
 
-                poseStack.popPose();
+                poseStack.pushPose();
                 BlockState state = plateBlockEntity.getBlockState();
                 poseStack.translate(0.5, 0.5, 0.5);
                 poseStack.mulPose(

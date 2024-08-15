@@ -28,10 +28,10 @@ public class CocktailManager extends SimpleJsonResourceReloadListener {
     }
 
     @Override
-    protected void apply(
-            Map<ResourceLocation, JsonElement> resourceList,
-            ResourceManager resourceManager,
-            ProfilerFiller profiler) {
+    protected Map<ResourceLocation, JsonElement> prepare(
+            ResourceManager resourceManager, ProfilerFiller profiler) {
+        Map<ResourceLocation, JsonElement> resourceList = super.prepare(resourceManager, profiler);
+
         // copy form neoforge
         DynamicOps<JsonElement> ops = this.makeConditionalOps();
         ImmutableMap.Builder<ResourceLocation, CocktailProperty> builder = ImmutableMap.builder();
@@ -52,7 +52,15 @@ public class CocktailManager extends SimpleJsonResourceReloadListener {
                     .ifPresent(cocktailProperty -> builder.put(location, cocktailProperty));
         }
         this.registeredCocktailProperty = builder.build();
+
+        return resourceList;
     }
+
+    @Override
+    protected void apply(
+            Map<ResourceLocation, JsonElement> resourceList,
+            ResourceManager resourceManager,
+            ProfilerFiller profiler) {}
 
     public Collection<CocktailProperty> getAllCocktailProperty() {
         return registeredCocktailProperty.values();

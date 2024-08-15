@@ -6,7 +6,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,20 +18,19 @@ import java.util.List;
  * @author DustW
  **/
 @Mixin(Item.class)
-
-// FIND A WAY TO RENDER IT FIRST!!!
-
 public class MixinItem {
     @SuppressWarnings("all")
     @Inject(method = "appendHoverText", at = @At("RETURN"), cancellable = true)
     public void KK$appendHoverText(
             ItemStack stack,
-            Level level,
-            List<Component> tooltip,
+            Item.TooltipContext context,
+            List<Component> tooltipComponents,
             TooltipFlag tooltipFlag,
             CallbackInfo ci) {
         if (PlateHolderMap.canPutOnPlate(stack.getItem())) {
-            tooltip.add(Component.translatable("info.kitchenkarrot.can_be_dished"));
+            if (tooltipComponents.contains(
+                    Component.translatable("info.kitchenkarrot.can_be_dished"))) return;
+            tooltipComponents.add(Component.translatable("info.kitchenkarrot.can_be_dished"));
         }
     }
 }

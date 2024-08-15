@@ -2,6 +2,7 @@ package io.github.tt432.kitchenkarrot.mixin;
 
 import io.github.tt432.kitchenkarrot.registries.ModEffects;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 
@@ -17,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  **/
 @Mixin(MobEffectInstance.class)
 public class MixinMobEffectInstance {
-    @Shadow @Final private MobEffect effect;
+    @Shadow @Final private Holder<MobEffect> effect;
 
     @Shadow private int amplifier;
 
@@ -25,7 +26,7 @@ public class MixinMobEffectInstance {
 
     @Inject(method = "update", at = @At("HEAD"), cancellable = true)
     private void KK$update(MobEffectInstance pOther, CallbackInfoReturnable<Boolean> cir) {
-        if (this.effect == ModEffects.TIPSY.get()) {
+        if (this.effect == ModEffects.TIPSY) {
             amplifier += 1;
             duration = pOther.getDuration();
             cir.setReturnValue(true);
