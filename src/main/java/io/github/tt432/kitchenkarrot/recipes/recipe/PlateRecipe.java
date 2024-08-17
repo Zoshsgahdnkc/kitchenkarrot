@@ -37,8 +37,9 @@ public class PlateRecipe extends BaseRecipe {
                                                     .fieldOf("result")
                                                     .forGetter(plateRecipe -> plateRecipe.result),
                                             Ingredient.CODEC
-                                                    .fieldOf("tool")
-                                                    .orElse(Ingredient.of(ModItemTags.KNIFE_ITEM))
+                                                    .optionalFieldOf(
+                                                            "tool",
+                                                            Ingredient.of(ModItemTags.KNIFE_ITEM))
                                                     .forGetter(plateRecipe -> plateRecipe.tool))
                                     .apply(builder, PlateRecipe::new));
 

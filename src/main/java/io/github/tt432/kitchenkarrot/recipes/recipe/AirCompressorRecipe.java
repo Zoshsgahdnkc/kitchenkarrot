@@ -31,9 +31,9 @@ public class AirCompressorRecipe extends BaseRecipe {
             RecordCodecBuilder.mapCodec(
                     builder ->
                             builder.group(
-                                            Ingredient.LIST_CODEC_NONEMPTY
-                                                    .fieldOf("ingredient")
-                                                    .orElse(
+                                            NonNullList.codecOf(Ingredient.CODEC)
+                                                    .optionalFieldOf(
+                                                            "ingredient",
                                                             NonNullList.withSize(
                                                                     4, Ingredient.EMPTY))
                                                     .forGetter(AirCompressorRecipe::getIngredient),
@@ -51,9 +51,7 @@ public class AirCompressorRecipe extends BaseRecipe {
 
     public static final StreamCodec<RegistryFriendlyByteBuf, AirCompressorRecipe> STREAM_CODEC =
             StreamCodec.composite(
-                    ByteBufCodecs.fromCodec(
-                            Ingredient.LIST_CODEC_NONEMPTY.orElse(
-                                    NonNullList.withSize(4, Ingredient.EMPTY))),
+                    ByteBufCodecs.fromCodec(NonNullList.codecOf(Ingredient.CODEC)),
                     recipe -> recipe.ingredient,
                     ByteBufCodecs.INT,
                     recipe -> recipe.craftingTime,
@@ -64,14 +62,17 @@ public class AirCompressorRecipe extends BaseRecipe {
                     AirCompressorRecipe::new);
 
     public AirCompressorRecipe(
-            List<Ingredient> ingredient, int craftingTime, Ingredient container, ItemStack result) {
+            NonNullList<Ingredient> ingredient,
+            int craftingTime,
+            Ingredient container,
+            ItemStack result) {
         this.ingredient = ingredient;
         this.craftingTime = craftingTime;
         this.container = container;
         this.result = result;
     }
 
-    List<Ingredient> ingredient;
+    NonNullList<Ingredient> ingredient;
     int craftingTime;
     Ingredient container;
     ItemStack result;
@@ -86,7 +87,7 @@ public class AirCompressorRecipe extends BaseRecipe {
         return result.getDescriptionId();
     }
 
-    public List<Ingredient> getIngredient() {
+    public NonNullList<Ingredient> getIngredient() {
         return ingredient;
     }
 
