@@ -39,7 +39,9 @@ public class Kitchenkarrot {
     public Kitchenkarrot(IEventBus bus, Dist dist, ModContainer container) {
         INSTANCE = this;
 
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        if (dist.isClient()) {
+            container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        }
         container.registerConfig(
                 ModConfig.Type.COMMON, ModCommonConfigs.COMMON, "kitchenkarrot-common.toml");
         ModBlocks.BLOCKS.register(bus);
