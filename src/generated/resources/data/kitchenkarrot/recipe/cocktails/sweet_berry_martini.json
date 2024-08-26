@@ -1,10 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [],
-    "id": "kitchenkarrot:cocktails/sweet_berry_martini"
-  },
+  "cocktail_property": "kitchenkarrot:sweet_berry_martini",
   "content": {
     "craftingtime": 75,
     "hunger": 7,

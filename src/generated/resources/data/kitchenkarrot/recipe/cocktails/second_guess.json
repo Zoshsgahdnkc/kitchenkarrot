@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 3600,
-        "id": "minecraft:slow_falling",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/second_guess"
-  },
+  "cocktail_property": "kitchenkarrot:second_guess",
   "content": {
     "craftingtime": 40,
     "hunger": 4,

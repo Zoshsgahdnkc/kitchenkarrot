@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 12000,
-        "id": "minecraft:absorption",
-        "lvl": 2
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/sculked_garden"
-  },
+  "cocktail_property": "kitchenkarrot:sculked_garden",
   "content": {
     "craftingtime": 140,
     "hunger": 0,

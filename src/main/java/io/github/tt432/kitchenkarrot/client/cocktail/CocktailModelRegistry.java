@@ -1,14 +1,14 @@
 package io.github.tt432.kitchenkarrot.client.cocktail;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
-import io.github.tt432.kitchenkarrot.cocktail.CocktailProperty;
+import io.github.tt432.kitchenkarrot.item.CocktailItem;
+import io.github.tt432.kitchenkarrot.registries.ModCocktails;
 
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +17,6 @@ import java.util.Map;
  * @author DustW
  **/
 public class CocktailModelRegistry {
-    public static final ResourceKey<Registry<CocktailProperty>> COCKTAIL_REGISTRY_KEY =
-            ResourceKey.createRegistryKey(Kitchenkarrot.getModRL("cocktail"));
-
     private static final Map<ResourceLocation, BakedModel> MODEL_MAP = new HashMap<>();
 
     public static BakedModel get(ResourceLocation resourceLocation) {
@@ -49,10 +46,10 @@ public class CocktailModelRegistry {
 
     @SuppressWarnings("unused")
     public static void register(ModelEvent.RegisterAdditional e) {
-        for (CocktailProperty cocktailProperty :
-                Kitchenkarrot.getCocktailManager().getAllCocktailProperty()) {
-            Kitchenkarrot.LOGGER.info("Register cocktailProperty model: {}", cocktailProperty.id());
-            e.register(to(cocktailProperty.id()));
-        }
+        e.register(to(CocktailItem.UNKNOWN_COCKTAIL));
+
+        ModCocktails.COCKTAIL_PROPERTIES.getEntries().stream()
+                .map(DeferredHolder::get)
+                .forEach(cocktailProperty -> e.register(to(cocktailProperty.id())));
     }
 }

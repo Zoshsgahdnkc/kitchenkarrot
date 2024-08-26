@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fishermens_delight": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:fishermens_delight"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:fishermens_delight"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fishermens_delight"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:fishermens_delight"
+    ]
+  }
+}

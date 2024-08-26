@@ -2,10 +2,10 @@ package io.github.tt432.kitchenkarrot.item;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.cocktail.CocktailProperty;
-import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.recipes.object.EffectStack;
 import io.github.tt432.kitchenkarrot.recipes.recipe.CocktailRecipe;
+import io.github.tt432.kitchenkarrot.registries.ModDataComponents;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 
@@ -29,11 +29,14 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -60,6 +63,7 @@ public class CocktailItem extends Item {
     }
 
     @Override
+    @NotNull
     public ItemStack finishUsingItem(ItemStack stack, Level pLevel, LivingEntity livingEntity) {
         if (livingEntity instanceof ServerPlayer player) {
             CocktailProperty cocktailProperty = getCocktail(stack);
@@ -71,7 +75,7 @@ public class CocktailItem extends Item {
                     if (!player.getAbilities().instabuild) {
                         stack.shrink(1);
                     }
-                    for (EffectStack effectStack : recipe.cocktailProperty.effectStack()) {
+                    for (EffectStack effectStack : getCocktail(stack).effectStack()) {
                         player.addEffect(effectStack.get());
                     }
                 } else if (cocktail.equals(UNKNOWN_COCKTAIL)) {
@@ -107,19 +111,17 @@ public class CocktailItem extends Item {
     }
 
     @Override
+    @NotNull
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.DRINK;
     }
 
     @Override
+    @NotNull
     public String getDescriptionId(ItemStack stack) {
         CocktailProperty name = getCocktail(stack);
 
-        if (name != null) {
-            return name.toString().replace(":", ".");
-        }
-
-        return super.getDescriptionId(stack);
+        return name.toString().replace(":", ".");
     }
 
     @Override
@@ -134,42 +136,30 @@ public class CocktailItem extends Item {
             tooltipComponents.add(
                     Component.translatable(name.toString().replace(":", ".") + ".tooltip"));
             if (Minecraft.getInstance().level != null) {
-                CocktailRecipe recipe =
-                        get(
-                                Minecraft.getInstance().level,
-                                Objects.requireNonNull(getCocktail(stack)));
-                if (recipe != null) {
-                    tooltipComponents.add(
-                            Component.translatable(
-                                    "item.cocktail.author", recipe.cocktailProperty.author()));
-                    CocktailRecipe cocktailRecipe =
-                            get(
-                                    Minecraft.getInstance().level,
-                                    Objects.requireNonNull(getCocktail(stack)));
-                    if (cocktailRecipe != null) {
-                        List<MobEffectInstance> list =
-                                cocktailRecipe.cocktailProperty.effectStack().stream()
-                                        .map(EffectStack::get)
-                                        .toList();
 
-                        PotionContents.addPotionTooltip(
-                                list, tooltipComponents::add, 1.0F, context.tickRate());
-                    }
-                }
+                tooltipComponents.add(
+                        Component.translatable(
+                                "item.cocktail.author", getCocktail(stack).author()));
+
+                List<MobEffectInstance> list =
+                        getCocktail(stack).effectStack().stream().map(EffectStack::get).toList();
+
+                PotionContents.addPotionTooltip(
+                        list, tooltipComponents::add, 1.0F, context.tickRate());
             }
         }
     }
 
-    @Nullable
+    @Nonnull
     public static CocktailProperty getCocktail(ItemStack itemStack) {
-        if (itemStack.getComponents().has(KKDataComponents.COCKTAIL.get())) {
-            return itemStack.get(KKDataComponents.COCKTAIL);
+        if (itemStack.getComponents().has(ModDataComponents.COCKTAIL.get())) {
+            return Objects.requireNonNull(itemStack.get(ModDataComponents.COCKTAIL));
         }
-        return null;
+        return CocktailItem.UNKNOWN_COCKTAIL_PROPERTY;
     }
 
     public static void setCocktail(ItemStack itemStack, CocktailProperty cocktailProperty) {
-        itemStack.set(KKDataComponents.COCKTAIL, cocktailProperty);
+        itemStack.set(ModDataComponents.COCKTAIL, cocktailProperty);
     }
 
     @Nullable

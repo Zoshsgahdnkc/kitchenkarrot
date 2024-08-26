@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * @author DustW
  **/
+// TODO rewrite this
 public class SyncDataManager {
     private final List<SyncData<?>> syncDataList = new ArrayList<>();
 

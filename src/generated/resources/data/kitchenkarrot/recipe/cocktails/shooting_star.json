@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 6000,
-        "id": "minecraft:night_vision",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/shooting_star"
-  },
+  "cocktail_property": "kitchenkarrot:shooting_star",
   "content": {
     "craftingtime": 100,
     "hunger": 2,

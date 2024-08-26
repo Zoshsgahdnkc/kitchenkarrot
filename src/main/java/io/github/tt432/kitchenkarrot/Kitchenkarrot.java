@@ -1,12 +1,11 @@
 package io.github.tt432.kitchenkarrot;
 
-import io.github.tt432.kitchenkarrot.cocktail.CocktailManager;
-import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
 import io.github.tt432.kitchenkarrot.recipes.RecipeManager;
 import io.github.tt432.kitchenkarrot.registries.*;
+import io.github.tt432.kitchenkarrot.registries.ModDataComponents;
 
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -16,8 +15,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +33,6 @@ public class Kitchenkarrot {
     public static final String VERSION = "1.21-0.5.0";
 
     private static Kitchenkarrot INSTANCE;
-    private static final CocktailManager cocktailManager = new CocktailManager();
 
     //    private final ModNetworking networking;
 
@@ -56,16 +52,11 @@ public class Kitchenkarrot {
         ModEntities.ENTITYS.register(bus);
         ModGlobalLootModifiers.GLM.register(bus);
         ModEffects.EFFECTS.register(bus);
-        KKDataComponents.DATA_COMPONENTS.register(bus);
+        ModDataComponents.DATA_COMPONENTS.register(bus);
+
+        ModCocktails.COCKTAIL_PROPERTIES.register(bus);
 
         RecipeManager.register(bus);
-
-        NeoForge.EVENT_BUS.addListener(this::reloadDataPack);
-        //        networking = new ModNetworking();
-    }
-
-    public void reloadDataPack(AddReloadListenerEvent event) {
-        event.addListener(cocktailManager);
     }
 
     public static Kitchenkarrot getInstance() {
@@ -75,12 +66,4 @@ public class Kitchenkarrot {
     public static ResourceLocation getModRL(String path) {
         return ResourceLocation.fromNamespaceAndPath(Kitchenkarrot.MOD_ID, path);
     }
-
-    public static CocktailManager getCocktailManager() {
-        return cocktailManager;
-    }
-
-    //    public ModNetworking getNetworking() {
-    //        return networking;
-    //    }
 }

@@ -22,13 +22,11 @@ public class EffectStack {
                             builder.group(
                                             Codec.STRING
                                                     .fieldOf("id")
-                                                    .forGetter(effectStack -> effectStack.id),
-                                            Codec.INT
-                                                    .fieldOf("lvl")
-                                                    .forGetter(effectStack -> effectStack.lvl),
+                                                    .forGetter(EffectStack::getId),
+                                            Codec.INT.fieldOf("lvl").forGetter(EffectStack::getLvl),
                                             Codec.INT
                                                     .fieldOf("duration")
-                                                    .forGetter(effectStack -> effectStack.duration))
+                                                    .forGetter(EffectStack::getDuration))
                                     .apply(builder, EffectStack::new));
 
     public EffectStack(String id, int lvl, int duration) {
@@ -37,11 +35,23 @@ public class EffectStack {
         this.duration = duration;
     }
 
-    String id;
-    int lvl;
-    int duration;
+    private String id;
+    private int lvl;
+    private int duration;
 
     private Supplier<MobEffectInstance> cache;
+
+    public String getId() {
+        return id;
+    }
+
+    public int getLvl() {
+        return lvl;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
 
     public MobEffectInstance get() {
         if (cache == null) {

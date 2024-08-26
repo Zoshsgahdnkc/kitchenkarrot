@@ -1,21 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 12000,
-        "id": "minecraft:strength",
-        "lvl": 0
-      },
-      {
-        "duration": 100,
-        "id": "minecraft:blindness",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/red_lizard"
-  },
+  "cocktail_property": "kitchenkarrot:red_lizard",
   "content": {
     "craftingtime": 95,
     "hunger": 0,

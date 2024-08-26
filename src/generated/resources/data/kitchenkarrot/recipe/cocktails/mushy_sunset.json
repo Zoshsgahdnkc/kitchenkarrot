@@ -1,10 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [],
-    "id": "kitchenkarrot:cocktails/mushy_sunset"
-  },
+  "cocktail_property": "kitchenkarrot:mushy_sunset",
   "content": {
     "craftingtime": 50,
     "hunger": 9,

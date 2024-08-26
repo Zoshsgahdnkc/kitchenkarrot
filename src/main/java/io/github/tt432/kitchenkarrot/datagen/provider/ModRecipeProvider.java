@@ -6,6 +6,7 @@ import io.github.tt432.kitchenkarrot.datagen.provider.recipe.*;
 import io.github.tt432.kitchenkarrot.recipes.recipe.BrewingBarrelRecipe;
 import io.github.tt432.kitchenkarrot.recipes.recipe.CocktailRecipe;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
+import io.github.tt432.kitchenkarrot.registries.ModCocktails;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.tag.ModItemTags;
 
@@ -46,14 +47,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             has(ModItemTags.OIL);
     protected static final Criterion<InventoryChangeTrigger.TriggerInstance> HAS_SALT =
             has(ModItemTags.SALT);
-    private final CompletableFuture<HolderLookup.Provider> cocktailProvider;
 
     public ModRecipeProvider(
-            PackOutput output,
-            CompletableFuture<HolderLookup.Provider> registries,
-            CompletableFuture<HolderLookup.Provider> cocktailProvider) {
+            PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
-        this.cocktailProvider = cocktailProvider;
     }
 
     @Override
@@ -166,8 +163,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void genCocktails(RecipeOutput recipeOutput) {
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("bane_of_arthropods"),
+                ModCocktails.BANE_OF_ARTHROPODS,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.ACORN_WINE_BASE),
@@ -181,8 +177,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("birch_sap_vodka"),
+                ModCocktails.BIRCH_SAP_VODKA,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.VODKA_BASE),
@@ -196,8 +191,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("black_pearl"),
+                ModCocktails.BLACK_PEARL,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -211,8 +205,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("jacks_story"),
+                ModCocktails.JACKS_STORY,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -226,8 +219,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("july_21"),
+                ModCocktails.JULY_21,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.MEAD_BASE),
@@ -241,8 +233,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("light_yellow_firefly"),
+                ModCocktails.LIGHT_YELLOW_FIREFLY,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -256,8 +247,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("milk_acorn_wine"),
+                ModCocktails.MILK_ACORN_WINE,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.ACORN_WINE_BASE),
@@ -271,8 +261,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("mushy_sunset"),
+                ModCocktails.MUSHY_SUNSET,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.VODKA_BASE),
@@ -286,8 +275,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("nebula_chronicles"),
+                ModCocktails.NEBULA_CHRONICLES,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.ACORN_WINE_BASE),
@@ -301,8 +289,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("red_lizard"),
+                ModCocktails.RED_LIZARD,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -316,8 +303,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("sculked_garden"),
+                ModCocktails.SCULKED_GARDEN,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -331,8 +317,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("second_guess"),
+                ModCocktails.SECOND_GUESS,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.ACORN_WINE_BASE),
@@ -346,8 +331,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("shanghai_beach"),
+                ModCocktails.SHANGHAI_BEACH,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.VODKA_BASE),
@@ -361,8 +345,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("shooting_star"),
+                ModCocktails.SHOOTING_STAR,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.VODKA_BASE),
@@ -376,8 +359,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("slimy_ball"),
+                ModCocktails.SLIMY_BALL,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.MEAD_BASE),
@@ -391,8 +373,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("sweet_berry_martini"),
+                ModCocktails.SWEET_BERRY_MARTINI,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.ACORN_WINE_BASE),
@@ -406,8 +387,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("tears_of_stanley"),
+                ModCocktails.TEARS_OF_STANLEY,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -421,8 +401,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("tsundere_heroine"),
+                ModCocktails.TSUNDERE_HEROINE,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.VODKA_BASE),
@@ -436,8 +415,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("twilight_forest"),
+                ModCocktails.TWILIGHT_FOREST,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -451,8 +429,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         CocktailRecipeBuilder.cocktail(
                 recipeOutput,
-                cocktailProvider,
-                RL("yura_punk"),
+                ModCocktails.YURA_PUNK,
                 new CocktailRecipe.Content(
                         List.of(
                                 Ingredient.of(ModItems.RUM_BASE),
@@ -799,7 +776,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void genStoneCutting(RecipeOutput recipeOutput) {
         RecipeProvider.stonecutterResultFromBase(
-                recipeOutput, RecipeCategory.MISC, ModItems.ACORN.get(), Items.OAK_SAPLING);
+                recipeOutput, RecipeCategory.MISC, ModItems.ACORN, Items.OAK_SAPLING);
         RecipeProvider.stonecutterResultFromBase(
                 recipeOutput, RecipeCategory.MISC, ModItems.PLATE_PIECES, ModItems.EMPTY_PLATE, 3);
 
@@ -1481,8 +1458,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static ModShapelessRecipeBuilder foodShapeless(DeferredItem<Item> food, int count) {
-        return ModShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, food.get(), count)
-                .group(KK);
+        return ModShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, food, count).group(KK);
     }
 
     protected static ResourceLocation RL(String string) {

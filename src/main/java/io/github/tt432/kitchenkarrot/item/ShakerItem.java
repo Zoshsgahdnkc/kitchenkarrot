@@ -2,8 +2,8 @@ package io.github.tt432.kitchenkarrot.item;
 
 import static io.github.tt432.kitchenkarrot.registries.ModItems.cocktailProperties;
 
-import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.menu.ShakerMenu;
+import io.github.tt432.kitchenkarrot.registries.ModDataComponents;
 import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import io.github.tt432.kitchenkarrot.util.SoundUtil;
 
@@ -99,19 +99,19 @@ public class ShakerItem extends Item {
     }
 
     public static void setFinish(ItemStack stack, boolean finish) {
-        stack.set(KKDataComponents.FINISH, finish);
+        stack.set(ModDataComponents.FINISH, finish);
     }
 
     public static boolean getFinish(ItemStack stack) {
-        return stack.getComponents().getOrDefault(KKDataComponents.FINISH.get(), false);
+        return stack.getComponents().getOrDefault(ModDataComponents.FINISH.get(), false);
     }
 
     public static void setRecipeTime(ItemStack stack, int time) {
-        stack.set(KKDataComponents.RECIPE_TIME, time);
+        stack.set(ModDataComponents.RECIPE_TIME, time);
     }
 
     public static int getRecipeTime(ItemStack stack) {
-        return stack.getComponents().getOrDefault(KKDataComponents.RECIPE_TIME.get(), 0);
+        return stack.getComponents().getOrDefault(ModDataComponents.RECIPE_TIME.get(), 0);
     }
 
     @Override

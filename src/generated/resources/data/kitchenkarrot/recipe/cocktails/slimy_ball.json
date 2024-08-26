@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 4800,
-        "id": "minecraft:jump_boost",
-        "lvl": 8
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/slimy_ball"
-  },
+  "cocktail_property": "kitchenkarrot:slimy_ball",
   "content": {
     "craftingtime": 100,
     "hunger": 3,

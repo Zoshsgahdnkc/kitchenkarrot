@@ -7,11 +7,9 @@
   "mixins": [
     "MixinItem",
     "MixinLivingEntity",
-    "MixinMobEffectInstance",
-    "MixinReloadableServerResources"
+    "MixinMobEffectInstance"
   ],
   "client": [
-    "MixinMinecraft"
   ],
   "injectors": {
     "defaultRequire": 1

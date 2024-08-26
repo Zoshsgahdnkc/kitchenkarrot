@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_egg_tart": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:egg_tart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:egg_tart"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_egg_tart"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:egg_tart"
+    ]
+  }
+}

@@ -7,10 +7,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.github.tt432.kitchenkarrot.cocktail.CocktailProperty;
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 import io.github.tt432.kitchenkarrot.recipes.base.BaseRecipe;
+import io.github.tt432.kitchenkarrot.registries.ModCocktails;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.registries.RecipeSerializers;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -33,9 +35,12 @@ public class CocktailRecipe extends BaseRecipe {
             RecordCodecBuilder.mapCodec(
                     builder ->
                             builder.group(
-                                            CocktailProperty.CODEC
+                                            ModCocktails.COCKTAILS_REGISTRY
+                                                    .holderByNameCodec()
                                                     .fieldOf("cocktail_property")
-                                                    .forGetter(recipe -> recipe.cocktailProperty),
+                                                    .forGetter(
+                                                            recipe ->
+                                                                    recipe.cocktailPropertyHolder),
                                             Content.CODEC
                                                     .fieldOf("content")
                                                     .forGetter(recipe -> recipe.content))
@@ -43,17 +48,17 @@ public class CocktailRecipe extends BaseRecipe {
 
     public static final StreamCodec<RegistryFriendlyByteBuf, CocktailRecipe> STREAM_CODEC =
             StreamCodec.composite(
-                    ByteBufCodecs.fromCodec(CocktailProperty.CODEC),
-                    recipe -> recipe.cocktailProperty,
+                    ByteBufCodecs.fromCodec(ModCocktails.COCKTAILS_REGISTRY.holderByNameCodec()),
+                    recipe -> recipe.cocktailPropertyHolder,
                     Content.STREAM_CODEC,
                     recipe -> recipe.content,
                     CocktailRecipe::new);
 
     public Content content;
-    public CocktailProperty cocktailProperty;
+    public Holder<CocktailProperty> cocktailPropertyHolder;
 
-    public CocktailRecipe(CocktailProperty cocktailProperty, Content content) {
-        this.cocktailProperty = cocktailProperty;
+    public CocktailRecipe(Holder<CocktailProperty> cocktailPropertyHolder, Content content) {
+        this.cocktailPropertyHolder = cocktailPropertyHolder;
         this.content = content;
     }
 
@@ -64,7 +69,7 @@ public class CocktailRecipe extends BaseRecipe {
 
     @Override
     public String getId() {
-        return cocktailProperty.id().getPath();
+        return cocktailPropertyHolder.value().id().getPath();
     }
 
     ItemStack result;
@@ -73,7 +78,7 @@ public class CocktailRecipe extends BaseRecipe {
     public ItemStack getResultItem(HolderLookup.Provider provider) {
         if (result == null) {
             result = new ItemStack(ModItems.COCKTAIL.get());
-            CocktailItem.setCocktail(result, cocktailProperty);
+            CocktailItem.setCocktail(result, cocktailPropertyHolder.value());
         }
         return result.copy();
     }

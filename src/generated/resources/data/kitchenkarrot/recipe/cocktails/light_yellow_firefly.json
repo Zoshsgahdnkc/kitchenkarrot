@@ -1,21 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 2400,
-        "id": "minecraft:invisibility",
-        "lvl": 0
-      },
-      {
-        "duration": 2400,
-        "id": "minecraft:glowing",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/light_yellow_firefly"
-  },
+  "cocktail_property": "kitchenkarrot:light_yellow_firefly",
   "content": {
     "craftingtime": 150,
     "hunger": 6,

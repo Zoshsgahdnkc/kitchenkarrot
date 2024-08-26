@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 600,
-        "id": "minecraft:nausea",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/bane_of_arthropods"
-  },
+  "cocktail_property": "kitchenkarrot:bane_of_arthropods",
   "content": {
     "craftingtime": 60,
     "hunger": 6,

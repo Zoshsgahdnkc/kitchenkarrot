@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 3000,
-        "id": "minecraft:regeneration",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/birch_sap_vodka"
-  },
+  "cocktail_property": "kitchenkarrot:birch_sap_vodka",
   "content": {
     "craftingtime": 80,
     "hunger": 1,

@@ -8,6 +8,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 /**
  * @author DustW
  **/
+@Deprecated
 public class RecipeFluidStack {
     public static final Codec<RecipeFluidStack> CODEC =
             RecordCodecBuilder.create(

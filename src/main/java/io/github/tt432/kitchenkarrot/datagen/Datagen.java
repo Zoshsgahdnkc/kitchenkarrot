@@ -1,7 +1,6 @@
 package io.github.tt432.kitchenkarrot.datagen;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
-import io.github.tt432.kitchenkarrot.datagen.provider.ModCocktailProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.ModGLMProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.ModItemModelProvider;
 import io.github.tt432.kitchenkarrot.datagen.provider.ModRecipeProvider;
@@ -28,14 +27,10 @@ public class Datagen {
         ExistingFileHelper helper = e.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = e.getLookupProvider();
 
-        CompletableFuture<HolderLookup.Provider> cocktailProvider =
-                generator
-                        .addProvider(true, new ModCocktailProvider(output, lookupProvider))
-                        .getRegistryProvider();
-
         ModBlockTagsProvider modBlockTagsProvider =
                 generator.addProvider(
                         true, new ModBlockTagsProvider(output, lookupProvider, helper));
+
         generator.addProvider(
                 true,
                 new ModItemTagsProvider(
@@ -43,8 +38,7 @@ public class Datagen {
 
         generator.addProvider(true, new ModLootTableProvider(output, lookupProvider));
         generator.addProvider(true, new ModGLMProvider(output, lookupProvider));
-        generator.addProvider(
-                true, new ModRecipeProvider(output, lookupProvider, cocktailProvider));
+        generator.addProvider(true, new ModRecipeProvider(output, lookupProvider));
         generator.addProvider(true, new ModItemModelProvider(output, helper));
     }
 }

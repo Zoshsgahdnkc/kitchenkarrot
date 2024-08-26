@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crispy_bread_with_kelp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:crispy_bread_with_kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:crispy_bread_with_kelp"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crispy_bread_with_kelp"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:crispy_bread_with_kelp"
+    ]
+  }
+}

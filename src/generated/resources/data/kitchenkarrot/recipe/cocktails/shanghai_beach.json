@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 4800,
-        "id": "minecraft:strength",
-        "lvl": 2
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/shanghai_beach"
-  },
+  "cocktail_property": "kitchenkarrot:shanghai_beach",
   "content": {
     "craftingtime": 100,
     "hunger": 3,

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:fries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:fries"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fries"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:fries"
+    ]
+  }
+}

@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 4800,
-        "id": "minecraft:resistance",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/nebula_chronicles"
-  },
+  "cocktail_property": "kitchenkarrot:nebula_chronicles",
   "content": {
     "craftingtime": 140,
     "hunger": 4,

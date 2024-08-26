@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 6000,
-        "id": "minecraft:conduit_power",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/jacks_story"
-  },
+  "cocktail_property": "kitchenkarrot:jacks_story",
   "content": {
     "craftingtime": 70,
     "hunger": 0,

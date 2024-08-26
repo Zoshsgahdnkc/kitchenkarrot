@@ -1,8 +1,8 @@
 package io.github.tt432.kitchenkarrot.client.plate;
 
 import io.github.tt432.kitchenkarrot.Kitchenkarrot;
-import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.registries.ModBlocks;
+import io.github.tt432.kitchenkarrot.registries.ModDataComponents;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -77,24 +77,25 @@ public class PlateBakedModel implements BakedModel {
                     int p_173469_) {
                 DataComponentMap components = stack.getComponents();
 
-                if (components.has(KKDataComponents.PLATE_TYPE.get())
-                        && Objects.requireNonNull(components.get(KKDataComponents.PLATE_TYPE.get()))
+                if (components.has(ModDataComponents.PLATE_TYPE.get())
+                        && Objects.requireNonNull(
+                                        components.get(ModDataComponents.PLATE_TYPE.get()))
                                 .contentEquals("minecraft:air")
-                        && components.has(KKDataComponents.PLATE_AMOUNT.get())) {
+                        && components.has(ModDataComponents.PLATE_AMOUNT.get())) {
                     ResourceLocation plateType =
                             ResourceLocation.fromNamespaceAndPath(
                                     Kitchenkarrot.MOD_ID,
                                     ResourceLocation.parse(
                                                     Objects.requireNonNull(
                                                             components.get(
-                                                                    KKDataComponents.PLATE_TYPE
+                                                                    ModDataComponents.PLATE_TYPE
                                                                             .get())))
                                             .getPath());
                     ResourceLocation location =
                             ResourceLocation.parse(
                                     plateType
                                             + "_"
-                                            + components.get(KKDataComponents.PLATE_AMOUNT.get()));
+                                            + components.get(ModDataComponents.PLATE_AMOUNT.get()));
 
                     BakedModel model1 =
                             Minecraft.getInstance()

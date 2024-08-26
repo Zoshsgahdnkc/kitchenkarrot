@@ -5,8 +5,5 @@
   },
   "result": {
     "id": "kitchenkarrot:feast_pizza_slice"
-  },
-  "tool": {
-    "tag": "kitchenkarrot:knife_item"
   }
 }

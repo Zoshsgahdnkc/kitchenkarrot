@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 4800,
-        "id": "minecraft:invisibility",
-        "lvl": 0
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/twilight_forest"
-  },
+  "cocktail_property": "kitchenkarrot:twilight_forest",
   "content": {
     "craftingtime": 110,
     "hunger": 4,

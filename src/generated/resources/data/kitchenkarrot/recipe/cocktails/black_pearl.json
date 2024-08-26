@@ -1,16 +1,6 @@
 {
   "type": "kitchenkarrot:cocktail",
-  "cocktail_property": {
-    "author": "kitchenkarrot",
-    "effect": [
-      {
-        "duration": 10000,
-        "id": "minecraft:glowing",
-        "lvl": 10
-      }
-    ],
-    "id": "kitchenkarrot:cocktails/black_pearl"
-  },
+  "cocktail_property": "kitchenkarrot:black_pearl",
   "content": {
     "craftingtime": 90,
     "hunger": 1,

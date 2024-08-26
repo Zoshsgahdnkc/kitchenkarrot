@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_beef_in_dripleaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:raw_beef_in_dripleaf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:beef_in_dripleaf_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_beef_in_dripleaf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:beef_in_dripleaf_from_smoking"
+    ]
+  }
+}

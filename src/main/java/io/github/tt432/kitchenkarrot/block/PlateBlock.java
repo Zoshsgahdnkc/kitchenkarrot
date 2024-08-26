@@ -5,9 +5,9 @@ import static io.github.tt432.kitchenkarrot.block.PlateHolderMap.plateHolder;
 import com.mojang.serialization.MapCodec;
 
 import io.github.tt432.kitchenkarrot.blockentity.PlateBlockEntity;
-import io.github.tt432.kitchenkarrot.components.KKDataComponents;
 import io.github.tt432.kitchenkarrot.recipes.recipe.PlateRecipe;
 import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
+import io.github.tt432.kitchenkarrot.registries.ModDataComponents;
 import io.github.tt432.kitchenkarrot.registries.ModItems;
 import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import io.github.tt432.kitchenkarrot.registries.RecipeTypes;
@@ -121,7 +121,7 @@ public class PlateBlock extends ModBaseEntityBlock<PlateBlockEntity> {
                     ItemStack stack = new ItemStack(this);
                     blockEntity.saveToItem(stack, level.registryAccess());
                     setPlate(stack, dishItem);
-                    if (stack.getComponents().has(KKDataComponents.PLATE_TYPE.get())
+                    if (stack.getComponents().has(ModDataComponents.PLATE_TYPE.get())
                             && !dishItem.is(Items.AIR)) {
                         String inputName =
                                 dishItem.getDisplayName()
@@ -236,9 +236,9 @@ public class PlateBlock extends ModBaseEntityBlock<PlateBlockEntity> {
     }
 
     public static void setPlate(ItemStack self, ItemStack content) {
-        self.set(KKDataComponents.PLATE_AMOUNT, content.getCount());
+        self.set(ModDataComponents.PLATE_AMOUNT, content.getCount());
         self.set(
-                KKDataComponents.PLATE_TYPE,
+                ModDataComponents.PLATE_TYPE,
                 BuiltInRegistries.ITEM.getKey(content.getItem()).toString());
     }
 
