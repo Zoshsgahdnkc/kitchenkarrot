@@ -29,8 +29,6 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -63,7 +61,7 @@ public class CocktailItem extends Item {
     }
 
     @Override
-    @NotNull
+    @Nonnull
     public ItemStack finishUsingItem(ItemStack stack, Level pLevel, LivingEntity livingEntity) {
         if (livingEntity instanceof ServerPlayer player) {
             CocktailProperty cocktailProperty = getCocktail(stack);
@@ -111,13 +109,13 @@ public class CocktailItem extends Item {
     }
 
     @Override
-    @NotNull
+    @Nonnull
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.DRINK;
     }
 
     @Override
-    @NotNull
+    @Nonnull
     public String getDescriptionId(ItemStack stack) {
         CocktailProperty name = getCocktail(stack);
 
