@@ -30,10 +30,6 @@ neoForge {
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
-        configureEach {
-            logLevel = org.slf4j.event.Level.DEBUG
-        }
-
         client {
             client()
 
