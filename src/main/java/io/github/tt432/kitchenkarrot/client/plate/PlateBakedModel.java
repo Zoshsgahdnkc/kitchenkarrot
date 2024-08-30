@@ -78,7 +78,7 @@ public class PlateBakedModel implements BakedModel {
                 DataComponentMap components = stack.getComponents();
 
                 if (components.has(ModDataComponents.PLATE_TYPE.get())
-                        && Objects.requireNonNull(
+                        && !Objects.requireNonNull(
                                         components.get(ModDataComponents.PLATE_TYPE.get()))
                                 .contentEquals("minecraft:air")
                         && components.has(ModDataComponents.PLATE_AMOUNT.get())) {
