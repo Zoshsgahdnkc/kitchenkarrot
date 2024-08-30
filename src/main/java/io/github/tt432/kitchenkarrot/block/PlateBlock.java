@@ -15,6 +15,7 @@ import io.github.tt432.kitchenkarrot.tag.ModItemTags;
 import io.github.tt432.kitchenkarrot.util.ItemHandlerUtils;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -23,10 +24,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.BlockGetter;
@@ -128,16 +127,10 @@ public class PlateBlock extends ModBaseEntityBlock<PlateBlockEntity> {
                                         .getString()
                                         .replace("[", "")
                                         .replace("]", "");
-                        stack.getItem()
-                                .appendHoverText(
-                                        stack,
-                                        Item.TooltipContext.EMPTY,
-                                        Collections.singletonList(
-                                                (Component.translatable(
-                                                                "info.kitchenkarrot.dished",
-                                                                inputName))
-                                                        .setStyle(Style.EMPTY.withItalic(false))),
-                                        TooltipFlag.NORMAL);
+                        stack.set(
+                                DataComponents.CUSTOM_NAME,
+                                (Component.translatable("info.kitchenkarrot.dished", inputName))
+                                        .setStyle(Style.EMPTY.withItalic(false)));
                     }
                     player.setItemInHand(hand, stack);
                     handler.extractItem(0, 64, false);
