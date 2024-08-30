@@ -42,6 +42,7 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
         this.modelRenderer = context.getBlockRenderDispatcher().getModelRenderer();
     }
 
+    // spotless:off
     // TODO 重写渲染系统
     @Override
     @ParametersAreNonnullByDefault
@@ -59,6 +60,8 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
                             .getCapability(
                                     Capabilities.ItemHandler.BLOCK,
                                     plateBlockEntity.getBlockPos(),
+                                    plateBlockEntity.getBlockState(),
+                                    plateBlockEntity,
                                     null);
             if (capability != null) {
                 ItemStack stack = capability.getStackInSlot(0);
@@ -111,4 +114,5 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
             }
         }
     }
+    // spotless:on
 }

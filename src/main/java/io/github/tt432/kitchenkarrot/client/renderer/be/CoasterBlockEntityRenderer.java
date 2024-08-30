@@ -26,6 +26,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  **/
 public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBlockEntity> {
 
+    // spotless:off
     @Override
     @ParametersAreNonnullByDefault
     public void render(
@@ -42,6 +43,8 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
                             .getCapability(
                                     Capabilities.ItemHandler.BLOCK,
                                     blockEntity.getBlockPos(),
+                                    blockEntity.getBlockState(),
+                                    blockEntity,
                                     null);
             if (capability != null) {
                 poseStack.pushPose();
@@ -72,4 +75,5 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
             }
         }
     }
+    // spotless:on
 }

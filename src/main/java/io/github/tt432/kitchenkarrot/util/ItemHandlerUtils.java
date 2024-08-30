@@ -28,14 +28,12 @@ public class ItemHandlerUtils {
             IItemHandler handler, int slot, Player player, InteractionHand hand) {
         insertSingle(handler, slot, player, player.getItemInHand(hand));
     }
-    ;
 
     public static void insertSingle(
             IItemHandler handler, int slot, Player player, ItemStack itemStack) {
         ItemStack stack = player.getAbilities().instabuild ? itemStack.copy() : itemStack.split(1);
         handler.insertItem(slot, stack, false);
     }
-    ;
 
     public static void extractSingle(IItemHandler handler, int slot, Player player) {
         ItemStack stack = handler.extractItem(slot, 1, false);
@@ -43,5 +41,4 @@ public class ItemHandlerUtils {
             player.drop(stack, true);
         }
     }
-    ;
 }
