@@ -1,5 +1,7 @@
 package io.github.tt432.kitchenkarrot.blockentity;
 
+import io.github.tt432.kitchenkarrot.blockentity.sync.ItemStackHandlerSyncData;
+import io.github.tt432.kitchenkarrot.blockentity.sync.SyncDataManager;
 import io.github.tt432.kitchenkarrot.capability.KKItemStackHandler;
 import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
 
@@ -14,18 +16,23 @@ import java.util.List;
  * @author DustW
  **/
 public class CoasterBlockEntity extends BaseBlockEntity {
-    private final KKItemStackHandler item = new KKItemStackHandler(this, 1);
+    private ItemStackHandlerSyncData item;
 
     public CoasterBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.COASTER.get(), pWorldPosition, pBlockState);
     }
 
     @Override
+    protected void syncDataInit(SyncDataManager manager) {
+        item = manager.add(new ItemStackHandlerSyncData(this, "item", 1, true));
+    }
+
+    @Override
     public List<ItemStack> drops() {
-        return Collections.singletonList(item.getStackInSlot(0));
+        return Collections.singletonList(item.get().getStackInSlot(0));
     }
 
     public KKItemStackHandler getItem() {
-        return item;
+        return item.get();
     }
 }

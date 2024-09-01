@@ -1,11 +1,15 @@
 package io.github.tt432.kitchenkarrot.blockentity;
 
+import io.github.tt432.kitchenkarrot.blockentity.sync.ItemStackHandlerSyncData;
+import io.github.tt432.kitchenkarrot.blockentity.sync.SyncDataManager;
 import io.github.tt432.kitchenkarrot.capability.KKItemStackHandler;
 import io.github.tt432.kitchenkarrot.registries.ModBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -14,18 +18,24 @@ import java.util.List;
  * @author DustW
  **/
 public class PlateBlockEntity extends BaseBlockEntity {
-    private KKItemStackHandler item = new KKItemStackHandler(this, 1);
+    private ItemStackHandlerSyncData item;
 
     public PlateBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.PLATE.get(), pWorldPosition, pBlockState);
     }
 
     @Override
-    public List<ItemStack> drops() {
-        return Collections.singletonList(item.getStackInSlot(0));
+    protected void syncDataInit(SyncDataManager manager) {
+        item = manager.add(new ItemStackHandlerSyncData(this, "item", 1, true));
     }
 
+    @Override
+    public List<ItemStack> drops() {
+        return Collections.singletonList(item.get().getStackInSlot(0));
+    }
+
+    @NotNull
     public KKItemStackHandler getItem() {
-        return item;
+        return item.get();
     }
 }
