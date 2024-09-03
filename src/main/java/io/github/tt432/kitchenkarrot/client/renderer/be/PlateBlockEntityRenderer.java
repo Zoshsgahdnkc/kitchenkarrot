@@ -19,7 +19,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.client.RenderTypeHelper;
 import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -54,64 +53,54 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
             int packedLight,
             int packedOverlay) {
         if (plateBlockEntity.getLevel() != null) {
-            IItemHandler capability =
-                    plateBlockEntity
-                            .getLevel()
-                            .getCapability(
-                                    Capabilities.ItemHandler.BLOCK,
-                                    plateBlockEntity.getBlockPos(),
-                                    plateBlockEntity.getBlockState(),
-                                    plateBlockEntity,
-                                    null);
-            if (capability != null) {
-                ItemStack stack = capability.getStackInSlot(0);
-                BakedModel model =
-                        this.modelManager.getModel(
-                                to(
-                                        stack.isEmpty()
-                                                ? PlateModelRegistry.DEFAULT_NAME
-                                                : ResourceLocation.fromNamespaceAndPath(
-                                                        Kitchenkarrot.MOD_ID,
-                                                        ResourceLocation.parse(
-                                                                                stack.getItem()
-                                                                                        .toString())
-                                                                        .getPath()
-                                                                + "_"
-                                                                + stack.getCount())));
+            IItemHandler capability = plateBlockEntity.getItem();
+            ItemStack stack = capability.getStackInSlot(0);
+            BakedModel model =
+                    this.modelManager.getModel(
+                            to(
+                                    stack.isEmpty()
+                                            ? PlateModelRegistry.DEFAULT_NAME
+                                            : ResourceLocation.fromNamespaceAndPath(
+                                                    Kitchenkarrot.MOD_ID,
+                                                    ResourceLocation.parse(
+                                                                            stack.getItem()
+                                                                                    .toString())
+                                                                    .getPath()
+                                                            + "_"
+                                                            + stack.getCount())));
 
-                poseStack.pushPose();
-                BlockState state = plateBlockEntity.getBlockState();
-                poseStack.translate(0.5, 0.5, 0.5);
-                poseStack.mulPose(
-                        new Quaternionf()
-                                .rotateY(
-                                        -(state.getValue(PlateBlock.DEGREE) - 180)
-                                                * (float) Math.PI
-                                                / 180));
-                poseStack.translate(-0.5, -0.5, -0.5);
-                model.getRenderTypes(
-                                plateBlockEntity.getBlockState(),
-                                RandomSource.create(),
-                                ModelData.EMPTY)
-                        .forEach(
-                                renderType -> {
-                                    this.modelRenderer.renderModel(
-                                            poseStack.last(),
-                                            multiBufferSource.getBuffer(
-                                                    RenderTypeHelper.getEntityRenderType(
-                                                            renderType, false)),
-                                            plateBlockEntity.getBlockState(),
-                                            model,
-                                            1.0F,
-                                            1.0F,
-                                            1.0F,
-                                            packedLight,
-                                            packedOverlay,
-                                            ModelData.EMPTY,
-                                            renderType);
-                                });
-                poseStack.popPose();
-            }
+            poseStack.pushPose();
+            BlockState state = plateBlockEntity.getBlockState();
+            poseStack.translate(0.5, 0.5, 0.5);
+            poseStack.mulPose(
+                    new Quaternionf()
+                            .rotateY(
+                                    -(state.getValue(PlateBlock.DEGREE) - 180)
+                                            * (float) Math.PI
+                                            / 180));
+            poseStack.translate(-0.5, -0.5, -0.5);
+            model.getRenderTypes(
+                            plateBlockEntity.getBlockState(),
+                            RandomSource.create(),
+                            ModelData.EMPTY)
+                    .forEach(
+                            renderType -> {
+                                this.modelRenderer.renderModel(
+                                        poseStack.last(),
+                                        multiBufferSource.getBuffer(
+                                                RenderTypeHelper.getEntityRenderType(
+                                                        renderType, false)),
+                                        plateBlockEntity.getBlockState(),
+                                        model,
+                                        1.0F,
+                                        1.0F,
+                                        1.0F,
+                                        packedLight,
+                                        packedOverlay,
+                                        ModelData.EMPTY,
+                                        renderType);
+                            });
+            poseStack.popPose();
         }
     }
     // spotless:on

@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class CoasterBlockEntity extends BaseBlockEntity {
         return Collections.singletonList(item.get().getStackInSlot(0));
     }
 
+    @NotNull
     public KKItemStackHandler getItem() {
         return item.get();
     }

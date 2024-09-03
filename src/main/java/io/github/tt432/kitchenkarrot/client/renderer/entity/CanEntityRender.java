@@ -13,6 +13,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
+import org.jetbrains.annotations.NotNull;
+
 public class CanEntityRender extends EntityRenderer<CanEntity> {
     CanEntityModel<?> canEntityModel;
 
@@ -23,26 +25,27 @@ public class CanEntityRender extends EntityRenderer<CanEntity> {
 
     @Override
     public void render(
-            CanEntity p_entity,
+            @NotNull CanEntity canEntity,
             float entityYaw,
             float partialTick,
-            PoseStack poseStack,
-            MultiBufferSource bufferSource,
+            @NotNull PoseStack poseStack,
+            @NotNull MultiBufferSource bufferSource,
             int packedLight) {
-        super.render(p_entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+        super.render(canEntity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
         poseStack.pushPose();
         poseStack.translate(0, -1.2, 0);
         this.canEntityModel.renderToBuffer(
                 poseStack,
-                bufferSource.getBuffer(RenderType.entityCutout(getTextureLocation(p_entity))),
+                bufferSource.getBuffer(RenderType.entityCutout(getTextureLocation(canEntity))),
                 packedLight,
                 OverlayTexture.NO_OVERLAY,
-                1);
+                0xFFFFFF);
         poseStack.popPose();
     }
 
     @Override
-    public ResourceLocation getTextureLocation(CanEntity pEntity) {
+    @NotNull
+    public ResourceLocation getTextureLocation(@NotNull CanEntity canEntity) {
         return ResourceLocation.fromNamespaceAndPath(
                 Kitchenkarrot.MOD_ID, "textures/entity/can.png");
     }
