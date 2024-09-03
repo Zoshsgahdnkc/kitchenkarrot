@@ -1,6 +1,6 @@
 package io.github.tt432.kitchenkarrot.client.renderer.be;
 
-import static io.github.tt432.kitchenkarrot.client.plate.PlateModelRegistry.to;
+import static io.github.tt432.kitchenkarrot.client.plate.PlateModelRegistry.RLtoMRL;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -55,17 +55,11 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
         if (plateBlockEntity.getLevel() != null) {
             IItemHandler capability = plateBlockEntity.getItem();
             ItemStack stack = capability.getStackInSlot(0);
-            BakedModel model =
-                    this.modelManager.getModel(
-                            to(
-                                    stack.isEmpty()
+            BakedModel model = this.modelManager.getModel(RLtoMRL(stack.isEmpty()
                                             ? PlateModelRegistry.DEFAULT_NAME
-                                            : ResourceLocation.fromNamespaceAndPath(
-                                                    Kitchenkarrot.MOD_ID,
-                                                    ResourceLocation.parse(
-                                                                            stack.getItem()
-                                                                                    .toString())
-                                                                    .getPath()
+                                            : ResourceLocation.fromNamespaceAndPath(Kitchenkarrot.MOD_ID,
+                                                    ResourceLocation.parse(stack.getItem().toString())
+                                                            .getPath()
                                                             + "_"
                                                             + stack.getCount())));
 
@@ -87,9 +81,7 @@ public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockE
                             renderType -> {
                                 this.modelRenderer.renderModel(
                                         poseStack.last(),
-                                        multiBufferSource.getBuffer(
-                                                RenderTypeHelper.getEntityRenderType(
-                                                        renderType, false)),
+                                        multiBufferSource.getBuffer(RenderTypeHelper.getEntityRenderType(renderType, false)),
                                         plateBlockEntity.getBlockState(),
                                         model,
                                         1.0F,

@@ -35,7 +35,7 @@ public class PlateModelRegistry {
                         modelResourceLocation.id().getPath().split("plates/")[1]));
     }
 
-    public static ModelResourceLocation to(ResourceLocation resourceLocation) {
+    public static ModelResourceLocation RLtoMRL(ResourceLocation resourceLocation) {
         return ModelResourceLocation.standalone(
                 ResourceLocation.fromNamespaceAndPath(
                         resourceLocation.getNamespace(), "plates/" + resourceLocation.getPath()));
@@ -61,10 +61,10 @@ public class PlateModelRegistry {
 
         PlateList.INSTANCE.plates.addAll(plates);
 
-        e.register(to(DEFAULT_NAME));
+        e.register(RLtoMRL(DEFAULT_NAME));
 
         for (var info : PlateList.INSTANCE.plates) {
-            e.register(to(ResourceLocation.parse(info)));
+            e.register(RLtoMRL(ResourceLocation.parse(info)));
         }
     }
 

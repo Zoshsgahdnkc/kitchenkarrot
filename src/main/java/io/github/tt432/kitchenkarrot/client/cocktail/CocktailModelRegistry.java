@@ -38,7 +38,7 @@ public class CocktailModelRegistry {
         return ResourceLocation.fromNamespaceAndPath(namespace, "cocktails/" + path);
     }
 
-    public static ModelResourceLocation to(ResourceLocation resourceLocation) {
+    public static ModelResourceLocation RLtoMRL(ResourceLocation resourceLocation) {
         return ModelResourceLocation.standalone(
                 ResourceLocation.fromNamespaceAndPath(
                         resourceLocation.getNamespace(), "cocktail/" + resourceLocation.getPath()));
@@ -46,10 +46,10 @@ public class CocktailModelRegistry {
 
     @SuppressWarnings("unused")
     public static void register(ModelEvent.RegisterAdditional e) {
-        e.register(to(CocktailItem.UNKNOWN_COCKTAIL));
+        e.register(RLtoMRL(CocktailItem.UNKNOWN_COCKTAIL));
 
         ModCocktails.COCKTAIL_PROPERTIES.getEntries().stream()
                 .map(DeferredHolder::get)
-                .forEach(cocktailProperty -> e.register(to(cocktailProperty.id())));
+                .forEach(cocktailProperty -> e.register(RLtoMRL(cocktailProperty.id())));
     }
 }

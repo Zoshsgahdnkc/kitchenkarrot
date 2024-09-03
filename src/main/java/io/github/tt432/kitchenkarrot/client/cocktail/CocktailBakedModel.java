@@ -1,6 +1,6 @@
 package io.github.tt432.kitchenkarrot.client.cocktail;
 
-import static io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry.to;
+import static io.github.tt432.kitchenkarrot.client.cocktail.CocktailModelRegistry.RLtoMRL;
 
 import io.github.tt432.kitchenkarrot.item.CocktailItem;
 
@@ -56,33 +56,35 @@ public class CocktailBakedModel implements BakedModel {
     }
 
     @Override
+    @NotNull
     public TextureAtlasSprite getParticleIcon() {
         return CocktailTextureManager.INSTANCE.getSprite(CocktailItem.UNKNOWN_COCKTAIL);
     }
 
     // spotless:off
     @Override
+    @NotNull
     public ItemOverrides getOverrides() {
         return new ItemOverrides() {
             @NotNull
             @Override
             public BakedModel resolve(
-                    @NotNull BakedModel p_173465_,
-                    @NotNull ItemStack p_173466_,
-                    @Nullable ClientLevel p_173467_,
-                    @Nullable LivingEntity p_173468_,
-                    int p_173469_) {
+                    @NotNull BakedModel model,
+                    @NotNull ItemStack stack,
+                    @Nullable ClientLevel level,
+                    @Nullable LivingEntity entity,
+                    int seed) {
 
-                ResourceLocation cocktail = Objects.requireNonNull(CocktailItem.getCocktail(p_173466_)).id();
-                BakedModel model;
+                ResourceLocation cocktail = Objects.requireNonNull(CocktailItem.getCocktail(stack)).id();
+                BakedModel cocktailModel;
                 ModelManager modelManager = Minecraft.getInstance().getModelManager();
                 if (cocktail != null
-                        && modelManager.getMissingModel() != modelManager.getModel(to(cocktail))) {
-                    model = modelManager.getModel(to(cocktail));
+                        && modelManager.getMissingModel() != modelManager.getModel(RLtoMRL(cocktail))) {
+                    cocktailModel = modelManager.getModel(RLtoMRL(cocktail));
                 } else {
-                    model = modelManager.getModel(to(CocktailItem.UNKNOWN_COCKTAIL));
+                    cocktailModel = modelManager.getModel(RLtoMRL(CocktailItem.UNKNOWN_COCKTAIL));
                 }
-                return model;
+                return cocktailModel;
             }
         };
     }

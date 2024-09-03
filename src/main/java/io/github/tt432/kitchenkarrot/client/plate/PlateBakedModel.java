@@ -31,6 +31,7 @@ import java.util.Objects;
  **/
 public class PlateBakedModel implements BakedModel {
     @Override
+    @NotNull
     public List<BakedQuad> getQuads(
             @Nullable BlockState p_119123_, @Nullable Direction p_119124_, RandomSource p_119125_) {
         return Collections.emptyList();
@@ -57,6 +58,7 @@ public class PlateBakedModel implements BakedModel {
     }
 
     @Override
+    @NotNull
     public TextureAtlasSprite getParticleIcon() {
         return Minecraft.getInstance()
                 .getTextureAtlas(TextureAtlas.LOCATION_BLOCKS)
@@ -67,11 +69,11 @@ public class PlateBakedModel implements BakedModel {
     @NotNull
     public ItemOverrides getOverrides() {
         return new ItemOverrides() {
-            @Nullable
+            @NotNull
             @Override
             public BakedModel resolve(
-                    BakedModel model,
-                    ItemStack stack,
+                    @NotNull BakedModel model,
+                    @NotNull ItemStack stack,
                     @Nullable ClientLevel p_173467_,
                     @Nullable LivingEntity p_173468_,
                     int p_173469_) {
@@ -100,14 +102,16 @@ public class PlateBakedModel implements BakedModel {
                     BakedModel model1 =
                             Minecraft.getInstance()
                                     .getModelManager()
-                                    .getModel(PlateModelRegistry.to(location));
+                                    .getModel(PlateModelRegistry.RLtoMRL(location));
                     return model1;
                 }
 
                 BakedModel model1 =
                         Minecraft.getInstance()
                                 .getModelManager()
-                                .getModel(PlateModelRegistry.to(PlateModelRegistry.DEFAULT_NAME));
+                                .getModel(
+                                        PlateModelRegistry.RLtoMRL(
+                                                PlateModelRegistry.DEFAULT_NAME));
                 return model1;
             }
         };
