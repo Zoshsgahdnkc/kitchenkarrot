@@ -28,7 +28,7 @@ public class TidalAffinityEffect extends MobEffect {
                         2D,
                         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 
-        if(attributeinstance != null) {
+        if (attributeinstance != null) {
             attributeinstance.removeModifier(attributemodifier);
             if (pLivingEntity.isInWaterOrRain()) {
                 attributeinstance.addTransientModifier(attributemodifier);

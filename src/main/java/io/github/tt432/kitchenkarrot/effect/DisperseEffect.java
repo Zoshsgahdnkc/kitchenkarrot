@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -37,7 +38,9 @@ public class DisperseEffect extends MobEffect {
         if (disperse(pLivingEntity)) {
             Holder<MobEffect> disperse = ModEffects.DISPERSE;
             MobEffectInstance mobEffectInstance = pLivingEntity.getEffect(disperse);
-            if (pAmplifier > 0 && mobEffectInstance != null && mobEffectInstance.getDuration() > 5) {
+            if (pAmplifier > 0
+                    && mobEffectInstance != null
+                    && mobEffectInstance.getDuration() > 5) {
                 pLivingEntity.forceAddEffect(
                         new MobEffectInstance(
                                 disperse, mobEffectInstance.getDuration(), pAmplifier - 1),
