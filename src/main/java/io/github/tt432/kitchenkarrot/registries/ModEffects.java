@@ -18,28 +18,28 @@ public class ModEffects {
 
     public static final DeferredHolder<MobEffect, MobEffect> DISPERSE =
             EFFECTS.register(
-                    "disperse", () -> new DisperseEffect(MobEffectCategory.NEUTRAL, 12777212));
+                    "disperse", () -> new DisperseEffect(MobEffectCategory.NEUTRAL, 0xC2F6FC));
 
     public static final DeferredHolder<MobEffect, MobEffect> TOXIC_RESISTANCE =
             EFFECTS.register(
                     "toxic_resistance",
-                    () -> new ToxicResistanceEffect(MobEffectCategory.BENEFICIAL, 9557596));
+                    () -> new ToxicResistanceEffect(MobEffectCategory.BENEFICIAL, 0x91D65C));
 
     public static final DeferredHolder<MobEffect, MobEffect> WITHER_RESISTANCE =
             EFFECTS.register(
                     "wither_resistance",
-                    () -> new WitherResistanceEffect(MobEffectCategory.BENEFICIAL, 4542325));
+                    () -> new WitherResistanceEffect(MobEffectCategory.BENEFICIAL, 0x454F75));
 
     public static final DeferredHolder<MobEffect, MobEffect> TIDAL_AFFINITY =
             EFFECTS.register(
                     "tidal_affinity",
-                    () -> new TidalAffinityEffect(MobEffectCategory.BENEFICIAL, 6929663));
+                    () -> new TidalAffinityEffect(MobEffectCategory.BENEFICIAL, 0x69BCFF));
 
     public static final DeferredHolder<MobEffect, MobEffect> TIPSY =
             EFFECTS.register(
                     "tipsy",
                     () ->
-                            new TipsyEffect(MobEffectCategory.HARMFUL, 12750161)
+                            new TipsyEffect(MobEffectCategory.HARMFUL, 0xC28D51)
                                     .addAttributeModifier(
                                             Attributes.MOVEMENT_SPEED,
                                             ResourceLocation.withDefaultNamespace("effect.tipsy"),
