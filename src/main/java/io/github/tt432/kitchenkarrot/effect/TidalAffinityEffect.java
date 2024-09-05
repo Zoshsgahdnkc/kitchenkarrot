@@ -27,18 +27,13 @@ public class TidalAffinityEffect extends MobEffect {
                         ResourceLocation.withDefaultNamespace("effect.tidal"),
                         2D,
                         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
-        if (pLivingEntity.isInWaterOrRain()) {
+
+        if(attributeinstance != null) {
             attributeinstance.removeModifier(attributemodifier);
-            attributeinstance.addTransientModifier(attributemodifier);
-            //            attributeinstance.addPermanentModifier(new
-            // AttributeModifier(attributemodifier.getId(),
-            //                    this.getDescriptionId() + " " + pAmplifier,
-            // this.getAttributeModifierValue(pAmplifier, attributemodifier),
-            // attributemodifier.getOperation()));
-        } else {
-            attributeinstance.removeModifier(attributemodifier);
+            if (pLivingEntity.isInWaterOrRain()) {
+                attributeinstance.addTransientModifier(attributemodifier);
+            }
         }
-        ;
         return super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 

@@ -36,7 +36,7 @@ public class DisperseEffect extends MobEffect {
         if (disperse(pLivingEntity)) {
             Holder<MobEffect> disperse = ModEffects.DISPERSE;
             MobEffectInstance mobEffectInstance = pLivingEntity.getEffect(disperse);
-            if (pAmplifier > 0 && mobEffectInstance.getDuration() > 5) {
+            if (pAmplifier > 0 && mobEffectInstance != null && mobEffectInstance.getDuration() > 5) {
                 pLivingEntity.forceAddEffect(
                         new MobEffectInstance(
                                 disperse, mobEffectInstance.getDuration(), pAmplifier - 1),
