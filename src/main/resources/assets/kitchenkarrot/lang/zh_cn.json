@@ -251,5 +251,16 @@
     "potion.potency.8": "VIII",
     "potion.potency.9": "IX",
     "potion.potency.10": "X",
-    "item.kitchenkarrot.cream_of_mushroom_soup": "奶油蘑菇汤"
+    "item.kitchenkarrot.cream_of_mushroom_soup": "奶油蘑菇汤",
+
+    "kitchenkarrot.configuration.CocktailProperty Settings": "鸡尾酒属性设置",
+    "kitchenkarrot.configuration.Spawn Empty Can Entity": "是否生成空罐头实体",
+    "kitchenkarrot.configuration.Can Entity Lifetime": "罐头实体存活时间",
+    "kitchenkarrot.configuration.Canned Food Settings": "罐头食物设置",
+    "kitchenkarrot.configuration.Villager Trade Settings": "村民设置",
+    "kitchenkarrot.configuration.Unknown CocktailProperty Effects Blacklist": "未知鸡尾酒获取buff黑名单",
+    "kitchenkarrot.configuration.Farmer Buy Gem Carrot": "农民购买宝石胡萝卜",
+    "kitchenkarrot.configuration.Whitelist Mode": "白名单模式",
+    "kitchenkarrot.configuration.Butcher Sell Salt": "屠夫出售盐",
+    "kitchenkarrot.configuration.Butcher Sell Oil": "屠夫出售油"
 }

@@ -250,5 +250,16 @@
     "potion.potency.7": "VII",
     "potion.potency.8": "VIII",
     "potion.potency.9": "IX",
-    "potion.potency.10": "X"
+    "potion.potency.10": "X",
+
+    "kitchenkarrot.configuration.CocktailProperty Settings": "CocktailProperty Settings",
+    "kitchenkarrot.configuration.Spawn Empty Can Entity": "Spawn Empty Can Entity",
+    "kitchenkarrot.configuration.Can Entity Lifetime": "Can Entity Lifetime",
+    "kitchenkarrot.configuration.Canned Food Settings": "Canned Food Settings",
+    "kitchenkarrot.configuration.Villager Trade Settings": "Villager Trade Settings",
+    "kitchenkarrot.configuration.Unknown CocktailProperty Effects Blacklist": "Unknown CocktailProperty Effects Blacklist",
+    "kitchenkarrot.configuration.Farmer Buy Gem Carrot": "Farmer Buy Gem Carrot",
+    "kitchenkarrot.configuration.Whitelist Mode": "Whitelist Mode",
+    "kitchenkarrot.configuration.Butcher Sell Salt": "Butcher Sell Salt",
+    "kitchenkarrot.configuration.Butcher Sell Oil": "Butcher Sell Oil"
 }
