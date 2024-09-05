@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
 
 public class TipsyEffect extends MobEffect {
     public TipsyEffect(MobEffectCategory category, int color) {
@@ -14,7 +15,7 @@ public class TipsyEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
+    public boolean applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
         if (pAmplifier >= 3) {
             pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 1200, 1));
             pLivingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 3));
