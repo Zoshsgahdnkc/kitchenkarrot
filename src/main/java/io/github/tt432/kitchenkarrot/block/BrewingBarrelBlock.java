@@ -51,6 +51,20 @@ public class BrewingBarrelBlock extends FacingGuiEntityBlock<BrewingBarrelBlockE
     }
 
     @Override
+    protected void tick(
+            @NotNull BlockState state,
+            @NotNull ServerLevel level,
+            @NotNull BlockPos pos,
+            @NotNull RandomSource random) {
+        super.tick(state, level, pos, random);
+        BrewingBarrelBlockEntity blockEntity =
+                ModBlockEntities.BREWING_BARREL.get().getBlockEntity(level, pos);
+        if (blockEntity != null) {
+            blockEntity.recheckOpen();
+        }
+    }
+
+    @Override
     @NotNull
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
@@ -124,14 +138,6 @@ public class BrewingBarrelBlock extends FacingGuiEntityBlock<BrewingBarrelBlockE
                 }
                 player.playSound(
                         SoundEvents.BUCKET_EMPTY, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-            } else {
-                if (!level.isClientSide()) {
-                    // Fixme: qyl27: work not correctly when more than one player open it.
-                    level.setBlock(pos, state.setValue(OPEN, true), Block.UPDATE_ALL);
-                    this.getBlockEntity()
-                            .getBlockEntity(level, pos)
-                            .playSound(SoundEvents.BARREL_OPEN);
-                }
             }
 
             if (changed.get()) {

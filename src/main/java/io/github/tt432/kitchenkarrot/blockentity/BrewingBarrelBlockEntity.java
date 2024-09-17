@@ -14,6 +14,7 @@ import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -22,6 +23,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -46,6 +49,35 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
     private StringSyncData recipe;
     private RecipeHolder<BrewingBarrelRecipe> currentRecipe;
     private BoolSyncData started;
+    private final ContainerOpenersCounter openersCounter =
+            new ContainerOpenersCounter() {
+                @Override
+                protected void onOpen(Level level, BlockPos pos, BlockState state) {
+                    BrewingBarrelBlockEntity.this.playSound(SoundEvents.BARREL_OPEN);
+                    level.setBlockAndUpdate(pos, state.setValue(BrewingBarrelBlock.OPEN, true));
+                }
+
+                @Override
+                protected void onClose(Level level, BlockPos pos, BlockState state) {
+                    BrewingBarrelBlockEntity.this.playSound(SoundEvents.BARREL_CLOSE);
+                    level.setBlockAndUpdate(pos, state.setValue(BrewingBarrelBlock.OPEN, false));
+                }
+
+                @Override
+                protected void openerCountChanged(
+                        Level level, BlockPos pos, BlockState state, int count, int openCount) {
+                    level.blockEvent(pos, state.getBlock(), 1, openCount);
+                }
+
+                @Override
+                protected boolean isOwnContainer(Player player) {
+                    if (player.containerMenu instanceof BrewingBarrelMenu menu) {
+                        return menu.blockEntity == BrewingBarrelBlockEntity.this;
+                    } else {
+                        return false;
+                    }
+                }
+            };
 
     public BrewingBarrelBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.BREWING_BARREL.get(), pWorldPosition, pBlockState);
@@ -232,7 +264,6 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
         super.saveAdditional(tag, registries);
         tag.put("input", input.serializeNBT(registries));
         tag.put("result", result.serializeNBT(registries));
-        tag.put("tank", tank.get().writeToNBT(registries, tag));
     }
 
     @Override
@@ -241,7 +272,6 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
         if (!isSyncTag(tag)) {
             input.deserializeNBT(registries, tag.getCompound("input"));
             result.deserializeNBT(registries, tag.getCompound("result"));
-            tank.get().readFromNBT(registries, tag.getCompound("tank"));
         }
     }
 
@@ -259,5 +289,26 @@ public class BrewingBarrelBlockEntity extends MenuBlockEntity {
                 SoundSource.BLOCKS,
                 0.5F,
                 level.random.nextFloat() * 0.1F + 0.9F);
+    }
+
+    public void startOpen(Player player) {
+        if (!this.remove && !player.isSpectator()) {
+            this.openersCounter.incrementOpeners(
+                    player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+    }
+
+    public void stopOpen(Player player) {
+        if (!this.remove && !player.isSpectator()) {
+            this.openersCounter.decrementOpeners(
+                    player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+    }
+
+    public void recheckOpen() {
+        if (!this.remove) {
+            this.openersCounter.recheckOpeners(
+                    this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
     }
 }

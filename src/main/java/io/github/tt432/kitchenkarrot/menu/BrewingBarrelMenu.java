@@ -5,6 +5,7 @@ import io.github.tt432.kitchenkarrot.menu.base.KKBeMenu;
 import io.github.tt432.kitchenkarrot.registries.ModMenuTypes;
 
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 
 /**
  * @author DustW
@@ -14,6 +15,13 @@ public class BrewingBarrelMenu extends KKBeMenu<BrewingBarrelBlockEntity> {
         super(ModMenuTypes.BREWING_BARREL.get(), windowId, inv, blockEntity);
 
         addSlots();
+        blockEntity.startOpen(inv.player);
+    }
+
+    @Override
+    public void removed(Player player) {
+        super.removed(player);
+        blockEntity.stopOpen(player);
     }
 
     void addSlots() {
