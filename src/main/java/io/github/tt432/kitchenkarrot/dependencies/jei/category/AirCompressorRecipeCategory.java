@@ -57,7 +57,7 @@ public class AirCompressorRecipeCategory extends BaseRecipeCategory<AirCompresso
         builder.addSlot(RecipeIngredientRole.INPUT, 49, 32).addIngredients(ingredient.get(1));
         builder.addSlot(RecipeIngredientRole.INPUT, 28, 53).addIngredients(ingredient.get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 49, 53).addIngredients(ingredient.get(3));
-        builder.addSlot(RecipeIngredientRole.INPUT, 28, 9)
+        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 28, 9)
                 .addIngredients(Ingredient.of(Items.REDSTONE));
 
         var container = Objects.requireNonNullElse(recipe.getContainer(), Ingredient.EMPTY);
