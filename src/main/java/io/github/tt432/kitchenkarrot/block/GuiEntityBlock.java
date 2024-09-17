@@ -40,7 +40,7 @@ public abstract class GuiEntityBlock<T extends BaseBlockEntity> extends ModBaseE
             BlockEntity blockEntity = level.getBlockEntity(pos);
 
             if (blockEntity instanceof MenuBlockEntity kk) {
-                player.openMenu(kk);
+                player.openMenu(kk,pos);
                 kk.forceOnce();
             }
             return ItemInteractionResult.CONSUME;
