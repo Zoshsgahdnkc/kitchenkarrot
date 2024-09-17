@@ -28,6 +28,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import org.jetbrains.annotations.NotNull;
+
 public class AirCompressorBlock extends FacingGuiEntityBlock<AirCompressorBlockEntity> {
     public static final MapCodec<AirCompressorBlock> CODEC =
             simpleCodec((p) -> new AirCompressorBlock());
@@ -38,8 +40,12 @@ public class AirCompressorBlock extends FacingGuiEntityBlock<AirCompressorBlockE
     }
 
     @Override
+    @NotNull
     public VoxelShape getShape(
-            BlockState pState, BlockGetter level, BlockPos pos, CollisionContext pContext) {
+            @NotNull BlockState pState,
+            @NotNull BlockGetter level,
+            @NotNull BlockPos pos,
+            @NotNull CollisionContext context) {
         return SHAPE;
     }
 
@@ -49,14 +55,14 @@ public class AirCompressorBlock extends FacingGuiEntityBlock<AirCompressorBlockE
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(
-            ItemStack stack,
-            BlockState state,
+    protected @NotNull ItemInteractionResult useItemOn(
+            @NotNull ItemStack stack,
+            @NotNull BlockState state,
             Level level,
-            BlockPos pos,
-            Player player,
-            InteractionHand hand,
-            BlockHitResult hitResult) {
+            @NotNull BlockPos pos,
+            @NotNull Player player,
+            @NotNull InteractionHand hand,
+            @NotNull BlockHitResult hitResult) {
         if (level.isClientSide) {
             if (player.getItemInHand(hand).is(Items.WATER_BUCKET)) {
                 level.playSound(player, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1, 1);

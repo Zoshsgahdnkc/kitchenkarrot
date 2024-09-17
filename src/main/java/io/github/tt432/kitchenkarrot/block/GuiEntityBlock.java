@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author DustW
  **/
@@ -23,14 +25,15 @@ public abstract class GuiEntityBlock<T extends BaseBlockEntity> extends ModBaseE
     }
 
     @Override
+    @NotNull
     protected ItemInteractionResult useItemOn(
-            ItemStack stack,
-            BlockState state,
+            @NotNull ItemStack stack,
+            @NotNull BlockState state,
             Level level,
-            BlockPos pos,
-            Player player,
-            InteractionHand hand,
-            BlockHitResult hitResult) {
+            @NotNull BlockPos pos,
+            @NotNull Player player,
+            @NotNull InteractionHand hand,
+            @NotNull BlockHitResult hitResult) {
         if (level.isClientSide) {
             return ItemInteractionResult.SUCCESS;
         } else {

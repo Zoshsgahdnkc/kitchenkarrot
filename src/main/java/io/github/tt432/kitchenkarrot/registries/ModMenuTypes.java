@@ -31,9 +31,6 @@ public class ModMenuTypes {
             MENUS.register(
                     "shaker", () -> new MenuType<>(ShakerMenu::new, FeatureFlags.VANILLA_SET));
 
-    //    public static final RegistryObject<MenuType<ShakerMenu>> SHAKER =
-    //            MENUS.register("shaker", () -> new MenuType<>(ShakerMenu::new));
-
     private interface KKBeMenuCreator<M extends AbstractContainerMenu, T extends BlockEntity> {
         M create(int windowId, Inventory inv, T blockEntity);
     }

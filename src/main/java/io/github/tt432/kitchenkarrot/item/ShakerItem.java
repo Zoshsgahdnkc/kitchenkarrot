@@ -8,6 +8,7 @@ import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import io.github.tt432.kitchenkarrot.util.SoundUtil;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -30,29 +31,30 @@ public class ShakerItem extends Item {
     }
 
     @Override
+    @NotNull
     public InteractionResultHolder<ItemStack> use(
-            Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        var stack = pPlayer.getItemInHand(pUsedHand);
+            @NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+        ItemStack stack = player.getItemInHand(usedHand);
 
-        if (pUsedHand == InteractionHand.MAIN_HAND) {
-            if (pPlayer.isShiftKeyDown()) {
-                if (!pLevel.isClientSide) {
-                    pPlayer.openMenu(
+        if (usedHand == InteractionHand.MAIN_HAND) {
+            if (player.isShiftKeyDown()) {
+                if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.openMenu(
                             new SimpleMenuProvider(
-                                    (id, inv, player) -> new ShakerMenu(id, inv),
+                                    (id, inv, player1) -> new ShakerMenu(id, inv),
                                     stack.getDisplayName()));
                 } else {
-                    pPlayer.playSound(
+                    player.playSound(
                             ModSoundEvents.SHAKER_OPEN.get(),
                             0.5F,
-                            pLevel.random.nextFloat() * 0.1F + 0.9F);
+                            level.random.nextFloat() * 0.1F + 0.9F);
                 }
 
-                return InteractionResultHolder.sidedSuccess(stack, pLevel.isClientSide);
+                return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
             } else if (!getFinish(stack)) {
-                pPlayer.startUsingItem(pUsedHand);
-                if (pLevel.isClientSide) {
-                    SoundUtil.shakerSound(pPlayer, pLevel);
+                player.startUsingItem(usedHand);
+                if (level.isClientSide) {
+                    SoundUtil.shakerSound(player, level);
                 }
                 return InteractionResultHolder.success(stack);
             }
@@ -63,34 +65,42 @@ public class ShakerItem extends Item {
 
     @Override
     public void inventoryTick(
-            ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if (pLevel.isClientSide && pEntity instanceof Player player) {
-            if (player.getUseItem() != pStack) {
+            @NotNull ItemStack itemStack,
+            Level pLevel,
+            @NotNull Entity entity,
+            int slotId,
+            boolean isSelected) {
+        if (pLevel.isClientSide && entity instanceof Player player) {
+            if (player.getUseItem() != itemStack) {
                 Minecraft.getInstance()
                         .getSoundManager()
                         .stop(ModSoundEvents.SHAKER.get().getLocation(), player.getSoundSource());
             }
         }
 
-        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+        super.inventoryTick(itemStack, pLevel, entity, slotId, isSelected);
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        if (pLivingEntity instanceof Player player) {
-            setFinish(pStack, true);
+    @NotNull
+    public ItemStack finishUsingItem(
+            @NotNull ItemStack itemStack,
+            @NotNull Level level,
+            @NotNull LivingEntity livingEntity) {
+        if (livingEntity instanceof Player player) {
+            setFinish(itemStack, true);
 
-            if (pLevel.isClientSide) {
+            if (level.isClientSide) {
                 Minecraft.getInstance()
                         .getSoundManager()
                         .stop(ModSoundEvents.SHAKER.get().getLocation(), player.getSoundSource());
-                pLivingEntity.playSound(
+                livingEntity.playSound(
                         ModSoundEvents.COCKTAIL_COMPLETE.get(),
                         0.5F,
-                        pLevel.random.nextFloat() * 0.1F + 0.9F);
+                        level.random.nextFloat() * 0.1F + 0.9F);
             }
         }
-        return pStack;
+        return itemStack;
     }
 
     @Override
@@ -115,7 +125,8 @@ public class ShakerItem extends Item {
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack pStack) {
+    @NotNull
+    public UseAnim getUseAnimation(@NotNull ItemStack pStack) {
         return UseAnim.DRINK;
     }
 }
