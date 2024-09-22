@@ -120,7 +120,6 @@ public class ShakerMenu extends KKMenu {
 
     void slotChanged(IItemHandler handler) {
         if (!handler.getStackInSlot(11).isEmpty()) {
-            ShakerItem.setRecipeTime(itemStack, 0);
             return;
         }
 
