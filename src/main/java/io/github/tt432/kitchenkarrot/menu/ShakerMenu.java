@@ -41,6 +41,17 @@ public class ShakerMenu extends KKMenu {
         super(ModMenuTypes.SHAKER.get(), pContainerId, inventory);
 
         itemStack = inventory.getSelected();
+        handler = (ItemStackHandler) itemStack.getCapability(Capabilities.ItemHandler.ITEM);
+        if (handler != null) {
+            if (itemStack.has(DataComponents.CUSTOM_DATA)) {
+                handler.deserializeNBT(
+                        inventory.player.level().registryAccess(),
+                        itemStack
+                                .getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY)
+                                .copyTag()
+                                .getCompound("inv"));
+            }
+        }
 
         if (!(itemStack.getItem() instanceof ShakerItem)) {
             removed(inventory.player);
@@ -52,24 +63,12 @@ public class ShakerMenu extends KKMenu {
     }
 
     /**
-     * temporary, to sync two sides
-     */
-    private void sync() {
-        IItemHandler capability = Capabilities.ItemHandler.ITEM.getCapability(itemStack, null);
-        if (capability != null) {
-            slotChanged(capability);
-        }
-    }
-
-    /**
      * trigger when finish
      *
      * @param player
      */
     private void finishRecipe(Player player) {
         if (ShakerItem.getFinish(itemStack)) {
-            IItemHandler handler =
-                    Capabilities.ItemHandler.ENTITY_AUTOMATION.getCapability(player, null);
 
             if (handler != null) {
                 if (player.level().isClientSide) {
@@ -189,7 +188,6 @@ public class ShakerMenu extends KKMenu {
     }
 
     void addSlots() {
-        IItemHandler handler = Capabilities.ItemHandler.ITEM.getCapability(itemStack, null);
         if (handler != null) {
             addSlot(handler, 0, 62, 22);
             addSlot(handler, 1, 80, 22);
@@ -210,16 +208,18 @@ public class ShakerMenu extends KKMenu {
     }
 
     @Override
-    public void removed(Player pPlayer) {
-        super.removed(pPlayer);
-        sync();
+    public void removed(Player player) {
+        CompoundTag tag = new CompoundTag();
+        tag.put("inv", handler.serializeNBT(player.level().registryAccess()));
+        itemStack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
 
-        if (pPlayer.level().isClientSide) {
-            pPlayer.playSound(
+        if (player.level().isClientSide) {
+            player.playSound(
                     ModSoundEvents.SHAKER_CLOSE.get(),
                     0.5F,
-                    pPlayer.getRandom().nextFloat() * 0.1F + 0.9F);
+                    player.getRandom().nextFloat() * 0.1F + 0.9F);
         }
+        super.removed(player);
     }
 
     @Override
