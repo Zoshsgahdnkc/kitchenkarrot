@@ -1,6 +1,5 @@
 package io.github.tt432.kitchenkarrot.menu;
 
-import io.github.tt432.kitchenkarrot.item.CocktailItem;
 import io.github.tt432.kitchenkarrot.item.ShakerItem;
 import io.github.tt432.kitchenkarrot.menu.base.KKMenu;
 import io.github.tt432.kitchenkarrot.menu.slot.KKResultSlot;
@@ -81,13 +80,13 @@ public class ShakerMenu extends KKMenu {
                                 .filter(holder -> holder.value().matches(inputs))
                                 .findFirst();
 
-                ItemStack recipeResult = CocktailItem.unknownCocktail();
+                ItemStack recipeResult = null;
 
                 if (recipeHolder.isPresent()) {
                     recipeResult = recipeHolder.get().value().getResultItem(RegistryAccess.EMPTY);
                 }
 
-                if (inputs.stream().anyMatch(ItemStack::isEmpty)) {
+                if (inputs.stream().anyMatch(ItemStack::isEmpty) || recipeResult == null) {
                     return;
                 }
 
