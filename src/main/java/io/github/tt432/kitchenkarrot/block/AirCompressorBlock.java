@@ -107,7 +107,7 @@ public class AirCompressorBlock extends FacingGuiEntityBlock<AirCompressorBlockE
             var be = level.getBlockEntity(pos);
 
             if (be instanceof MenuBlockEntity kk) {
-                player.openMenu(kk,pos);
+                player.openMenu(kk, pos);
                 kk.forceOnce();
             }
             return ItemInteractionResult.CONSUME;

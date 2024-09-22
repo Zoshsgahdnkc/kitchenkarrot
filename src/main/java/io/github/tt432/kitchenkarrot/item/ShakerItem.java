@@ -8,7 +8,6 @@ import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import io.github.tt432.kitchenkarrot.util.SoundUtil;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -38,8 +37,8 @@ public class ShakerItem extends Item {
 
         if (usedHand == InteractionHand.MAIN_HAND) {
             if (player.isShiftKeyDown()) {
-                if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
-                    serverPlayer.openMenu(
+                if (!level.isClientSide) {
+                    player.openMenu(
                             new SimpleMenuProvider(
                                     (id, inv, player1) -> new ShakerMenu(id, inv),
                                     stack.getDisplayName()));
@@ -49,7 +48,6 @@ public class ShakerItem extends Item {
                             0.5F,
                             level.random.nextFloat() * 0.1F + 0.9F);
                 }
-
                 return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
             } else if (!getFinish(stack)) {
                 player.startUsingItem(usedHand);

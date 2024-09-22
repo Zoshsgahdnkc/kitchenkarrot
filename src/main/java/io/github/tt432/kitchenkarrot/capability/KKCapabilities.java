@@ -58,6 +58,7 @@ public class KKCapabilities {
                 (blockEntity, direction) -> blockEntity.getItem());
 
         // Item
+        // spotless:off
         event.registerItem(
                 Capabilities.ItemHandler.ITEM,
                 (itemStack, unused) ->
@@ -65,17 +66,14 @@ public class KKCapabilities {
                             @Override
                             public boolean isItemValid(int slot, @NotNull ItemStack stack) {
                                 return !(stack.getItem() instanceof ShakerItem)
-                                        && (slot < 5
-                                                || slot > 10
-                                                || (slot < 9
-                                                        ? stack.is(ModItemTags.BASE)
-                                                        : slot == 9
-                                                                ? stack.is(ModItems.ICE_CUBES.get())
-                                                                : stack.is(
-                                                                        ModItems.CARROT_SPICES
-                                                                                .get())));
+                                        && (slot < 5 || slot > 10 || (slot < 9 ? stack.is(ModItemTags.BASE)
+                                        : slot == 9 ? stack.is(ModItems.ICE_CUBES.get())
+                                        : stack.is(
+                                        ModItems.CARROT_SPICES
+                                                .get())));
                             }
                         },
                 ModItems.SHAKER);
+        // spotless:on
     }
 }
