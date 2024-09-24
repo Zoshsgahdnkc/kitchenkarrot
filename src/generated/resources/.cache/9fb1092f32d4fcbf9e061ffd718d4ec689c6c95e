@@ -1,4 +1,4 @@
-// 1.21.1	2024-08-26T20:27:39.9392508	Recipes
+// 1.21.1	2024-09-24T18:54:40.3002486	Recipes
 f689f72bdbc1d6f035c639c3fcfd95856ce81360 data/kitchenkarrot/advancement/recipes/food/bikini_bottom_sub.json
 8efca26d4ce0bfaf62cbabb394e9f45acb350cfc data/kitchenkarrot/advancement/recipes/food/birch_sap_donut.json
 ca6b65ba8ff8eaf3e930425a808e90c726dfeb87 data/kitchenkarrot/advancement/recipes/food/buche_de_noel.json
@@ -165,12 +165,12 @@ b29799af9f99149ba335f5597f43f4744c9200c2 data/kitchenkarrot/recipe/fruit_cereal_
 a3a45f58ade15b2762943662e6dc7c19154e9670 data/kitchenkarrot/recipe/honey_brulee.json
 9b10f2a65be4fe53fdb89cc5ac8b2e141b111ce1 data/kitchenkarrot/recipe/iced_melon_lager.json
 26a76a054e46ba96b88e4c793347f3df094fdb99 data/kitchenkarrot/recipe/ice_cubes.json
-de760c16df9380252085c88224bc5febfffac0de data/kitchenkarrot/recipe/kelp_soda.json
+0359490f994698053a3995d00977c42bfe96d3ca data/kitchenkarrot/recipe/kelp_soda.json
 d9001e6dbb0ff14effb2f406330655dbf29c810c data/kitchenkarrot/recipe/kelp_with_sunflower_seed.json
 6e48692a4f229c07d4233c0327aa77e2aed18f3d data/kitchenkarrot/recipe/knife.json
 961320e9b2faae227264508a7f7823c54619eb8e data/kitchenkarrot/recipe/lava_brulee.json
 2f67915af228ecdba602f784efd797db9b298175 data/kitchenkarrot/recipe/leafy_fresh_chocolate.json
-99050e3873653f4828a39685af66a1a9699e3c93 data/kitchenkarrot/recipe/light_soda.json
+5eb183937843c041f47f407b525bf14cf7bcc4c5 data/kitchenkarrot/recipe/light_soda.json
 b20de220fd57145f0c6130ad806943cc16ae565a data/kitchenkarrot/recipe/lush_salad.json
 65336f262369f097b24fdb29db9b02a42f1ed4b8 data/kitchenkarrot/recipe/mead.json
 a5cec5b164ab1582d609ccc991cd75e279ca23f0 data/kitchenkarrot/recipe/mead_base.json
@@ -218,7 +218,7 @@ c55a90633490d0fc637e9dc6659546ffcb02a54b data/kitchenkarrot/recipe/sunflower_oil
 7a934d5a779f9be7865c83ec70f7cf2515b05944 data/kitchenkarrot/recipe/sweet_berry_tart.json
 ab6a8d3fe9feb06e0800c85565b47256ef8957dc data/kitchenkarrot/recipe/sweet_roll.json
 5f73fb6665bd69b03d01393ab62fae4550c9e50f data/kitchenkarrot/recipe/travelers_salad.json
-60d659abfe2f433e410290bd2f1e935260bf4966 data/kitchenkarrot/recipe/twisting_soda.json
+c0c289cb9b9abfa971bf612a8127cfa864a17f98 data/kitchenkarrot/recipe/twisting_soda.json
 9ce653e80658aad16610992be9c08033403f6276 data/kitchenkarrot/recipe/ultra_super_delicious_cereal_porridge.json
 923e85920d6306a8ef5cbaf3464a3c5e0f00b154 data/kitchenkarrot/recipe/vodka.json
 8a9f2d848f863b7cdd836d8100acb4dc71cc3eff data/kitchenkarrot/recipe/vodka_base.json

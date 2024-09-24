@@ -17,6 +17,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -36,7 +37,9 @@ public class BrewingBarrelRecipeCategory extends BaseRecipeCategory<BrewingBarre
 
     @Override
     public void setRecipe(
-            IRecipeLayoutBuilder builder, BrewingBarrelRecipe recipe, @NotNull IFocusGroup focuses) {
+            IRecipeLayoutBuilder builder,
+            BrewingBarrelRecipe recipe,
+            @NotNull IFocusGroup focuses) {
         var ingredients = recipe.getIngredient();
 
         builder.addSlot(RecipeIngredientRole.INPUT, 42, 17).addIngredients(ingredients.get(0));

@@ -186,7 +186,7 @@ public class AirCompressorBlockEntity extends MenuBlockEntity {
 
     protected void start(RecipeHolder<AirCompressorRecipe> pRecipe) {
         setRecipe(pRecipe);
-        maxProgress.set(((AirCompressorRecipe) recipe.value()).getCraftingTime());
+        maxProgress.set(recipe.value().getCraftingTime());
         started.set(true);
     }
 

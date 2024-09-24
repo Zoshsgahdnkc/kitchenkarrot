@@ -42,7 +42,7 @@ public class AirCompressorRecipe extends BaseRecipe {
                                                     .forGetter(
                                                             AirCompressorRecipe::getCraftingTime),
                                             Ingredient.CODEC
-                                                    .fieldOf("container")
+                                                    .optionalFieldOf("container", Ingredient.EMPTY)
                                                     .forGetter(AirCompressorRecipe::getContainer),
                                             ItemStack.SINGLE_ITEM_CODEC
                                                     .fieldOf("result")

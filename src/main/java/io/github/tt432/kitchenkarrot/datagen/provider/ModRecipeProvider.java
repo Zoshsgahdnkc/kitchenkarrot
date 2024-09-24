@@ -655,7 +655,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 Ingredient.of(Items.KELP),
                                 Ingredient.of(Items.KELP)),
                         100,
-                        Ingredient.of(ModItems.EMPTY_CAN))
+                        Ingredient.EMPTY)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KELP_SODA)));
 
         AirCompressorRecipeBuilder.airCompressor(
@@ -667,7 +667,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 Ingredient.of(ItemTags.LEAVES),
                                 Ingredient.of(ItemTags.LEAVES)),
                         100,
-                        Ingredient.of(ModItems.EMPTY_CAN))
+                        Ingredient.EMPTY)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.LIGHT_SODA)));
 
         AirCompressorRecipeBuilder.airCompressor(
@@ -679,7 +679,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 Ingredient.of(Items.TWISTING_VINES),
                                 Ingredient.of(Items.TWISTING_VINES)),
                         100,
-                        Ingredient.of(ModItems.EMPTY_CAN))
+                        Ingredient.EMPTY)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.TWISTING_SODA)));
     }
 
