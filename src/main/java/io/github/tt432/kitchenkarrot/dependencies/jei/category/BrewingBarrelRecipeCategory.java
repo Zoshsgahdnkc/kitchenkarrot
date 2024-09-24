@@ -7,6 +7,7 @@ import io.github.tt432.kitchenkarrot.recipes.recipe.BrewingBarrelRecipe;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.ITooltipBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
@@ -16,9 +17,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.Collections;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author DustW
@@ -37,7 +36,7 @@ public class BrewingBarrelRecipeCategory extends BaseRecipeCategory<BrewingBarre
 
     @Override
     public void setRecipe(
-            IRecipeLayoutBuilder builder, BrewingBarrelRecipe recipe, IFocusGroup focuses) {
+            IRecipeLayoutBuilder builder, BrewingBarrelRecipe recipe, @NotNull IFocusGroup focuses) {
         var ingredients = recipe.getIngredient();
 
         builder.addSlot(RecipeIngredientRole.INPUT, 42, 17).addIngredients(ingredients.get(0));
@@ -54,21 +53,21 @@ public class BrewingBarrelRecipeCategory extends BaseRecipeCategory<BrewingBarre
     }
 
     @Override
-    public List<Component> getTooltipStrings(
-            BrewingBarrelRecipe recipe,
-            IRecipeSlotsView recipeSlotsView,
+    public void getTooltip(
+            @NotNull ITooltipBuilder tooltip,
+            @NotNull BrewingBarrelRecipe recipe,
+            @NotNull IRecipeSlotsView recipeSlotsView,
             double mouseX,
             double mouseY) {
         if (mouseX >= 20 && mouseX <= 38) {
             if (mouseY >= 16 && mouseY <= 34)
-                return List.of(
+                tooltip.add(
                         Component.translatable(
                                 "info.kitchenkarrot.water", recipe.getWaterConsumption()));
             if (mouseY >= 36 && mouseY <= 54)
-                return List.of(
+                tooltip.add(
                         Component.translatable(
                                 "info.kitchenkarrot.time", recipe.getCraftingTime() / 20));
         }
-        return Collections.emptyList();
     }
 }
