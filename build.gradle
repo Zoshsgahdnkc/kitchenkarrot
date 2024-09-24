@@ -121,9 +121,9 @@ repositories {
 }
 
 dependencies {
-    compileOnly "mezz.jei:jei-1.21-common-api:19.5.0.39"
-    compileOnly "mezz.jei:jei-1.21-neoforge-api:19.5.0.39"
-    localRuntime "mezz.jei:jei-1.21-neoforge:19.5.0.39"
+    compileOnly "mezz.jei:jei-1.21.1-common-api:19.18.10.218"
+    compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.18.10.218"
+    localRuntime "mezz.jei:jei-1.21.1-neoforge:19.18.10.218"
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
