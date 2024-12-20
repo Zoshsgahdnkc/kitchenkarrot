@@ -829,7 +829,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_SWORD), has(Items.IRON_SWORD))
                 .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KNIFE.get())));
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.ENCHANTED_CHEESE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.GOLDEN_CHEESE.get())
                 .group(KK)
                 .define('#', ModItems.CHEESE_SLICE.get())
                 .define('-', Items.GOLD_NUGGET)
@@ -839,7 +839,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(
                         getHasName(ModItems.CHEESE_SLICE.get()), has(ModItems.CHEESE_SLICE.get()))
                 .unlockedBy(getHasName(Items.GOLD_NUGGET), has(Items.GOLD_NUGGET))
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ENCHANTED_CHEESE.get())));
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.GOLDEN_CHEESE.get())));
 
         simpleMiscShaped(ModBlocks.ACORN_OIL, 2, ModItemTags.ACORN)
                 .pattern("* ")

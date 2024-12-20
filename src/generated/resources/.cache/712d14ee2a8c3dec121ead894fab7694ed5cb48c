@@ -1,4 +1,4 @@
-// 1.21.1	2024-08-26T20:27:39.9332686	Item Models: kitchenkarrot
+// 1.21.1	2024-12-20T20:02:30.7945917	Item Models: kitchenkarrot
 587a728a6194f49a78ce4da0a026dc1a4bbebeef assets/kitchenkarrot/models/item/acorn.json
 7f62e09445b4d6ddd57a6d2ac3b52e91243b5d04 assets/kitchenkarrot/models/item/acorn_oil.json
 46b625de364e39641dbefbe62c60af36aa6e4ab6 assets/kitchenkarrot/models/item/acorn_wine.json
@@ -49,7 +49,6 @@ d93d44a9c1599c03ff85f3071a74ed1f102fef6b assets/kitchenkarrot/models/item/curry_
 b5e3334f49d5883f6f16e1f700453552ba35709f assets/kitchenkarrot/models/item/dungeon_pizza_slice.json
 29365a4cc2893e286925be32bf736b1f6a67850a assets/kitchenkarrot/models/item/egg_tart.json
 e9d441187f761bb85559da8babb82afeb7b2704f assets/kitchenkarrot/models/item/empty_can.json
-b3d824ced8a1380bbda311a5a45e30b2940e6fe7 assets/kitchenkarrot/models/item/enchanted_cheese.json
 a7e4410b8b5845992c5aa903c96d7738362b4fce assets/kitchenkarrot/models/item/feast_pizza.json
 c34c737a272952a5a8d7e7d96993c07ee34fd338 assets/kitchenkarrot/models/item/feast_pizza_slice.json
 36ff1267655274866cebcab352517f16bcef2a29 assets/kitchenkarrot/models/item/fine_salt.json
@@ -62,6 +61,7 @@ de6606ff4a3b6c3c2747eece886c52a71b21a6be assets/kitchenkarrot/models/item/fries.
 492aebd11443feccf51d72689a35d06c78ac5020 assets/kitchenkarrot/models/item/fruit_cereal_porridge.json
 0157aff95335129095446c8aafa3d0568fae6b41 assets/kitchenkarrot/models/item/gem_carrot.json
 a59a8d580fa96976c9027921d2b9bb6309cfb1eb assets/kitchenkarrot/models/item/glow_berry_lager.json
+2c14e75baba3fd231c7282d64c2335274f5e9517 assets/kitchenkarrot/models/item/golden_cheese.json
 ce54a5c96ff73cfd49b19a46c3f1803c5f159e97 assets/kitchenkarrot/models/item/grilled_fish_and_cactus.json
 260eb31fdf1dfb09bf8ae207acd19c28e602e378 assets/kitchenkarrot/models/item/grilled_wheatmeal.json
 49573324d96378d4b56527d1f6992a97f48a2256 assets/kitchenkarrot/models/item/hi_nrg_brulee.json

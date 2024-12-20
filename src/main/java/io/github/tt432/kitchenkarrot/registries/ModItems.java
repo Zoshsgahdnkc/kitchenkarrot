@@ -134,8 +134,8 @@ public class ModItems {
             ITEMS.register("cheese_wheel", () -> new ModFood(11, 1.1F));
     public static final DeferredItem<Item> CHEESE_SLICE =
             ITEMS.register("cheese_slice", () -> new ModFood(11, 1.1F));
-    public static final DeferredItem<Item> ENCHANTED_CHEESE =
-            ITEMS.register("enchanted_cheese", () -> new ModFood(11, 1.1F));
+    public static final DeferredItem<Item> GOLDEN_CHEESE =
+            ITEMS.register("golden_cheese", () -> new ModFood(11, 1.1F));
     public static final DeferredItem<Item> CRIMSON_FUNGI_SPRING_ROLL =
             ITEMS.register("crimson_fungi_spring_roll", () -> new ModFood(11, 1.1F));
     public static final DeferredItem<Item> MIXED_NUTS_MOONCAKE =
