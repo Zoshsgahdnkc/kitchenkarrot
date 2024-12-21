@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "kitchenkarrot:item/enchanted_cheese"
+    "layer0": "kitchenkarrot:item/golden_cheese"
   }
 }

@@ -86,7 +86,7 @@ public class ModTabs {
             event.accept(ModItems.SEED_PIE);
             event.accept(ModItems.CHEESE_WHEEL);
             event.accept(ModItems.CHEESE_SLICE);
-            event.accept(ModItems.ENCHANTED_CHEESE);
+            event.accept(ModItems.GOLDEN_CHEESE);
             event.accept(ModItems.RAW_BEEF_IN_DRIPLEAF);
             event.accept(ModItems.BEEF_IN_DRIPLEAF);
             event.accept(ModItems.SMALL_BEEF_IN_DRIPLEAF);
