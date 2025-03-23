@@ -104,7 +104,7 @@
     "item.kitchenkarrot.carrot_and_carrot": "群英荟萃",
     "item.kitchenkarrot.cheese_wheel": "奶酪轮",
     "item.kitchenkarrot.cheese_slice": "小块奶酪",
-    "item.kitchenkarrot.enchanted_cheese": "附魔奶酪",
+    "item.kitchenkarrot.golden_cheese": "金奶酪",
     "item.kitchenkarrot.stone_shore_quiche": "石岸咸派",
     "item.kitchenkarrot.crimson_fungi_spring_roll": "绯红菌春卷",
     "item.kitchenkarrot.buche_de_noel": "圣诞木柴蛋糕",
@@ -246,10 +246,14 @@
     "advancement.kitchenkarrot.get_canned_hoglin_confit.desc": "用你手头的金锭换点猪灵佳肴",
 
     "entity.kitchenkarrot.can": "空罐头",
+    "effect.kitchenkarrot.disperse": "净化",
+    "effect.kitchenkarrot.tidal_affinity": "潮汐亲和",
+    "effect.kitchenkarrot.tipsy": "微醺",
+    "effect.kitchenkarrot.toxic_resistance": "剧毒抗性",
+    "effect.kitchenkarrot.wither_resistance": "凋零抗性",
     "potion.potency.6": "VI",
     "potion.potency.7": "VII",
     "potion.potency.8": "VIII",
     "potion.potency.9": "IX",
-    "potion.potency.10": "X",
-    "item.kitchenkarrot.cream_of_mushroom_soup": "奶油蘑菇汤"
+    "potion.potency.10": "X"
 }

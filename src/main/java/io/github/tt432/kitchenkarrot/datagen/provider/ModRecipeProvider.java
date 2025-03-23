@@ -420,7 +420,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodShapeless(ModItems.STONE_SHORE_QUICHE)
                 .requires(Items.WHEAT, 2)
                 .requires(Items.TURTLE_EGG)
-                .requires(ModItems.CHEESE_SLICE)
+                .requires(ModItemTags.CHEESE)
                 .requires(Items.POPPY)
                 .requires(ModItems.CARROT_SPICES)
                 .requires(ModItemTags.SALT)
@@ -444,11 +444,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.WHEAT)
                 .requires(tag("forge", "eggs"))
                 .requires(Items.SWEET_BERRIES)
-                .requires(Items.COCOA_BEANS)
+                .requires(ItemTags.LOGS)
                 .requires(Items.SUGAR)
                 .requires(ModItemTags.ICE_CUBES)
                 .unlockedBy(Items.SWEET_BERRIES)
-                .unlockedBy(Items.COCOA_BEANS)
                 .unlockedBy(ModItemTags.ICE_CUBES)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.BUCHE_DE_NOEL.get())));
         foodShapeless(ModItems.MIXED_NUTS_MOONCAKE)
@@ -474,7 +473,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItemTags.BREAD)
                 .requires(ModItems.SASHIMI)
                 .requires(ModItems.PICKLED_SEA_PICKLES)
-                .requires(ModItems.CHEESE_SLICE)
+                .requires(ModItemTags.CHEESE)
                 .requires(ModItems.CARROT_SPICES)
                 .requires(Items.INK_SAC)
                 .unlockedBy(ModItemTags.BREAD)
@@ -541,7 +540,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_SWORD), has(Items.IRON_SWORD))
                 .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.KNIFE.get())));
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.ENCHANTED_CHEESE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.GOLDEN_CHEESE.get())
                 .group(KK)
                 .define('#', ModItems.CHEESE_SLICE.get())
                 .define('-', Items.GOLD_NUGGET)
@@ -551,7 +550,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(
                         getHasName(ModItems.CHEESE_SLICE.get()), has(ModItems.CHEESE_SLICE.get()))
                 .unlockedBy(getHasName(Items.GOLD_NUGGET), has(Items.GOLD_NUGGET))
-                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.ENCHANTED_CHEESE.get())));
+                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.GOLDEN_CHEESE.get())));
 
         simpleMiscShaped(ModBlocks.ACORN_OIL.get(), 2, ModItemTags.ACORN)
                 .pattern("* ")
@@ -613,7 +612,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("121")
                 .pattern("333")
                 .pattern("444")
-                .define('1', ModItemTags.MILK)
+                .define('1', ModItemTags.CHEESE)
                 .define('2', ModItemTags.SALT)
                 .define('3', Ingredient.of(Items.ROTTEN_FLESH, Items.SPIDER_EYE))
                 .define('4', Tags.Items.CROPS_WHEAT)
@@ -631,7 +630,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("121")
                 .pattern("333")
                 .pattern("444")
-                .define('1', ModItemTags.MILK)
+                .define('1', ModItemTags.CHEESE)
                 .define('2', ModItemTags.OIL)
                 .define('3', ModItemTags.MEAT)
                 .define('4', Tags.Items.CROPS_WHEAT)
@@ -853,8 +852,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         simpleMiscShapeless(ModItems.CROQUE_MADAME, null)
                 .requires(Items.BREAD)
-                .requires(ModItemTags.MILK)
-                .requires(ModItemTags.MILK)
+                .requires(ModItemTags.CHEESE)
                 .requires(ModItemTags.OIL)
                 .requires(Tags.Items.EGGS)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.CROQUE_MADAME.get())));

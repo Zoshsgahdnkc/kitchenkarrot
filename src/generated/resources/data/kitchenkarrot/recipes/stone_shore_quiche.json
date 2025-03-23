@@ -13,7 +13,7 @@
       "item": "minecraft:turtle_egg"
     },
     {
-      "item": "kitchenkarrot:cheese_slice"
+      "tag": "forge:cheese"
     },
     {
       "item": "minecraft:poppy"

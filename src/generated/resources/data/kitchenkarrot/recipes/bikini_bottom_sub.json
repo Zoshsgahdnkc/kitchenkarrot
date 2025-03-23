@@ -13,7 +13,7 @@
       "item": "kitchenkarrot:pickled_sea_pickles"
     },
     {
-      "item": "kitchenkarrot:cheese_slice"
+      "tag": "forge:cheese"
     },
     {
       "item": "kitchenkarrot:carrot_spices"

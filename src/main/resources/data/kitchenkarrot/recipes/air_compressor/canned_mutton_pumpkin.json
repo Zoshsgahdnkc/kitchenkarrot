@@ -1,0 +1,24 @@
+{
+  "type": "kitchenkarrot:air_compressing",
+  "ingredient": [
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "tag": "forge:cooked_mutton"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:canned_mutton_pumpkin"
+  },
+  "container": {
+    "item": "kitchenkarrot:empty_can"
+  },
+  "craftingtime": 100
+}

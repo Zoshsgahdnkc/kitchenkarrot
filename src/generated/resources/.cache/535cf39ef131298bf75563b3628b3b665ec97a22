@@ -1,6 +1,7 @@
-// 1.20.1	2024-08-05T19:28:04.2761427	Tags for minecraft:item mod id kitchenkarrot
+// 1.20.1	2025-03-24T01:30:06.6854198	Tags for minecraft:item mod id kitchenkarrot
 ec31611b98630ef9282bd6dffa2f6d35edec1e69 data/ecologics/tags/items/squirrel_tempt_items.json
 0bdc999a7f653eecbb3c513a0baf1b963a2587ab data/forge/tags/items/bread.json
+4b94c7ee28c881924a69b99a57dea58b74705435 data/forge/tags/items/cheese.json
 07ee70cc11fb3f2a3872f4b3a5f68cf59b8e09f7 data/forge/tags/items/cooked_beef.json
 c3c27458abd0552603e7efa5057e67df2cdca0e5 data/forge/tags/items/cooked_chicken.json
 d8b0b700fc458d4dd250857ba426aa4a8d57a1e7 data/forge/tags/items/cooked_mutton.json
@@ -26,7 +27,7 @@ bda323c7da748792cc9c57578c970cbbb09c12b6 data/forge/tags/items/water.json
 85286a2a6549f0f75912e96af7db342fa65262c3 data/kitchenkarrot/tags/items/cooked_meat.json
 7d84095d462f85b2ba3c675cbafd871f76d31726 data/kitchenkarrot/tags/items/corals.json
 e11ed0b6a7871924f38af8fc5dd6c9cb70d4e018 data/kitchenkarrot/tags/items/fire_charges.json
-d34f2970ae8e96c64ca0f6c8c37352d3741c32f7 data/kitchenkarrot/tags/items/grass_spices.json
+a90a0516923f485028b08d7c64f41346ae571e44 data/kitchenkarrot/tags/items/grass_spices.json
 43a04d4e60dce95f8610d8326699ea2a2da43961 data/kitchenkarrot/tags/items/interact_with_plate.json
 97261fb438101a962d82cab12956ff1c4048644d data/kitchenkarrot/tags/items/knife_item.json
 a6070b25fc355153aaac5fde77a4e474ec74da87 data/kitchenkarrot/tags/items/meat.json

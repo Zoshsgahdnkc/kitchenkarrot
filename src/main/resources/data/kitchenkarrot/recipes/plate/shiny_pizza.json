@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:shiny_pizza"
+    },
+    "result": {
+      "item": "kitchenkarrot:shiny_pizza_slice"
+    }
+  }

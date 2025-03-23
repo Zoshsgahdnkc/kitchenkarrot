@@ -1,0 +1,24 @@
+{
+  "type": "kitchenkarrot:air_compressing",
+  "ingredient": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:canned_candied_apple"
+  },
+  "container": {
+    "item": "kitchenkarrot:empty_can"
+  },
+  "craftingtime": 100
+}

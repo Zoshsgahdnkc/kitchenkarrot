@@ -38,6 +38,8 @@ public class ModItemTags {
     // neoforge Tags
     public static final TagKey<Item> KNIVES =
             ItemTags.create(new ResourceLocation("forge:tools/knives"));
+    public static final TagKey<Item> CHEESE =
+            ItemTags.create(new ResourceLocation("forge:cheese"));
     public static final TagKey<Item> NUTS = ItemTags.create(new ResourceLocation("forge:nuts"));
     public static final TagKey<Item> CROPS_RICE =
             ItemTags.create(new ResourceLocation("forge:crops/rice"));

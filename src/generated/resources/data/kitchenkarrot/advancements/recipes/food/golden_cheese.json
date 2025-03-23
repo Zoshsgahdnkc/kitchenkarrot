@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "kitchenkarrot:enchanted_cheese"
+        "recipe": "kitchenkarrot:golden_cheese"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "kitchenkarrot:enchanted_cheese"
+      "kitchenkarrot:golden_cheese"
     ]
   },
   "sends_telemetry_event": false

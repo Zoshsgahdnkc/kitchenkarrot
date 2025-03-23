@@ -1,0 +1,30 @@
+{
+    "type": "kitchenkarrot:brewing_barrel",
+    "content":{
+        "recipe":[
+            {
+                "tag" : "forge:crops/potato"
+            },
+            {
+                "tag" : "forge:crops/potato"
+            },
+            {
+                "tag" : "forge:crops/potato"
+            },
+            {
+                "tag" : "forge:crops/potato"
+            },
+            {
+                "tag" : "forge:crops/beetroot"
+            },
+            {
+                "tag" : "forge:crops/beetroot"
+            }
+        ],
+        "craftingtime":6000
+    },
+    "result":{
+        "item":"kitchenkarrot:vodka"
+    }
+
+}

@@ -11,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 //TODO IMPLEMENT THIS
 public class TidalAffinityEffect extends MobEffect {
 
-    public static final Attribute ATTRIBUTE = Attributes.ATTACK_SPEED;
+    public static final Attribute ATTRIBUTE = Attributes.MOVEMENT_SPEED;
 
     public TidalAffinityEffect(MobEffectCategory category, int color) {
         super(category, color);
@@ -24,7 +24,7 @@ public class TidalAffinityEffect extends MobEffect {
                 2D, AttributeModifier.Operation.MULTIPLY_TOTAL);
         if (pLivingEntity.isInWaterOrRain()) {
             attributeinstance.removeModifier(attributemodifier);
-            attributeinstance.addTransientModifier(attributemodifier);
+            attributeinstance.addPermanentModifier(attributemodifier);
 //            attributeinstance.addPermanentModifier(new AttributeModifier(attributemodifier.getId(),
 //                    this.getDescriptionId() + " " + pAmplifier, this.getAttributeModifierValue(pAmplifier, attributemodifier), attributemodifier.getOperation()));
         } else {

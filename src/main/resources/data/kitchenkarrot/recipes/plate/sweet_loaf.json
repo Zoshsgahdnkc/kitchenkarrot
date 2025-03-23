@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:sweet_loaf"
+    },
+    "result": {
+      "item": "kitchenkarrot:sweet_loaf_slice"
+    }
+  }

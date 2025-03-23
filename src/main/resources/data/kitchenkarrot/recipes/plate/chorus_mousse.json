@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:chorus_mousse"
+    },
+    "result": {
+      "item": "kitchenkarrot:small_chorus_mousse"
+    }
+  }
