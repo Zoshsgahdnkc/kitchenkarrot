@@ -93,7 +93,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItemTags.RAW_PORK,
                         ModItemTags.FOOD_RAW_FISH);
         tag(ModItemTags.SALT_ROCK)
-                .add(Items.CALCITE, Items.TUFF, Items.MOSSY_COBBLESTONE, Items.DIORITE);
+                .add(Items.CALCITE, Items.MOSSY_COBBLESTONE, Items.DIORITE);
         tag(ModItemTags.VEGAN_MEAT)
                 .add(
                         ModItems.RAW_VEGAN_BEEF.get(),

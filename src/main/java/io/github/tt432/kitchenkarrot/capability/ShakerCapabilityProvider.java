@@ -22,6 +22,7 @@ public class ShakerCapabilityProvider extends CapabilityProvider<ShakerCapabilit
     private final LazyOptional<ItemStackHandler> handler = LazyOptional.of(() -> new ItemStackHandler(12) {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            if (!stack.getItem().canFitInsideContainerItems()) return false;
             return !(stack.getItem() instanceof ShakerItem) && (slot < 5 || slot > 10 || (slot < 9 ? stack.is(ModItemTags.BASE) :
                     slot == 9 ? stack.is(ModItems.ICE_CUBES.get()) : stack.is(ModItems.CARROT_SPICES.get())));
         }

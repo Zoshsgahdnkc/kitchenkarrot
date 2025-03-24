@@ -141,10 +141,13 @@
     "info.kitchenkarrot.popacorn":"%s Bites Remains",
     "info.kitchenkarrot.water":"Water Consumption: %smB",
     "info.kitchenkarrot.time":"Brewing Duration: %ss",
+    "info.kitchenkarrot.shaker1":"Shift right click to open the shaker",
+    "info.kitchenkarrot.shaker2":"Hold right click after closing the shaker to shake.",
     "jei.info.kitchenkarrot.gem_carrot":"Has a small chance to be harvested from normal carrots plants.",
     "jei.info.kitchenkarrot.fine_salt":"In most circumstances, can be bought from a butcher villager.(Configurable)",
     "jei.info.kitchenkarrot.pillager_pie":"Has a small chance to be looted from illager structure or from a dead pillager.",
     "jei.info.kitchenkarrot.water":"Right click the air compressor with a water bucket to obtain quickly.",
+    "jei.info.kitchenkarrot.shaker":"Shift right click to open the shaker. Input five ingredients in the middle. Close the shaker and hold right click to shake until hearing a ding sound. The slots on the left is for storing ingredients",
 
     "kitchenkarrot.unknown":"Unknown Cocktail",
     "kitchenkarrot.unknown.tooltip":"Creative work.Uncertain effect.",

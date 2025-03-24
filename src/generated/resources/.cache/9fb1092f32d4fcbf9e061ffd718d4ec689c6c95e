@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-24T01:30:06.6804178	Recipes
+// 1.20.1	2025-03-24T17:19:36.3064039	Recipes
 3bf5a784fe21a1373dba39e499b1a560883c4e49 data/kitchenkarrot/advancements/recipes/food/bikini_bottom_sub.json
 5cd5a68f6aad3d4e90ddecca3754af331d34d5d3 data/kitchenkarrot/advancements/recipes/food/birch_sap_donut.json
 b351f57fa5be8c8ad68ebeb1036eca3c10d1af88 data/kitchenkarrot/advancements/recipes/food/buche_de_noel.json
@@ -66,6 +66,7 @@ fed6bd7de1e9a5921dad7ce0f7c476a78f863d55 data/kitchenkarrot/advancements/recipes
 32a72e7ea7d82a93f9a9bdf1a1ff991196b44fd1 data/kitchenkarrot/advancements/recipes/misc/raw_vegan_pork.json
 edf2cf11003b18a4249af956471bd5a8faa52081 data/kitchenkarrot/advancements/recipes/misc/rice_cake.json
 b51b018cc494e007f46a39a4bb6960e38438644d data/kitchenkarrot/advancements/recipes/misc/rock_salt.json
+220b03081b7c11a34c680b7bf6ccd9519052508c data/kitchenkarrot/advancements/recipes/misc/rock_salt_with_tuff.json
 75ae3bfe40841a80c9147c3172fd9e96cd3ee3ea data/kitchenkarrot/advancements/recipes/misc/rum_base.json
 1a9f8bf7e477b37ba6b38d0b5a2450a60679caeb data/kitchenkarrot/advancements/recipes/misc/sashimi.json
 67640c9f10fafb486bdb2cbb53f5f04652d65f8c data/kitchenkarrot/advancements/recipes/misc/sea_salt_2.json
@@ -157,6 +158,7 @@ bd188c65a1f1b3eb2f4ac183dfdfd41cc2b5df22 data/kitchenkarrot/recipes/raw_vegan_mu
 f4271dbd6fa2c91643cfee516d783f348cb0ac74 data/kitchenkarrot/recipes/raw_vegan_pork.json
 c51e41b45c63ffec944bc57380a1e8c1cd872ce4 data/kitchenkarrot/recipes/rice_cake.json
 ecfa9d2a307250cb3c7fddee0e23697a545aa3f6 data/kitchenkarrot/recipes/rock_salt.json
+e38a76c15edb7d5fbffd26aaaae373112d679f59 data/kitchenkarrot/recipes/rock_salt_with_tuff.json
 71a15d291a5d3e84f3c33825dbeaa83f3f5c0a0e data/kitchenkarrot/recipes/rum_base.json
 c0656e5172d452f78f49522eb65d228fcae0b367 data/kitchenkarrot/recipes/sashimi.json
 52b98ba9133fbbaefc4b4bd8dc1a87a94ca91444 data/kitchenkarrot/recipes/sea_salt_2.json

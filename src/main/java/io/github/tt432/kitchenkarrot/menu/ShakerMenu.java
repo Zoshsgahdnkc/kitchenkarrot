@@ -129,7 +129,32 @@ public class ShakerMenu extends KKMenu {
         if (index == slots.size() - 1) {
             sound();
         }
-        return super.quickMoveStack(player, index);
+        var slot = slots.get(index);
+        var slotItem = slot.getItem();
+        var playerSlotSize = 36;
+
+        if (index < playerSlotSize) {
+            for (int i = playerSlotSize; i < slots.size(); i++) {
+                var temp = slots.get(i);
+
+                if (temp.safeInsert(slotItem).isEmpty()) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
+        }
+        else {
+            for (int i = 0; i < playerSlotSize; i++) {
+                var temp = slots.get(i);
+
+                if (temp.safeInsert(slotItem).isEmpty()) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
+        }
+
+        return ItemStack.EMPTY;
     }
 
     // init

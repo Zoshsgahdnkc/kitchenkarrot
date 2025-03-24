@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-24T01:30:06.6854198	Tags for minecraft:item mod id kitchenkarrot
+// 1.20.1	2025-03-24T17:19:36.3114039	Tags for minecraft:item mod id kitchenkarrot
 ec31611b98630ef9282bd6dffa2f6d35edec1e69 data/ecologics/tags/items/squirrel_tempt_items.json
 0bdc999a7f653eecbb3c513a0baf1b963a2587ab data/forge/tags/items/bread.json
 4b94c7ee28c881924a69b99a57dea58b74705435 data/forge/tags/items/cheese.json
@@ -32,5 +32,5 @@ a90a0516923f485028b08d7c64f41346ae571e44 data/kitchenkarrot/tags/items/grass_spi
 97261fb438101a962d82cab12956ff1c4048644d data/kitchenkarrot/tags/items/knife_item.json
 a6070b25fc355153aaac5fde77a4e474ec74da87 data/kitchenkarrot/tags/items/meat.json
 dbdeae99671a510a35a82be5656c839db9c368c8 data/kitchenkarrot/tags/items/raw_meat.json
-d932b55c1628b2bcec76a6d7b423ae7c55fd4b79 data/kitchenkarrot/tags/items/salt_rock.json
+d80f03527147ea44643615a3a1397b68f3b1c364 data/kitchenkarrot/tags/items/salt_rock.json
 ef76563c5ce4beb535da2e474148784c70cc5293 data/kitchenkarrot/tags/items/vegan_meat.json

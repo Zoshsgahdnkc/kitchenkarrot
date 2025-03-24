@@ -686,6 +686,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('*', ModItemTags.SALT_ROCK)
                 .save(recipeOutput, RL(getSimpleRecipeName(ModBlocks.ROCK_SALT.get())));
 
+        simpleMiscShaped(ModBlocks.ROCK_SALT, 2, null)
+                .pattern("* ")
+                .pattern(" *")
+                .define('*', Items.TUFF)
+                .save(recipeOutput, RL("rock_salt_with_tuff"));
+
         simpleMiscShaped(ModBlocks.SEA_SALT, 2, null)
                 .pattern("* ")
                 .pattern(" #")

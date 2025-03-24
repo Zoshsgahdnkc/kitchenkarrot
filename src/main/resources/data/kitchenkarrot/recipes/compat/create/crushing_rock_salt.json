@@ -8,18 +8,22 @@
   "type": "create:crushing",
   "ingredients": [
     {
-      "item": "kitchenkarrot:gem_carrot"
+      "tag": "kitchenkarrot:salt_rock"
     }
   ],
   "results": [
     {
-      "item": "kitchenkarrot:carrot_spices",
-      "count": 2
+      "item": "kitchenkarrot:rock_salt",
+      "count": 1
     },
     {
-      "item": "kitchenkarrot:carrot_spices",
+      "item": "kitchenkarrot:rock_salt",
       "chance": 0.5
+    },
+    {
+      "item": "minecraft:cobblestone",
+      "chance": 0.2
     }
   ],
-  "processingTime": 200
+  "processingTime": 480
 }

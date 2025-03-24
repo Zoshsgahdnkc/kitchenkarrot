@@ -16,6 +16,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -31,6 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author DustW
@@ -147,12 +150,26 @@ public class AirCompressorBlockEntity extends MenuBlockEntity {
 
     private void finish() {
         for (int i = 0; i < input1.getSlots(); i++) {
+            ItemStack remaining = input1.getStackInSlot(i).getCraftingRemainingItem();
+            if (remaining != ItemStack.EMPTY) {
+                popRemainingItem(remaining);
+            }
             input1.extractItem(i, 1, false);
         }
         energy.reduce(10, 0);
         output.insertItem(0, getRecipe().getResultItem(RegistryAccess.EMPTY), false);
 //        output.insertItem(0, getRecipe().getResultItem(), false);
         stop();
+    }
+
+    private void popRemainingItem(ItemStack remaining) {
+        BlockPos pos = getBlockPos();
+        RandomSource random = level.getRandom();
+        level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                remaining,
+                random.nextFloat() * 2 - 1,
+                random.nextFloat(),
+                random.nextFloat() * 2 - 1));
     }
 
     private boolean isRecipeSame() {
