@@ -23,6 +23,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_fresh_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:fresh_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_moss_block": {
       "conditions": {
         "items": [
@@ -44,6 +56,7 @@
   },
   "requirements": [
     [
+      "has_fresh_salad",
       "has_bowl",
       "has_moss_block",
       "has_TagKey[minecraft:item / minecraft:small_flowers]",

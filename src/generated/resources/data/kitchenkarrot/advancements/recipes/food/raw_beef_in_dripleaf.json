@@ -45,6 +45,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_raw_beef_in_dripleaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:raw_beef_in_dripleaf"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:raw_beef_in_dripleaf"
@@ -54,6 +66,7 @@
   },
   "requirements": [
     [
+      "has_raw_beef_in_dripleaf",
       "has_big_dripleaf",
       "has_TagKey[minecraft:item / forge:raw_beef]",
       "has_TagKey[minecraft:item / forge:salt]",

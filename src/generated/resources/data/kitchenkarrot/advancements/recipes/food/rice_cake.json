@@ -11,6 +11,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_rice_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:rice_cake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_sugar": {
       "conditions": {
         "items": [
@@ -32,6 +44,7 @@
   },
   "requirements": [
     [
+      "has_rice_cake",
       "has_TagKey[minecraft:item / forge:crops/rice]",
       "has_sugar",
       "has_the_recipe"

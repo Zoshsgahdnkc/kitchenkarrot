@@ -1401,7 +1401,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static ModShapelessRecipeBuilder foodShapeless(RegistryObject<Item> food, int count) {
-        return ModShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, food.get(), count);
+        return ModShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, food.get(), count).unlockedBy(getHasName(food.get()), has(food.get()));
     }
 
     protected static ResourceLocation RL(String string) {

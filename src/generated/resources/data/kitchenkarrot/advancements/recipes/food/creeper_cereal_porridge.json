@@ -23,6 +23,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_creeper_cereal_porridge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:creeper_cereal_porridge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_grilled_wheatmeal": {
       "conditions": {
         "items": [
@@ -56,6 +68,7 @@
   },
   "requirements": [
     [
+      "has_creeper_cereal_porridge",
       "has_bowl",
       "has_grilled_wheatmeal",
       "has_TagKey[minecraft:item / forge:milk]",

@@ -11,6 +11,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_bacon_wrapped_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:bacon_wrapped_potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_baked_potato": {
       "conditions": {
         "items": [
@@ -52,6 +64,7 @@
   },
   "requirements": [
     [
+      "has_bacon_wrapped_potato",
       "has_TagKey[minecraft:item / forge:cooked_pork]",
       "has_baked_potato",
       "has_oil",

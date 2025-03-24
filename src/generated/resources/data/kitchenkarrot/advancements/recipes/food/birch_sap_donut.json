@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_birch_sap_donut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:birch_sap_donut"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_oil": {
       "conditions": {
         "items": [
@@ -56,6 +68,7 @@
   },
   "requirements": [
     [
+      "has_birch_sap_donut",
       "has_wheat",
       "has_birch_sap",
       "has_sugar",

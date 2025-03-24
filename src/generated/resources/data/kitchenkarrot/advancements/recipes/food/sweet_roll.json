@@ -31,6 +31,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_sweet_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:sweet_roll"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:sweet_roll"
@@ -40,6 +52,7 @@
   },
   "requirements": [
     [
+      "has_sweet_roll",
       "has_TagKey[minecraft:item / forge:bread]",
       "has_TagKey[minecraft:item / forge:salt]",
       "has_TagKey[minecraft:item / forge:eggs]",

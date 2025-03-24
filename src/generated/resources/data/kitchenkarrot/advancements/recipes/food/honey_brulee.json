@@ -33,6 +33,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_honey_brulee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:honey_brulee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_sugar": {
       "conditions": {
         "items": [
@@ -54,6 +66,7 @@
   },
   "requirements": [
     [
+      "has_honey_brulee",
       "has_TagKey[minecraft:item / forge:milk]",
       "has_TagKey[minecraft:item / forge:cooking_oil]",
       "has_sugar",

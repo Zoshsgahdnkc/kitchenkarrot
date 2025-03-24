@@ -41,6 +41,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_hi_nrg_brulee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:hi_nrg_brulee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:hi_nrg_brulee"
@@ -50,6 +62,7 @@
   },
   "requirements": [
     [
+      "has_hi_nrg_brulee",
       "has_TagKey[minecraft:item / forge:milk]",
       "has_TagKey[minecraft:item / forge:cooking_oil]",
       "has_TagKey[minecraft:item / forge:dusts/redstone]",

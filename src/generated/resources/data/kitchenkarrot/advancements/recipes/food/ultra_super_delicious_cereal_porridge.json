@@ -52,10 +52,23 @@
         "recipe": "kitchenkarrot:ultra_super_delicious_cereal_porridge"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_super_delicious_cereal_porridge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:ultra_super_delicious_cereal_porridge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
+      "has_ultra_super_delicious_cereal_porridge",
       "has_bowl",
       "has_grilled_wheatmeal",
       "has_TagKey[minecraft:item / forge:milk]",

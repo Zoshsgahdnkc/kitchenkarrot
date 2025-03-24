@@ -54,10 +54,23 @@
         "recipe": "kitchenkarrot:woodland_tater_puree"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_woodland_tater_puree": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:woodland_tater_puree"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
+      "has_woodland_tater_puree",
       "has_baked_potato",
       "has_milk",
       "has_birch_sap",

@@ -35,6 +35,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_stone_shore_quiche": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:stone_shore_quiche"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:stone_shore_quiche"
@@ -56,6 +68,7 @@
   },
   "requirements": [
     [
+      "has_stone_shore_quiche",
       "has_turtle_egg",
       "has_cheese_wheel",
       "has_poppy",

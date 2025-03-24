@@ -23,6 +23,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_mixed_nuts_mooncake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:mixed_nuts_mooncake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:mixed_nuts_mooncake"
@@ -44,6 +56,7 @@
   },
   "requirements": [
     [
+      "has_mixed_nuts_mooncake",
       "has_wheat",
       "has_TagKey[minecraft:item / forge:nuts/acorn]",
       "has_birch_sap",

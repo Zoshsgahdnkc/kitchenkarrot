@@ -11,6 +11,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_sashimi": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:sashimi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:sashimi"
@@ -20,6 +32,7 @@
   },
   "requirements": [
     [
+      "has_sashimi",
       "has_TagKey[minecraft:item / forge:food/raw_fish]",
       "has_the_recipe"
     ]

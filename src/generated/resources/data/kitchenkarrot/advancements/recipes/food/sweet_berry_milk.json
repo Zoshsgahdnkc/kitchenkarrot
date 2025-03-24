@@ -35,6 +35,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_sweet_berry_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:sweet_berry_milk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:sweet_berry_milk"
@@ -44,6 +56,7 @@
   },
   "requirements": [
     [
+      "has_sweet_berry_milk",
       "has_TagKey[minecraft:item / forge:milk]",
       "has_sweet_berries",
       "has_sugar",

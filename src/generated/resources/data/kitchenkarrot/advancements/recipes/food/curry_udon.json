@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_curry_udon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:curry_udon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:curry_udon"
@@ -22,6 +34,7 @@
   },
   "requirements": [
     [
+      "has_curry_udon",
       "has_carrot_spices",
       "has_the_recipe"
     ]

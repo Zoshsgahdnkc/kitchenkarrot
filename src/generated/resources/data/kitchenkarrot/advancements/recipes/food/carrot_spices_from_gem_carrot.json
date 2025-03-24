@@ -11,6 +11,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:carrot_spices"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_gem_carrot": {
       "conditions": {
         "items": [
@@ -44,6 +56,7 @@
   },
   "requirements": [
     [
+      "has_carrot_spices",
       "has_gem_carrot",
       "has_paper",
       "has_TagKey[minecraft:item / kitchenkarrot:grass_spices]",

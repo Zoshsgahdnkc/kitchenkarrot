@@ -31,6 +31,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_drumstick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:drumstick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:drumstick"
@@ -40,6 +52,7 @@
   },
   "requirements": [
     [
+      "has_drumstick",
       "has_TagKey[minecraft:item / forge:raw_chicken]",
       "has_TagKey[minecraft:item / forge:cooking_oil]",
       "has_TagKey[minecraft:item / forge:salt]",

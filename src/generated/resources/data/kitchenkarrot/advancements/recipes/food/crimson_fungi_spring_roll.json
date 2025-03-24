@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_crimson_fungi_spring_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:crimson_fungi_spring_roll"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_crimson_fungus": {
       "conditions": {
         "items": [
@@ -46,6 +58,7 @@
   },
   "requirements": [
     [
+      "has_crimson_fungi_spring_roll",
       "has_wheat",
       "has_crimson_fungus",
       "has_carrot_spices",

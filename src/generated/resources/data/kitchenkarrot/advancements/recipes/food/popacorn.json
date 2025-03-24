@@ -31,6 +31,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_popacorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:popacorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:popacorn"
@@ -40,6 +52,7 @@
   },
   "requirements": [
     [
+      "has_popacorn",
       "has_TagKey[minecraft:item / forge:nuts/acorn]",
       "has_TagKey[minecraft:item / forge:cooking_oil]",
       "has_TagKey[minecraft:item / forge:salt]",

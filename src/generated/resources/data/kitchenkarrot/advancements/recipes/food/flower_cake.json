@@ -33,6 +33,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_flower_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:flower_cake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:flower_cake"
@@ -42,6 +54,7 @@
   },
   "requirements": [
     [
+      "has_flower_cake",
       "has_TagKey[minecraft:item / forge:crops/wheat]",
       "has_egg",
       "has_TagKey[minecraft:item / minecraft:small_flowers]",

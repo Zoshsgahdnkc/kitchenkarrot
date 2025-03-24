@@ -53,6 +53,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_sirloin_steak": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:sirloin_steak"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "kitchenkarrot:sirloin_steak"
@@ -62,6 +74,7 @@
   },
   "requirements": [
     [
+      "has_sirloin_steak",
       "has_TagKey[minecraft:item / forge:cooked_beef]",
       "has_TagKey[minecraft:item / forge:crops/nether_wart]",
       "has_TagKey[minecraft:item / forge:cooking_oil]",
