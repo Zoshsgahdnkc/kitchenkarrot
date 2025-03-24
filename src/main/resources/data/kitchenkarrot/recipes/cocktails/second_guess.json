@@ -23,7 +23,8 @@
         "hunger":4,
         "saturation":0,
         "effect":[
-            {"id":"minecraft:slow_falling","lvl":0,"duration":3600}
+            {"id":"minecraft:slow_falling","lvl":1,"duration":3600},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":1800}
         ]
     }
 }

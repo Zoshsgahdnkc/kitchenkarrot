@@ -23,7 +23,8 @@
         "hunger":5,
         "saturation":0.7,
         "effect":[
-            {"id":"minecraft:luck","lvl":0,"duration":2400}
+            {"id":"minecraft:luck","lvl":1,"duration":2400},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

@@ -23,7 +23,9 @@
         "hunger":1,
         "saturation":1,
         "effect":[
-            {"id":"minecraft:glowing","lvl":10,"duration":10000}
+            {"id":"minecraft:glowing","lvl":5,"duration":8820},
+            {"id":"kitchenkarrot:wither_resistance","lvl":1,"duration":2048},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":1800}
         ]
     }
 }

@@ -5,8 +5,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 
-public class ToxicResistanceEffect extends MobEffect {
-    public ToxicResistanceEffect(MobEffectCategory category, int color) {
+public class PoisonResistanceEffect extends MobEffect {
+    public PoisonResistanceEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 

@@ -8,8 +8,11 @@ import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,7 +53,7 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
             ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
             ItemStack item = handler.getStackInSlot(0);
             itemRenderer.renderStatic(item, ItemDisplayContext.GROUND,
-                    LightTexture.FULL_BRIGHT, packedOverlay,
+                    getLightLevel(blockEntity.getLevel(), blockEntity.getBlockPos()), packedOverlay,
                     poseStack, bufferSource, Minecraft.getInstance().level, ForgeRegistries.ITEMS.getKey(item.getItem()).hashCode());
 //            itemRenderer.renderStatic(item, ItemTransforms.TransformType.GROUND,
 //                    LightTexture.FULL_BRIGHT, packedOverlay,
@@ -58,6 +61,12 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
 
             poseStack.popPose();
         });
+    }
+
+    private int getLightLevel(Level level, BlockPos pos) {
+        int block = level.getBrightness(LightLayer.BLOCK, pos);
+        int sky = level.getBrightness(LightLayer.SKY, pos);
+        return LightTexture.pack(block, sky);
     }
 
 }

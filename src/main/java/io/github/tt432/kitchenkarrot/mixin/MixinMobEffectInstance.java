@@ -1,6 +1,7 @@
 package io.github.tt432.kitchenkarrot.mixin;
 
 import io.github.tt432.kitchenkarrot.registries.ModEffects;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import org.spongepowered.asm.mixin.Final;
@@ -25,7 +26,7 @@ public class MixinMobEffectInstance {
     private void mixinUpdate(MobEffectInstance pOther, CallbackInfoReturnable<Boolean> cir) {
         if (this.effect == ModEffects.TIPSY.get()) {
             amplifier += 1;
-            duration = pOther.getDuration();
+            duration = Math.max(this.duration, pOther.getDuration());
             cir.setReturnValue(true);
         }
     }

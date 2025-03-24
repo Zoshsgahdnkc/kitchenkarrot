@@ -23,7 +23,8 @@
         "hunger":0,
         "saturation":0,
         "effect":[
-            {"id":"minecraft:conduit_power","lvl":0,"duration":6000}
+            {"id":"minecraft:conduit_power","lvl":1,"duration":4800},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

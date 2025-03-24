@@ -23,7 +23,8 @@
         "hunger":3,
         "saturation":0,
         "effect":[
-            {"id":"minecraft:jump_boost","lvl":8,"duration":4800}
+            {"id":"minecraft:jump_boost","lvl":5,"duration":4800},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

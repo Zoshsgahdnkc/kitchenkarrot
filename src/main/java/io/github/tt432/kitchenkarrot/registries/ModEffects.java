@@ -14,16 +14,16 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Kitchenkarrot.MOD_ID);
 
     public static final RegistryObject<MobEffect> DISPERSE = EFFECTS.register("disperse",
-            () -> new DisperseEffect(MobEffectCategory.NEUTRAL, 12777212));
+            () -> new DisperseEffect(MobEffectCategory.BENEFICIAL, 12777212));
 
-    public static final RegistryObject<MobEffect> TOXIC_RESISTANCE = EFFECTS.register("toxic_resistance",
-            () -> new ToxicResistanceEffect(MobEffectCategory.BENEFICIAL, 9557596));
+    public static final RegistryObject<MobEffect> POISON_RESISTANCE = EFFECTS.register("poison_resistance",
+            () -> new PoisonResistanceEffect(MobEffectCategory.BENEFICIAL, 9554851));
 
     public static final RegistryObject<MobEffect> WITHER_RESISTANCE = EFFECTS.register("wither_resistance",
             () -> new WitherResistanceEffect(MobEffectCategory.BENEFICIAL, 4542325));
 
-    public static final RegistryObject<MobEffect> TIDAL_AFFINITY = EFFECTS.register("tidal_affinity",
-            () -> new TidalAffinityEffect(MobEffectCategory.BENEFICIAL, 6929663));
+//    public static final RegistryObject<MobEffect> TIDAL_AFFINITY = EFFECTS.register("tidal_affinity",
+//            () -> new TidalAffinityEffect(MobEffectCategory.BENEFICIAL, 6929663));
 
     public static final RegistryObject<MobEffect> TIPSY = EFFECTS.register("tipsy",
             () -> new TipsyEffect(MobEffectCategory.HARMFUL, 12750161)

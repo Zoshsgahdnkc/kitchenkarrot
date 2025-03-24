@@ -37,7 +37,7 @@ public class ModItems {
     public static final RegistryObject<Item> CHINESE_CREPE = ITEMS.register("chinese_crepe", () -> new ModFood(9, 9F));
     public static final RegistryObject<Item> CROQUE_MADAME = ITEMS.register("croque_madame", () -> new ModFood(8, 10));
     public static final RegistryObject<Item> GRILLED_WHEATMEAL = ITEMS.register("grilled_wheatmeal", () -> new ModFood(3, 1));
-    public static final RegistryObject<Item> GRILLED_FISH_AND_CACTUS = ITEMS.register("grilled_fish_and_cactus", () -> new ModFood(8, 8F, EffectEntry.of(ModEffects.TOXIC_RESISTANCE.get(), 180, 1)));
+    public static final RegistryObject<Item> GRILLED_FISH_AND_CACTUS = ITEMS.register("grilled_fish_and_cactus", () -> new ModFood(8, 8F, EffectEntry.of(ModEffects.POISON_RESISTANCE.get(), 180, 1)));
     public static final RegistryObject<Item> FLOWER_CAKE = ITEMS.register("flower_cake", () -> new ModFood(6, 4.8F));
     public static final RegistryObject<Item> PILLAGER_PIE = ITEMS.register("pillager_pie", () -> new ModFood(6, 4.8F, EffectEntry.of(MobEffects.BAD_OMEN, 600, 1)));
     public static final RegistryObject<Item> MONSTER_LASAGNA = ITEMS.register("monster_lasagna", () -> new ModFood(13, 3.2F));
@@ -59,7 +59,7 @@ public class ModItems {
     public static final RegistryObject<Item> HI_NRG_BRULEE = ITEMS.register("hi_nrg_brulee", () -> new ModFood(4, 14.4F));
     public static final RegistryObject<Item> SIRLOIN_STEAK = ITEMS.register("sirloin_steak", () -> new ModFood(13, 18F));
     public static final RegistryObject<Item> BEEF_GRAINS = ITEMS.register("beef_grains", () -> new ModFood(3, 4));
-    public static final RegistryObject<Item> SASHIMI = ITEMS.register("sashimi", () -> new ModFood(4, 2.4F, EffectEntry.of(ModEffects.TOXIC_RESISTANCE.get(), 60, 1)));
+    public static final RegistryObject<Item> SASHIMI = ITEMS.register("sashimi", () -> new ModFood(4, 2.4F, EffectEntry.of(ModEffects.POISON_RESISTANCE.get(), 60, 1)));
     public static final RegistryObject<Item> MOSS_FRIED_LAMB_CUTLETS = ITEMS.register("moss_fried_lamb_cutlets", () -> new ModFood(10, 12.8F));
     public static final RegistryObject<Item> FRIES = ITEMS.register("fries", () -> new ModFood(6, 8.4F));
     public static final RegistryObject<Item> DRUMSTICK = ITEMS.register("drumstick", () -> new ModFood(6, 8.4F, EffectEntry.of(MobEffects.DAMAGE_BOOST, 30, 1)));
@@ -80,7 +80,7 @@ public class ModItems {
     public static final RegistryObject<Item> GOLDEN_CHEESE = ITEMS.register("golden_cheese", () -> new ModFood(6, 8.4F, EffectEntry.of(MobEffects.HEAL, 1, 1)));
     public static final RegistryObject<Item> CRIMSON_FUNGI_SPRING_ROLL = ITEMS.register("crimson_fungi_spring_roll", () -> new ModFood(7, 5.6F));
     public static final RegistryObject<Item> MIXED_NUTS_MOONCAKE = ITEMS.register("mixed_nuts_mooncake", () -> new ModFood(5, 2F, EffectEntry.of(MobEffects.MOVEMENT_SPEED, 300, 1)));
-    public static final RegistryObject<Item> BIKINI_BOTTOM_SUB = ITEMS.register("bikini_bottom_sub", () -> new ModFood(13, 14.4F, EffectEntry.of(MobEffects.DOLPHINS_GRACE, 180, 1), EffectEntry.of(ModEffects.TOXIC_RESISTANCE.get(), 180, 1)));
+    public static final RegistryObject<Item> BIKINI_BOTTOM_SUB = ITEMS.register("bikini_bottom_sub", () -> new ModFood(13, 14.4F, EffectEntry.of(MobEffects.DOLPHINS_GRACE, 180, 1), EffectEntry.of(ModEffects.POISON_RESISTANCE.get(), 180, 1)));
     public static final RegistryObject<Item> BIRCH_SAP_DONUT = ITEMS.register("birch_sap_donut", () -> new ModFood(3, 3.6F, EffectEntry.of(MobEffects.ABSORPTION, 60, 1)));
     public static final RegistryObject<Item> BUCHE_DE_NOEL = ITEMS.register("buche_de_noel", () -> new ModFood(5, 8F));
 

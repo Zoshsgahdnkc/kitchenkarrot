@@ -25,8 +25,9 @@
         "hunger":6,
         "saturation":0.1,
         "effect":[
-            {"id":"minecraft:invisibility","lvl":0,"duration":2400},
-            {"id":"minecraft:glowing","lvl":0,"duration":2400}
+            {"id":"minecraft:invisibility","lvl":1,"duration":2400},
+            {"id":"minecraft:glowing","lvl":1,"duration":2400},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

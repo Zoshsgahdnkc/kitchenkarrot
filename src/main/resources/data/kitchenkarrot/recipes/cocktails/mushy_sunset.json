@@ -21,8 +21,9 @@
         ],
         "craftingtime":50,
         "hunger":9,
-        "saturation":0.2,
+        "saturation":0.6,
         "effect":[
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":600}
         ]
     }
 }

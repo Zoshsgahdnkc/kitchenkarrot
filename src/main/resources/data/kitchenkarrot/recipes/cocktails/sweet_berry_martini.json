@@ -23,6 +23,7 @@
         "hunger":7,
         "saturation":0.3,
         "effect":[
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":600}
         ]
     }
 

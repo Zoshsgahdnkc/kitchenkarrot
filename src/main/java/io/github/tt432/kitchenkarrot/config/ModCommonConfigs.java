@@ -21,7 +21,8 @@ public class ModCommonConfigs {
             "minecraft:instant_health",
             "minecraft:instant_damage",
             "minecraft:bad_omen",
-            "minecraft:hero_of_the_village"
+            "minecraft:hero_of_the_village",
+            "kitchenkarrot:disperse"
     ));
 
     static {

@@ -23,7 +23,8 @@
         "hunger":1,
         "saturation":2,
         "effect":[
-            {"id":"minecraft:regeneration","lvl":0,"duration":3000}
+            {"id":"minecraft:regeneration","lvl":1,"duration":3000},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

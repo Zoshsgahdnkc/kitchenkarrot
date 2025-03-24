@@ -15,10 +15,10 @@ public class TipsyEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (pAmplifier >= 3) {
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 1));
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 3));
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 3));
-            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 1200, 3));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 120, 0));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 2));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 2));
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 1200, 2));
             pLivingEntity.removeEffect(ModEffects.TIPSY.get());
         }
     }

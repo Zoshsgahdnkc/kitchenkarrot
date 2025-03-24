@@ -23,7 +23,8 @@
         "hunger":4,
         "saturation":0.3,
         "effect":[
-            {"id":"minecraft:resistance","lvl":0,"duration":4800}
+            {"id":"minecraft:resistance","lvl":0,"duration":4800},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

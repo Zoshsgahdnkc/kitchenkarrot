@@ -23,8 +23,9 @@
         "hunger":0,
         "saturation":0,
         "effect":[
-            {"id":"minecraft:strength","lvl":0,"duration":12000},
-            {"id":"minecraft:blindness","lvl":0,"duration":100}
+            {"id":"minecraft:strength","lvl":1,"duration":12000},
+            {"id":"minecraft:hunger","lvl":3,"duration":200},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

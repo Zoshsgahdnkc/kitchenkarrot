@@ -23,7 +23,8 @@
         "hunger":3,
         "saturation":0.5,
         "effect":[
-            {"id":"minecraft:strength","lvl":2,"duration":4800}
+            {"id":"minecraft:strength","lvl":2,"duration":3600},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }

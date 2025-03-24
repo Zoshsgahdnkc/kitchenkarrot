@@ -23,9 +23,10 @@
         "hunger":1,
         "saturation":1,
         "effect":[
-            {"id":"minecraft:nausea","lvl":1,"duration":600},
             {"id":"minecraft:speed","lvl":2,"duration":4800},
-            {"id":"minecraft:jump_boost","lvl":2,"duration":4800}
+            {"id":"minecraft:jump_boost","lvl":2,"duration":4800},
+            {"id":"minecraft:nausea","lvl":1,"duration":240},
+            {"id":"kitchenkarrot:tipsy","lvl":1,"duration":3600}
         ]
     }
 }
