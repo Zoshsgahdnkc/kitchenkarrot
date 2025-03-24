@@ -1,0 +1,55 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / forge:cooking_oil]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / forge:raw_chicken]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:raw_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / forge:salt]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:drumstick"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_TagKey[minecraft:item / forge:raw_chicken]",
+      "has_TagKey[minecraft:item / forge:cooking_oil]",
+      "has_TagKey[minecraft:item / forge:salt]",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:drumstick"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -7,6 +7,18 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
+    "has_water": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:water"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_water_bucket": {
       "conditions": {
         "items": [
@@ -23,6 +35,7 @@
   "requirements": [
     [
       "has_water_bucket",
+      "has_water",
       "has_the_recipe"
     ]
   ],

@@ -1,0 +1,66 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / forge:cooking_oil]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / forge:dusts/redstone]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:dusts/redstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / forge:milk]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / kitchenkarrot:fire_charges]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "kitchenkarrot:fire_charges"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:hi_nrg_brulee"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_TagKey[minecraft:item / forge:milk]",
+      "has_TagKey[minecraft:item / forge:cooking_oil]",
+      "has_TagKey[minecraft:item / forge:dusts/redstone]",
+      "has_TagKey[minecraft:item / kitchenkarrot:fire_charges]",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:hi_nrg_brulee"
+    ]
+  },
+  "sends_telemetry_event": false
+}

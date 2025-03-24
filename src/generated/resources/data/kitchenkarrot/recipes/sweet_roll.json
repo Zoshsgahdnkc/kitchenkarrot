@@ -1,16 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "kitchenkarrot",
   "ingredients": [
     {
       "tag": "forge:bread"
     },
     {
       "tag": "forge:salt"
-    },
-    {
-      "tag": "forge:milk"
     },
     {
       "tag": "forge:eggs"

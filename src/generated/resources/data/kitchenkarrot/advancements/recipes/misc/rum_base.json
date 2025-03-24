@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kitchenkarrot:rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_rum_base": {
       "conditions": {
         "items": [
@@ -23,6 +35,7 @@
   "requirements": [
     [
       "has_rum_base",
+      "has_rum",
       "has_the_recipe"
     ]
   ],

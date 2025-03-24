@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "kitchenkarrot",
   "key": {
     "1": {
       "item": "minecraft:blue_dye"

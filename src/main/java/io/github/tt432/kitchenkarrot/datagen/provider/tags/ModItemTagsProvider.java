@@ -8,6 +8,7 @@ import io.github.tt432.kitchenkarrot.tag.ModItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
@@ -41,6 +42,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModBlocks.ACORN_OIL.get().asItem(),
                         ModBlocks.CHORUS_OIL.get().asItem());
         tag(ModItemTags.FRUITS).add(Items.APPLE, Items.CHORUS_FRUIT);
+        tag(ModItemTags.MOD_FRUITS).addTag(ModItemTags.FRUITS).add(Items.MELON_SLICE, Items.GLOW_BERRIES, Items.SWEET_BERRIES);
         tag(ModItemTags.ICE_CUBES).add(ModItems.ICE_CUBES.get());
         tag(ModItemTags.MILK).add(ModItems.MILK.get());
         tag(ModItemTags.NUTS).add(ModItems.ACORN.get());

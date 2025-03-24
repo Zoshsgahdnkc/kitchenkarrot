@@ -1,10 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "kitchenkarrot",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:crops/wheat"
     },
     {
       "item": "minecraft:crimson_fungus"

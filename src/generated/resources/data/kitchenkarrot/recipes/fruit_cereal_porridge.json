@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "kitchenkarrot",
   "ingredients": [
     {
       "item": "minecraft:bowl"
@@ -13,7 +12,7 @@
       "tag": "forge:milk"
     },
     {
-      "tag": "forge:fruits"
+      "tag": "kitchenkarrot:fruits"
     }
   ],
   "result": {

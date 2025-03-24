@@ -46,6 +46,7 @@ public class ModItemTags {
     public static final TagKey<Item> COOKED_MUTTON =
             ItemTags.create(new ResourceLocation("forge:cooked_mutton"));
     public static final TagKey<Item> FRUITS = ItemTags.create(new ResourceLocation("forge:fruits"));
+    public static final TagKey<Item> MOD_FRUITS = ItemTags.create(new ResourceLocation("kitchenkarrot:fruits"));
     public static final TagKey<Item> RAW_PORK =
             ItemTags.create(new ResourceLocation("forge:raw_pork"));
     public static final TagKey<Item> RAW_MUTTON =

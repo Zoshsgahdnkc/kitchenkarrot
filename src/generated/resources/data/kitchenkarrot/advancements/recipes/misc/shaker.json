@@ -1,6 +1,30 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_shaker": {
       "conditions": {
         "items": [
@@ -22,6 +46,8 @@
   },
   "requirements": [
     [
+      "has_iron_nugget",
+      "has_bucket",
       "has_shaker",
       "has_the_recipe"
     ]

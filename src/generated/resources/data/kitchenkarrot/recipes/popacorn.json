@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "kitchenkarrot",
   "ingredients": [
     {
       "tag": "forge:nuts/acorn"
@@ -14,9 +13,6 @@
     },
     {
       "tag": "forge:nuts/acorn"
-    },
-    {
-      "item": "minecraft:sugar"
     },
     {
       "tag": "forge:cooking_oil"

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cheese_slice": {
+    "has_cheese_wheel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "kitchenkarrot:cheese_slice"
+              "kitchenkarrot:cheese_wheel"
             ]
           }
         ]
@@ -57,7 +57,7 @@
   "requirements": [
     [
       "has_turtle_egg",
-      "has_cheese_slice",
+      "has_cheese_wheel",
       "has_poppy",
       "has_salt",
       "has_the_recipe"

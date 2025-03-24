@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / forge:water]": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:water"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_birch_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:birch_sapling"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:birch_sap"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_birch_sapling",
+      "has_TagKey[minecraft:item / forge:water]",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:birch_sap"
+    ]
+  },
+  "sends_telemetry_event": false
+}

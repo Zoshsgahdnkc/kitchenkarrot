@@ -1,10 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "kitchenkarrot",
   "key": {
     "*": {
-      "item": "minecraft:chorus_flower"
+      "item": "minecraft:chorus_fruit"
     }
   },
   "pattern": [

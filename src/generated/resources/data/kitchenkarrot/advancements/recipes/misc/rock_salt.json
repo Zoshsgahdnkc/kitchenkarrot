@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_rock": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "kitchenkarrot:salt_rock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_rock_salt": {
       "conditions": {
         "items": [
@@ -23,6 +33,7 @@
   "requirements": [
     [
       "has_rock_salt",
+      "has_rock",
       "has_the_recipe"
     ]
   ],

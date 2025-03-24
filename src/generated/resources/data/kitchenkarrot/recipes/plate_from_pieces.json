@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "equipment",
-  "group": "kitchenkarrot",
   "ingredients": [
     {
       "item": "kitchenkarrot:plate_pieces"
