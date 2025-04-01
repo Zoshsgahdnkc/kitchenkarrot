@@ -254,7 +254,7 @@
     "effect.kitchenkarrot.disperse": "Disperse",
     "effect.kitchenkarrot.tidal_affinity": "Tidal Affinity",
     "effect.kitchenkarrot.tipsy": "Tipsy",
-    "effect.kitchenkarrot.poison_resistance": "Toxic Resistance",
+    "effect.kitchenkarrot.poison_resistance": "Poison Resistance",
     "effect.kitchenkarrot.wither_resistance": "Wither Resistance",
     "effect.kitchenkarrot.disperse.description": "Clear other effects on the entity. Decrease its level by 1 when clearing effects.",
     "effect.kitchenkarrot.tipsy.description": "Decrease movement speed, increase attack damage on every level. When reacquiring this effect, reset the countdown and increase the level by 1. When the level reaches 4, clear this effect and apply various harmful effects to the entity.",
