@@ -68,7 +68,7 @@ public abstract class KKMenu extends AbstractContainerMenu {
         var playerSlotSize = 36;
 
         if (index < playerSlotSize) {
-            for (int i = slots.size() - 1; i >= playerSlotSize; i--) {
+            for (int i = playerSlotSize; i < slots.size(); i++) {
                 var temp = slots.get(i);
 
                 if (temp.safeInsert(slotItem).isEmpty()) {

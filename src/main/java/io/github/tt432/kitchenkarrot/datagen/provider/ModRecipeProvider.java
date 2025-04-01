@@ -695,10 +695,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("11")
                 .pattern("22")
                 .pattern("33")
-                .define('1', ModItemTags.MILK)
+                .define('1', ModItemTags.CHEESE)
                 .define('2', Items.ROTTEN_FLESH)
                 .define('3', Tags.Items.CROPS_WHEAT)
-                .unlockedBy("has_milk", has(ModItemTags.MILK))
+                .unlockedBy(CHEESE, has(ModItemTags.CHEESE))
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
                 .unlockedBy(getHasName(Items.WHEAT), has(Tags.Items.CROPS_WHEAT))
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.MONSTER_LASAGNA.get())));

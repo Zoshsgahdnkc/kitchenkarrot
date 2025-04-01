@@ -143,6 +143,10 @@
     "info.kitchenkarrot.time": "酿造时长：%s秒",
     "info.kitchenkarrot.shaker1":"Shift右键打开摇酒壶",
     "info.kitchenkarrot.shaker2":"关闭摇酒壶后长按右键摇酒",
+    "info.kitchenkarrot.brewing_barrel.not_enough_liquid":"没有足够的水",
+    "info.kitchenkarrot.brewing_barrel.error_recipe":"没有对应配方",
+    "info.kitchenkarrot.air_compressor.no_energy":"需要补充红石粉",
+    "info.kitchenkarrot.all_good":"一切正常",
     "jei.info.kitchenkarrot.gem_carrot": "有小概率在收获普通胡萝卜植株时获得。",
     "jei.info.kitchenkarrot.fine_salt": "大部分情况下可以从屠夫村民处购买。（可配置）",
     "jei.info.kitchenkarrot.pillager_pie": "有小概率在灾厄村民结构中或者击败掠夺者时获得。",
@@ -201,8 +205,6 @@
     "kitchenkarrot.cocktail.shaker": "摇酒壶：摇酒",
 
     "container.kitchenkarrot:brewing_barrel": "",
-    "brewing_barrel.error.not_enough_liquid": "没有足够的水",
-    "brewing_barrel.error.error_recipe": "没有对应配方",
 
     "container.kitchenkarrot:air_compressor": "",
 
@@ -252,7 +254,7 @@
     "effect.kitchenkarrot.disperse": "净化",
     "effect.kitchenkarrot.tidal_affinity": "潮汐亲和",
     "effect.kitchenkarrot.tipsy": "微醺",
-    "effect.kitchenkarrot.poison_resistance": "剧毒抗性",
+    "effect.kitchenkarrot.poison_resistance": "中毒抗性",
     "effect.kitchenkarrot.wither_resistance": "凋零抗性",
     "effect.kitchenkarrot.disperse.description": "清除身上的其它效果。每清除一次减少一级。",
     "effect.kitchenkarrot.tipsy.description": "降低移动速度，增加攻击力。获得同样效果时刷新时间并提高等级。累加到四级时消失并使实体获得各种debuff。",

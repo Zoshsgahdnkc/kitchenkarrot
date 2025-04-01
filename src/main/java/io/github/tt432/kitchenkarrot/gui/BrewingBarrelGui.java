@@ -36,7 +36,7 @@ public class BrewingBarrelGui extends KKGui<BrewingBarrelMenu> {
 
                 addRenderableWidget(new ProgressWidget(this, TEXTURE, leftPos + 21, topPos + 23,
                         182, 0, 9, 42, true,
-                        () -> Component.translatable(tank.getFluidAmount() + "mB / " + tank.getCapacity() + "mB"),
+                        () -> Component.literal(tank.getFluidAmount() + "mB / " + tank.getCapacity() + "mB"),
                         true, tank::getCapacity, tank::getFluidAmount));
 
                 addRenderableWidget(new ProgressWidget(this, TEXTURE, leftPos + 152, topPos + 23,
@@ -47,13 +47,10 @@ public class BrewingBarrelGui extends KKGui<BrewingBarrelMenu> {
                             } else {
                                 Optional<BrewingBarrelRecipe> recipe = be.findRecipe();
                                 if (recipe.isPresent() && be.hasEnoughWater(recipe.get())) {
-                                    return Component.translatable("brewing_barrel.error.not_enough_liquid");
+                                    return Component.translatable("info.kitchenkarrot.brewing_barrel.not_enough_liquid");
                                 }
                                 else if (!be.isRecipeSame()) {
-                                    return Component.translatable("brewing_barrel.error.error_recipe");
-                                }
-                                else if (!be.resultEmpty()) {
-                                    return Component.translatable("brewing_barrel.error.result_slot_not_empty");
+                                    return Component.translatable("info.kitchenkarrot.brewing_barrel.error_recipe");
                                 }
                                 else {
                                     return Component.empty();

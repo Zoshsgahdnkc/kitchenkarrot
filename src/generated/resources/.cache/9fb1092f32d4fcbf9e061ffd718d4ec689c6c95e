@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-25T00:09:56.6453395	Recipes
+// 1.20.1	2025-03-25T12:44:37.4220122	Recipes
 5620119f919cf9982aeff2024e2f392dfca8992a data/kitchenkarrot/advancements/recipes/food/bacon_wrapped_potato.json
 f5555fd73d4a774af8d1e5e9ad3f05d0bbfc3967 data/kitchenkarrot/advancements/recipes/food/bamboo_potato.json
 f8d28f1bff489683ac8fa7dcbaca3dd4a70a6032 data/kitchenkarrot/advancements/recipes/food/beetroot_crepe.json
@@ -42,7 +42,7 @@ ccaeb74b1d9c7b4720cadd092c5bbb138c703c91 data/kitchenkarrot/advancements/recipes
 fc9aac6da6ef183b5b6723d0a3162f0a8483366d data/kitchenkarrot/advancements/recipes/food/lush_salad.json
 80669383a0bdd5696911b24b00b63dfbcbf3ad38 data/kitchenkarrot/advancements/recipes/food/milk.json
 ffb125913b49a442d811eb51f3e48c880dfa32e4 data/kitchenkarrot/advancements/recipes/food/mixed_nuts_mooncake.json
-1a20318cc3dde920fd9248174d1ec8d1c243ecc3 data/kitchenkarrot/advancements/recipes/food/monster_lasagna.json
+c7b60ea2932e919be71c47a1a6c93c9cedf9cbe7 data/kitchenkarrot/advancements/recipes/food/monster_lasagna.json
 7d77db40e079a554cc9f289602bddecb81189617 data/kitchenkarrot/advancements/recipes/food/moss_fried_lamb_cutlets.json
 75a6aed48249b9cf1855b80d4237b7e418c87a1b data/kitchenkarrot/advancements/recipes/food/phantom_stew.json
 18eb9d33287b59bd12f435b47c692cd68c76c913 data/kitchenkarrot/advancements/recipes/food/pickled_sea_pickles.json
@@ -143,7 +143,7 @@ a66e6839c938299d79622702c75a9bc120a453c7 data/kitchenkarrot/recipes/mead_base.js
 0676af31d906dbddb97cc1dfcca801117dd84aa9 data/kitchenkarrot/recipes/milk.json
 a32208b464424494a5984c82ffa46e088d8ede00 data/kitchenkarrot/recipes/milk_bucket.json
 dace0c9bd5dbd6205e003a434bcb0ebf603cf769 data/kitchenkarrot/recipes/mixed_nuts_mooncake.json
-3110e6f8cc726956b75661cb53e34cdf62542b54 data/kitchenkarrot/recipes/monster_lasagna.json
+0cb62dafbb06b4d47e9a59c9e637d0fecac5c08c data/kitchenkarrot/recipes/monster_lasagna.json
 f45f9629d5face58cb2263848ae365ef8b02b06e data/kitchenkarrot/recipes/moss_fried_lamb_cutlets.json
 4e18c93d6ab2d627bcebe45904a6744f8311c22d data/kitchenkarrot/recipes/phantom_stew.json
 0d7973eabd2755829f5e98831d9093a907bc64de data/kitchenkarrot/recipes/pickled_sea_pickles.json

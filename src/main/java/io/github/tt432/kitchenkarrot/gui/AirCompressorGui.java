@@ -31,9 +31,13 @@ public class AirCompressorGui extends KKGui<AirCompressorMenu> {
 
         addRenderableWidget(new ProgressWidget(this, GUI,
                 leftPos + 105, topPos + 50, 184, 0, 20, 19, true,
-                () -> be.getMaxProgress() - be.getProgress(), be::getProgress));
+                () -> be.getMaxProgress(), be::getProgress));
         addRenderableWidget(new ProgressWidget(this, GUI,
                 leftPos + 49, topPos + 8, 176, 0, 8, 60, true,
+                () -> {
+                    if (be.getAtomicEnergy() == 0) return Component.translatable("info.kitchenkarrot.air_compressor.no_energy");
+                    return Component.literal(be.getAtomicEnergy() + " / 12");
+                }, true,
                 () -> 12, be::getAtomicEnergy));
     }
 
@@ -42,8 +46,4 @@ public class AirCompressorGui extends KKGui<AirCompressorMenu> {
         super.render(p_283479_, p_283661_, p_281248_, p_281886_);
     }
 
-//    @Override
-//    public void render(PoseStack matrixStack, int mouseX, int mouseY, float partialTicks) {
-//        super.render(matrixStack, mouseX, mouseY, partialTicks);
-//    }
 }

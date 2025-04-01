@@ -103,11 +103,12 @@ public class AirCompressorBlockEntity extends MenuBlockEntity {
     @Override
     public void tick() {
         super.tick();
+        // Part of adding energy
+        if (canCharge()) {
+            charge();
+        }
         if (!level.isClientSide) {
-            // Part of adding energy
-            if (canCharge()) {
-                charge();
-            }
+//            System.out.println("current:" + progress.get() + "     max:" + maxProgress.get());
             // Part of handling recipe
             if (isStarted()) {
                 if (isRecipeSame()) {

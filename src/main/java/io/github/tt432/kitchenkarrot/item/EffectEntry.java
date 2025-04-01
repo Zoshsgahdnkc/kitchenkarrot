@@ -18,19 +18,19 @@ public class EffectEntry {
         this.probability = probability;
     }
 
-    static EffectEntry of(RegistryObject<MobEffect> effect, int time, float probability) {
-        return new EffectEntry(() -> new MobEffectInstance(effect.get(), time * 20), probability);
+    static EffectEntry of(RegistryObject<MobEffect> effect, float time, float probability) {
+        return new EffectEntry(() -> new MobEffectInstance(effect.get(), (int) (time * 20)), probability);
     }
 
-    static EffectEntry of(RegistryObject<MobEffect> effect, int time, int level, float probability) {
-        return new EffectEntry(() -> new MobEffectInstance(effect.get(), time * 20, level - 1), probability);
+    static EffectEntry of(RegistryObject<MobEffect> effect, float time, int level, float probability) {
+        return new EffectEntry(() -> new MobEffectInstance(effect.get(), (int) (time * 20), level - 1), probability);
     }
 
-    public static EffectEntry of(MobEffect effect, int time, float probability) {
-        return new EffectEntry(() -> new MobEffectInstance(effect, time * 20), probability);
+    public static EffectEntry of(MobEffect effect, float time, float probability) {
+        return new EffectEntry(() -> new MobEffectInstance(effect, (int) (time * 20)), probability);
     }
 
-    public static EffectEntry of(MobEffect effect, int time, int level, float probability) {
-        return new EffectEntry(() -> new MobEffectInstance(effect, time * 20, level - 1), probability);
+    public static EffectEntry of(MobEffect effect, float time, int level, float probability) {
+        return new EffectEntry(() -> new MobEffectInstance(effect, (int) (time * 20), level - 1), probability);
     }
 }

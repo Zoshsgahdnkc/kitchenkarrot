@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_milk": {
+    "has_cheese": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:milk"
+            "tag": "forge:cheese"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "requirements": [
     [
       "has_monster_lasagna",
-      "has_milk",
+      "has_cheese",
       "has_rotten_flesh",
       "has_wheat",
       "has_the_recipe"

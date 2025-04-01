@@ -141,6 +141,10 @@
     "info.kitchenkarrot.popacorn": "剩餘%s口",
     "info.kitchenkarrot.water": "消耗水：%smB",
     "info.kitchenkarrot.time": "釀造時長：%s秒",
+    "info.kitchenkarrot.brewing_barrel.not_enough_liquid":"沒有足夠的水",
+    "info.kitchenkarrot.brewing_barrel.error_recipe":"沒有對應配方",
+    "info.kitchenkarrot.air_compressor.no_energy":"需要補充紅石粉",
+    "info.kitchenkarrot.all_good":"一切正常",
     "jei.info.kitchenkarrot.gem_carrot": "有小幾率在收穫普通胡蘿蔔時獲得。",
     "jei.info.kitchenkarrot.fine_salt": "大部分情況下可以從屠夫村民購買。（可配置）",
     "jei.info.kitchenkarrot.pillager_pie": "有小幾率窳民結構中或者擊敗掠奪者時獲得。",
@@ -198,8 +202,6 @@
     "kitchenkarrot.cocktail.shaker": "搖酒",
 
     "container.kitchenkarrot:brewing_barrel": "",
-    "brewing_barrel.error.not_enough_liquid": "沒有足夠的水",
-    "brewing_barrel.error.error_recipe": "沒有對應配方",
 
     "container.kitchenkarrot:air_compressor": "",
 
