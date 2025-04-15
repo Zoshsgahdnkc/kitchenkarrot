@@ -147,6 +147,8 @@
     "info.kitchenkarrot.brewing_barrel.error_recipe":"No Recipe Found",
     "info.kitchenkarrot.air_compressor.no_energy":"Requiring Redstone Powder",
     "info.kitchenkarrot.all_good":"All good",
+    "info.kitchenkarrot.warning": "You are playing minecraft with an alpha version of KitchenKarrot mod. This version may contain bugs or features that don't work in correct ways.\nIf you encounter any of these, please report to our discord to help us fix them.",
+    "info.kitchenkarrot.report_link": "Click this line to join our discord.",
     "jei.info.kitchenkarrot.gem_carrot":"Has a small chance to be harvested from normal carrots plants.",
     "jei.info.kitchenkarrot.fine_salt":"In most circumstances, can be bought from a butcher villager.(Configurable)",
     "jei.info.kitchenkarrot.pillager_pie":"Has a small chance to be looted from illager structure or from a dead pillager.",

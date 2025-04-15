@@ -1,5 +1,6 @@
 package io.github.tt432.kitchenkarrot;
 
+import io.github.tt432.kitchenkarrot.config.ModClientConfigs;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
@@ -39,6 +40,7 @@ public class Kitchenkarrot {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.COMMON, "kitchenkarrot-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ModClientConfigs.CLIENT, "kitchenkarrot-client.toml");
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
         ModBlockItems.BLOCK_ITEMS.register(bus);

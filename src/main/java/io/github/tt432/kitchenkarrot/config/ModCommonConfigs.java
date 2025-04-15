@@ -61,7 +61,7 @@ public class ModCommonConfigs {
         BUILDER.push("Alcohol Settings");
         MAXIMUM_TIPSY_LEVEL = BUILDER.comment("Determines the maximum level the tipsy effect can reach. Each level decreases 5% movement speed and increases 5% attack damage.","Upon reaching anywhere higher than the maximum level will turn the current effects into harmful ones.","3 by default.")
                 .define("Maximum Tipsy Level", 3);
-        WASTED_DURATION = BUILDER.comment("The duration in ticks of the drunk state effects (expect nausea).", "1200 ticks (60 seconds) by default.")
+        WASTED_DURATION = BUILDER.comment("The duration in ticks of the drunk state effects (except nausea).", "1200 ticks (60 seconds) by default.")
                 .define("Wasted State Duration", 1200);
         WASTED_EFFECTS_LIST = BUILDER.comment("The effects to be applied when the entity gets drunk.")
                 .define("Wasted State Effects", WASTED_EFFECTS);
