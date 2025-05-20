@@ -23,7 +23,7 @@
         "hunger":1,
         "saturation":2,
         "effect":[
-            {"id":"minecraft:instant_health","lvl":3,"duration":20},
+            {"id":"minecraft:instant_health","lvl":3,"duration":1},
             {"id":"kitchenkarrot:tipsy","lvl":1,"duration":1800}
         ]
     }

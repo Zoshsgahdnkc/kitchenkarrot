@@ -213,7 +213,7 @@ public class PlateBlock extends ModBaseEntityBlock<PlateBlockEntity> {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        if (!context.getPlayer().isShiftKeyDown()) {
+        if (context.getPlayer() == null || !context.getPlayer().isShiftKeyDown()) {
             int rotation = (int) context.getRotation();
             if (context.getLevel().isClientSide) {
                 while (rotation >= 180 || rotation < -180) {

@@ -195,9 +195,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                                        Ingredient.of(Items.WHEAT),
 //                                        Ingredient.of(Items.WHEAT),
 //                                        Ingredient.of(Items.WHEAT),
-//                                        Ingredient.of(Items.SWEET_BERRIES),
-//                                        Ingredient.of(Items.SWEET_BERRIES),
-//                                        Ingredient.of(Items.SWEET_BERRIES)),
+//                                        Ingredient.of(Items.GLOW_BERRIES),
+//                                        Ingredient.of(Items.GLOW_BERRIES),
+//                                        Ingredient.of(Items.GLOW_BERRIES)),
 //                                2000,
 //                                250))
 //                .save(recipeOutput, RL(getSimpleRecipeName(ModItems.GLOW_BERRY_LAGER)));

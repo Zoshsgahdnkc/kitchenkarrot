@@ -31,9 +31,10 @@ logoFile="logo.png" #optional
 # A text field displayed in the mod UI
 #credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
-authors = "KitchenKarrot Crew" #optional
+authors = "Zoshsgahdnkc, skyinr, TT432, MapleMapl" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
+Delicious In Pocket!
 An Energetic Food Expansion-Fast Food,Dessert,Soft Drinks,Alcohol and More.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

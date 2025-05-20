@@ -16,7 +16,7 @@ public class ModClientConfigs {
 
         BUILDER.push("Client Settings");
         SHOW_WELCOME_MESSAGE = BUILDER.comment("Whether to display the welcome message when entering game.(Most likely an alpha warning)", "Preferably, leave it as how it was.")
-                .define("Show Welcome Message", Boolean.TRUE);
+                .define("Show Welcome Message", Boolean.FALSE);
         BUILDER.pop();
         CLIENT = BUILDER.build();
     }
