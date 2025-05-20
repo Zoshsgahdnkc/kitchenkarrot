@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-20T16:43:32.432524	Recipes
+// 1.21.1	2025-05-21T01:39:58.7009655	Recipes
 135a8491257c25e0ad040196a4b25cbcb1531e10 data/kitchenkarrot/advancement/recipes/food/bacon_wrapped_potato.json
 3caba7c18d6350827541e685d6297f1a41bec1c9 data/kitchenkarrot/advancement/recipes/food/bamboo_potato.json
 7a00c6b2bf860e7a94e15f0fe1b3e3223f128f19 data/kitchenkarrot/advancement/recipes/food/beetroot_crepe.json
@@ -103,7 +103,7 @@ b7c86133d418d6dd43bce5608a2f6b129fbb373f data/kitchenkarrot/recipe/birch_sap.jso
 4b50953289ef7b4c69876232ce61611d7d593733 data/kitchenkarrot/recipe/birch_sap_chocolate_bar.json
 b0e1e945f6e708c19da90a25a0a270ce7e3bc302 data/kitchenkarrot/recipe/birch_sap_donut.json
 f39dc50ece154a61e1f1cc880ae64baaff1dbf05 data/kitchenkarrot/recipe/brewing_barrel.json
-a7094a5cca79567be4da3c2ad0ec8593c59cce79 data/kitchenkarrot/recipe/buche_de_noel.json
+825bdee5db597588168e2c747f59d8407590ad71 data/kitchenkarrot/recipe/buche_de_noel.json
 6c33faa2ab26b86095b08c0679d4cf37b2c351cd data/kitchenkarrot/recipe/canned_beef_potato.json
 f3804de94892fa571d527bc92b4f8526088f7de9 data/kitchenkarrot/recipe/canned_candied_apple.json
 cf6646fa5a4baa721d8c22ae859c5b627c801755 data/kitchenkarrot/recipe/canned_mutton_pumpkin.json
@@ -184,6 +184,7 @@ e1460821e08b5a9986cbfd31a59964112a6c4066 data/kitchenkarrot/recipe/monster_lasag
 7ff0b597ea8185f34f7e198d3b2f84f794829f64 data/kitchenkarrot/recipe/picked_sea_pickles_from_fermenting.json
 5b39cc244547cdffd1c6ad59f97c9303d3d230dc data/kitchenkarrot/recipe/pickled_sea_pickles.json
 55b6b7e5549a55bfc0d8288272e8b0262442b734 data/kitchenkarrot/recipe/plate_beef_grains.json
+64a63d46626f746401e31718ee5a642b5d87ca05 data/kitchenkarrot/recipe/plate_cheese_slice.json
 0d85366dad07e029d1b0b16a1d792ab3bbcc3ff0 data/kitchenkarrot/recipe/plate_dungeon_pizza_slice.json
 f4b6184c60d6d3d3cdd8f1d5d8135663fa8ca258 data/kitchenkarrot/recipe/plate_feast_pizza_slice.json
 a7f83a10855a30134e3ae9c88a38693941e95615 data/kitchenkarrot/recipe/plate_from_pieces.json

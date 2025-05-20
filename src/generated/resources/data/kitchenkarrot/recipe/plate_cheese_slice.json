@@ -1,0 +1,9 @@
+{
+  "type": "kitchenkarrot:plate",
+  "input": {
+    "id": "kitchenkarrot:cheese_wheel"
+  },
+  "result": {
+    "id": "kitchenkarrot:cheese_slice"
+  }
+}

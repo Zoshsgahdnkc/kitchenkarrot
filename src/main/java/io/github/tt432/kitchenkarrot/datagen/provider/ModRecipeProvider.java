@@ -154,6 +154,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         ModItems.SWEET_LOAF_SLICE.toStack(),
                         Ingredient.of(ModItemTags.KNIFE_ITEM))
                 .save(recipeOutput, RL(getPlateRecipeName(ModItems.SWEET_LOAF_SLICE)));
+        PlateRecipeBuilder.plate(
+                        ModItems.CHEESE_WHEEL.toStack(),
+                        ModItems.CHEESE_SLICE.toStack(),
+                        Ingredient.of(ModItemTags.KNIFE_ITEM))
+                .save(recipeOutput, RL(getPlateRecipeName(ModItems.CHEESE_SLICE)));
     }
 
     //
@@ -747,7 +752,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         RL(getSimpleRecipeName(ModItems.CRIMSON_FUNGI_SPRING_ROLL.get())));
         foodShapeless(ModItems.BUCHE_DE_NOEL)
                 .requires(Items.WHEAT)
-                .requires(tag("forge", "eggs"))
+                .requires(tag("c", "eggs"))
                 .requires(Items.SWEET_BERRIES)
                 .requires(Items.COCOA_BEANS)
                 .requires(Items.SUGAR)

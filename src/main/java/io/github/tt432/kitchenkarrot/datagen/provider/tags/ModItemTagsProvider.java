@@ -30,6 +30,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModItemTags.SQUIRREL_TEMPT_ITEMS).add(ModItems.ACORN.get());
 
+        tag(ModItemTags.CHEESE).add(ModItems.CHEESE_WHEEL.get()).add(ModItems.CHEESE_SLICE.get());
         tag(ModItemTags.BREAD).add(Items.BREAD);
         tag(ModItemTags.COOKED_BEEF).add(Items.COOKED_BEEF, ModItems.COOKED_VEGAN_BEEF.get());
         tag(ModItemTags.COOKED_CHICKEN).add(Items.COOKED_CHICKEN);
@@ -58,6 +59,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModBlocks.SEA_SALT.asItem(),
                         ModBlocks.FINE_SALT.asItem());
         tag(Tags.Items.BUCKETS_WATER).add(ModItems.WATER.get());
+        tag(ModItemTags.WATER).add(ModItems.WATER.get()).add(Items.WATER_BUCKET);
         tag(ModItemTags.BASE)
                 .add(
                         ModItems.RUM_BASE.get(),
@@ -88,6 +90,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.GRASS_SPICES).add(Items.FERN, Items.GRASS_BLOCK);
         tag(ModItemTags.INTERACT_WITH_PLATE).addTags(ModItemTags.KNIVES);
         tag(ModItemTags.KNIFE_ITEM).add(ModItems.KNIFE.get());
+        tag(ModItemTags.FOOD_RAW_FISH).add(Items.COD, Items.SALMON, Items.TROPICAL_FISH);
+        tag(ModItemTags.FOOD_COOKED_FISH).add(Items.COOKED_COD, Items.COOKED_SALMON);
         tag(ModItemTags.MEAT).addTags(ModItemTags.RAW_MEAT, ModItemTags.COOKED_MEAT);
         tag(ModItemTags.RAW_MEAT)
                 .addTags(
