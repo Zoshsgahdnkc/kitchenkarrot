@@ -1,5 +1,6 @@
 package io.github.tt432.kitchenkarrot;
 
+import io.github.tt432.kitchenkarrot.config.ModClientConfigs;
 import io.github.tt432.kitchenkarrot.config.ModCommonConfigs;
 import io.github.tt432.kitchenkarrot.glm.ModGlobalLootModifiers;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
@@ -30,7 +31,7 @@ public class Kitchenkarrot {
     public static final String MOD_ID = "kitchenkarrot";
 
     // Mod version here.
-    public static final String VERSION = "1.21-0.5.0";
+    public static final String VERSION = "1.21-0.6.2b";
 
     private static Kitchenkarrot INSTANCE;
 
@@ -41,6 +42,8 @@ public class Kitchenkarrot {
 
         if (dist.isClient()) {
             container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+            container.registerConfig(
+                    ModConfig.Type.CLIENT, ModClientConfigs.CLIENT, "kitchenkarrot-client.toml");
         }
         container.registerConfig(
                 ModConfig.Type.COMMON, ModCommonConfigs.COMMON, "kitchenkarrot-common.toml");

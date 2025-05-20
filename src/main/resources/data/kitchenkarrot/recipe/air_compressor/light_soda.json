@@ -1,0 +1,21 @@
+{
+  "type": "kitchenkarrot:air_compressing",
+  "ingredient": [
+    {
+      "tag": "forge:water"
+    },
+    {
+      "tag": "forge:water"
+    },
+    {
+      "tag": "minecraft:leaves"
+    },
+    {
+      "tag": "minecraft:leaves"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:light_soda"
+  },
+  "craftingtime": 100
+}

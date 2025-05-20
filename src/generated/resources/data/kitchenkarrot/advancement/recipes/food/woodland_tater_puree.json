@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kitchenkarrot:birch_sap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:birch_sap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:baked_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:baked_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bowl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:woodland_tater_puree"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:baked_potato",
+      "has_kitchenkarrot:milk",
+      "has_kitchenkarrot:birch_sap",
+      "has_minecraft:bowl"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:woodland_tater_puree"
+    ]
+  }
+}

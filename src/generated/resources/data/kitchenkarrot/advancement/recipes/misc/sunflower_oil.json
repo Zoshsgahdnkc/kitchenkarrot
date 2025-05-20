@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_sunflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sunflower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_sunflower_oil": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sunflower_oil"
+      "has_sunflower_oil",
+      "has_sunflower"
     ]
   ],
   "rewards": {

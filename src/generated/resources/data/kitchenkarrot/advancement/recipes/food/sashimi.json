@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:food/raw_fish]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:food/raw_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:sashimi"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / c:food/raw_fish]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:sashimi"
+    ]
+  }
+}

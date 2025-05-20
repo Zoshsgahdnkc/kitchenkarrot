@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:raw_beef]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:raw_beef"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:salt]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:carrot_spices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:big_dripleaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:big_dripleaf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:raw_beef_in_dripleaf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:big_dripleaf",
+      "has_TagKey[minecraft:item / c:raw_beef]",
+      "has_TagKey[minecraft:item / c:salt]",
+      "has_kitchenkarrot:carrot_spices"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:raw_beef_in_dripleaf"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import io.github.tt432.kitchenkarrot.Kitchenkarrot;
 import io.github.tt432.kitchenkarrot.dependencies.jei.category.*;
 import io.github.tt432.kitchenkarrot.gui.AirCompressorGui;
 import io.github.tt432.kitchenkarrot.gui.BrewingBarrelGui;
+import io.github.tt432.kitchenkarrot.gui.ShakerGui;
 import io.github.tt432.kitchenkarrot.item.ModBlockItems;
 import io.github.tt432.kitchenkarrot.menu.AirCompressorMenu;
 import io.github.tt432.kitchenkarrot.menu.BrewingBarrelMenu;
@@ -107,6 +108,10 @@ public class JeiPlugin implements IModPlugin {
                 new ItemStack(ModItems.WATER.get()),
                 VanillaTypes.ITEM_STACK,
                 Component.translatable("jei.info.kitchenkarrot.water"));
+        registration.addIngredientInfo(
+                new ItemStack(ModItems.SHAKER.get()),
+                VanillaTypes.ITEM_STACK,
+                Component.translatable("jei.info.kitchenkarrot.shaker"));
     }
 
     @Override
@@ -123,6 +128,7 @@ public class JeiPlugin implements IModPlugin {
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(AirCompressorGui.class, 105, 52, 21, 19, AIR_COMPRESSOR);
         registration.addRecipeClickArea(BrewingBarrelGui.class, 133, 53, 4, 4, BREWING_BARREL);
+        registration.addRecipeClickArea(ShakerGui.class, 155, 61, 14, 16, COCKTAIL);
     }
 
     @Override

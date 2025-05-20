@@ -26,6 +26,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
 
+    // Vanilla food
     public static final DeferredItem<Item> BEEF_IN_DRIPLEAF =
             ITEMS.register("beef_in_dripleaf", () -> new ModFood(12, 14.4F));
     public static final DeferredItem<Item> SMALL_BEEF_IN_DRIPLEAF =
@@ -35,7 +36,11 @@ public class ModItems {
     public static final DeferredItem<Item> PICKLED_SEA_PICKLES =
             ITEMS.register("pickled_sea_pickles", () -> new ModFood(2, 2));
     public static final DeferredItem<Item> BIRCH_SAP_CHOCOLATE_BAR =
-            ITEMS.register("birch_sap_chocolate_bar", () -> new ModFood(5, 9.2F));
+            ITEMS.register(
+                    "birch_sap_chocolate_bar",
+                    () ->
+                            new ModFood(
+                                    5, 9.2F, EffectEntry.of(MobEffects.MOVEMENT_SPEED, 90, 2, 1)));
     public static final DeferredItem<Item> CHOCOLATE_CROISSANT =
             ITEMS.register("chocolate_croissant", () -> new ModFood(7, 8));
     public static final DeferredItem<Item> BEETROOT_CREPE =
@@ -47,7 +52,9 @@ public class ModItems {
     public static final DeferredItem<Item> GRILLED_WHEATMEAL =
             ITEMS.register("grilled_wheatmeal", () -> new ModFood(3, 1));
     public static final DeferredItem<Item> GRILLED_FISH_AND_CACTUS =
-            ITEMS.register("grilled_fish_and_cactus", () -> new ModFood(8, 8F));
+            ITEMS.register(
+                    "grilled_fish_and_cactus",
+                    () -> new ModFood(8, 8F, EffectEntry.of(ModEffects.POISON_RESISTANCE, 180, 1)));
     public static final DeferredItem<Item> FLOWER_CAKE =
             ITEMS.register("flower_cake", () -> new ModFood(6, 4.8F));
     public static final DeferredItem<Item> PILLAGER_PIE =
@@ -55,13 +62,9 @@ public class ModItems {
                     "pillager_pie",
                     () -> new ModFood(6, 4.8F, EffectEntry.of(MobEffects.BAD_OMEN, 600, 1)));
     public static final DeferredItem<Item> MONSTER_LASAGNA =
-            ITEMS.register(
-                    "monster_lasagna",
-                    () -> new ModFood(13, 3.2F, EffectEntry.of(MobEffects.HUNGER, 30, 1)));
+            ITEMS.register("monster_lasagna", () -> new ModFood(13, 3.6F));
     public static final DeferredItem<Item> SMALL_MONSTER_LASAGNA =
-            ITEMS.register(
-                    "small_monster_lasagna",
-                    () -> new ModFood(5, 1.6F, EffectEntry.of(MobEffects.HUNGER, 10, 1)));
+            ITEMS.register("small_monster_lasagna", () -> new ModFood(5, 1.6F));
     public static final DeferredItem<Item> CHORUS_MOUSSE =
             ITEMS.register("chorus_mousse", () -> new ModFood(12, 14.4F));
     public static final DeferredItem<Item> SMALL_CHORUS_MOUSSE =
@@ -75,7 +78,7 @@ public class ModItems {
                     "dungeon_pizza_slice",
                     () -> new ModFood(10, 6F, EffectEntry.of(MobEffects.POISON, 10, 0.2F)));
     public static final DeferredItem<Item> FEAST_PIZZA_SLICE =
-            ITEMS.register("feast_pizza_slice", () -> new ModFood(10, 12.8F));
+            ITEMS.register("feast_pizza_slice", () -> new ModFood(8, 9.6F));
     public static final DeferredItem<Item> SHINY_PIZZA_SLICE =
             ITEMS.register("shiny_pizza_slice", () -> new ModFood(7, 24));
     public static final DeferredItem<Item> SWEET_LOAF =
@@ -99,15 +102,23 @@ public class ModItems {
     public static final DeferredItem<Item> BEEF_GRAINS =
             ITEMS.register("beef_grains", () -> new ModFood(3, 4));
     public static final DeferredItem<Item> SASHIMI =
-            ITEMS.register("sashimi", () -> new ModFood(4, 2.4F));
+            ITEMS.register(
+                    "sashimi",
+                    () ->
+                            new ModFood(
+                                    4, 2.4F, EffectEntry.of(ModEffects.POISON_RESISTANCE, 60, 1)));
     public static final DeferredItem<Item> MOSS_FRIED_LAMB_CUTLETS =
             ITEMS.register("moss_fried_lamb_cutlets", () -> new ModFood(10, 12.8F));
     public static final DeferredItem<Item> FRIES =
-            ITEMS.register("fries", () -> new ModFood(6, 8F));
+            ITEMS.register("fries", () -> new ModFood(6, 8.4F));
     public static final DeferredItem<Item> DRUMSTICK =
-            ITEMS.register("drumstick", () -> new ModFood(7, 9.6F));
+            ITEMS.register(
+                    "drumstick",
+                    () -> new ModFood(6, 8.4F, EffectEntry.of(MobEffects.DAMAGE_BOOST, 30, 1)));
     public static final DeferredItem<Item> FRIED_CHICKEN_COMBO =
-            ITEMS.register("fried_chicken_combo", () -> new ModFood(15, 30));
+            ITEMS.register(
+                    "fried_chicken_combo",
+                    () -> new ModFood(15, 30, EffectEntry.of(MobEffects.DAMAGE_BOOST, 180, 1)));
     public static final DeferredItem<Item> RAW_VEGAN_BEEF =
             ITEMS.register("raw_vegan_beef", () -> new ModFood(3, 1.8F));
     public static final DeferredItem<Item> COOKED_VEGAN_BEEF =
@@ -129,28 +140,46 @@ public class ModItems {
     public static final DeferredItem<Item> SWEET_ROLL =
             ITEMS.register("sweet_roll", () -> new ModFood(11, 1.1F));
     public static final DeferredItem<Item> STONE_SHORE_QUICHE =
-            ITEMS.register("stone_shore_quiche", () -> new ModFood(11, 1.1F));
+            ITEMS.register("stone_shore_quiche", () -> new ModFood(13, 16F));
     public static final DeferredItem<Item> CHEESE_WHEEL =
-            ITEMS.register("cheese_wheel", () -> new ModFood(11, 1.1F));
+            ITEMS.register("cheese_wheel", () -> new ModFood(10, 7.2F));
     public static final DeferredItem<Item> CHEESE_SLICE =
-            ITEMS.register("cheese_slice", () -> new ModFood(11, 1.1F));
+            ITEMS.register(
+                    "cheese_slice", () -> new ModFood(2, 1.6F).setDuration(ModFood.Duration.Fast));
     public static final DeferredItem<Item> GOLDEN_CHEESE =
-            ITEMS.register("golden_cheese", () -> new ModFood(11, 1.1F));
+            ITEMS.register(
+                    "golden_cheese",
+                    () -> new ModFood(6, 8.4F, true, EffectEntry.of(MobEffects.HEAL, 0.05f, 1)));
     public static final DeferredItem<Item> CRIMSON_FUNGI_SPRING_ROLL =
-            ITEMS.register("crimson_fungi_spring_roll", () -> new ModFood(11, 1.1F));
+            ITEMS.register("crimson_fungi_spring_roll", () -> new ModFood(7, 6.4F));
     public static final DeferredItem<Item> MIXED_NUTS_MOONCAKE =
-            ITEMS.register("mixed_nuts_mooncake", () -> new ModFood(11, 1.1F));
+            ITEMS.register(
+                    "mixed_nuts_mooncake",
+                    () -> new ModFood(5, 4.8F, EffectEntry.of(MobEffects.MOVEMENT_SPEED, 300, 1)));
     public static final DeferredItem<Item> BIKINI_BOTTOM_SUB =
-            ITEMS.register("bikini_bottom_sub", () -> new ModFood(11, 1.1F));
+            ITEMS.register(
+                    "bikini_bottom_sub",
+                    () ->
+                            new ModFood(
+                                    13,
+                                    14.4F,
+                                    EffectEntry.of(MobEffects.DOLPHINS_GRACE, 180, 1),
+                                    EffectEntry.of(ModEffects.POISON_RESISTANCE, 180, 1)));
     public static final DeferredItem<Item> BIRCH_SAP_DONUT =
-            ITEMS.register("birch_sap_donut", () -> new ModFood(11, 1.1F));
+            ITEMS.register(
+                    "birch_sap_donut",
+                    () -> new ModFood(3, 3.6F, EffectEntry.of(MobEffects.ABSORPTION, 60, 1)));
     public static final DeferredItem<Item> BUCHE_DE_NOEL =
-            ITEMS.register("buche_de_noel", () -> new ModFood(11, 1.1F));
+            ITEMS.register("buche_de_noel", () -> new ModFood(5, 8F));
 
+    // Drinks
     public static final DeferredItem<Item> SOOTHING_TEA =
             ITEMS.register(
                     "soothing_tea",
-                    () -> ModFood.drinkItem(1, 3.6F).setDuration(ModFood.Duration.Slow));
+                    () ->
+                            ModFood.drinkItem(
+                                            1, 3.6F, EffectEntry.of(ModEffects.DISPERSE, 180, 3, 3))
+                                    .setDuration(ModFood.Duration.Slow));
     public static final DeferredItem<Item> BIRCH_SAP =
             ITEMS.register("birch_sap", () -> ModFood.drinkItem(1, 2f));
     public static final DeferredItem<Item> ICED_MELON_LAGER =
@@ -160,30 +189,53 @@ public class ModItems {
                             ModFood.drinkItem(
                                     3,
                                     2.4F,
-                                    EffectEntry.of(MobEffects.FIRE_RESISTANCE, 300, 2, 1)));
+                                    EffectEntry.of(MobEffects.FIRE_RESISTANCE, 300, 1, 1),
+                                    EffectEntry.of(ModEffects.TIPSY, 180, 1)));
     public static final DeferredItem<Item> GLOW_BERRY_LAGER =
             ITEMS.register(
                     "glow_berry_lager",
                     () ->
                             ModFood.drinkItem(
-                                    2, 2.4F, EffectEntry.of(MobEffects.GLOWING, 300, 2, 1)));
+                                    2,
+                                    2.4F,
+                                    EffectEntry.of(MobEffects.GLOWING, 300, 1, 1),
+                                    EffectEntry.of(ModEffects.TIPSY, 180, 1)));
     public static final DeferredItem<Item> ACORN_WINE =
-            ITEMS.register("acorn_wine", () -> ModFood.drinkItem(2, 5.2F));
+            ITEMS.register(
+                    "acorn_wine",
+                    () -> ModFood.drinkItem(1, 0F, EffectEntry.of(ModEffects.DISPERSE, 60, 2, 1)));
     public static final DeferredItem<Item> MEAD =
-            ITEMS.register("mead", () -> ModFood.drinkItem(1, 0F));
+            ITEMS.register("mead", () -> ModFood.drinkItem(2, 5.2F));
     public static final DeferredItem<Item> RUM =
             ITEMS.register(
                     "rum",
                     () ->
                             ModFood.drinkItem(
-                                    1, 0F, EffectEntry.of(MobEffects.DOLPHINS_GRACE, 300, 1)));
+                                    1,
+                                    0F,
+                                    EffectEntry.of(MobEffects.DOLPHINS_GRACE, 180, 1),
+                                    EffectEntry.of(ModEffects.TIPSY, 180, 1)));
     public static final DeferredItem<Item> VODKA =
             ITEMS.register(
                     "vodka",
                     () ->
                             ModFood.drinkItem(
-                                    1, 0F, EffectEntry.of(MobEffects.DAMAGE_BOOST, 300, 1)));
+                                    1,
+                                    0F,
+                                    EffectEntry.of(MobEffects.DAMAGE_BOOST, 180, 1),
+                                    EffectEntry.of(ModEffects.TIPSY, 180, 1)));
+    public static final DeferredItem<Item> SWEET_BERRY_MILK =
+            ITEMS.register(
+                    "sweet_berry_milk",
+                    () ->
+                            new ModFood(
+                                    4,
+                                    4.8F,
+                                    16,
+                                    true,
+                                    EffectEntry.of(MobEffects.INVISIBILITY, 60, 1)));
 
+    // Snacks
     public static final DeferredItem<Item> KELP_WITH_SUNFLOWER_SEED =
             ITEMS.register(
                     "kelp_with_sunflower_seed",
@@ -208,6 +260,7 @@ public class ModItems {
                     "bacon_wrapped_potato",
                     () -> new ModFood(5, 3.6F, 16).setDuration(ModFood.Duration.Fast));
 
+    // Snack Drinks
     public static final DeferredItem<Item> LIGHT_SODA =
             ITEMS.register(
                     "light_soda", () -> ModFood.drinkItem(1, 0).setDuration(ModFood.Duration.Fast));
@@ -253,28 +306,64 @@ public class ModItems {
                             CannedFoodItem.drinkItem(
                                             1,
                                             3F,
-                                            EffectEntry.of(MobEffects.MOVEMENT_SPEED, 180, 2, 1),
-                                            EffectEntry.of(MobEffects.DIG_SPEED, 180, 2, 1))
+                                            EffectEntry.of(MobEffects.MOVEMENT_SPEED, 360, 2, 1),
+                                            EffectEntry.of(MobEffects.DIG_SPEED, 360, 2, 1))
                                     .setDuration(ModFood.Duration.Fast));
 
+    // Food with container
     public static final DeferredItem<Item> FISHERMENS_DELIGHT =
-            ITEMS.register("fishermens_delight", () -> new ModFood(10, 10.4F, 16).setBowlFood());
+            ITEMS.register(
+                    "fishermens_delight",
+                    () ->
+                            new ModFood(10, 10.4F, 16, EffectEntry.of(MobEffects.LUCK, 300, 1))
+                                    .setBowlFood());
     public static final DeferredItem<Item> LUSH_SALAD =
-            ITEMS.register("lush_salad", () -> new ModFood(7, 6.4F, 16).setBowlFood());
+            ITEMS.register(
+                    "lush_salad",
+                    () ->
+                            new ModFood(7, 6.4F, 16, EffectEntry.of(MobEffects.REGENERATION, 10, 1))
+                                    .setBowlFood());
     public static final DeferredItem<Item> FRESH_SALAD =
-            ITEMS.register("fresh_salad", () -> new ModFood(6, 4, 16).setBowlFood());
+            ITEMS.register(
+                    "fresh_salad",
+                    () ->
+                            new ModFood(6, 4, 16, EffectEntry.of(MobEffects.REGENERATION, 10, 1))
+                                    .setBowlFood());
     public static final DeferredItem<Item> TRAVELERS_SALAD =
-            ITEMS.register("travelers_salad", () -> new ModFood(5, 3.2F, 16).setBowlFood());
+            ITEMS.register(
+                    "travelers_salad",
+                    () ->
+                            new ModFood(5, 3.2F, 16, EffectEntry.of(MobEffects.REGENERATION, 10, 1))
+                                    .setBowlFood());
     public static final DeferredItem<Item> FRUIT_CEREAL_PORRIDGE =
             ITEMS.register("fruit_cereal_porridge", () -> new ModFood(7, 9.6F, 16).setBowlFood());
     public static final DeferredItem<Item> CREEPER_CEREAL_PORRIDGE =
-            ITEMS.register("creeper_cereal_porridge", () -> new ModFood(7, 9.6F, 16).setBowlFood());
+            ITEMS.register(
+                    "creeper_cereal_porridge", () -> new ModFood(12, 4.8F, 16).setBowlFood());
+    public static final DeferredItem<Item> ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE =
+            ITEMS.register(
+                    "ultra_super_delicious_cereal_porridge",
+                    () ->
+                            new ModFood(
+                                    FoodUtil.food(defaultProperties(), 20, 100F)
+                                            .rarity(Rarity.UNCOMMON)
+                                            .stacksTo(16)));
     public static final DeferredItem<Item> BEETROOT_SALAD =
-            ITEMS.register("beetroot_salad", () -> new ModFood(6, 3.6F, 16).setBowlFood());
+            ITEMS.register("beetroot_salad", () -> new ModFood(7, 5.2F, 16).setBowlFood());
     public static final DeferredItem<Item> WOODLAND_TATER_PUREE =
             ITEMS.register("woodland_tater_puree", () -> new ModFood(7, 6.4F, 16).setBowlFood());
     public static final DeferredItem<Item> CARROT_AND_CARROT =
             ITEMS.register("carrot_and_carrot", () -> new ModFood(10, 10F, 16).setBowlFood());
+    public static final DeferredItem<Item> PHANTOM_STEW =
+            ITEMS.register(
+                    "phantom_stew",
+                    () ->
+                            new ModFood(
+                                            2,
+                                            12F,
+                                            16,
+                                            EffectEntry.of(ModEffects.WITHER_RESISTANCE, 180, 1))
+                                    .setBowlFood());
 
     public static final DeferredItem<Item> CANNED_MUTTON_PUMPKIN =
             ITEMS.register("canned_mutton_pumpkin", () -> new InstantFoodItem(5, 9.6F));
@@ -311,37 +400,6 @@ public class ModItems {
                                             SoundSource.PLAYERS);
                                 }
                             });
-
-    public static final DeferredItem<Item> PHANTOM_STEW =
-            ITEMS.register(
-                    "phantom_stew",
-                    () ->
-                            new ModFood(
-                                            8,
-                                            9.2F,
-                                            16,
-                                            EffectEntry.of(ModEffects.WITHER_RESISTANCE, 180, 1))
-                                    .setBowlFood());
-
-    public static final DeferredItem<Item> SWEET_BERRY_MILK =
-            ITEMS.register(
-                    "sweet_berry_milk",
-                    () ->
-                            new ModFood(
-                                    4,
-                                    4.8F,
-                                    16,
-                                    true,
-                                    EffectEntry.of(MobEffects.INVISIBILITY, 60, 1)));
-
-    public static final DeferredItem<Item> ULTRA_SUPER_DELICIOUS_CEREAL_PORRIDGE =
-            ITEMS.register(
-                    "ultra_super_delicious_cereal_porridge",
-                    () ->
-                            new ModFood(
-                                    FoodUtil.food(defaultProperties(), 20, 100F)
-                                            .rarity(Rarity.UNCOMMON)
-                                            .stacksTo(16)));
 
     public static final DeferredItem<Item> CURRY_UDON =
             ITEMS.register(

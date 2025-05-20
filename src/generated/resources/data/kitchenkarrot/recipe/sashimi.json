@@ -4,7 +4,7 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:foods/raw_fish"
+      "tag": "c:food/raw_fish"
     }
   ],
   "result": {

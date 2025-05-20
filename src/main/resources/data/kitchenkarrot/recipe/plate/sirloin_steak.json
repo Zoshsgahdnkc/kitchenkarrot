@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:sirloin_steak"
+    },
+    "result": {
+      "item": "kitchenkarrot:beef_grains"
+    }
+  }

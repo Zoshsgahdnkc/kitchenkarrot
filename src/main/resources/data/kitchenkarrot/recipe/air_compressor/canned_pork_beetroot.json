@@ -1,0 +1,24 @@
+{
+  "type": "kitchenkarrot:air_compressing",
+  "ingredient": [
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:salt"
+    },
+    {
+      "tag": "forge:cooked_pork"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:canned_pork_beetroot"
+  },
+  "container": {
+    "item": "kitchenkarrot:empty_can"
+  },
+  "craftingtime": 100
+}

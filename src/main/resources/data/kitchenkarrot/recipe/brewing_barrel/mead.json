@@ -1,0 +1,30 @@
+{
+    "type": "kitchenkarrot:brewing_barrel",
+    "content":{
+        "recipe":[
+            {
+                "item" : "minecraft:honeycomb"
+            },
+            {
+                "item" : "minecraft:honeycomb"
+            },
+            {
+                "item" : "minecraft:honeycomb"
+            },
+            {
+                "item" : "kitchenkarrot:water"
+            },
+            {
+                "item" : "kitchenkarrot:water"
+            },
+            {
+                "item" : "kitchenkarrot:water"
+            }
+        ],
+        "craftingtime":6000
+    },
+    "result":{
+        "item":"kitchenkarrot:mead"
+    }
+
+}

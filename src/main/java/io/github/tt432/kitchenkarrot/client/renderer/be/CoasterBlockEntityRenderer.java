@@ -10,9 +10,12 @@ import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.IItemHandler;
 
@@ -55,7 +58,7 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
             itemRenderer.renderStatic(
                     itemStack,
                     ItemDisplayContext.GROUND,
-                    LightTexture.FULL_BRIGHT,
+                    getLightLevel(coasterBlockEntity.getLevel(), coasterBlockEntity.getBlockPos()),
                     packedOverlay,
                     poseStack,
                     bufferSource,
@@ -64,5 +67,10 @@ public class CoasterBlockEntityRenderer implements BlockEntityRenderer<CoasterBl
             poseStack.popPose();
         }
     }
-    // spotless:on
+
+    private int getLightLevel(Level level, BlockPos pos) {
+        int block = level.getBrightness(LightLayer.BLOCK, pos);
+        int sky = level.getBrightness(LightLayer.SKY, pos);
+        return LightTexture.pack(block, sky);
+    }
 }

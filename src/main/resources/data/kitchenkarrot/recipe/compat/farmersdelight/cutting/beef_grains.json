@@ -1,0 +1,31 @@
+{
+  "type":"forge:conditional",
+  "recipes":[
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid":"farmersdelight"
+        }
+      ],
+
+    "recipe":{
+      "type": "farmersdelight:cutting",
+      "ingredients": [
+        {
+          "item": "kitchenkarrot:sirloin_steak"
+        }
+      ],
+      "tool": {
+        "tag": "forge:tools/knives"
+      },
+      "result": [
+        {
+          "item": "kitchenkarrot:beef_grains",
+          "count": 6
+        }
+      ]
+    }
+  }
+  ]
+}

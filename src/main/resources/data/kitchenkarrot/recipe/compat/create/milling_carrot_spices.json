@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "results": [
+    {
+      "item": "kitchenkarrot:carrot_spices",
+      "count": 1,
+      "chance": 0.5
+    }
+  ],
+  "processingTime": 120
+}

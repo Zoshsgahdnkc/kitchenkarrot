@@ -1,10 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "kitchenkarrot",
   "key": {
     "1": {
-      "tag": "c:buckets/milk"
+      "tag": "c:cheese"
     },
     "2": {
       "tag": "c:salt"

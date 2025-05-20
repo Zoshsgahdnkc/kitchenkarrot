@@ -8,6 +8,7 @@ import io.github.tt432.kitchenkarrot.registries.ModSoundEvents;
 import io.github.tt432.kitchenkarrot.util.SoundUtil;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -16,10 +17,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 /**
  * @author DustW
@@ -27,6 +31,17 @@ import org.jetbrains.annotations.NotNull;
 public class ShakerItem extends Item {
     public ShakerItem() {
         super(cocktailProperties().stacksTo(1));
+    }
+
+    @Override
+    public void appendHoverText(
+            ItemStack stack,
+            TooltipContext context,
+            List<Component> tooltipComponents,
+            TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+        tooltipComponents.add(Component.translatable("info.kitchenkarrot.shaker1"));
+        tooltipComponents.add(Component.translatable("info.kitchenkarrot.shaker2"));
     }
 
     @Override

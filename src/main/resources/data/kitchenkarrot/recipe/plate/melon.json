@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "minecraft:melon"
+    },
+    "result": {
+      "item": "minecraft:melon_slice"
+    }
+  }

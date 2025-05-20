@@ -1,0 +1,31 @@
+{
+  "type":"forge:conditional",
+  "recipes":[
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid":"farmersdelight"
+        }
+      ],
+
+    "recipe":{
+      "type": "farmersdelight:cutting",
+      "ingredients": [
+        {
+          "item": "kitchenkarrot:slime_mousse"
+        }
+      ],
+      "tool": {
+        "tag": "forge:tools/knives"
+      },
+      "result": [
+        {
+          "item": "kitchenkarrot:small_slime_mousse",
+          "count": 4
+        }
+      ]
+    }
+  }
+  ]
+}

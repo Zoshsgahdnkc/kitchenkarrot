@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:salt]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:sea_pickle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sea_pickle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:pickled_sea_pickles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:sea_pickle",
+      "has_TagKey[minecraft:item / c:salt]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:pickled_sea_pickles"
+    ]
+  }
+}

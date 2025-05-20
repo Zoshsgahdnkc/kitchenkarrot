@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:beef_in_dripleaf"
+    },
+    "result": {
+      "item": "kitchenkarrot:small_beef_in_dripleaf"
+    }
+  }

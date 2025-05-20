@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kitchenkarrot:birch_sap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:birch_sap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:cocoa_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cocoa_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sugar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:birch_sap_chocolate_bar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:cocoa_beans",
+      "has_kitchenkarrot:birch_sap",
+      "has_minecraft:sugar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:birch_sap_chocolate_bar"
+    ]
+  }
+}

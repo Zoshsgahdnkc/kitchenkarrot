@@ -39,11 +39,14 @@ public class ModItemTags {
     public static final TagKey<Item> KNIVES =
             ItemTags.create(ResourceLocation.parse("c:tools/knives"));
     public static final TagKey<Item> NUTS = ItemTags.create(ResourceLocation.parse("c:nuts"));
+    public static final TagKey<Item> CHEESE = ItemTags.create(ResourceLocation.parse("c:cheese"));
     public static final TagKey<Item> CROPS_RICE =
             ItemTags.create(ResourceLocation.parse("c:crops/rice"));
     public static final TagKey<Item> COOKED_MUTTON =
             ItemTags.create(ResourceLocation.parse("c:cooked_mutton"));
     public static final TagKey<Item> FRUITS = ItemTags.create(ResourceLocation.parse("c:fruits"));
+    public static final TagKey<Item> MOD_FRUITS =
+            ItemTags.create(ResourceLocation.parse("kitchenkarrot:fruits"));
     public static final TagKey<Item> RAW_PORK =
             ItemTags.create(ResourceLocation.parse("c:raw_pork"));
     public static final TagKey<Item> RAW_MUTTON =
@@ -66,6 +69,11 @@ public class ModItemTags {
             ItemTags.create(ResourceLocation.parse("c:nuts/acorn"));
     public static final TagKey<Item> BREAD = ItemTags.create(ResourceLocation.parse("c:bread"));
     public static final TagKey<Item> MILK = ItemTags.create(ResourceLocation.parse("c:milk"));
+    public static final TagKey<Item> WATER = ItemTags.create(ResourceLocation.parse("c:water"));
+    public static final TagKey<Item> FOOD_COOKED_FISH =
+            ItemTags.create(ResourceLocation.parse("c:food/cooked_fish"));
+    public static final TagKey<Item> FOOD_RAW_FISH =
+            ItemTags.create(ResourceLocation.parse("c:food/raw_fish"));
 
     public static final TagKey<Item> FOOD_MEAT =
             ItemTags.create(ResourceLocation.parse("c:food/meat"));

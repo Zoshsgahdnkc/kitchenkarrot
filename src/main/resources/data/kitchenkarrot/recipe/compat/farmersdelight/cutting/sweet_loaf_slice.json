@@ -1,0 +1,31 @@
+{
+  "type":"forge:conditional",
+  "recipes":[
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid":"farmersdelight"
+        }
+      ],
+
+    "recipe":{
+      "type": "farmersdelight:cutting",
+      "ingredients": [
+        {
+          "item": "kitchenkarrot:sweet_loaf"
+        }
+      ],
+      "tool": {
+        "tag": "forge:tools/knives"
+      },
+      "result": [
+        {
+          "item": "kitchenkarrot:sweet_loaf_slice",
+          "count": 3
+        }
+      ]
+    }
+  }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "kitchenkarrot:brewing_barrel",
+  "content": {
+    "craftingtime": 3000,
+    "recipe": [
+      {
+        "item": "minecraft:sea_pickle"
+      },
+      {
+        "item": "minecraft:sea_pickle"
+      },
+      {
+        "item": "minecraft:sea_pickle"
+      },
+      {
+        "item": "minecraft:sea_pickle"
+      },
+      {
+        "tag": "c:salt"
+      },
+      {
+        "tag": "c:salt"
+      }
+    ],
+    "water_consumption": 0
+  },
+  "result": {
+    "id": "kitchenkarrot:pickled_sea_pickles"
+  }
+}

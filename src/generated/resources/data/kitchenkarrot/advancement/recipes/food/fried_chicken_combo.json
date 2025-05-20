@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kitchenkarrot:carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:carrot_spices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:drumstick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:drumstick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:fries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:fries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:fried_chicken_combo"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_kitchenkarrot:fries",
+      "has_kitchenkarrot:drumstick",
+      "has_kitchenkarrot:carrot_spices"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:fried_chicken_combo"
+    ]
+  }
+}

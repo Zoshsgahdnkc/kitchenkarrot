@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "kitchenkarrot",
   "key": {
     "0": {
       "item": "minecraft:cactus"
@@ -10,7 +9,7 @@
       "tag": "c:salt"
     },
     "2": {
-      "tag": "c:foods/cooked_fish"
+      "tag": "c:food/cooked_fish"
     },
     "3": {
       "tag": "kitchenkarrot:grass_spices"

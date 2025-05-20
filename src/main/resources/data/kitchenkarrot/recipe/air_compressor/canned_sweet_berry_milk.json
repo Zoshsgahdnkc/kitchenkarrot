@@ -1,0 +1,24 @@
+{
+  "type": "kitchenkarrot:air_compressing",
+  "ingredient": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "kitchenkarrot:sweet_berry_milk"
+    },
+    {
+      "item": "kitchenkarrot:sweet_berry_milk"
+    }
+  ],
+  "result": {
+    "item": "kitchenkarrot:canned_sweet_berry_milk"
+  },
+  "container": {
+    "item": "kitchenkarrot:empty_can"
+  },
+  "craftingtime": 100
+}

@@ -107,7 +107,7 @@
     "item.kitchenkarrot.golden_cheese":"Golden Cheese",
     "item.kitchenkarrot.stone_shore_quiche":"Stone Shore Quiche",
     "item.kitchenkarrot.crimson_fungi_spring_roll":"Crimson_fungi_spring_roll",
-    "item.kitchenkarrot.buche_de_noel":"Bûche De Noël",
+    "item.kitchenkarrot.buche_de_noel":"Yule Log",
     "item.kitchenkarrot.mixed_nuts_mooncake":"Mixed Nuts Mooncake",
     "item.kitchenkarrot.birch_sap_donut":"Birch Sap Donut",
     "item.kitchenkarrot.bikini_bottom_sub":"Bikini Bottom Sub",
@@ -141,10 +141,19 @@
     "info.kitchenkarrot.popacorn":"%s Bites Remains",
     "info.kitchenkarrot.water":"Water Consumption: %smB",
     "info.kitchenkarrot.time":"Brewing Duration: %ss",
+    "info.kitchenkarrot.shaker1":"Shift right click to open the shaker",
+    "info.kitchenkarrot.shaker2":"Hold right click after closing the shaker to shake.",
+    "info.kitchenkarrot.brewing_barrel.not_enough_liquid":"Not Enough Water",
+    "info.kitchenkarrot.brewing_barrel.error_recipe":"No Recipe Found",
+    "info.kitchenkarrot.air_compressor.no_energy":"Requiring Redstone Powder",
+    "info.kitchenkarrot.all_good":"All good",
+    "info.kitchenkarrot.warning": "You are playing minecraft with an alpha version of KitchenKarrot mod. This version may contain bugs or features that don't work in correct ways.\nIf you encounter any of these, please report to our discord to help us fix them.",
+    "info.kitchenkarrot.report_link": "Click this line to join our discord.",
     "jei.info.kitchenkarrot.gem_carrot":"Has a small chance to be harvested from normal carrots plants.",
     "jei.info.kitchenkarrot.fine_salt":"In most circumstances, can be bought from a butcher villager.(Configurable)",
     "jei.info.kitchenkarrot.pillager_pie":"Has a small chance to be looted from illager structure or from a dead pillager.",
     "jei.info.kitchenkarrot.water":"Right click the air compressor with a water bucket to obtain quickly.",
+    "jei.info.kitchenkarrot.shaker":"Shift right click to open the shaker. Input five ingredients in the middle. Close the shaker and hold right click to shake until hearing a ding sound. The slots on the left is for storing ingredients",
 
     "kitchenkarrot.unknown":"Unknown Cocktail",
     "kitchenkarrot.unknown.tooltip":"Creative work.Uncertain effect.",
@@ -198,8 +207,6 @@
     "kitchenkarrot.cocktail.shaker":"Shaking",
 
     "container.kitchenkarrot:brewing_barrel":"",
-    "brewing_barrel.error.not_enough_liquid":"Not Enough Water",
-    "brewing_barrel.error.error_recipe":"No Recipe Found",
 
     "container.kitchenkarrot:air_compressor":"",
 
@@ -246,20 +253,18 @@
     "advancement.kitchenkarrot.get_canned_hoglin_confit.desc":"Exchange some of your gold ingots for piglin treats.",
 
     "entity.kitchenkarrot.can": "Empty Can",
+    "effect.kitchenkarrot.disperse": "Disperse",
+    "effect.kitchenkarrot.tidal_affinity": "Tidal Affinity",
+    "effect.kitchenkarrot.tipsy": "Tipsy",
+    "effect.kitchenkarrot.poison_resistance": "Poison Resistance",
+    "effect.kitchenkarrot.wither_resistance": "Wither Resistance",
+    "effect.kitchenkarrot.disperse.description": "Clear other effects on the entity. Decrease its level by 1 when clearing effects.",
+    "effect.kitchenkarrot.tipsy.description": "Decrease movement speed, increase attack damage on every level. When reacquiring this effect, reset the countdown and increase the level by 1. When the level reaches 4, clear this effect and apply various harmful effects to the entity.",
+    "effect.kitchenkarrot.poison_resistance.description": "Remove the poisoned effect in the duration.",
+    "effect.kitchenkarrot.wither_resistance.description": "Remove the wither effect in the duration.",
     "potion.potency.6": "VI",
     "potion.potency.7": "VII",
     "potion.potency.8": "VIII",
     "potion.potency.9": "IX",
-    "potion.potency.10": "X",
-
-    "kitchenkarrot.configuration.CocktailProperty Settings": "CocktailProperty Settings",
-    "kitchenkarrot.configuration.Spawn Empty Can Entity": "Spawn Empty Can Entity",
-    "kitchenkarrot.configuration.Can Entity Lifetime": "Can Entity Lifetime",
-    "kitchenkarrot.configuration.Canned Food Settings": "Canned Food Settings",
-    "kitchenkarrot.configuration.Villager Trade Settings": "Villager Trade Settings",
-    "kitchenkarrot.configuration.Unknown CocktailProperty Effects Blacklist": "Unknown CocktailProperty Effects Blacklist",
-    "kitchenkarrot.configuration.Farmer Buy Gem Carrot": "Farmer Buy Gem Carrot",
-    "kitchenkarrot.configuration.Whitelist Mode": "Whitelist Mode",
-    "kitchenkarrot.configuration.Butcher Sell Salt": "Butcher Sell Salt",
-    "kitchenkarrot.configuration.Butcher Sell Oil": "Butcher Sell Oil"
+    "potion.potency.10": "X"
 }

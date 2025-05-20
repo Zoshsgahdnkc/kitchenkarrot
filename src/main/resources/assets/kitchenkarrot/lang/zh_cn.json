@@ -141,10 +141,19 @@
     "info.kitchenkarrot.popacorn": "剩余%s口",
     "info.kitchenkarrot.water": "消耗水：%smB",
     "info.kitchenkarrot.time": "酿造时长：%s秒",
+    "info.kitchenkarrot.shaker1":"Shift右键打开摇酒壶",
+    "info.kitchenkarrot.shaker2":"关闭摇酒壶后长按右键摇酒",
+    "info.kitchenkarrot.brewing_barrel.not_enough_liquid":"没有足够的水",
+    "info.kitchenkarrot.brewing_barrel.error_recipe":"没有对应配方",
+    "info.kitchenkarrot.air_compressor.no_energy":"需要补充红石粉",
+    "info.kitchenkarrot.all_good":"一切正常",
+    "info.kitchenkarrot.warning": "如果您看到这条消息，您可能在游玩胡萝卜厨房模组的a测版本，该版本可能包含Bug和不符合预期的特性。\n如果您在游玩时遇到了疑似类似情况，请在我们的QQ群报告以帮助我们修复。",
+    "info.kitchenkarrot.report_link": "点我加入QQ群，或者搜索群号694711755加入",
     "jei.info.kitchenkarrot.gem_carrot": "有小概率在收获普通胡萝卜植株时获得。",
     "jei.info.kitchenkarrot.fine_salt": "大部分情况下可以从屠夫村民处购买。（可配置）",
     "jei.info.kitchenkarrot.pillager_pie": "有小概率在灾厄村民结构中或者击败掠夺者时获得。",
     "jei.info.kitchenkarrot.water": "对空气压缩机使用水桶来快速获取。",
+    "jei.info.kitchenkarrot.shaker":"Shift右键打开摇酒壶，在中间的五个格子中放入原料，关闭摇酒壶并长按右键直到听到叮声。左侧的格子用于储存原料。",
 
     "kitchenkarrot.unknown": "不知名鸡尾酒",
     "kitchenkarrot.unknown.tooltip": "§7新奇的研发。效果不明",
@@ -198,8 +207,6 @@
     "kitchenkarrot.cocktail.shaker": "摇酒壶：摇酒",
 
     "container.kitchenkarrot:brewing_barrel": "",
-    "brewing_barrel.error.not_enough_liquid": "没有足够的水",
-    "brewing_barrel.error.error_recipe": "没有对应配方",
 
     "container.kitchenkarrot:air_compressor": "",
 
@@ -246,21 +253,18 @@
     "advancement.kitchenkarrot.get_canned_hoglin_confit.desc": "用你手头的金锭换点猪灵佳肴",
 
     "entity.kitchenkarrot.can": "空罐头",
+    "effect.kitchenkarrot.disperse": "净化",
+    "effect.kitchenkarrot.tidal_affinity": "潮汐亲和",
+    "effect.kitchenkarrot.tipsy": "微醺",
+    "effect.kitchenkarrot.poison_resistance": "中毒抗性",
+    "effect.kitchenkarrot.wither_resistance": "凋零抗性",
+    "effect.kitchenkarrot.disperse.description": "清除身上的其它效果。每清除一次减少一级。",
+    "effect.kitchenkarrot.tipsy.description": "降低移动速度，增加攻击力。获得同样效果时刷新时间并提高等级。累加到四级时消失并使实体获得各种debuff。",
+    "effect.kitchenkarrot.poison_resistance.description": "在持续时间内移除实体的中毒效果",
+    "effect.kitchenkarrot.wither_resistance.description": "在持续时间内移除实体的凋零状态",
     "potion.potency.6": "VI",
     "potion.potency.7": "VII",
     "potion.potency.8": "VIII",
     "potion.potency.9": "IX",
-    "potion.potency.10": "X",
-    "item.kitchenkarrot.cream_of_mushroom_soup": "奶油蘑菇汤",
-
-    "kitchenkarrot.configuration.CocktailProperty Settings": "鸡尾酒属性设置",
-    "kitchenkarrot.configuration.Spawn Empty Can Entity": "是否生成空罐头实体",
-    "kitchenkarrot.configuration.Can Entity Lifetime": "罐头实体存活时间",
-    "kitchenkarrot.configuration.Canned Food Settings": "罐头食物设置",
-    "kitchenkarrot.configuration.Villager Trade Settings": "村民设置",
-    "kitchenkarrot.configuration.Unknown CocktailProperty Effects Blacklist": "未知鸡尾酒获取buff黑名单",
-    "kitchenkarrot.configuration.Farmer Buy Gem Carrot": "农民购买宝石胡萝卜",
-    "kitchenkarrot.configuration.Whitelist Mode": "白名单模式",
-    "kitchenkarrot.configuration.Butcher Sell Salt": "屠夫出售盐",
-    "kitchenkarrot.configuration.Butcher Sell Oil": "屠夫出售油"
+    "potion.potency.10": "X"
 }

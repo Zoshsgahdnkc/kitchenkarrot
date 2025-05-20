@@ -1,11 +1,31 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_barrel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:barrel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_brewing_barrel": {
       "conditions": {
         "items": [
           {
             "items": "kitchenkarrot:brewing_barrel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:copper_ingot"
           }
         ]
       },
@@ -21,7 +41,9 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_brewing_barrel"
+      "has_brewing_barrel",
+      "has_barrel",
+      "has_copper_ingot"
     ]
   ],
   "rewards": {

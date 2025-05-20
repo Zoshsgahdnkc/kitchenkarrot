@@ -83,13 +83,10 @@ public class BrewingBarrelGui extends KKGui<BrewingBarrelMenu> {
                                         if (recipe.isPresent()
                                                 && be.hasEnoughWater(recipe.get().value())) {
                                             return Component.translatable(
-                                                    "brewing_barrel.error.not_enough_liquid");
+                                                    "info.kitchenkarrot.brewing_barrel.not_enough_liquid");
                                         } else if (!be.isRecipeSame()) {
                                             return Component.translatable(
-                                                    "brewing_barrel.error.error_recipe");
-                                        } else if (!be.resultEmpty()) {
-                                            return Component.translatable(
-                                                    "brewing_barrel.error.result_slot_not_empty");
+                                                    "info.kitchenkarrot.brewing_barrel.error_recipe");
                                         } else {
                                             return Component.empty();
                                         }

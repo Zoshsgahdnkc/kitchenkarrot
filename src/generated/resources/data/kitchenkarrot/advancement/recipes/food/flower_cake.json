@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:crops/wheat]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:crops/wheat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / minecraft:small_flowers]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:small_flowers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:flower_cake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / c:crops/wheat]",
+      "has_minecraft:egg",
+      "has_TagKey[minecraft:item / minecraft:small_flowers]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:flower_cake"
+    ]
+  }
+}

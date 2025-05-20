@@ -10,10 +10,10 @@
         "item": "minecraft:sugar_cane"
       },
       {
-        "item": "minecraft:sugar_cane"
+        "tag": "c:mushrooms"
       },
       {
-        "item": "minecraft:sugar_cane"
+        "tag": "c:mushrooms"
       },
       {
         "tag": "c:crops/wheat"

@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_mead": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:mead"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_mead_base": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_mead_base"
+      "has_mead_base",
+      "has_mead"
     ]
   ],
   "rewards": {

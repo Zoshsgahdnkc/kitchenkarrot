@@ -1,4 +1,4 @@
-// 1.21.1	2024-08-26T20:27:39.944237	Tags for minecraft:item mod id kitchenkarrot
+// 1.21.1	2025-05-20T16:18:00.7750525	Tags for minecraft:item mod id kitchenkarrot
 0bdc999a7f653eecbb3c513a0baf1b963a2587ab data/c/tags/item/bread.json
 bae5c99a489e0d798ed85d0e1008d2cebf460eac data/c/tags/item/buckets/milk.json
 bda323c7da748792cc9c57578c970cbbb09c12b6 data/c/tags/item/buckets/water.json
@@ -12,6 +12,7 @@ bc229f680fa773a41269c1569f5a700f669eb8e5 data/c/tags/item/foods/cooked_fish.json
 78af8b7f0eb426d81d11718d2e79c8bdc3d4cec1 data/c/tags/item/food/meat.json
 3d6a05e6cbf89cb95005b3c6c79fa45bd9666f6f data/c/tags/item/fruits.json
 5c76c16c9dfdc5aa75d5ec7a1e4855c8247cbe32 data/c/tags/item/ice_cubes.json
+acf8f4e4477a82a699ad4404e879f86902346970 data/c/tags/item/milk.json
 ec31611b98630ef9282bd6dffa2f6d35edec1e69 data/c/tags/item/nuts.json
 ec31611b98630ef9282bd6dffa2f6d35edec1e69 data/c/tags/item/nuts/acorn.json
 43b6b6c7a87e89b487542b57fab0ae9f63b1fceb data/c/tags/item/raw_beef.json
@@ -26,6 +27,7 @@ ec31611b98630ef9282bd6dffa2f6d35edec1e69 data/ecologics/tags/item/squirrel_tempt
 6cb7d271bb20d165344dc1fb432b708d2ba132a9 data/kitchenkarrot/tags/item/cooked_meat.json
 7d84095d462f85b2ba3c675cbafd871f76d31726 data/kitchenkarrot/tags/item/corals.json
 e11ed0b6a7871924f38af8fc5dd6c9cb70d4e018 data/kitchenkarrot/tags/item/fire_charges.json
+09871845c8c2729b768d8e6e05185230c11540ce data/kitchenkarrot/tags/item/fruits.json
 d34f2970ae8e96c64ca0f6c8c37352d3741c32f7 data/kitchenkarrot/tags/item/grass_spices.json
 bdbeae02a808ff0eaa0179133de641968847bb0e data/kitchenkarrot/tags/item/interact_with_plate.json
 97261fb438101a962d82cab12956ff1c4048644d data/kitchenkarrot/tags/item/knife_item.json

@@ -1,0 +1,9 @@
+{
+    "type": "kitchenkarrot:plate",
+    "input": {
+      "item": "kitchenkarrot:monster_lasagna"
+    },
+    "result": {
+      "item": "kitchenkarrot:small_monster_lasagna"
+    }
+  }

@@ -7,11 +7,16 @@ import io.github.tt432.kitchenkarrot.registries.ModItems;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -45,5 +50,29 @@ public class CocktailRecipeCategory extends BaseRecipeCategory<CocktailRecipe> {
                 .addItemStack(recipe.getResultItem(RegistryAccess.EMPTY));
         //        builder.addSlot(RecipeIngredientRole.OUTPUT, 15,
         // 32).addItemStack(recipe.getResultItem());
+    }
+
+    @Override
+    public void draw(
+            CocktailRecipe recipe,
+            IRecipeSlotsView recipeSlotsView,
+            GuiGraphics guiGraphics,
+            double mouseX,
+            double mouseY) {
+        super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
+        drawShakeTime(recipe, guiGraphics);
+    }
+
+    private void drawShakeTime(CocktailRecipe recipe, GuiGraphics guiGraphics) {
+        int timeInTicks = recipe.getContent().craftingTime();
+        if (timeInTicks > 0) {
+            int timeInSeconds = timeInTicks / 20;
+            Component timeString =
+                    Component.translatable("gui.jei.category.smelting.time.seconds", timeInSeconds);
+            Font font = Minecraft.getInstance().font;
+            int stringWidth = font.width(timeString);
+            guiGraphics.drawString(
+                    font, timeString, getWidth() - stringWidth - 7, 57, 0xFF2F2F2F, false);
+        }
     }
 }

@@ -13,13 +13,13 @@
         "item": "minecraft:wheat"
       },
       {
-        "item": "minecraft:sweet_berries"
+        "item": "minecraft:glow_berries"
       },
       {
-        "item": "minecraft:sweet_berries"
+        "item": "minecraft:glow_berries"
       },
       {
-        "item": "minecraft:sweet_berries"
+        "item": "minecraft:glow_berries"
       }
     ],
     "water_consumption": 250

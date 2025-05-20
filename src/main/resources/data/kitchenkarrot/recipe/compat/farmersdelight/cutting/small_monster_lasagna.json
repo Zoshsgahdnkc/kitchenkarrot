@@ -1,0 +1,31 @@
+{
+  "type":"forge:conditional",
+  "recipes":[
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid":"farmersdelight"
+        }
+      ],
+
+    "recipe":{
+      "type": "farmersdelight:cutting",
+      "ingredients": [
+        {
+          "item": "kitchenkarrot:monster_lasagna"
+        }
+      ],
+      "tool": {
+        "tag": "forge:tools/knives"
+      },
+      "result": [
+        {
+          "item": "kitchenkarrot:small_monster_lasagna",
+          "count": 4
+        }
+      ]
+    }
+  }
+  ]
+}

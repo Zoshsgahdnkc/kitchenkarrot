@@ -41,8 +41,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModBlocks.ACORN_OIL.asItem(),
                         ModBlocks.CHORUS_OIL.asItem());
         tag(ModItemTags.FRUITS).add(Items.APPLE, Items.CHORUS_FRUIT);
+        tag(ModItemTags.MOD_FRUITS)
+                .addTag(ModItemTags.FRUITS)
+                .add(Items.MELON_SLICE, Items.GLOW_BERRIES, Items.SWEET_BERRIES);
         tag(ModItemTags.ICE_CUBES).add(ModItems.ICE_CUBES.get());
         tag(Tags.Items.BUCKETS_MILK).add(ModItems.MILK.get());
+        tag(ModItemTags.MILK).add(ModItems.MILK.get()).add(Items.MILK_BUCKET);
         tag(ModItemTags.NUTS).add(ModItems.ACORN.get());
         tag(ModItemTags.RAW_BEEF).add(Items.BEEF, ModItems.RAW_VEGAN_BEEF.get());
         tag(ModItemTags.RAW_CHICKEN).add(Items.CHICKEN);

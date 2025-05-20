@@ -10,10 +10,10 @@
       "item": "kitchenkarrot:grilled_wheatmeal"
     },
     {
-      "tag": "c:buckets/milk"
+      "tag": "c:milk"
     },
     {
-      "tag": "c:fruits"
+      "tag": "kitchenkarrot:fruits"
     }
   ],
   "result": {

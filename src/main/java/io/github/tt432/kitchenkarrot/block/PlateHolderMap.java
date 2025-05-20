@@ -35,6 +35,8 @@ public class PlateHolderMap {
                     .put(ModItems.FRIED_CHICKEN_COMBO.get(), 1)
                     .put(ModItems.BEEF_IN_DRIPLEAF.get(), 1)
                     .put(ModItems.SMALL_BEEF_IN_DRIPLEAF.get(), 4)
+                    .put(ModItems.CHEESE_WHEEL.get(), 1)
+                    .put(ModItems.CHEESE_SLICE.get(), 8)
                     .put(Items.MELON, 1)
                     .put(Items.MELON_SLICE, 8)
                     .build();

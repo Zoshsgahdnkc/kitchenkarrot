@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_acorn_wine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:acorn_wine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_acorn_wine_base": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_acorn_wine_base"
+      "has_acorn_wine_base",
+      "has_acorn_wine"
     ]
   ],
   "rewards": {

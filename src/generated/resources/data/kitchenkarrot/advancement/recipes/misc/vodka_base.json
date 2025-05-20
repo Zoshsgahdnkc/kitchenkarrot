@@ -7,6 +7,16 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
+    "has_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:vodka"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_vodka_base": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_vodka_base"
+      "has_vodka_base",
+      "has_vodka"
     ]
   ],
   "rewards": {

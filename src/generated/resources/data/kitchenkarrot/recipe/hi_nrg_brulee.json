@@ -4,13 +4,13 @@
   "group": "kitchenkarrot",
   "ingredients": [
     {
-      "tag": "c:buckets/milk"
+      "tag": "c:milk"
     },
     {
       "tag": "c:cooking_oil"
     },
     {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     {
       "tag": "kitchenkarrot:fire_charges"

@@ -18,8 +18,8 @@ public class EffectEntry {
         this.probability = probability;
     }
 
-    public static EffectEntry of(Holder<MobEffect> effect, int time, float probability) {
-        return new EffectEntry(() -> new MobEffectInstance(effect, time * 20), probability);
+    public static EffectEntry of(Holder<MobEffect> effect, float time, float probability) {
+        return new EffectEntry(() -> new MobEffectInstance(effect, (int) (time * 20)), probability);
     }
 
     public static EffectEntry of(Holder<MobEffect> effect, int time, int level, float probability) {

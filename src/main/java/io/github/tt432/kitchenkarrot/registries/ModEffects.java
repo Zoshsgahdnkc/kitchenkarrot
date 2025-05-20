@@ -18,41 +18,31 @@ public class ModEffects {
 
     public static final DeferredHolder<MobEffect, MobEffect> DISPERSE =
             EFFECTS.register(
-                    "disperse", () -> new DisperseEffect(MobEffectCategory.NEUTRAL, 0xC2F6FC));
+                    "disperse", () -> new DisperseEffect(MobEffectCategory.BENEFICIAL, 12777212));
 
-    public static final DeferredHolder<MobEffect, MobEffect> TOXIC_RESISTANCE =
+    public static final DeferredHolder<MobEffect, MobEffect> POISON_RESISTANCE =
             EFFECTS.register(
-                    "toxic_resistance",
-                    () -> new ToxicResistanceEffect(MobEffectCategory.BENEFICIAL, 0x91D65C));
+                    "poison_resistance",
+                    () -> new PoisonResistanceEffect(MobEffectCategory.BENEFICIAL, 9554851));
 
     public static final DeferredHolder<MobEffect, MobEffect> WITHER_RESISTANCE =
             EFFECTS.register(
                     "wither_resistance",
-                    () -> new WitherResistanceEffect(MobEffectCategory.BENEFICIAL, 0x454F75));
-
-    public static final DeferredHolder<MobEffect, MobEffect> TIDAL_AFFINITY =
-            EFFECTS.register(
-                    "tidal_affinity",
-                    () -> new TidalAffinityEffect(MobEffectCategory.BENEFICIAL, 0x69BCFF));
+                    () -> new WitherResistanceEffect(MobEffectCategory.BENEFICIAL, 4542325));
 
     public static final DeferredHolder<MobEffect, MobEffect> TIPSY =
             EFFECTS.register(
                     "tipsy",
                     () ->
-                            new TipsyEffect(MobEffectCategory.HARMFUL, 0xC28D51)
+                            new TipsyEffect(MobEffectCategory.HARMFUL, 12750161)
                                     .addAttributeModifier(
                                             Attributes.MOVEMENT_SPEED,
                                             ResourceLocation.withDefaultNamespace("effect.tipsy"),
                                             -0.05D,
                                             AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
                                     .addAttributeModifier(
-                                            Attributes.ATTACK_SPEED,
-                                            ResourceLocation.withDefaultNamespace("effect.tipsy"),
-                                            -0.1D,
-                                            AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-                                    .addAttributeModifier(
                                             Attributes.ATTACK_DAMAGE,
                                             ResourceLocation.withDefaultNamespace("effect.tipsy"),
-                                            0.1D,
+                                            0.05D,
                                             AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 }

@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:cheese]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:cooking_oil]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:eggs]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:eggs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:croque_madame"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:bread",
+      "has_TagKey[minecraft:item / c:cheese]",
+      "has_TagKey[minecraft:item / c:cooking_oil]",
+      "has_TagKey[minecraft:item / c:eggs]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:croque_madame"
+    ]
+  }
+}

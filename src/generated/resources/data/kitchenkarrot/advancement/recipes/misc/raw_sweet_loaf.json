@@ -1,11 +1,51 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_raw_sweet_loaf": {
       "conditions": {
         "items": [
           {
             "items": "kitchenkarrot:raw_sweet_loaf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sugar"
           }
         ]
       },
@@ -21,7 +61,11 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw_sweet_loaf"
+      "has_raw_sweet_loaf",
+      "has_oil",
+      "has_bread",
+      "has_sugar",
+      "has_milk"
     ]
   ],
   "rewards": {

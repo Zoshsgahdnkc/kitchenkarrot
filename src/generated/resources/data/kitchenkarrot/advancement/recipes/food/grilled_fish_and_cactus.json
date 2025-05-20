@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:food/cooked_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_grilled_fish_and_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:grilled_fish_and_cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#kitchenkarrot:grass_spices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:grilled_fish_and_cactus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_grilled_fish_and_cactus",
+      "has_cactus",
+      "has_fish",
+      "has_spices",
+      "has_salt"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:grilled_fish_and_cactus"
+    ]
+  }
+}

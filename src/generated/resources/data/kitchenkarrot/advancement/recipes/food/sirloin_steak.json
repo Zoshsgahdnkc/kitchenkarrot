@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:cooked_beef]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cooked_beef"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:cooking_oil]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:crops/nether_wart]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:crops/nether_wart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:salt]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:carrot_spices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:sirloin_steak"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_TagKey[minecraft:item / c:cooked_beef]",
+      "has_TagKey[minecraft:item / c:crops/nether_wart]",
+      "has_TagKey[minecraft:item / c:cooking_oil]",
+      "has_TagKey[minecraft:item / c:salt]",
+      "has_kitchenkarrot:carrot_spices"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:sirloin_steak"
+    ]
+  }
+}

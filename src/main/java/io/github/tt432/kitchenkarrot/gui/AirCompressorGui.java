@@ -55,6 +55,13 @@ public class AirCompressorGui extends KKGui<AirCompressorMenu> {
                         8,
                         60,
                         true,
+                        () -> {
+                            if (be.getAtomicEnergy() == 0)
+                                return Component.translatable(
+                                        "info.kitchenkarrot.air_compressor.no_energy");
+                            return Component.literal(be.getAtomicEnergy() + " / 12");
+                        },
+                        true,
                         () -> 12,
                         be::getAtomicEnergy));
     }

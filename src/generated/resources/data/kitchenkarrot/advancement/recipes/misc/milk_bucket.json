@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_milk_bucket": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_milk_bucket"
+      "has_milk_bucket",
+      "has_milk"
     ]
   ],
   "rewards": {

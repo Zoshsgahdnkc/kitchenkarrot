@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_TagKey[minecraft:item / c:cooking_oil]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / c:salt]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_TagKey[minecraft:item / kitchenkarrot:cooked_meat]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#kitchenkarrot:cooked_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kitchenkarrot:carrot_spices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "kitchenkarrot:carrot_spices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_minecraft:bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "kitchenkarrot:chinese_crepe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecraft:bread",
+      "has_TagKey[minecraft:item / c:salt]",
+      "has_TagKey[minecraft:item / c:cooking_oil]",
+      "has_kitchenkarrot:carrot_spices",
+      "has_TagKey[minecraft:item / kitchenkarrot:cooked_meat]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "kitchenkarrot:chinese_crepe"
+    ]
+  }
+}
