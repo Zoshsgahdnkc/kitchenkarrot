@@ -556,7 +556,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, RL(getSimpleRecipeName(ModItems.VODKA)));
 
         BrewingBarrelRecipeBuilder.brewingBarrel(
-                        ModItems.PICKLED_SEA_PICKLES, 4,
+                        ModItems.PICKLED_SEA_PICKLES,
+                        4,
                         new BrewingBarrelRecipe.Content(
                                 NonNullList.of(
                                         Ingredient.EMPTY,

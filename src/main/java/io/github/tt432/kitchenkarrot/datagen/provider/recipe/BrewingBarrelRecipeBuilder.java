@@ -18,7 +18,8 @@ public class BrewingBarrelRecipeBuilder implements RecipeBuilder {
     private final int count;
     private final BrewingBarrelRecipe.Content content;
 
-    private BrewingBarrelRecipeBuilder(ItemLike result, int count, BrewingBarrelRecipe.Content content) {
+    private BrewingBarrelRecipeBuilder(
+            ItemLike result, int count, BrewingBarrelRecipe.Content content) {
         this.result = result;
         this.content = content;
         this.count = count;
@@ -28,6 +29,7 @@ public class BrewingBarrelRecipeBuilder implements RecipeBuilder {
             ItemLike result, int count, BrewingBarrelRecipe.Content content) {
         return new BrewingBarrelRecipeBuilder(result, count, content);
     }
+
     public static BrewingBarrelRecipeBuilder brewingBarrel(
             ItemLike result, BrewingBarrelRecipe.Content content) {
         return brewingBarrel(result, 1, content);

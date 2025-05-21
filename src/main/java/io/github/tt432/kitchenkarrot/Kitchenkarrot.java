@@ -31,7 +31,7 @@ public class Kitchenkarrot {
     public static final String MOD_ID = "kitchenkarrot";
 
     // Mod version here.
-    public static final String VERSION = "1.21-0.6.2b";
+    public static final String VERSION = "1.21-0.6.3b";
 
     private static Kitchenkarrot INSTANCE;
 

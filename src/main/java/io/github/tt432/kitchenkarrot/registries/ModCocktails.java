@@ -116,7 +116,8 @@ public class ModCocktails {
 
     public static final DeferredHolder<CocktailProperty, CocktailProperty> TWILIGHT_FOREST =
             register(
-                    "twilight_forest", List.of(new EffectStack("kitchenkarrot:poison_resistance", 1, 3300)));
+                    "twilight_forest",
+                    List.of(new EffectStack("kitchenkarrot:poison_resistance", 1, 3300)));
 
     public static final DeferredHolder<CocktailProperty, CocktailProperty> YURA_PUNK =
             register(

@@ -142,4 +142,9 @@ public class ShakerItem extends Item {
     public UseAnim getUseAnimation(@NotNull ItemStack pStack) {
         return UseAnim.DRINK;
     }
+
+    @Override
+    public boolean canFitInsideContainerItems() {
+        return false;
+    }
 }
