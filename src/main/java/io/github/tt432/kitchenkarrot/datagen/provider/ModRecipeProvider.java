@@ -1064,7 +1064,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.BOWL)
                 .requires(ModItems.GRILLED_WHEATMEAL.get())
                 .requires(ModItemTags.MILK)
-                .requires(Ingredient.of(ModItemTags.MOD_FRUITS))
+                .requires(ModItemTags.MOD_FRUITS)
                 .unlockedBy(Items.BOWL)
                 .unlockedBy(ModItems.GRILLED_WHEATMEAL.get())
                 .unlockedBy(ModItemTags.MILK)
