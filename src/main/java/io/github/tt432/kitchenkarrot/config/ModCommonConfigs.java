@@ -34,6 +34,7 @@ public class ModCommonConfigs {
     public static final List<String> WASTED_EFFECTS =
             new ArrayList<>(
                     List.of("minecraft:weakness", "minecraft:slowness", "minecraft:hunger"));
+    public static final List<String> WASTED_LEVELS = new ArrayList<>(List.of("3", "3", "3"));
 
     @SubscribeEvent
     public static void LoaderConfig(ModConfigEvent event) {}
@@ -92,7 +93,7 @@ public class ModCommonConfigs {
         WASTED_EFFECTS_LEVEL =
                 BUILDER.comment(
                                 "The level of each effect of the drunk state. Each number represents the real level appeared in game. This list should be as long as the previous one.")
-                        .define("Wasted State Effects Duration", List.of("3", "3", "3"));
+                        .define("Wasted State Effects Duration", WASTED_LEVELS);
         BUILDER.pop();
         COMMON = BUILDER.build();
     }
