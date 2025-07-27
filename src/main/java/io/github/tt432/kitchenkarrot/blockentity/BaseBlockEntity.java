@@ -29,14 +29,18 @@ public abstract class BaseBlockEntity extends BlockEntity {
         syncDataInit(syncDataManager);
     }
 
+    @Override
+    public void setChanged() {
+        super.setChanged();
+        sync(level);
+    }
+
     /**
      * place sync data here
      */
     protected void syncDataInit(SyncDataManager manager) {}
 
-    public void tick() {
-        sync(level);
-    }
+    public void tick() {}
 
     private static final String SYNC_KEY = "sync";
 
@@ -51,6 +55,14 @@ public abstract class BaseBlockEntity extends BlockEntity {
 
         if (!isSyncTag(tag)) {
             forceOnce();
+        }
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() != null) {
+            sync(getLevel());
         }
     }
 
